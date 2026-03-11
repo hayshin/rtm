@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+import json
 import os
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
 import numpy as np
@@ -50,7 +51,7 @@ def diarize(
 
     pipeline = Pipeline.from_pretrained(
         "pyannote/speaker-diarization-3.1",
-        use_auth_token=token,
+        token=token,
     )
     pipeline.to(torch.device("cpu"))
 
@@ -63,8 +64,23 @@ def diarize(
         max_speakers=max_speakers,
     )
 
+    # pyannote 3.3+ may wrap result in DiarizeOutput; find the Annotation by capability
+    if hasattr(diarization, "itertracks"):
+        annotation = diarization
+    else:
+        annotation = next(
+            (getattr(diarization, f) for f in dir(diarization)
+             if not f.startswith("_") and hasattr(getattr(diarization, f, None), "itertracks")),
+            None,
+        )
+        if annotation is None:
+            raise RuntimeError(
+                f"Cannot extract Annotation from {type(diarization).__name__}. "
+                f"Available attrs: {[f for f in dir(diarization) if not f.startswith('_')]}"
+            )
+
     segments: list[Segment] = []
-    for turn, _, speaker in diarization.itertracks(yield_label=True):
+    for turn, _, speaker in annotation.itertracks(yield_label=True):
         segments.append(Segment(
             start=turn.start,
             end=turn.end,
@@ -80,3 +96,12 @@ def diarize(
         num_speakers=num_speakers_found,
         source_path=result.source_path,
     )
+
+
+def save(result: DiarizationResult, out_path: Path) -> None:
+    data = {
+        "source_path": str(result.source_path),
+        "num_speakers": result.num_speakers,
+        "segments": [asdict(s) for s in result.segments],
+    }
+    out_path.write_text(json.dumps(data, indent=2))
