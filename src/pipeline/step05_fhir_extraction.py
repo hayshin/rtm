@@ -32,7 +32,7 @@ Rules:
 
 class _Condition(BaseModel):
     text: str
-    clinical_status: str = "unknown"       # "active" | "resolved" | "unknown"
+    clinical_status: str = "unknown"  # "active" | "resolved" | "unknown"
     verification_status: str = "unconfirmed"  # "confirmed" | "unconfirmed" | "refuted"
     snomed_code: str | None = None
     snomed_display: str | None = None
@@ -77,7 +77,7 @@ class _LLMExtractionResult(BaseModel):
 
 @dataclass
 class FHIRExtractionResult:
-    bundle: dict          # FHIR R4 Bundle as plain dict
+    bundle: dict  # FHIR R4 Bundle as plain dict
     resource_counts: dict[str, int]
     soap_summary: str
     source_path: Path
@@ -85,8 +85,10 @@ class FHIRExtractionResult:
 
 # ── FHIR R4 resource builders ─────────────────────────────────────────────────
 
+
 def _codesystem_clinical() -> str:
     return "http://terminology.hl7.org/CodeSystem/condition-clinical"
+
 
 def _codesystem_ver() -> str:
     return "http://terminology.hl7.org/CodeSystem/condition-ver-status"
@@ -95,28 +97,45 @@ def _codesystem_ver() -> str:
 def _build_condition(c: _Condition, encounter_ref: str) -> dict:
     coding = []
     if c.snomed_code:
-        coding.append({
-            "system": "http://snomed.info/sct",
-            "code": c.snomed_code,
-            "display": c.snomed_display or c.text,
-        })
+        coding.append(
+            {
+                "system": "http://snomed.info/sct",
+                "code": c.snomed_code,
+                "display": c.snomed_display or c.text,
+            }
+        )
     if c.icd10_code:
-        coding.append({"system": "http://hl7.org/fhir/sid/icd-10-cm", "code": c.icd10_code})
+        coding.append(
+            {"system": "http://hl7.org/fhir/sid/icd-10-cm", "code": c.icd10_code}
+        )
     if not coding:
         coding.append({"display": c.text})
 
-    cs = c.clinical_status if c.clinical_status in ("active", "resolved", "inactive", "remission", "unknown") else "unknown"
-    vs = c.verification_status if c.verification_status in ("confirmed", "unconfirmed", "refuted", "provisional", "differential", "entered-in-error") else "unconfirmed"
+    cs = (
+        c.clinical_status
+        if c.clinical_status
+        in ("active", "resolved", "inactive", "remission", "unknown")
+        else "unknown"
+    )
+    vs = (
+        c.verification_status
+        if c.verification_status
+        in (
+            "confirmed",
+            "unconfirmed",
+            "refuted",
+            "provisional",
+            "differential",
+            "entered-in-error",
+        )
+        else "unconfirmed"
+    )
 
     return {
         "resourceType": "Condition",
         "id": str(uuid4()),
-        "clinicalStatus": {
-            "coding": [{"system": _codesystem_clinical(), "code": cs}]
-        },
-        "verificationStatus": {
-            "coding": [{"system": _codesystem_ver(), "code": vs}]
-        },
+        "clinicalStatus": {"coding": [{"system": _codesystem_clinical(), "code": cs}]},
+        "verificationStatus": {"coding": [{"system": _codesystem_ver(), "code": vs}]},
         "code": {"coding": coding, "text": c.text},
         "subject": {"reference": f"Patient/{PATIENT_ID}"},
         "encounter": {"reference": encounter_ref},
@@ -126,24 +145,35 @@ def _build_condition(c: _Condition, encounter_ref: str) -> dict:
 def _build_medication(m: _Medication, encounter_ref: str) -> dict:
     coding = []
     if m.rxnorm_code:
-        coding.append({
-            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-            "code": m.rxnorm_code,
-            "display": m.drug_name,
-        })
+        coding.append(
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": m.rxnorm_code,
+                "display": m.drug_name,
+            }
+        )
     else:
         coding.append({"display": m.drug_name})
 
-    valid_statuses = ("active", "completed", "entered-in-error", "intended", "stopped", "on-hold", "unknown", "not-taken")
+    valid_statuses = (
+        "active",
+        "completed",
+        "entered-in-error",
+        "intended",
+        "stopped",
+        "on-hold",
+        "unknown",
+        "not-taken",
+    )
     status = m.status if m.status in valid_statuses else "unknown"
 
     resource: dict = {
         "resourceType": "MedicationStatement",
         "id": str(uuid4()),
         "status": status,
-        "medicationCodeableConcept": {"coding": coding, "text": m.drug_name},
+        "medication": {"concept": {"coding": coding, "text": m.drug_name}},
         "subject": {"reference": f"Patient/{PATIENT_ID}"},
-        "context": {"reference": encounter_ref},
+        "encounter": {"reference": encounter_ref},
     }
 
     dosage: dict = {}
@@ -162,11 +192,13 @@ def _build_medication(m: _Medication, encounter_ref: str) -> dict:
 def _build_observation(o: _Observation, encounter_ref: str) -> dict:
     coding = []
     if o.loinc_code:
-        coding.append({
-            "system": "http://loinc.org",
-            "code": o.loinc_code,
-            "display": o.loinc_display or o.text,
-        })
+        coding.append(
+            {
+                "system": "http://loinc.org",
+                "code": o.loinc_code,
+                "display": o.loinc_display or o.text,
+            }
+        )
     else:
         coding.append({"display": o.text})
 
@@ -187,15 +219,26 @@ def _build_observation(o: _Observation, encounter_ref: str) -> dict:
 def _build_procedure(p: _Procedure, encounter_ref: str) -> dict:
     coding = []
     if p.snomed_code:
-        coding.append({
-            "system": "http://snomed.info/sct",
-            "code": p.snomed_code,
-            "display": p.snomed_display or p.text,
-        })
+        coding.append(
+            {
+                "system": "http://snomed.info/sct",
+                "code": p.snomed_code,
+                "display": p.snomed_display or p.text,
+            }
+        )
     else:
         coding.append({"display": p.text})
 
-    valid_statuses = ("preparation", "in-progress", "not-done", "on-hold", "stopped", "completed", "entered-in-error", "unknown")
+    valid_statuses = (
+        "preparation",
+        "in-progress",
+        "not-done",
+        "on-hold",
+        "stopped",
+        "completed",
+        "entered-in-error",
+        "unknown",
+    )
     status = p.status if p.status in valid_statuses else "completed"
 
     return {
@@ -210,6 +253,7 @@ def _build_procedure(p: _Procedure, encounter_ref: str) -> dict:
 
 # ── Main function ─────────────────────────────────────────────────────────────
 
+
 def extract(
     postprocessing: PostProcessingResult,
     *,
@@ -223,12 +267,14 @@ def extract(
     agent = Agent(
         model=OpenAIChat(id=model_id, api_key=api_key),
         instructions=SYSTEM_PROMPT,
-        response_model=_LLMExtractionResult,
+        output_schema=_LLMExtractionResult,
     )
 
     lines = ["Full transcript (post-processed):"]
     for i, seg in enumerate(postprocessing.segments):
-        lines.append(f"[{i}] {seg.speaker_role} ({seg.start:.2f}s–{seg.end:.2f}s): {seg.cleaned_text}")
+        lines.append(
+            f"[{i}] {seg.speaker_role} ({seg.start:.2f}s–{seg.end:.2f}s): {seg.cleaned_text}"
+        )
 
     response = agent.run("\n".join(lines))
     extracted: _LLMExtractionResult = response.content
@@ -238,21 +284,35 @@ def extract(
     encounter_ref = f"Encounter/{encounter_id}"
 
     segs = postprocessing.segments
-    period_start = f"{ENCOUNTER_DATE}T{int(segs[0].start // 3600):02d}:{int((segs[0].start % 3600) // 60):02d}:{int(segs[0].start % 60):02d}Z" if segs else f"{ENCOUNTER_DATE}T00:00:00Z"
-    period_end = f"{ENCOUNTER_DATE}T{int(segs[-1].end // 3600):02d}:{int((segs[-1].end % 3600) // 60):02d}:{int(segs[-1].end % 60):02d}Z" if segs else f"{ENCOUNTER_DATE}T00:00:00Z"
+    period_start = (
+        f"{ENCOUNTER_DATE}T{int(segs[0].start // 3600):02d}:{int((segs[0].start % 3600) // 60):02d}:{int(segs[0].start % 60):02d}Z"
+        if segs
+        else f"{ENCOUNTER_DATE}T00:00:00Z"
+    )
+    period_end = (
+        f"{ENCOUNTER_DATE}T{int(segs[-1].end // 3600):02d}:{int((segs[-1].end % 3600) // 60):02d}:{int(segs[-1].end % 60):02d}Z"
+        if segs
+        else f"{ENCOUNTER_DATE}T00:00:00Z"
+    )
 
     encounter = {
         "resourceType": "Encounter",
         "id": encounter_id,
-        "status": "finished",
-        "class": {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-            "code": "AMB",
-            "display": "ambulatory",
-        },
+        "status": "completed",
+        "class": [
+            {
+                "coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "code": "AMB",
+                    "display": "ambulatory",
+                }]
+            }
+        ],
         "subject": {"reference": f"Patient/{PATIENT_ID}"},
-        "participant": [{"individual": {"reference": f"Practitioner/{PRACTITIONER_ID}"}}],
-        "period": {"start": period_start, "end": period_end},
+        "participant": [
+            {"actor": {"reference": f"Practitioner/{PRACTITIONER_ID}"}}
+        ],
+        "actualPeriod": {"start": period_start, "end": period_end},
     }
 
     resources = [encounter]
@@ -289,6 +349,7 @@ def extract(
 
 
 # ── Persistence ───────────────────────────────────────────────────────────────
+
 
 def save(result: FHIRExtractionResult, out_path: Path) -> None:
     data = {

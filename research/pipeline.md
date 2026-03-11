@@ -75,11 +75,11 @@ Corrects residual ASR errors using contextual language modeling: fixes mis-trans
 
 ## Phase 3 — Clinical Extraction & FHIR Generation
 
-### Step 5 · LLM Clinical Extraction → FHIR R4 Bundle
+### Step 5 · LLM Clinical Extraction → FHIR R5 Bundle
 
 **Tools:** GPT-4o, Llama 3.3-70B, Phi4-14B, Qwen2.5-14B, fhir.resources (Python), Infherno, FHIR-GPT, Smolagents
 
-A single LLM pass over the post-processed, role-labeled transcript performs all of: SOAP classification, named entity recognition, negation detection, relation extraction, terminology normalization, and FHIR resource mapping. The LLM receives the full conversation context and outputs a structured extraction schema (Pydantic) that is programmatically converted to FHIR R4 resources (`Condition`, `MedicationStatement`, `Observation`, `Procedure`, `Encounter`).
+A single LLM pass over the post-processed, role-labeled transcript performs all of: SOAP classification, named entity recognition, negation detection, relation extraction, terminology normalization, and FHIR resource mapping. The LLM receives the full conversation context and outputs a structured extraction schema (Pydantic) that is programmatically converted to FHIR R5 resources (`Condition`, `MedicationStatement`, `Observation`, `Procedure`, `Encounter`).
 
 **SOAP classification** is implicit in resource type selection: subjective patient complaints → `Condition` (unconfirmed), objective exam/lab findings → `Observation`, diagnoses → `Condition` (confirmed), plan items → `MedicationStatement`/`Procedure`. This context-aware mapping avoids the ambiguity that plagues segment-level classification — "blood pressure 140/90" is correctly typed as `Observation` when measured now versus `Condition` risk factor when reported historically, because the LLM reads full context.
 
