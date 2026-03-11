@@ -50,37 +50,22 @@ def diarize(
         )
 
     pipeline = Pipeline.from_pretrained(
-        "pyannote/speaker-diarization-3.1",
+        "pyannote/speaker-diarization-community-1",
         token=token,
     )
     pipeline.to(torch.device("cpu"))
 
     waveform = torch.from_numpy(result.samples).unsqueeze(0)  # (1, samples)
 
-    diarization = pipeline(
+    output = pipeline(
         {"waveform": waveform, "sample_rate": result.sample_rate},
         num_speakers=num_speakers,
         min_speakers=min_speakers,
         max_speakers=max_speakers,
     )
 
-    # pyannote 3.3+ may wrap result in DiarizeOutput; find the Annotation by capability
-    if hasattr(diarization, "itertracks"):
-        annotation = diarization
-    else:
-        annotation = next(
-            (getattr(diarization, f) for f in dir(diarization)
-             if not f.startswith("_") and hasattr(getattr(diarization, f, None), "itertracks")),
-            None,
-        )
-        if annotation is None:
-            raise RuntimeError(
-                f"Cannot extract Annotation from {type(diarization).__name__}. "
-                f"Available attrs: {[f for f in dir(diarization) if not f.startswith('_')]}"
-            )
-
     segments: list[Segment] = []
-    for turn, _, speaker in annotation.itertracks(yield_label=True):
+    for turn, speaker in output.speaker_diarization:
         segments.append(Segment(
             start=turn.start,
             end=turn.end,

@@ -10,4 +10,5 @@ dependencies = [
     "noisereduce>=3.0",
     "webrtcvad-wheels",
     "numpy>=2.0",
+    "pyannote-audio>=4.0.4",
 ]
