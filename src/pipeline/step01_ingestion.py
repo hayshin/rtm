@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -91,3 +92,22 @@ def ingest(
 
 def save(result: IngestionResult, out_path: Path) -> None:
     sf.write(out_path, result.samples, result.sample_rate)
+    meta = {
+        "source_path": str(result.source_path),
+        "sample_rate": result.sample_rate,
+        "duration_s": result.duration_s,
+        "speech_ratio": result.speech_ratio,
+    }
+    out_path.with_suffix(".json").write_text(json.dumps(meta, indent=2))
+
+
+def load(wav_path: Path) -> IngestionResult:
+    samples, sample_rate = sf.read(wav_path, dtype="float32")
+    meta = json.loads(wav_path.with_suffix(".json").read_text())
+    return IngestionResult(
+        samples=samples,
+        sample_rate=sample_rate,
+        duration_s=meta["duration_s"],
+        speech_ratio=meta["speech_ratio"],
+        source_path=Path(meta["source_path"]),
+    )

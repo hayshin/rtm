@@ -85,3 +85,12 @@ def save(result: TranscriptionResult, out_path: Path) -> None:
         "segments": [asdict(s) for s in result.segments],
     }
     out_path.write_text(json.dumps(data, indent=2))
+
+
+def load(path: Path) -> TranscriptionResult:
+    data = json.loads(path.read_text())
+    segments = [TranscriptSegment(**s) for s in data["segments"]]
+    return TranscriptionResult(
+        segments=segments,
+        source_path=Path(data["source_path"]),
+    )

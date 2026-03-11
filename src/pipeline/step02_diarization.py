@@ -90,3 +90,13 @@ def save(result: DiarizationResult, out_path: Path) -> None:
         "segments": [asdict(s) for s in result.segments],
     }
     out_path.write_text(json.dumps(data, indent=2))
+
+
+def load(path: Path) -> DiarizationResult:
+    data = json.loads(path.read_text())
+    segments = [Segment(**s) for s in data["segments"]]
+    return DiarizationResult(
+        segments=segments,
+        num_speakers=data["num_speakers"],
+        source_path=Path(data["source_path"]),
+    )
