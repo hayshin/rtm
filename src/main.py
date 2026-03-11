@@ -14,6 +14,9 @@ from pipeline.step02_diarization import save as save_diarization
 from pipeline.step03_transcription import transcribe
 from pipeline.step03_transcription import load as load_transcription
 from pipeline.step03_transcription import save as save_transcription
+from pipeline.step04_postprocessing import postprocess
+from pipeline.step04_postprocessing import load as load_postprocessing
+from pipeline.step04_postprocessing import save as save_postprocessing
 
 
 def main() -> None:
@@ -89,6 +92,19 @@ def main() -> None:
     for seg in transcription_result.segments:
         print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker}: {seg.text}")
     print(f"Output: {step03_out}")
+
+    step04_out = outputs_dir / "step04_day1_consultation01.json"
+    if step04_out.exists():
+        print("\n--- Post-processing (cached) ---")
+        postprocessing_result = load_postprocessing(step04_out)
+    else:
+        postprocessing_result = postprocess(transcription_result)
+        save_postprocessing(postprocessing_result, step04_out)
+        print("\n--- Post-processing ---")
+    print(f"Total segments: {len(postprocessing_result.segments)}")
+    for seg in postprocessing_result.segments:
+        print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker_role}: {seg.cleaned_text}")
+    print(f"Output: {step04_out}")
 
     tmp_path.unlink(missing_ok=True)
 

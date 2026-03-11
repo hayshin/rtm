@@ -13,4 +13,6 @@ dependencies = [
     "pyannote-audio>=4.0.4",
     "transformers>=4.40",
     "accelerate>=0.26",
+    "agno>=2.5.9",
+    "openai>=2.26.0",
 ]
