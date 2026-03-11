@@ -7,29 +7,27 @@
 ```
 [1]  Audio Ingestion & Pre-processing
           ↓
-[3]  Speaker Diarization
+[2]  Speaker Diarization
           ↓
-[3b] LLM-based Diarization Correction
+[3]  ASR Transcription — Whisper (Medical Fine-tune)
           ↓
-[4]  ASR Transcription — Whisper (Medical Fine-tune)
+[4]  LLM Transcript Post-processing + Speaker Role Assignment
           ↓
-[5]  LLM Transcript Post-processing
+[5]  SOAP Segmentation & Sentence Classification
           ↓
-[6]  SOAP Segmentation & Sentence Classification
+[6]  Named Entity Recognition (NER)
           ↓
-[7]  Named Entity Recognition (NER)
+[7]  Negation Detection & Relation Extraction
           ↓
-[8]  Negation Detection & Relation Extraction
+[8]  Terminology Normalization
           ↓
-[9]  Terminology Normalization
+[9]  FHIR Resource Mapping & Assembly
           ↓
-[10] FHIR Resource Mapping & Assembly
+[10] FHIR Validation & Provenance Tracking
           ↓
-[11] FHIR Validation & Provenance Tracking
+[11] Human-in-the-Loop Clinician Review
           ↓
-[12] Human-in-the-Loop Clinician Review
-          ↓
-[13] EHR Integration via FHIR API
+[12] EHR Integration via FHIR API
 ```
 
 ---
@@ -50,25 +48,15 @@ Accepts raw audio from microphones, EHR-integrated recorders, or telephony syste
 
 ### Step 2 · Speaker Diarization
 
-**Tools:** pyannote.audio 3.x, WhisperX (Whisper + Pyannote), AWS Transcribe Medical, NeMo
+**Tools:** pyannote.audio 4.x, WhisperX (Whisper + Pyannote), AWS Transcribe Medical, NeMo
 
-Segments the audio into speaker turns, separating physician speech from patient speech. Output is a timestamped transcript annotated with speaker labels (`[PHYSICIAN]`, `[PATIENT]`). WhisperX tightly integrates word-level alignment with pyannote diarization, enabling character-level speaker attribution rather than segment-level only (Metcalf et al., 2024). A counterintuitive finding from comparative evaluation is that general-purpose ASR models achieve significantly better diarization accuracy than medical-specialized models despite lower domain coverage (Tran et al., 2022).
+Segments the audio into speaker turns, separating physician speech from patient speech. Output is a timestamped transcript with generic speaker labels (`SPEAKER_00`, `SPEAKER_01`). Role assignment (PHYSICIAN/PATIENT) is deferred to Step 4, where the LLM can determine roles from transcript content. WhisperX tightly integrates word-level alignment with pyannote diarization, enabling character-level speaker attribution rather than segment-level only (Metcalf et al., 2024). A counterintuitive finding from comparative evaluation is that general-purpose ASR models achieve significantly better diarization accuracy than medical-specialized models despite lower domain coverage (Tran et al., 2022).
 
 > Clinical diarization error rates (WDER) range from 1.8–13.9% (Tran et al., AMIA 2022). The lowest WDER (1.8%) was achieved by a general-purpose model (Amazon Transcribe), not a medical-specialized variant. Speaker attribution is essential — the same phrase carries different clinical meaning depending on who said it.
 
 ---
 
-### Step 3 · LLM-based Diarization Correction
-
-**Tools:** Mistral 7b Instruct v0.2, DiarizationLM (ensemble of ASR-specific fine-tuned models)
-
-Applies a post-processing correction pass over the diarized transcript using a language model fine-tuned to recognize and reassign misattributed speaker turns. Raw diarization systems generate systematic errors that depend heavily on the ASR source; a single LLM fine-tuned on one ASR tool fails to generalize to others. The recommended approach is a three-model ensemble — one model fine-tuned per ASR source (AWS, Azure, WhisperX) — combined for robust cross-ASR correction (Willis et al., 2024).
-
-> Fine-tuned ensemble models reduce deltaCP (speaker concatenation penalty) by 0.93–4.46 points and deltaSA (speaker-attributed WER) by 2.5–5.77 points depending on the ASR source (Willis et al., 2024). Zero-shot LLM diarization correction consistently degrades performance relative to no correction — fine-tuning on ASR-specific error patterns is essential. Labeled training data per ASR tool is required.
-
----
-
-### Step 4 · ASR Transcription — Whisper (Medical Fine-tune)
+### Step 3 · ASR Transcription — Whisper (Medical Fine-tune)
 
 **Tools:** Whisper large-v3, United-MedASR (Whisper + Faster Whisper + BART-Base), MedicalWhisper
 
@@ -85,11 +73,11 @@ WER improvement trajectory across the literature:
 
 ---
 
-### Step 5 · LLM Transcript Post-processing
+### Step 4 · LLM Transcript Post-processing + Speaker Role Assignment
 
 **Tools:** GPT-4o, Llama 3.3-70B, Phi4-14B, Qwen2.5-14B, ClinicalT5, BART-Base (medical fine-tune), MediNotes
 
-Corrects residual ASR errors using contextual language modeling: fixes mis-transcribed drug names, expands abbreviations, resolves homophones (e.g. _ileum_ vs. _ilium_), removes filler words, and restructures conversational speech into coherent clinical utterances. The BART-Base semantic correction layer (United-MedASR) specifically targets medical terminology substitution errors through fine-tuning on synthetic ICD-10 and FDA vocabulary (Banerjee et al., 2024). For privacy-preserving on-premise deployment, 4-bit quantized open-source models are viable: Llama-3.3-70B achieves the highest benchmark score (0.760 DRAGON utility), while Phi4-14B (0.751) and Qwen2.5-14B (0.748) offer a practical parameter-efficiency trade-off on 12GB VRAM hardware (Builtjes et al., 2025). The MediNotes system demonstrates that combining ASR with LLMs and Retrieval-Augmented Generation (RAG) over a medical knowledge base further reduces domain-specific terminology errors (Saadat et al., 2025). Parameter-efficient fine-tuning via QLoRA enables domain adaptation without full model retraining.
+Corrects residual ASR errors using contextual language modeling: fixes mis-transcribed drug names, expands abbreviations, resolves homophones (e.g. _ileum_ vs. _ilium_), removes filler words, and restructures conversational speech into coherent clinical utterances. In the same LLM pass, resolves speaker roles — mapping generic `SPEAKER_00`/`SPEAKER_01` labels to `[PHYSICIAN]`/`[PATIENT]` based on transcript content (e.g. clinical questioning patterns, examination language, symptom reporting). Combining role assignment with post-processing avoids a redundant LLM call and is more accurate since the model can reason from the full transcript context. The BART-Base semantic correction layer (United-MedASR) specifically targets medical terminology substitution errors through fine-tuning on synthetic ICD-10 and FDA vocabulary (Banerjee et al., 2024). For privacy-preserving on-premise deployment, 4-bit quantized open-source models are viable: Llama-3.3-70B achieves the highest benchmark score (0.760 DRAGON utility), while Phi4-14B (0.751) and Qwen2.5-14B (0.748) offer a practical parameter-efficiency trade-off on 12GB VRAM hardware (Builtjes et al., 2025). The MediNotes system demonstrates that combining ASR with LLMs and Retrieval-Augmented Generation (RAG) over a medical knowledge base further reduces domain-specific terminology errors (Saadat et al., 2025). Parameter-efficient fine-tuning via QLoRA enables domain adaptation without full model retraining.
 
 > Prompts must be domain-specific with a medical system context. Critically, translating non-English clinical text into English before LLM processing consistently degrades extraction performance — native-language processing must be preserved (Builtjes et al., 2025). Common ASR error patterns (pronoun deletion, agreement token substitution: "yeah", "okay") contribute more to WER than medical term errors, and must be handled in post-processing (Tran et al., 2022).
 
@@ -97,7 +85,7 @@ Corrects residual ASR errors using contextual language modeling: fixes mis-trans
 
 ## Phase 3 — Clinical NLP & Entity Extraction
 
-### Step 6 · SOAP Segmentation & Sentence Classification
+### Step 5 · SOAP Segmentation & Sentence Classification
 
 **Tools:** MedSpaCy, scispaCy, T5-large (SOAP fine-tune), Cluster2Sent, AutoScribe, LLM zero-shot classification
 
@@ -107,7 +95,7 @@ Classifies transcript segments into the four SOAP categories: **S**ubjective (pa
 
 ---
 
-### Step 7 · Named Entity Recognition (NER)
+### Step 6 · Named Entity Recognition (NER)
 
 **Tools:** ClinicalBERT, BioBERT, scispaCy `en_core_sci_lg`, cTAKES
 
@@ -117,7 +105,7 @@ Extracts typed clinical entities from each SOAP-classified segment: symptoms, di
 
 ---
 
-### Step 8 · Negation Detection & Relation Extraction
+### Step 7 · Negation Detection & Relation Extraction
 
 **Tools:** NegEx, MedSpaCy negation, BioBERT-RE, SMART Text2FHIR (`nlp-polarity` extension)
 
@@ -127,7 +115,7 @@ Detects negation ("no chest pain", "denies shortness of breath") and speculation
 
 ---
 
-### Step 9 · Terminology Normalization
+### Step 8 · Terminology Normalization
 
 **Tools:** UMLS Metathesaurus (QuickUMLS / MetaMap), SNOMED CT (live API / tool-calling), RxNorm, ICD-10-CM, LOINC, cTAKES dictionary lookup
 
@@ -139,7 +127,7 @@ Maps entity surface text to standard ontology codes: diagnoses → SNOMED CT / I
 
 ## Phase 4 — FHIR Resource Generation
 
-### Step 10 · FHIR Resource Mapping & Assembly
+### Step 9 · FHIR Resource Mapping & Assembly
 
 **Tools:** NLP2FHIR, FHIR-GPT, Infherno, HAPI FHIR SDK, fhir.resources (Python), Smolagents
 
@@ -158,7 +146,7 @@ Maps normalized entities and relations to FHIR R4 resources: `Condition`, `Medic
 
 ---
 
-### Step 11 · FHIR Validation & Provenance Tracking
+### Step 10 · FHIR Validation & Provenance Tracking
 
 **Tools:** HAPI FHIR Validator, HL7 Validator CLI, SMART Text2FHIR, fhir.resources (Python schema enforcement)
 
@@ -170,7 +158,7 @@ Validates each resource against official HL7 FHIR R4 profiles using a conformanc
 
 ## Phase 5 — Output & Quality Assurance
 
-### Step 12 · Human-in-the-Loop Clinician Review
+### Step 11 · Human-in-the-Loop Clinician Review
 
 **Tools:** SMART on FHIR apps, custom review UI
 
@@ -180,7 +168,7 @@ Presents generated FHIR resources to the clinician before committing to the EHR.
 
 ---
 
-### Step 13 · EHR Integration via FHIR API
+### Step 12 · EHR Integration via FHIR API
 
 **Tools:** SMART on FHIR (OAuth 2.0), HAPI FHIR Server, Epic / Cerner FHIR R4 APIs
 
