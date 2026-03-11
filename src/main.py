@@ -17,6 +17,12 @@ from pipeline.step03_transcription import save as save_transcription
 from pipeline.step04_postprocessing import postprocess
 from pipeline.step04_postprocessing import load as load_postprocessing
 from pipeline.step04_postprocessing import save as save_postprocessing
+from pipeline.step05_fhir_extraction import extract
+from pipeline.step05_fhir_extraction import load as load_extraction
+from pipeline.step05_fhir_extraction import save as save_extraction
+from pipeline.step06_validation import validate
+from pipeline.step06_validation import load as load_validation
+from pipeline.step06_validation import save as save_validation
 
 
 def main() -> None:
@@ -105,6 +111,38 @@ def main() -> None:
     for seg in postprocessing_result.segments:
         print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker_role}: {seg.cleaned_text}")
     print(f"Output: {step04_out}")
+
+    step05_out = outputs_dir / "step05_day1_consultation01.json"
+    if step05_out.exists():
+        print("\n--- FHIR Extraction (cached) ---")
+        extraction_result = load_extraction(step05_out)
+    else:
+        extraction_result = extract(postprocessing_result)
+        save_extraction(extraction_result, step05_out)
+        print("\n--- FHIR Extraction ---")
+    print(f"SOAP summary: {extraction_result.soap_summary}")
+    for rtype, count in extraction_result.resource_counts.items():
+        print(f"  {rtype}: {count}")
+    print(f"Output: {step05_out}")
+
+    step06_out = outputs_dir / "step06_day1_consultation01.json"
+    if step06_out.exists():
+        print("\n--- FHIR Validation (cached) ---")
+        validation_result = load_validation(step06_out)
+    else:
+        validation_result = validate(extraction_result)
+        save_validation(validation_result, step06_out)
+        print("\n--- FHIR Validation ---")
+    print(f"Valid: {validation_result.valid}")
+    errors = [i for i in validation_result.issues if i.severity == "error"]
+    warnings = [i for i in validation_result.issues if i.severity == "warning"]
+    print(f"Errors: {len(errors)}  Warnings: {len(warnings)}")
+    for issue in errors:
+        print(f"  [ERROR] {issue.resource_type}/{issue.resource_id}: {issue.message}")
+    total_resources = sum(validation_result.resource_counts.values())
+    provenance_count = len([e for e in validation_result.bundle_with_provenance["entry"] if e["resource"]["resourceType"] == "Provenance"])
+    print(f"Bundle: {total_resources} clinical resources + {provenance_count} Provenance")
+    print(f"Output: {step06_out}")
 
     tmp_path.unlink(missing_ok=True)
 
