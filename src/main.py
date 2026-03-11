@@ -57,6 +57,71 @@ def mix_tracks(audio_dir: Path, name: str, trim_s: int | None) -> Path:
     return tmp_path
 
 
+def run_ingestion(outputs_dir: Path, name: str, tmp_path: Path):
+    out = outputs_dir / f"step01_{name}.wav"
+    result = cached(
+        "Ingestion", out,
+        lambda: step01.ingest(tmp_path),
+        step01.load, step01.save,
+        check=lambda: out.exists() and out.with_suffix(".json").exists(),
+    )
+    print(f"Processed duration: {result.duration_s:.2f}s")
+    print(f"Speech ratio:       {result.speech_ratio:.3f}")
+    return result
+
+
+def run_diarization(outputs_dir: Path, name: str, ingestion):
+    out = outputs_dir / f"step02_{name}.json"
+    result = cached("Diarization", out, lambda: step02.diarize(ingestion), step02.load, step02.save)
+    print(f"Speakers found: {result.num_speakers}")
+    print(f"Total segments: {len(result.segments)}")
+    for seg in result.segments[:10]:
+        print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s]  {seg.speaker}  ({seg.duration:.2f}s)")
+    return result
+
+
+def run_transcription(outputs_dir: Path, name: str, ingestion, diarization):
+    out = outputs_dir / f"step03_{name}.json"
+    result = cached("Transcription", out, lambda: step03.transcribe(ingestion, diarization), step03.load, step03.save)
+    print(f"Total segments: {len(result.segments)}")
+    for seg in result.segments:
+        print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker}: {seg.text}")
+    return result
+
+
+def run_postprocessing(outputs_dir: Path, name: str, transcription):
+    out = outputs_dir / f"step04_{name}.json"
+    result = cached("Post-processing", out, lambda: step04.postprocess(transcription), step04.load, step04.save)
+    print(f"Total segments: {len(result.segments)}")
+    for seg in result.segments:
+        print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker_role}: {seg.cleaned_text}")
+    return result
+
+
+def run_fhir_extraction(outputs_dir: Path, name: str, postprocessing):
+    out = outputs_dir / f"step05_{name}.json"
+    result = cached("FHIR Extraction", out, lambda: step05.extract(postprocessing), step05.load, step05.save)
+    print(f"SOAP summary: {result.soap_summary}")
+    for rtype, count in result.resource_counts.items():
+        print(f"  {rtype}: {count}")
+    return result
+
+
+def run_validation(outputs_dir: Path, name: str, extraction):
+    out = outputs_dir / f"step06_{name}.json"
+    result = cached("FHIR Validation", out, lambda: step06.validate(extraction), step06.load, step06.save)
+    print(f"Valid: {result.valid}")
+    errors = [i for i in result.issues if i.severity == "error"]
+    warnings = [i for i in result.issues if i.severity == "warning"]
+    print(f"Errors: {len(errors)}  Warnings: {len(warnings)}")
+    for issue in errors:
+        print(f"  [ERROR] {issue.resource_type}/{issue.resource_id}: {issue.message}")
+    total = sum(result.resource_counts.values())
+    provenance = len([e for e in result.bundle_with_provenance["entry"] if e["resource"]["resourceType"] == "Provenance"])
+    print(f"Bundle: {total} clinical resources + {provenance} Provenance")
+    return result
+
+
 def run(name: str, trim_s: int | None = 60) -> None:
     audio_dir = Path(__file__).parent.parent / "references" / "primock57" / "audio"
     outputs_dir = Path(__file__).parent.parent / "outputs"
@@ -64,75 +129,12 @@ def run(name: str, trim_s: int | None = 60) -> None:
 
     tmp_path = mix_tracks(audio_dir, name, trim_s)
     try:
-        step01_out = outputs_dir / f"step01_{name}.wav"
-        ingestion = cached(
-            "Ingestion", step01_out,
-            lambda: step01.ingest(tmp_path),
-            step01.load, step01.save,
-            check=lambda: step01_out.exists() and step01_out.with_suffix(".json").exists(),
-        )
-        print(f"Processed duration: {ingestion.duration_s:.2f}s")
-        print(f"Speech ratio:       {ingestion.speech_ratio:.3f}")
-
-        step02_out = outputs_dir / f"step02_{name}.json"
-        diarization = cached(
-            "Diarization", step02_out,
-            lambda: step02.diarize(ingestion),
-            step02.load, step02.save,
-        )
-        print(f"Speakers found: {diarization.num_speakers}")
-        print(f"Total segments: {len(diarization.segments)}")
-        for seg in diarization.segments[:10]:
-            print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s]  {seg.speaker}  ({seg.duration:.2f}s)")
-
-        step03_out = outputs_dir / f"step03_{name}.json"
-        transcription = cached(
-            "Transcription", step03_out,
-            lambda: step03.transcribe(ingestion, diarization),
-            step03.load, step03.save,
-        )
-        print(f"Total segments: {len(transcription.segments)}")
-        for seg in transcription.segments:
-            print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker}: {seg.text}")
-
-        step04_out = outputs_dir / f"step04_{name}.json"
-        postprocessing = cached(
-            "Post-processing", step04_out,
-            lambda: step04.postprocess(transcription),
-            step04.load, step04.save,
-        )
-        print(f"Total segments: {len(postprocessing.segments)}")
-        for seg in postprocessing.segments:
-            print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker_role}: {seg.cleaned_text}")
-
-        step05_out = outputs_dir / f"step05_{name}.json"
-        extraction = cached(
-            "FHIR Extraction", step05_out,
-            lambda: step05.extract(postprocessing),
-            step05.load, step05.save,
-        )
-        print(f"SOAP summary: {extraction.soap_summary}")
-        for rtype, count in extraction.resource_counts.items():
-            print(f"  {rtype}: {count}")
-
-        step06_out = outputs_dir / f"step06_{name}.json"
-        validation = cached(
-            "FHIR Validation", step06_out,
-            lambda: step06.validate(extraction),
-            step06.load, step06.save,
-        )
-        print(f"Valid: {validation.valid}")
-        errors = [i for i in validation.issues if i.severity == "error"]
-        warnings = [i for i in validation.issues if i.severity == "warning"]
-        print(f"Errors: {len(errors)}  Warnings: {len(warnings)}")
-        for issue in errors:
-            print(f"  [ERROR] {issue.resource_type}/{issue.resource_id}: {issue.message}")
-        total_resources = sum(validation.resource_counts.values())
-        provenance_count = len([
-            e for e in validation.bundle_with_provenance["entry"]
-            if e["resource"]["resourceType"] == "Provenance"
-        ])
-        print(f"Bundle: {total_resources} clinical resources + {provenance_count} Provenance")
+        ingestion      = run_ingestion(outputs_dir, name, tmp_path)
+        diarization    = run_diarization(outputs_dir, name, ingestion)
+        transcription  = run_transcription(outputs_dir, name, ingestion, diarization)
+        postprocessing = run_postprocessing(outputs_dir, name, transcription)
+        extraction     = run_fhir_extraction(outputs_dir, name, postprocessing)
+        run_validation(outputs_dir, name, extraction)
     finally:
         tmp_path.unlink(missing_ok=True)
 
