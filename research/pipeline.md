@@ -13,22 +13,12 @@
           ↓
 [4]  LLM Transcript Post-processing + Speaker Role Assignment
           ↓
-[5]  SOAP Segmentation & Sentence Classification
+[5]  LLM Clinical Extraction → FHIR R4 Bundle
           ↓
-[6]  Named Entity Recognition (NER)
-          ↓
-[7]  Negation Detection & Relation Extraction
-          ↓
-[8]  Terminology Normalization
-          ↓
-[9]  FHIR Resource Mapping & Assembly
-          ↓
-[10] FHIR Validation & Provenance Tracking
-          ↓
-[11] Human-in-the-Loop Clinician Review
-          ↓
-[12] EHR Integration via FHIR API
+[6]  FHIR Validation & Provenance Tracking
 ```
+
+Steps 5–6 collapse the traditional multi-stage NLP pipeline (SOAP segmentation → NER → negation detection → terminology normalization → FHIR mapping) into two passes. This is motivated by the demonstrated capability of instruction-tuned LLMs to perform all of these sub-tasks jointly when given sufficient context, and by the Infherno result showing that agentic LLM-to-FHIR mapping achieves <2.3% semantic hallucination rate with schema-enforcement (Frei et al., 2025) — comparable to dedicated NLP pipelines at a fraction of the engineering complexity.
 
 ---
 
@@ -69,7 +59,7 @@ WER improvement trajectory across the literature:
 - ~2.5% WER — Whisper large-v3, zero-shot (Radford et al., 2022)
 - 0.4–1.0% WER — United-MedASR fine-tuned on synthetic medical data (Banerjee et al., 2024)
 
-> Medical fine-tuned variants achieve WER below 2.5%; domain-adapted stacked architectures (Whisper + BART) approach 0.4% WER on benchmark corpora (Banerjee et al., 2024). However, medical concept recall remains unexpectedly low at 0.48–0.49 (F-recall) despite high precision of 0.95–0.96 against LOINC/SNOMED CT concepts (Tran et al., 2022), motivating the post-processing step. Timestamps from this stage are required for FHIR `Provenance` resources in Step 11.
+> Medical fine-tuned variants achieve WER below 2.5%; domain-adapted stacked architectures (Whisper + BART) approach 0.4% WER on benchmark corpora (Banerjee et al., 2024). However, medical concept recall remains unexpectedly low at 0.48–0.49 (F-recall) despite high precision of 0.95–0.96 against LOINC/SNOMED CT concepts (Tran et al., 2022), motivating the post-processing step. Timestamps from this stage are required for FHIR `Provenance` resources in Step 6.
 
 ---
 
@@ -83,95 +73,36 @@ Corrects residual ASR errors using contextual language modeling: fixes mis-trans
 
 ---
 
-## Phase 3 — Clinical NLP & Entity Extraction
+## Phase 3 — Clinical Extraction & FHIR Generation
 
-### Step 5 · SOAP Segmentation & Sentence Classification
+### Step 5 · LLM Clinical Extraction → FHIR R4 Bundle
 
-**Tools:** MedSpaCy, scispaCy, T5-large (SOAP fine-tune), Cluster2Sent, AutoScribe, LLM zero-shot classification
+**Tools:** GPT-4o, Llama 3.3-70B, Phi4-14B, Qwen2.5-14B, fhir.resources (Python), Infherno, FHIR-GPT, Smolagents
 
-Classifies transcript segments into the four SOAP categories: **S**ubjective (patient complaints), **O**bjective (vitals, exam findings), **A**ssessment (diagnoses), **P**lan (medications, referrals). This context determines which FHIR resource type each entity maps to downstream. T5-large fine-tuned on K-SOAP/CliniKnote datasets provides a supervised alternative to zero-shot classification with stronger boundary detection (Saadat et al., 2025). For real-time use, Cluster2Sent employs hybrid extractive-abstractive summarization — clustering critical utterances during live consultation and immediately imposing SOAP structure before the encounter ends (Saadat et al., 2025). AutoScribe applies context-driven dialogue parsing with semantic normalization to handle conversational disfluencies specific to clinical interactions. Quality of SOAP output can be measured with DeepScore (domain-specific clinical relevance), BERTScore (semantic similarity), and ROUGE (content preservation).
+A single LLM pass over the post-processed, role-labeled transcript performs all of: SOAP classification, named entity recognition, negation detection, relation extraction, terminology normalization, and FHIR resource mapping. The LLM receives the full conversation context and outputs a structured extraction schema (Pydantic) that is programmatically converted to FHIR R4 resources (`Condition`, `MedicationStatement`, `Observation`, `Procedure`, `Encounter`).
 
-> "Blood pressure 140/90" is an `Observation` resource when measured objectively, but a `Condition` risk factor when reported historically. SOAP classification resolves this ambiguity. Errors at this stage propagate to all downstream FHIR resource type assignments.
+**SOAP classification** is implicit in resource type selection: subjective patient complaints → `Condition` (unconfirmed), objective exam/lab findings → `Observation`, diagnoses → `Condition` (confirmed), plan items → `MedicationStatement`/`Procedure`. This context-aware mapping avoids the ambiguity that plagues segment-level classification — "blood pressure 140/90" is correctly typed as `Observation` when measured now versus `Condition` risk factor when reported historically, because the LLM reads full context.
 
----
+**NER and negation** are handled jointly: "no chest pain" or "denies shortness of breath" maps to `verificationStatus=refuted`; "possible pneumonia" maps to `verificationStatus=unconfirmed`. Relation extraction (drug→dose, symptom→location) is resolved at structured output construction time — dosage fields are populated directly from the same extraction pass. This avoids the 23-point semantic completeness drop that ablation studies show when relation extraction is omitted (Semantic NLP Pipelines, Binghamton, 2024).
 
-### Step 6 · Named Entity Recognition (NER)
+**Terminology normalization** is performed best-effort by the LLM: SNOMED CT codes for conditions and procedures, RxNorm codes for medications, LOINC codes for observations. While LLM-generated codes are less reliable than dedicated lookup services (QuickUMLS, live SNOMED CT API), they provide a viable approximation for research. Concept normalization has the single highest isolated impact on interoperability score among all pipeline components — a 0.23-point drop when removed (Semantic NLP Pipelines, 2024) — making this the primary limitation of the LLM-only approach versus dedicated terminology services.
 
-**Tools:** ClinicalBERT, BioBERT, scispaCy `en_core_sci_lg`, cTAKES
+**FHIR mapping** uses `fhir.resources` Python objects for schema-constrained construction. The Infherno system demonstrates that programmatic FHIR object construction (rather than free-form JSON generation) reduces hallucination rates to <2.3% (Frei et al., 2025). NLP2FHIR (Mayo Clinic) establishes the baseline mapping rule inventory: 30 NLP-to-FHIR element rules and 62 content normalization rules, achieving F-score 0.69–0.99 across resource types (Hong et al., 2019). LLM attribute-level mapping accuracy: GPT-4o 67–73% (95% CI), Llama 3.2 405b 43–53% on MIMIC-IV FHIR benchmark (Murcia et al., 2024).
 
-Extracts typed clinical entities from each SOAP-classified segment: symptoms, diagnoses, medications (name + dose + route + frequency), procedures, anatomical locations, lab values, vital signs, and temporal expressions. Outputs entity spans with type labels and confidence scores. Dedicated sequence-tagging transformer models (ClinicalBERT, BioBERT) significantly outperform rule-based alternatives: ClinicalBERT achieves NER F1 = 0.89 versus F1 = 0.72 for rule-based systems, an improvement of 17 F1 points (Semantic NLP Pipelines, 2024). Generative LLMs (Llama, Phi series) are architecturally mismatched for token-level NER — their continuous text output format cannot reliably produce token-level span labels — and should not replace dedicated NER models at this step (Builtjes et al., 2025). Apache cTAKES with UIMA type system provides a production-grade alternative with integrated SNOMED CT and RxNorm dictionaries (Hong et al., 2019).
+The traditional multi-step alternative — separate SOAP (MedSpaCy/T5), NER (ClinicalBERT F1=0.89), negation (NegEx/BioBERT-RE F1=0.81), normalization (QuickUMLS), and mapping (NLP2FHIR) — achieves semantic completeness 91% and interoperability score 0.88 (Semantic NLP Pipelines, 2024), and remains the stronger approach for production systems or component-level ablation research. The LLM-unified approach trades accuracy ceiling for implementation simplicity and is appropriate for rapid research prototyping.
 
-> Transformer-based clinical NER achieves F1 0.89 on MIMIC benchmarks (Semantic NLP Pipelines, 2024) vs. 0.85–0.92 on i2b2. NER F1 alone does not determine final interoperability — concept normalization in Step 9 has an equally large downstream impact.
-
----
-
-### Step 7 · Negation Detection & Relation Extraction
-
-**Tools:** NegEx, MedSpaCy negation, BioBERT-RE, SMART Text2FHIR (`nlp-polarity` extension)
-
-Detects negation ("no chest pain", "denies shortness of breath") and speculation ("possible pneumonia") around each entity. Extracts relations between entities: drug→dosage, symptom→body-location, diagnosis→certainty. Results map directly to FHIR `clinicalStatus` and `verificationStatus` fields. BioBERT-RE achieves relation extraction F1 = 0.81 (Semantic NLP Pipelines, 2024). The SMART Text2FHIR pipeline encodes negation output as an `nlp-polarity` FHIR modifier extension (boolean) attached to each generated resource, enabling downstream systems to interpret polarity without re-running NLP (SMART Text2FHIR, Boston Children's Hospital). Ablation analysis demonstrates that removing relation extraction reduces semantic completeness from 91% to 68% — a 23-point drop (Semantic NLP Pipelines, 2024).
-
-> Approximately 30% of clinical entity mentions are negated. Skipping this step generates clinically dangerous false-positive FHIR resources. Without relation extraction, semantic completeness of the final FHIR bundle degrades by 23 percentage points (Semantic NLP Pipelines, 2024).
+> SOAP is implicit in FHIR resource type selection — the LLM resolves this during extraction, not as a separate prior step. Approximately 30% of clinical entity mentions are negated; missing these generates clinically dangerous false-positive FHIR resources (Semantic NLP Pipelines, 2024). FHIR requires coded `CodeableConcept` values — without ontology grounding resources are not interoperable, making terminology normalization the weakest point of the LLM-unified approach.
 
 ---
 
-### Step 8 · Terminology Normalization
+## Phase 4 — Validation & Output
 
-**Tools:** UMLS Metathesaurus (QuickUMLS / MetaMap), SNOMED CT (live API / tool-calling), RxNorm, ICD-10-CM, LOINC, cTAKES dictionary lookup
+### Step 6 · FHIR Validation & Provenance Tracking
 
-Maps entity surface text to standard ontology codes: diagnoses → SNOMED CT / ICD-10-CM, medications → RxNorm CUI, procedures → CPT / SNOMED CT, lab and vital observations → LOINC. UMLS serves as the cross-terminology hub. Candidate generation from UMLS followed by contextual similarity ranking (rather than simple dictionary lookup) improves disambiguation of ambiguous clinical terms. Inferno (2025) demonstrates that live SNOMED CT tool-calling during entity mapping — rather than static lookup tables — provides higher accuracy by querying the terminology service with full entity context (Frei et al., 2025). Concept normalization is the single largest driver of downstream interoperability: ablation shows a 0.23-point drop in interoperability score when normalization is removed, larger than the impact of removing relation extraction or validation (Semantic NLP Pipelines, 2024).
+**Tools:** fhir.resources (Python schema enforcement), HAPI FHIR Validator (optional, Java), SMART Text2FHIR
 
-> FHIR requires coded values (`CodeableConcept`). Without ontology grounding, generated resources are not interoperable. LOINC is mandatory for `Observation` resources. Concept normalization has the highest isolated impact on interoperability score among all NLP pipeline components (Semantic NLP Pipelines, 2024).
+Validates each resource against the HL7 FHIR R4 schema using `fhir.resources` Pydantic parsing — catching required field violations, type mismatches, and invalid cardinality. Attaches `Provenance` resources linking each clinical resource back to the source audio file and NLP pipeline version, enabling full auditability. NLP metadata extensions from NLP2FHIR (`confidence_score`, `nlp_system`, `offset`) provide a machine-readable audit trail to the exact character position in the source transcript (Hong et al., 2019). SMART Text2FHIR standardizes three provenance extensions: `nlp-source` (algorithm + version), `derivation-reference` (character offset + length), and `nlp-polarity` (negation boolean), enabling downstream consumers to reconstruct NLP decisions without re-running the pipeline (SMART Text2FHIR, Boston Children's Hospital).
 
----
+For full profile conformance validation (beyond schema), the HAPI FHIR Validator CLI (Java) can be added as an optional post-processing step. Programmatic schema enforcement during assembly reduces validation failures: hallucination rates below 2.3% have been demonstrated when `fhir.resources` object construction is used (Frei et al., 2025).
 
-## Phase 4 — FHIR Resource Generation
-
-### Step 9 · FHIR Resource Mapping & Assembly
-
-**Tools:** NLP2FHIR, FHIR-GPT, Infherno, HAPI FHIR SDK, fhir.resources (Python), Smolagents
-
-Maps normalized entities and relations to FHIR R4 resources: `Condition`, `MedicationStatement`, `Observation`, `Procedure`, `AllergyIntolerance`, `Encounter`. Populates all mandatory fields: `subject` (Patient reference), `status`, `code` (CodeableConcept), `recorder`, and `effectiveDateTime` (from ASR timestamps). A `FHIR Composition` resource wraps all generated resources as a document-level FHIR Bundle, preserving document semantics alongside individual resources (NLP2FHIR, Hong et al., 2019).
-
-**Mapping rule inventory (NLP2FHIR, Mayo Clinic):** 30 NLP-to-FHIR element mapping rules and 62 content normalization rules, achieving F-score 0.69–0.99 across resource types (`MedicationStatement.medicationCodeableConcept`: F = 0.988; `Medication.form`: F = 0.779). Eleven NLP-specific FHIR extensions capture metadata needed for provenance and confidence: `confidence_score`, `negated_modifier`, `certainty_modifier`, `conditional_modifier`, `nlp_system`, `offset` (source character position), `raw_text`, `nlp_date`, `term_temporal`.
-
-**LLM-based approaches:**
-
-- FHIR-GPT (NEJM AI, 2024): GPT-4 class model for direct clinical narrative → `MedicationStatement` mapping
-- Infherno (Frei et al., 2025): Gemini-2.5-Pro + Smolagents ReAct framework; enforces FHIR schema compliance through `fhir.resources` Python object construction rather than free-form JSON generation; SNOMED CT integrated via live tool-calling; achieves 86/132 exact field matches with <2.3% semantic hallucination rate on clinical discharge letters
-- LLM attribute-level mapping accuracy: GPT-4o 67–73% (95% CI), Llama 3.2 405b 43–53% on structured MIMIC-IV FHIR benchmark (Murcia et al., 2024)
-- Full semantic NLP pipeline (entity extraction → normalization → FHIR): NER F1 0.89, RE F1 0.81, semantic completeness 91%, interoperability score 0.88 (Semantic NLP Pipelines, Binghamton, 2024)
-
-> Agentic code-execution approaches (Infherno) achieve lower semantic hallucination rates (<2.3%) than prompt-only LLM approaches because FHIR schema compliance is enforced programmatically rather than instructed via text. JSON generation without schema constraints causes frequent parsing failures (FHIR-GPT). FHIR-GPT achieves >90% exact match on `MedicationStatement`. NLP2FHIR achieves F-score 0.69–0.99 across resource types on Mayo Clinic EHR data (Hong et al., 2019).
-
----
-
-### Step 10 · FHIR Validation & Provenance Tracking
-
-**Tools:** HAPI FHIR Validator, HL7 Validator CLI, SMART Text2FHIR, fhir.resources (Python schema enforcement)
-
-Validates each resource against official HL7 FHIR R4 profiles using a conformance engine. Attaches `Provenance` resources linking each field back to the source transcript segment, speaker label, and ASR timestamp — enabling full auditability and clinician review. NLP metadata extensions from NLP2FHIR (`confidence_score`, `nlp_system`, `offset`) provide a machine-readable audit trail to the exact character position in the source transcript (Hong et al., 2019). SMART Text2FHIR adds three standardized extensions: `nlp-source` (algorithm + version), `derivation-reference` (character offset + length in source document), and `nlp-polarity` (negation boolean), enabling downstream FHIR consumers to reconstruct NLP decisions without re-running the pipeline (SMART Text2FHIR, Boston Children's Hospital). Programmatic schema enforcement during assembly (Step 10) reduces validation failures at this stage: hallucination rates below 2.3% have been demonstrated when fhir.resources object construction is used (Frei et al., 2025).
-
-> Provenance tracking is the primary evaluation mechanism in a research context and a clinical accountability requirement in deployment. FHIR schema validation catches structural errors; NLP metadata extensions enable semantic auditability.
-
----
-
-## Phase 5 — Output & Quality Assurance
-
-### Step 11 · Human-in-the-Loop Clinician Review
-
-**Tools:** SMART on FHIR apps, custom review UI
-
-Presents generated FHIR resources to the clinician before committing to the EHR. Flags low-confidence extractions (via `confidence_score` NLP extension) for mandatory review. All edits, rejections, and confirmations are logged with a full audit trail. Systematic review evidence indicates that clinician trust is low when AI-generated outputs are not presented as editable drafts — live editing workflows are a prerequisite for clinical adoption (Saadat et al., 2025). Hallucinations and critical omissions in generated clinical notes are the primary patient safety concerns; cognitive load from reviewing AI-generated content is a secondary risk. Automated pre-screening with DeepScore (clinical domain relevance), BERTScore (semantic similarity), and ROUGE (content completeness) can prioritize resources most needing human attention before the clinician review queue.
-
-> No AI pipeline should autonomously write to a patient EHR. This is both a patient safety requirement and an FDA regulatory expectation for AI-assisted clinical documentation. Editable draft workflows are essential for clinician trust and adoption (Saadat et al., 2025).
-
----
-
-### Step 12 · EHR Integration via FHIR API
-
-**Tools:** SMART on FHIR (OAuth 2.0), HAPI FHIR Server, Epic / Cerner FHIR R4 APIs
-
-Pushes validated, clinician-approved FHIR resources to the target EHR via RESTful FHIR API (`POST /Condition`, `PUT /MedicationStatement`, etc.). Supports both batch (`Bundle`) and real-time streaming output modes; the `FHIR Bundle` format for batch submission is natively supported by NLP2FHIR and HAPI FHIR, enabling atomic commit of all resources from a single encounter (Hong et al., 2019). All API responses are logged for audit.
-
-> SMART on FHIR provides the OAuth 2.0 authorization layer required by all major EHR vendors (Epic, Cerner, Oracle Health).
+> Provenance tracking is the primary evaluation mechanism in a research context. FHIR schema validation catches structural errors; NLP metadata extensions enable semantic auditability. The validation pass also serves as the quantitative evaluation point for the research pipeline — error counts and resource coverage metrics are recorded here.
