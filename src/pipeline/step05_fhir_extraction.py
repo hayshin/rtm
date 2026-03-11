@@ -1,10 +1,11 @@
-"""Step 5: LLM Clinical Extraction → FHIR R4 Bundle."""
+"""Step 5: LLM Clinical Extraction → FHIR R5 Bundle."""
 
 from __future__ import annotations
 
 import json
 import os
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from uuid import uuid4
 
@@ -14,7 +15,7 @@ from pipeline.step04_postprocessing import PostProcessingResult
 
 PATIENT_ID = "patient-001"
 PRACTITIONER_ID = "practitioner-001"
-ENCOUNTER_DATE = "2024-01-01"  # placeholder for research
+_ENCOUNTER_BASE = datetime(2024, 1, 1, tzinfo=timezone.utc)
 
 SYSTEM_PROMPT = """You are a clinical NLP specialist. Given a post-processed doctor-patient consultation transcript with PHYSICIAN/PATIENT speaker labels, extract all clinically relevant information for FHIR R4 resource creation.
 
@@ -77,13 +78,22 @@ class _LLMExtractionResult(BaseModel):
 
 @dataclass
 class FHIRExtractionResult:
-    bundle: dict  # FHIR R4 Bundle as plain dict
+    bundle: dict  # FHIR R5 Bundle as plain dict
     resource_counts: dict[str, int]
     soap_summary: str
+    model_id: str
     source_path: Path
 
 
-# ── FHIR R4 resource builders ─────────────────────────────────────────────────
+# ── FHIR R5 resource builders ─────────────────────────────────────────────────
+
+SOURCE_SEGMENTS_URL = "http://example.org/fhir/StructureDefinition/source-segment-indices"
+
+
+def _source_segments_ext(indices: list[int]) -> list[dict] | None:
+    if not indices:
+        return None
+    return [{"url": SOURCE_SEGMENTS_URL, "valueString": ",".join(str(i) for i in indices)}]
 
 
 def _codesystem_clinical() -> str:
@@ -131,7 +141,7 @@ def _build_condition(c: _Condition, encounter_ref: str) -> dict:
         else "unconfirmed"
     )
 
-    return {
+    resource = {
         "resourceType": "Condition",
         "id": str(uuid4()),
         "clinicalStatus": {"coding": [{"system": _codesystem_clinical(), "code": cs}]},
@@ -140,6 +150,10 @@ def _build_condition(c: _Condition, encounter_ref: str) -> dict:
         "subject": {"reference": f"Patient/{PATIENT_ID}"},
         "encounter": {"reference": encounter_ref},
     }
+    ext = _source_segments_ext(c.segment_indices)
+    if ext:
+        resource["extension"] = ext
+    return resource
 
 
 def _build_medication(m: _Medication, encounter_ref: str) -> dict:
@@ -186,6 +200,9 @@ def _build_medication(m: _Medication, encounter_ref: str) -> dict:
     if dosage:
         resource["dosage"] = [dosage]
 
+    ext = _source_segments_ext(m.segment_indices)
+    if ext:
+        resource["extension"] = ext
     return resource
 
 
@@ -213,6 +230,9 @@ def _build_observation(o: _Observation, encounter_ref: str) -> dict:
     if o.value:
         resource["valueString"] = f"{o.value} {o.unit or ''}".strip()
 
+    ext = _source_segments_ext(o.segment_indices)
+    if ext:
+        resource["extension"] = ext
     return resource
 
 
@@ -241,7 +261,7 @@ def _build_procedure(p: _Procedure, encounter_ref: str) -> dict:
     )
     status = p.status if p.status in valid_statuses else "completed"
 
-    return {
+    resource = {
         "resourceType": "Procedure",
         "id": str(uuid4()),
         "status": status,
@@ -249,6 +269,10 @@ def _build_procedure(p: _Procedure, encounter_ref: str) -> dict:
         "subject": {"reference": f"Patient/{PATIENT_ID}"},
         "encounter": {"reference": encounter_ref},
     }
+    ext = _source_segments_ext(p.segment_indices)
+    if ext:
+        resource["extension"] = ext
+    return resource
 
 
 # ── Main function ─────────────────────────────────────────────────────────────
@@ -284,16 +308,10 @@ def extract(
     encounter_ref = f"Encounter/{encounter_id}"
 
     segs = postprocessing.segments
-    period_start = (
-        f"{ENCOUNTER_DATE}T{int(segs[0].start // 3600):02d}:{int((segs[0].start % 3600) // 60):02d}:{int(segs[0].start % 60):02d}Z"
-        if segs
-        else f"{ENCOUNTER_DATE}T00:00:00Z"
-    )
-    period_end = (
-        f"{ENCOUNTER_DATE}T{int(segs[-1].end // 3600):02d}:{int((segs[-1].end % 3600) // 60):02d}:{int(segs[-1].end % 60):02d}Z"
-        if segs
-        else f"{ENCOUNTER_DATE}T00:00:00Z"
-    )
+    start_s = min(s.start for s in segs) if segs else 0.0
+    end_s   = max(s.end   for s in segs) if segs else 0.0
+    period_start = (_ENCOUNTER_BASE + timedelta(seconds=start_s)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    period_end   = (_ENCOUNTER_BASE + timedelta(seconds=end_s)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     encounter = {
         "resourceType": "Encounter",
@@ -344,6 +362,7 @@ def extract(
         bundle=bundle,
         resource_counts=counts,
         soap_summary=extracted.soap_summary,
+        model_id=model_id,
         source_path=postprocessing.source_path,
     )
 
@@ -356,6 +375,7 @@ def save(result: FHIRExtractionResult, out_path: Path) -> None:
         "source_path": str(result.source_path),
         "resource_counts": result.resource_counts,
         "soap_summary": result.soap_summary,
+        "model_id": result.model_id,
         "bundle": result.bundle,
     }
     out_path.write_text(json.dumps(data, indent=2))
@@ -367,5 +387,6 @@ def load(path: Path) -> FHIRExtractionResult:
         bundle=data["bundle"],
         resource_counts=data["resource_counts"],
         soap_summary=data["soap_summary"],
+        model_id=data["model_id"],
         source_path=Path(data["source_path"]),
     )
