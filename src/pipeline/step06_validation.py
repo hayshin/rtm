@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import json
 from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
 
 from pipeline.step05_fhir_extraction import FHIRExtractionResult
 
 NLP_SYSTEM_URL = "http://example.org/fhir/StructureDefinition/nlp-system"
-NLP_PIPELINE_VERSION = "rtm-pipeline/step05/gpt-4o-mini"
 
 # Resource types that have required fields we want to check
 _IMPORTABLE = {
@@ -79,12 +79,13 @@ def _validate_resource(resource: dict) -> list[ValidationIssue]:
     return issues
 
 
-def _build_provenance(resource: dict, source_path: Path) -> dict:
+def _build_provenance(resource: dict, source_path: Path, model_id: str) -> dict:
+    pipeline_version = f"rtm-pipeline/step05/{model_id}"
     return {
         "resourceType": "Provenance",
         "id": str(uuid4()),
         "target": [{"reference": f"{resource['resourceType']}/{resource['id']}"}],
-        "recorded": "2024-01-01T00:00:00Z",
+        "recorded": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "agent": [
             {
                 "type": {
@@ -93,7 +94,7 @@ def _build_provenance(resource: dict, source_path: Path) -> dict:
                         "code": "assembler",
                     }]
                 },
-                "who": {"display": NLP_PIPELINE_VERSION},
+                "who": {"display": pipeline_version},
             }
         ],
         "entity": [
@@ -105,14 +106,14 @@ def _build_provenance(resource: dict, source_path: Path) -> dict:
         "extension": [
             {
                 "url": NLP_SYSTEM_URL,
-                "valueString": NLP_PIPELINE_VERSION,
+                "valueString": pipeline_version,
             }
         ],
     }
 
 
 def validate(extraction: FHIRExtractionResult) -> ValidationResult:
-    all_issues: list[ValidationIssue] = []
+    all_issues: list[ValidationIssue] = _validate_resource(extraction.bundle)
     provenance_resources: list[dict] = []
 
     for entry in extraction.bundle.get("entry", []):
@@ -122,7 +123,7 @@ def validate(extraction: FHIRExtractionResult) -> ValidationResult:
 
         issues = _validate_resource(resource)
         all_issues.extend(issues)
-        provenance_resources.append(_build_provenance(resource, extraction.source_path))
+        provenance_resources.append(_build_provenance(resource, extraction.source_path, extraction.model_id))
 
     bundle_with_provenance = dict(extraction.bundle)
     bundle_with_provenance["entry"] = list(extraction.bundle.get("entry", [])) + [
