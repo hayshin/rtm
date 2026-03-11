@@ -7,8 +7,6 @@
 ```
 [1]  Audio Ingestion & Pre-processing
           ↓
-[2]  De-identification (HIPAA Layer)
-          ↓
 [3]  Speaker Diarization
           ↓
 [3b] LLM-based Diarization Correction
@@ -48,19 +46,9 @@ Accepts raw audio from microphones, EHR-integrated recorders, or telephony syste
 
 ---
 
-### Step 2 · De-identification (HIPAA Layer)
-
-**Tools:** Microsoft Presidio, MIST, PhiloASR
-
-Applies a HIPAA §164.514-compliant data handling layer before any content leaves a secure environment — encrypted storage, access logging, and on-premise processing constraints. Audio-level de-identification (before transcription) is preferable to text-level-only de-identification, as PHI present in acoustic features (speaker voice, timing patterns) is not captured post-ASR. PhiloASR operates in the audio domain for this purpose. Text-level de-identification post-ASR removes names, dates, MRNs, and other PHI before any external API calls.
-
-> Required for legal compliance and for using clinical datasets (e.g. MIMIC-IV) in research evaluation.
-
----
-
 ## Phase 2 — Automatic Speech Recognition
 
-### Step 3 · Speaker Diarization
+### Step 2 · Speaker Diarization
 
 **Tools:** pyannote.audio 3.x, WhisperX (Whisper + Pyannote), AWS Transcribe Medical, NeMo
 
@@ -70,7 +58,7 @@ Segments the audio into speaker turns, separating physician speech from patient 
 
 ---
 
-### Step 3b · LLM-based Diarization Correction
+### Step 3 · LLM-based Diarization Correction
 
 **Tools:** Mistral 7b Instruct v0.2, DiarizationLM (ensemble of ASR-specific fine-tuned models)
 
@@ -87,6 +75,7 @@ Applies a post-processing correction pass over the diarized transcript using a l
 Transcribes each diarized speaker segment to text using a medical-adapted Whisper model. Outputs a timestamped, speaker-labeled transcript with accurate handling of drug names, anatomical terms, Latin abbreviations, and clinical shorthand. The United-MedASR architecture layers a BART-Base semantic correction model over Whisper to specifically address residual medical terminology errors that base Whisper mispronounces or substitutes (Banerjee et al., 2024). Synthetic data generation from ICD-10, MIMS, and FDA databases is used to enrich the fine-tuning corpus without privacy risks.
 
 WER improvement trajectory across the literature:
+
 - ~35% WER — general ASR on clinical audio (Kodish-Wachs et al., 2018)
 - 8.8–10.5% WER — commercial ASR systems in primary care (Tran et al., 2022)
 - ~2.5% WER — Whisper large-v3, zero-shot (Radford et al., 2022)
@@ -159,6 +148,7 @@ Maps normalized entities and relations to FHIR R4 resources: `Condition`, `Medic
 **Mapping rule inventory (NLP2FHIR, Mayo Clinic):** 30 NLP-to-FHIR element mapping rules and 62 content normalization rules, achieving F-score 0.69–0.99 across resource types (`MedicationStatement.medicationCodeableConcept`: F = 0.988; `Medication.form`: F = 0.779). Eleven NLP-specific FHIR extensions capture metadata needed for provenance and confidence: `confidence_score`, `negated_modifier`, `certainty_modifier`, `conditional_modifier`, `nlp_system`, `offset` (source character position), `raw_text`, `nlp_date`, `term_temporal`.
 
 **LLM-based approaches:**
+
 - FHIR-GPT (NEJM AI, 2024): GPT-4 class model for direct clinical narrative → `MedicationStatement` mapping
 - Infherno (Frei et al., 2025): Gemini-2.5-Pro + Smolagents ReAct framework; enforces FHIR schema compliance through `fhir.resources` Python object construction rather than free-form JSON generation; SNOMED CT integrated via live tool-calling; achieves 86/132 exact field matches with <2.3% semantic hallucination rate on clinical discharge letters
 - LLM attribute-level mapping accuracy: GPT-4o 67–73% (95% CI), Llama 3.2 405b 43–53% on structured MIMIC-IV FHIR benchmark (Murcia et al., 2024)
