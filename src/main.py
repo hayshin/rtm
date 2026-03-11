@@ -9,6 +9,8 @@ from pipeline.step01_ingestion import ingest
 from pipeline.step01_ingestion import save as save_ingestion
 from pipeline.step02_diarization import diarize
 from pipeline.step02_diarization import save as save_diarization
+from pipeline.step03_transcription import transcribe
+from pipeline.step03_transcription import save as save_transcription
 
 
 def main() -> None:
@@ -63,6 +65,15 @@ def main() -> None:
     step02_out = outputs_dir / "step02_day1_consultation01.json"
     save_diarization(diarization_result, step02_out)
     print(f"Saved: {step02_out}")
+
+    transcription_result = transcribe(ingestion_result, diarization_result)
+    print(f"\n--- Transcription ---")
+    print(f"Total segments: {len(transcription_result.segments)}")
+    for seg in transcription_result.segments:
+        print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker}: {seg.text}")
+    step03_out = outputs_dir / "step03_day1_consultation01.json"
+    save_transcription(transcription_result, step03_out)
+    print(f"Saved: {step03_out}")
 
     tmp_path.unlink(missing_ok=True)
 

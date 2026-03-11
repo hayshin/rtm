@@ -11,4 +11,6 @@ dependencies = [
     "webrtcvad-wheels",
     "numpy>=2.0",
     "pyannote-audio>=4.0.4",
+    "transformers>=4.40",
+    "accelerate>=0.26",
 ]
