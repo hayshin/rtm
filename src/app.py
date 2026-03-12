@@ -31,12 +31,13 @@ STEP_LABELS = [
 
 PENDING = "⏸ Pending"
 RUNNING = "⏳ Running…"
-DONE    = "✅ Done"
-CACHED  = "📋 Cached"
-ERROR   = "❌ Error"
+DONE = "✅ Done"
+CACHED = "📋 Cached"
+ERROR = "❌ Error"
 
 
 # ── Status table ──────────────────────────────────────────────────────────────
+
 
 def _status_table(rows: list[tuple[str, str, str]]) -> str:
     header = "| Step | Status | Time |\n|------|--------|------|\n"
@@ -45,8 +46,11 @@ def _status_table(rows: list[tuple[str, str, str]]) -> str:
 
 # ── Output formatters ─────────────────────────────────────────────────────────
 
+
 def _fmt_step1(r) -> str:
-    return f"**Duration:** {r.duration_s:.2f}s  \n**Speech ratio:** {r.speech_ratio:.3f}"
+    return (
+        f"**Duration:** {r.duration_s:.2f}s  \n**Speech ratio:** {r.speech_ratio:.3f}"
+    )
 
 
 def _fmt_step2(r) -> str:
@@ -57,7 +61,9 @@ def _fmt_step2(r) -> str:
         "|-------|-----|---------|----------|",
     ]
     for seg in r.segments[:10]:
-        lines.append(f"| {seg.start:.2f}s | {seg.end:.2f}s | {seg.speaker} | {seg.duration:.2f}s |")
+        lines.append(
+            f"| {seg.start:.2f}s | {seg.end:.2f}s | {seg.speaker} | {seg.duration:.2f}s |"
+        )
     if len(r.segments) > 10:
         lines.append(f"| *…{len(r.segments) - 10} more rows* | | | |")
     return "\n".join(lines)
@@ -85,7 +91,9 @@ def _fmt_step4(r) -> str:
     ]
     for seg in r.segments:
         text = seg.cleaned_text.replace("|", "\\|")
-        lines.append(f"| {seg.start:.2f}s | {seg.end:.2f}s | {seg.speaker_role} | {text} |")
+        lines.append(
+            f"| {seg.start:.2f}s | {seg.end:.2f}s | {seg.speaker_role} | {text} |"
+        )
     return "\n".join(lines)
 
 
@@ -98,7 +106,7 @@ def _fmt_step5(r) -> tuple[str, dict]:
 
 def _fmt_step6(r) -> tuple[str, dict]:
     valid_str = "✅ Valid" if r.valid else "❌ Invalid"
-    errors   = [i for i in r.issues if i.severity == "error"]
+    errors = [i for i in r.issues if i.severity == "error"]
     warnings = [i for i in r.issues if i.severity == "warning"]
     lines = [
         f"**Valid:** {valid_str}  ",
@@ -119,6 +127,7 @@ def _fmt_step6(r) -> tuple[str, dict]:
 
 
 # ── Step runners ──────────────────────────────────────────────────────────────
+
 
 def _run_step1(audio_path: str, out_dir: Path):
     path = out_dir / "step01.wav"
@@ -188,6 +197,7 @@ def _run_step6(extraction, out_dir: Path):
 
 # ── Generator ─────────────────────────────────────────────────────────────────
 
+
 def run_pipeline(audio_path, name, step4_model, step5_model):
     """Generator: yields [status_md, out1, out2, out3, out4, out5_text, out5_json, out6_text, out6_json]."""
     rows: list[tuple[str, str, str]] = [(l, PENDING, "—") for l in STEP_LABELS]
@@ -197,14 +207,21 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         return [_status_table(rows)] + outs
 
     def _set_status(idx, cached, elapsed):
-        rows[idx] = (STEP_LABELS[idx], CACHED if cached else DONE, "—" if cached else f"{elapsed:.1f}s")
+        rows[idx] = (
+            STEP_LABELS[idx],
+            CACHED if cached else DONE,
+            "—" if cached else f"{elapsed:.1f}s",
+        )
 
     if not audio_path:
         yield _yield()
         return
 
-    name = (name.strip().replace(" ", "_") if name.strip()
-            else Path(audio_path).stem.replace(" ", "_"))
+    name = (
+        name.strip().replace(" ", "_")
+        if name.strip()
+        else Path(audio_path).stem.replace(" ", "_")
+    )
     out_dir = OUTPUTS_DIR / name
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -254,7 +271,9 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
     rows[3] = (STEP_LABELS[3], RUNNING, "—")
     yield _yield()
     try:
-        postprocessing, cached, elapsed = _run_step4(transcription, out_dir, step4_model)
+        postprocessing, cached, elapsed = _run_step4(
+            transcription, out_dir, step4_model
+        )
         _set_status(3, cached, elapsed)
         outs[3] = _fmt_step4(postprocessing)
         yield _yield()
@@ -300,11 +319,11 @@ with gr.Blocks(title="RTM Pipeline") as app:
 
     with gr.Row():
         audio_in = gr.Audio(label="Audio file", type="filepath")
-        name_in  = gr.Textbox(label="Consultation name (cache key)", value="")
+        name_in = gr.Textbox(label="Consultation name (cache key)", value="")
 
     with gr.Accordion("Settings", open=False):
-        step4_model = gr.Textbox(label="Step 4 model", value="gpt-4o-mini")
-        step5_model = gr.Textbox(label="Step 5 model", value="gpt-4o-mini")
+        step4_model = gr.Textbox(label="Step 4 model", value="gpt-5-mini")
+        step5_model = gr.Textbox(label="Step 5 model", value="gpt-5-mini")
 
     audio_in.change(
         fn=lambda p: Path(p).stem.replace(" ", "_") if p else "",
@@ -334,7 +353,17 @@ with gr.Blocks(title="RTM Pipeline") as app:
     run_btn.click(
         fn=run_pipeline,
         inputs=[audio_in, name_in, step4_model, step5_model],
-        outputs=[status_md, out1, out2, out3, out4, out5_text, out5_json, out6_text, out6_json],
+        outputs=[
+            status_md,
+            out1,
+            out2,
+            out3,
+            out4,
+            out5_text,
+            out5_json,
+            out6_text,
+            out6_json,
+        ],
     )
 
 if __name__ == "__main__":

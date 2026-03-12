@@ -87,13 +87,17 @@ class FHIRExtractionResult:
 
 # ── FHIR R4 resource builders ─────────────────────────────────────────────────
 
-SOURCE_SEGMENTS_URL = "http://example.org/fhir/StructureDefinition/source-segment-indices"
+SOURCE_SEGMENTS_URL = (
+    "http://example.org/fhir/StructureDefinition/source-segment-indices"
+)
 
 
 def _source_segments_ext(indices: list[int]) -> list[dict] | None:
     if not indices:
         return None
-    return [{"url": SOURCE_SEGMENTS_URL, "valueString": ",".join(str(i) for i in indices)}]
+    return [
+        {"url": SOURCE_SEGMENTS_URL, "valueString": ",".join(str(i) for i in indices)}
+    ]
 
 
 def _codesystem_clinical() -> str:
@@ -281,7 +285,7 @@ def _build_procedure(p: _Procedure, encounter_ref: str) -> dict:
 def extract(
     postprocessing: PostProcessingResult,
     *,
-    model_id: str = "gpt-4o-mini",
+    model_id: str = "gpt-5-mini",
     openai_api_key: str | None = None,
 ) -> FHIRExtractionResult:
     from agno.agent import Agent
@@ -309,9 +313,13 @@ def extract(
 
     segs = postprocessing.segments
     start_s = min(s.start for s in segs) if segs else 0.0
-    end_s   = max(s.end   for s in segs) if segs else 0.0
-    period_start = (_ENCOUNTER_BASE + timedelta(seconds=start_s)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    period_end   = (_ENCOUNTER_BASE + timedelta(seconds=end_s)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    end_s = max(s.end for s in segs) if segs else 0.0
+    period_start = (_ENCOUNTER_BASE + timedelta(seconds=start_s)).strftime(
+        "%Y-%m-%dT%H:%M:%SZ"
+    )
+    period_end = (_ENCOUNTER_BASE + timedelta(seconds=end_s)).strftime(
+        "%Y-%m-%dT%H:%M:%SZ"
+    )
 
     encounter = {
         "resourceType": "Encounter",
