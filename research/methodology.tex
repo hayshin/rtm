@@ -8,7 +8,7 @@ Prior to pipeline ingestion, the two per-consultation tracks are mixed via addit
 
 \subsection{Pipeline Architecture}
 
-The system is organized as a six-step pipeline spanning four functional phases: (1) acoustic pre-processing, (2) automatic speech recognition with speaker attribution, (3) LLM-driven transcript refinement and clinical information extraction, and (4) FHIR resource generation with validation and provenance tracking. The six steps are:
+The system is organized as a six-step pipeline spanning four functional phases: (1) acoustic pre-processing, (2) automatic speech recognition with speaker attribution, (3) LLM-driven transcript refinement and clinical information extraction, and (4) FHIR resource generation with validation and provenance tracking. The six steps are illustrated in Figure~\ref{fig:pipeline}.
 
 \begin{enumerate}
   \item Audio Ingestion \& Pre-processing
@@ -18,6 +18,8 @@ The system is organized as a six-step pipeline spanning four functional phases: 
   \item LLM Clinical Extraction \textrightarrow{} FHIR R4 Bundle Construction
   \item FHIR Validation \& Provenance Tracking
 \end{enumerate}
+
+\input{figure}
 
 A central design decision is the collapse of the traditional multi-stage NLP pipeline — typically comprising SOAP segmentation, named entity recognition, negation detection, terminology normalization, and FHIR mapping as discrete components — into a single LLM extraction pass followed by schema-constrained, programmatic FHIR construction (Steps 5–6). This consolidation is motivated by Frei et al., who demonstrated a hallucination rate below 2.3\% when FHIR resources are assembled programmatically via \texttt{fhir.resources} object construction rather than generated as free-form JSON \cite{frei2025inferno}, and by Li et al., who demonstrated the feasibility of joint LLM-driven extraction and FHIR transformation \cite{li2024fhirgpt}.
 
