@@ -64,12 +64,12 @@
 \pubyear{2021}
 \access{Advance Access Publication Date: Day Month Year}
 \appnotes{Paper}
-\copyrightstatement{Published by Oxford University Press on behalf of the Institute of Mathematics and its Applications. All rights reserved.}
+% \copyrightstatement{Published by Oxford University Press on behalf of the Institute of Mathematics and its Applications. All rights reserved.}
 \firstpage{1}
 
 %\subtitle{Subject Section}
 
-\title[Short Article Title]{Designing an Automated Pipeline for Mapping Unstructured Clinical Audio to HL7 FHIR-Compliant Data Structures}
+\title[Automated Clinical Audio-to-FHIR Pipeline]{Designing an Automated Pipeline for Mapping Unstructured Clinical Audio to HL7 FHIR-Compliant Data Structures}
 
 \author{Dauren Baimurza*
 \address{\orgdiv{Computer Science}, \orgname{SDU University}, \orgaddress{\street{Street}, \postcode{Postcode}, \state{Almaty}, \country{Kazakhstan}}}}
@@ -83,11 +83,12 @@
 
 %\editor{Associate Editor: Name}
 
+
 \abstract{Abstracts must be able to stand alone and so cannot contain citations to
 the paper's references, equations, etc. An abstract must consist of a single
 paragraph and be concise. Because of online formatting, abstracts must appear
 as plain as possible.}
-\keywords{Automatic Speech Recognition; Clinical Audio Transcription; HL7 FHIR; Natural Language Processing; Healthcare Interoperability; Large Language Models; Unstructured Clinical Data.}
+\keywords{Automatic Speech Recognition; Speaker Diarization; Clinical Audio Processing; Large Language Models; Clinical Information Extraction; HL7 FHIR; Healthcare Interoperability.}
 
 % \boxedtext{
 % \begin{itemize}
@@ -129,9 +130,11 @@ Mapping extracted clinical concepts to FHIR resources introduces an additional l
 
 \subsection{Research Objectives and Scope}
 
-This study presents the design and evaluation of an automated pipeline for mapping unstructured clinical audio to HL7 FHIR Release 4B-compliant data structures \cite{hl7fhir2022r4b}. Rather than developing novel ASR or NLP models from scratch, the proposed system integrates and orchestrates existing pretrained components — including Whisper \cite{radford2023whisper} for transcription and LLM-based processing for clinical entity identification \cite{adedeji2024sound} — within a unified, modular architecture. The pipeline is developed and evaluated using the PriMock57 dataset of primary care mock consultations \cite{papadopoulos2022primock57}. The novelty of this work lies in the pipeline design itself: specifically, the systematic integration of these components, the application of LLM-driven post-processing for both transcription refinement and clinical information extraction, and the mapping of extracted entities to validated FHIR resource structures.
+This study presents the design and evaluation of an automated pipeline for mapping unstructured clinical audio to HL7 FHIR Release 4B-compliant data structures \cite{hl7fhir2022r4b}. Rather than developing novel ASR or NLP models from scratch, the proposed system integrates and orchestrates existing pretrained components — including Whisper \cite{radford2023whisper} for transcription and LLM-based processing for clinical entity identification \cite{adedeji2024sound} — within a unified, modular architecture. The pipeline is developed and evaluated using the PriMock57 dataset of primary care mock consultations \cite{papadopoulos2022primock57}. By utilizing a dataset consisting of mock consultations with professional actors, this research minimizes ethical risks associated with the exposure of sensitive patient-identifiable information while maintaining clinical realism. The novelty of this work lies in the pipeline design itself: specifically, the systematic integration of these components, the application of LLM-driven post-processing for both transcription refinement and clinical information extraction, and the mapping of extracted entities to validated FHIR resource structures.
 
 The remainder of this paper is organized as follows. Section~2 reviews related work spanning clinical ASR, medical NLP, and FHIR-based data modeling. Section~3 describes the proposed pipeline architecture and its constituent components. Section~4 details the experimental setup and evaluation methodology. Section~5 presents results and discussion, and Section~6 concludes with implications for clinical practice and directions for future research.
+
+
 \section{Literature Review}
 
 \subsection{Clinical Documentation Burden and AI-Assisted Transcription}
@@ -171,6 +174,10 @@ The Inferno framework advances this direction by using LLM agents equipped with 
 The SMART Text2FHIR pipeline demonstrates an NLP-centric alternative, using Apache cTAKES to extract clinical concepts from EHR notes and map them to FHIR Observation, Condition, Procedure, and MedicationStatement resources, with extensions for negation, NLP sourcing, and provenance. Increased FHIR data liquidity driven by interoperability regulations makes such NLP-to-FHIR pipelines viable at institutional scale \cite{miller2023smart}.
 
 Finally, retrieval-augmented generation (RAG)-enhanced LLMs—including GPT-4o and Llama 3.2 405B—applied to MIMIC-IV structured data achieve 67–73\% attribute-level FHIR mapping accuracy. Detailed JSON schemas and semantic clustering help narrow ambiguity, while iterative prompting further refines outputs. Persistent challenges include model hallucinations and incomplete source field descriptions, highlighting the continued need for validation layers in automated FHIR generation pipelines \cite{riquelme2025llm}.
+
+Despite these advancements, a significant research gap remains in the end-to-end integration of clinical audio processing with validated FHIR resource synthesis. Existing studies typically address automatic speech recognition, clinical information extraction, and FHIR transformation as isolated engineering challenges. Furthermore, most text-to-FHIR implementations are constrained to specific document types or a subset of clinical resources, failing to provide a modular framework capable of traversing the full pathway from raw spoken dialogue to a comprehensive, validated set of FHIR-compliant clinical records. This study addresses this fragmentation by proposing and evaluating a unified pipeline architecture designed for high-fidelity audio-to-FHIR mapping.
+
+
 \section{Methodology}
 
 \subsection{Dataset}
@@ -181,7 +188,7 @@ Prior to pipeline ingestion, the two per-consultation tracks are mixed via addit
 
 \subsection{Pipeline Architecture}
 
-The system is organized as a six-step pipeline spanning four functional phases: (1) acoustic pre-processing, (2) automatic speech recognition with speaker attribution, (3) LLM-driven transcript refinement and clinical information extraction, and (4) FHIR resource generation with validation and provenance tracking. The six steps are:
+The system is organized as a six-step pipeline spanning four functional phases: (1) acoustic pre-processing, (2) automatic speech recognition with speaker attribution, (3) LLM-driven transcript refinement and clinical information extraction, and (4) FHIR resource generation with validation and provenance tracking. The six steps are illustrated in Figure~\ref{fig:pipeline}.
 
 \begin{enumerate}
   \item Audio Ingestion \& Pre-processing
@@ -191,6 +198,113 @@ The system is organized as a six-step pipeline spanning four functional phases: 
   \item LLM Clinical Extraction \textrightarrow{} FHIR R4 Bundle Construction
   \item FHIR Validation \& Provenance Tracking
 \end{enumerate}
+
+
+
+\begin{figure}[ht]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+    box/.style={
+        rectangle, rounded corners=7pt,
+        minimum width=4.2cm, minimum height=1.4cm,
+        text centered, text width=3.9cm,
+        font=\small\bfseries,
+        line width=1.2pt
+    },
+    audio/.style ={box, fill=blue!15,   draw=blue!60!black},
+    asr/.style   ={box, fill=cyan!20,   draw=cyan!60!black},
+    llm/.style   ={box, fill=teal!20,   draw=teal!60!black},
+    nlp/.style   ={box, fill=orange!20, draw=orange!60!black},
+    fhir/.style  ={box, fill=green!20,  draw=green!60!black},
+    sublabel/.style={
+        font=\scriptsize\itshape,
+        text=gray!75!black,
+        text centered, text width=4.2cm
+    },
+    arr/.style={
+        -{Stealth[length=9pt,width=7pt]},
+        line width=1.8pt, color=gray!65!black
+    },
+    arrdown/.style={
+        -{Stealth[length=9pt,width=7pt]},
+        line width=1.8pt, color=gray!65!black,
+        rounded corners=10pt
+    },
+]
+
+% ROW 1
+\node[audio] (step1) {Audio Ingestion \& Pre-processing};
+\node[sublabel, below=0.10cm of step1] (step1-sub) {16\,kHz mono; noise reduction; VAD};
+
+\node[asr, right=1.5cm of step1] (step2) {Speaker Diarization};
+\node[sublabel, below=0.10cm of step2] (step2-sub) {pyannote.audio; max 2 speakers};
+
+\node[asr, right=1.5cm of step2] (step3) {ASR Transcription};
+\node[sublabel, below=0.10cm of step3] (step3-sub) {Medical-Whisper-Large-v3; WER\,0.19};
+
+\node[font=\scriptsize\bfseries\color{blue!70!black},  above=0.25cm of step1] {STEP 1};
+\node[font=\scriptsize\bfseries\color{cyan!70!black},  above=0.25cm of step2] {STEP 2};
+\node[font=\scriptsize\bfseries\color{cyan!70!black},  above=0.25cm of step3] {STEP 3};
+
+\draw[arr] (step1) -- (step2);
+\draw[arr] (step2) -- (step3);
+
+% ROW 2
+\node[llm,  below=2.4cm of step3] (step4) {LLM Transcript Refinement};
+\node[sublabel, below=0.10cm of step4] (step4-sub) {GPT-5-mini; cleaning \& role assignment};
+
+\node[nlp, left=1.5cm of step4]   (step5) {Clinical Extraction \& FHIR Bundle};
+\node[sublabel, below=0.10cm of step5] (step5-sub) {NER, negation, terminology coding};
+
+\node[fhir, left=1.5cm of step5]  (step6) {FHIR Validation \& Provenance};
+\node[sublabel, below=0.10cm of step6] (step6-sub) {fhir.resources R4B; Provenance};
+
+\node[font=\scriptsize\bfseries\color{teal!70!black},   above=0.25cm of step4] {STEP 4};
+\node[font=\scriptsize\bfseries\color{orange!70!black}, above=0.25cm of step5] {STEP 5};
+\node[font=\scriptsize\bfseries\color{green!60!black},  above=0.25cm of step6] {STEP 6};
+
+\draw[arr] (step4) -- (step5);
+\draw[arr] (step5) -- (step6);
+
+% Connecting arrow row1 -> row2
+\draw[arrdown] (step3.south) -- ++(0,-0.9cm) -| (step4.north);
+
+% Background shading
+\begin{scope}[on background layer]
+    \node[
+        fill=cyan!6, draw=cyan!30, rounded corners=9pt, line width=0.9pt,
+        fit=(step2)(step3)(step2-sub)(step3-sub),
+        inner sep=8pt,
+        label={[font=\scriptsize\itshape, text=cyan!55!black]above:Transcription Layer}
+    ] {};
+
+    \node[
+        fill=orange!6, draw=orange!30, rounded corners=9pt, line width=0.9pt,
+        fit=(step4)(step5)(step4-sub)(step5-sub),
+        inner sep=8pt,
+        label={[font=\scriptsize\itshape, text=orange!55!black]below:Extraction \& FHIR Layer}
+    ] {};
+\end{scope}
+
+\end{tikzpicture}%
+}% end resizebox
+
+\caption{Overview of the proposed automated pipeline for mapping unstructured
+clinical audio to HL7 FHIR-compliant data structures. The pipeline comprises
+six sequential steps:
+(1)~audio ingestion and pre-processing (16\,kHz resampling, noise reduction, voice activity detection);
+(2)~speaker diarization via pyannote.audio constrained to two speakers~\cite{tran2022asr};
+(3)~ASR transcription using Medical-Whisper-Large-v3~\cite{banerjee2024medasr};
+(4)~LLM transcript refinement for cleaning and speaker role assignment~\cite{adedeji2024sound};
+(5)~LLM clinical extraction producing a FHIR R4 Bundle via programmatic
+\texttt{fhir.resources} construction~\cite{frei2025inferno};
+and (6)~FHIR validation and provenance tracking~\cite{hl7fhir2022r4b}.}
+\label{fig:pipeline}
+\end{figure}
+
+
+
 
 A central design decision is the collapse of the traditional multi-stage NLP pipeline — typically comprising SOAP segmentation, named entity recognition, negation detection, terminology normalization, and FHIR mapping as discrete components — into a single LLM extraction pass followed by schema-constrained, programmatic FHIR construction (Steps 5–6). This consolidation is motivated by Frei et al., who demonstrated a hallucination rate below 2.3\% when FHIR resources are assembled programmatically via \texttt{fhir.resources} object construction rather than generated as free-form JSON \cite{frei2025inferno}, and by Li et al., who demonstrated the feasibility of joint LLM-driven extraction and FHIR transformation \cite{li2024fhirgpt}.
 
