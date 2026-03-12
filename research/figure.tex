@@ -1,6 +1,7 @@
 
 \begin{figure}[ht]
 \centering
+\resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[
     box/.style={
         rectangle, rounded corners=7pt,
@@ -84,7 +85,8 @@
     ] {};
 \end{scope}
 
-\end{tikzpicture}
+\end{tikzpicture}%
+}% end resizebox
 
 \caption{Overview of the proposed automated pipeline for mapping unstructured
 clinical audio to HL7 FHIR-compliant data structures. The pipeline comprises
