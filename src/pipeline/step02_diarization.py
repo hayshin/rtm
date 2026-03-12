@@ -14,15 +14,15 @@ from pipeline.step01_ingestion import IngestionResult
 
 @dataclass
 class Segment:
-    start: float    # seconds
-    end: float      # seconds
-    speaker: str    # "SPEAKER_00", "SPEAKER_01", ...
-    duration: float # end - start
+    start: float
+    end: float
+    speaker: str
+    duration: float
 
 
 @dataclass
 class DiarizationResult:
-    segments: list[Segment]   # sorted by start time
+    segments: list[Segment]
     num_speakers: int
     source_path: Path
 
@@ -55,7 +55,7 @@ def diarize(
     )
     pipeline.to(torch.device("cpu"))
 
-    waveform = torch.from_numpy(result.samples).unsqueeze(0)  # (1, samples)
+    waveform = torch.from_numpy(result.samples).unsqueeze(0)
 
     output = pipeline(
         {"waveform": waveform, "sample_rate": result.sample_rate},

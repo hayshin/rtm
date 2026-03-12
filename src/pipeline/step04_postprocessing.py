@@ -1,4 +1,4 @@
-"""Step 4: LLM Transcript Post-processing + Speaker Role Assignment."""
+"""Transcript cleanup and speaker role assignment."""
 
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ Return every segment index. Use consistent role assignments (same speaker always
 
 class _LLMSegment(BaseModel):
     index: int
-    speaker_role: str  # "PHYSICIAN" or "PATIENT"
+    speaker_role: str
     cleaned_text: str
 
 
@@ -34,10 +34,10 @@ class _LLMTranscript(BaseModel):
 class PostProcessedSegment:
     start: float
     end: float
-    speaker: str  # original label: "SPEAKER_00" etc.
-    speaker_role: str  # "PHYSICIAN" or "PATIENT"
-    original_text: str  # raw ASR text from step 3
-    cleaned_text: str  # LLM-corrected text
+    speaker: str
+    speaker_role: str
+    original_text: str
+    cleaned_text: str
     duration: float
 
 

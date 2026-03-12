@@ -10,34 +10,31 @@ from pipeline.step01_ingestion import IngestionResult
 from pipeline.step02_diarization import DiarizationResult
 
 SAMPLE_RATE = 16_000
-MIN_SEGMENT_DURATION = 0.1  # seconds
+MIN_SEGMENT_DURATION = 0.1
 
-# Backend identifiers
 BACKEND_FASTER_WHISPER = "faster-whisper"
 BACKEND_TRANSFORMERS = "transformers"
 
-# Default models per backend
 _DEFAULTS = {
     BACKEND_FASTER_WHISPER: "large-v3",
     BACKEND_TRANSFORMERS: "Na0s/Medical-Whisper-Large-v3",
 }
 
-# Module-level cache: (backend, model_id) -> model
 _MODEL_CACHE: dict = {}
 
 
 @dataclass
 class TranscriptSegment:
-    start: float    # seconds (from diarization)
-    end: float      # seconds
-    speaker: str    # "SPEAKER_00", "SPEAKER_01"
-    text: str       # transcribed text
-    duration: float # end - start
+    start: float
+    end: float
+    speaker: str
+    text: str
+    duration: float
 
 
 @dataclass
 class TranscriptionResult:
-    segments: list[TranscriptSegment]  # sorted by start time
+    segments: list[TranscriptSegment]
     source_path: Path
 
 
@@ -83,14 +80,7 @@ def transcribe(
     model_id: str | None = None,
     language: str = "en",
 ) -> TranscriptionResult:
-    """Transcribe diarized segments.
-
-    Args:
-        backend: "faster-whisper" (default, ~4-8x faster on CPU) or "transformers".
-        model_id: Override model. Defaults:
-            faster-whisper -> "large-v3"
-            transformers   -> "Na0s/Medical-Whisper-Large-v3"
-    """
+    """Transcribe diarized segments with the selected backend and model."""
     resolved_model = model_id or _DEFAULTS[backend]
     model = _load_model(backend, resolved_model)
 

@@ -1,4 +1,4 @@
-"""Step 5: LLM Clinical Extraction → FHIR R4 Bundle."""
+"""LLM-based extraction into a FHIR R4 bundle."""
 
 from __future__ import annotations
 
@@ -33,8 +33,8 @@ Rules:
 
 class _Condition(BaseModel):
     text: str
-    clinical_status: str = "unknown"  # "active" | "resolved" | "unknown"
-    verification_status: str = "unconfirmed"  # "confirmed" | "unconfirmed" | "refuted"
+    clinical_status: str = "unknown"
+    verification_status: str = "unconfirmed"
     snomed_code: str | None = None
     snomed_display: str | None = None
     icd10_code: str | None = None
@@ -46,7 +46,7 @@ class _Medication(BaseModel):
     dose: str | None = None
     route: str | None = None
     frequency: str | None = None
-    status: str = "unknown"  # "active" | "stopped" | "unknown"
+    status: str = "unknown"
     rxnorm_code: str | None = None
     segment_indices: list[int] = []
 
@@ -62,7 +62,7 @@ class _Observation(BaseModel):
 
 class _Procedure(BaseModel):
     text: str
-    status: str = "completed"  # "completed" | "not-done" | "planned"
+    status: str = "completed"
     snomed_code: str | None = None
     snomed_display: str | None = None
     segment_indices: list[int] = []
@@ -73,19 +73,17 @@ class _LLMExtractionResult(BaseModel):
     medications: list[_Medication] = []
     observations: list[_Observation] = []
     procedures: list[_Procedure] = []
-    soap_summary: str = ""  # 2–4 sentence SOAP note
+    soap_summary: str = ""
 
 
 @dataclass
 class FHIRExtractionResult:
-    bundle: dict  # FHIR R4 Bundle as plain dict
+    bundle: dict
     resource_counts: dict[str, int]
     soap_summary: str
     model_id: str
     source_path: Path
 
-
-# ── FHIR R4 resource builders ─────────────────────────────────────────────────
 
 SOURCE_SEGMENTS_URL = (
     "http://example.org/fhir/StructureDefinition/source-segment-indices"
@@ -278,10 +276,6 @@ def _build_procedure(p: _Procedure, encounter_ref: str) -> dict:
         resource["extension"] = ext
     return resource
 
-
-# ── Main function ─────────────────────────────────────────────────────────────
-
-
 def extract(
     postprocessing: PostProcessingResult,
     *,
@@ -307,7 +301,6 @@ def extract(
     response = agent.run("\n".join(lines))
     extracted: _LLMExtractionResult = response.content
 
-    # Encounter wraps all resources
     encounter_id = str(uuid4())
     encounter_ref = f"Encounter/{encounter_id}"
 
@@ -369,10 +362,6 @@ def extract(
         model_id=model_id,
         source_path=postprocessing.source_path,
     )
-
-
-# ── Persistence ───────────────────────────────────────────────────────────────
-
 
 def save(result: FHIRExtractionResult, out_path: Path) -> None:
     data = {

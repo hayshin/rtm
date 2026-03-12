@@ -12,7 +12,6 @@ from pipeline.step05_fhir_extraction import FHIRExtractionResult
 
 NLP_SYSTEM_URL = "http://example.org/fhir/StructureDefinition/nlp-system"
 
-# Resource types that have required fields we want to check
 _IMPORTABLE = {
     "Condition", "MedicationStatement", "Observation",
     "Procedure", "Encounter", "Bundle",
@@ -21,7 +20,7 @@ _IMPORTABLE = {
 
 @dataclass
 class ValidationIssue:
-    severity: str      # "error" | "warning"
+    severity: str
     resource_type: str
     resource_id: str
     message: str
@@ -30,9 +29,9 @@ class ValidationIssue:
 @dataclass
 class ValidationResult:
     issues: list[ValidationIssue]
-    valid: bool                  # True = no errors (warnings OK)
+    valid: bool
     resource_counts: dict[str, int]
-    bundle_with_provenance: dict  # bundle + Provenance resources appended
+    bundle_with_provenance: dict
     source_path: Path
 
 
@@ -58,7 +57,6 @@ def _validate_resource(resource: dict) -> list[ValidationIssue]:
             message="fhir.resources not available; skipped schema validation",
         ))
     except Exception as e:
-        # Pydantic ValidationError or similar — report each sub-error if possible
         try:
             for err in e.errors():  # type: ignore[attr-defined]
                 loc = " → ".join(str(x) for x in err["loc"])

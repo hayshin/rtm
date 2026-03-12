@@ -13,15 +13,15 @@ import soundfile as sf
 
 TARGET_SR = 16_000
 VAD_FRAME_MS = 20
-VAD_FRAME_SAMPLES = TARGET_SR * VAD_FRAME_MS // 1000  # 320
+VAD_FRAME_SAMPLES = TARGET_SR * VAD_FRAME_MS // 1000
 
 
 @dataclass
 class IngestionResult:
-    samples: np.ndarray    # float32 audio at 16kHz
-    sample_rate: int       # always 16000
-    duration_s: float      # processed audio duration (after VAD)
-    speech_ratio: float    # voiced_frames / total_frames
+    samples: np.ndarray
+    sample_rate: int
+    duration_s: float
+    speech_ratio: float
     source_path: Path
 
 
@@ -35,7 +35,6 @@ def _apply_vad(audio: np.ndarray, aggressiveness: int) -> tuple[np.ndarray, floa
 
     vad = webrtcvad.Vad(aggressiveness)
 
-    # Pad to multiple of frame size
     remainder = len(audio) % VAD_FRAME_SAMPLES
     if remainder:
         audio = np.pad(audio, (0, VAD_FRAME_SAMPLES - remainder))

@@ -36,15 +36,9 @@ CACHED = "📋 Cached"
 ERROR = "❌ Error"
 
 
-# ── Status table ──────────────────────────────────────────────────────────────
-
-
 def _status_table(rows: list[tuple[str, str, str]]) -> str:
     header = "| Step | Status | Time |\n|------|--------|------|\n"
     return header + "\n".join(f"| {l} | {s} | {t} |" for l, s, t in rows)
-
-
-# ── Output formatters ─────────────────────────────────────────────────────────
 
 
 def _fmt_step1(r) -> str:
@@ -126,9 +120,6 @@ def _fmt_step6(r) -> tuple[str, dict]:
     return "\n".join(lines), r.bundle_with_provenance
 
 
-# ── Step runners ──────────────────────────────────────────────────────────────
-
-
 def _run_step1(audio_path: str, out_dir: Path):
     path = out_dir / "step01.wav"
     cached = path.exists() and path.with_suffix(".json").exists()
@@ -195,11 +186,8 @@ def _run_step6(extraction, out_dir: Path):
     return result, False, time.perf_counter() - t0
 
 
-# ── Generator ─────────────────────────────────────────────────────────────────
-
-
 def run_pipeline(audio_path, name, step4_model, step5_model):
-    """Generator: yields [status_md, out1, out2, out3, out4, out5_text, out5_json, out6_text, out6_json]."""
+    """Stream status updates and outputs for each pipeline stage."""
     rows: list[tuple[str, str, str]] = [(l, PENDING, "—") for l in STEP_LABELS]
     outs: list = ["", "", "", "", "", None, "", None]
 
@@ -225,7 +213,6 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
     out_dir = OUTPUTS_DIR / name
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # Step 1: Ingestion
     rows[0] = (STEP_LABELS[0], RUNNING, "—")
     yield _yield()
     try:
@@ -239,7 +226,6 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # Step 2: Diarization
     rows[1] = (STEP_LABELS[1], RUNNING, "—")
     yield _yield()
     try:
@@ -253,7 +239,6 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # Step 3: Transcription
     rows[2] = (STEP_LABELS[2], RUNNING, "—")
     yield _yield()
     try:
@@ -267,7 +252,6 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # Step 4: Post-processing
     rows[3] = (STEP_LABELS[3], RUNNING, "—")
     yield _yield()
     try:
@@ -283,7 +267,6 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # Step 5: FHIR Extraction
     rows[4] = (STEP_LABELS[4], RUNNING, "—")
     yield _yield()
     try:
@@ -297,7 +280,6 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # Step 6: Validation
     rows[5] = (STEP_LABELS[5], RUNNING, "—")
     yield _yield()
     try:
@@ -311,8 +293,6 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-
-# ── Gradio app ────────────────────────────────────────────────────────────────
 
 with gr.Blocks(title="RTM Pipeline") as app:
     gr.Markdown("# RTM Clinical Pipeline")
