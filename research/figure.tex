@@ -1,0 +1,101 @@
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    box/.style={
+        rectangle, rounded corners=7pt,
+        minimum width=4.2cm, minimum height=1.4cm,
+        text centered, text width=3.9cm,
+        font=\small\bfseries,
+        line width=1.2pt
+    },
+    audio/.style ={box, fill=blue!15,   draw=blue!60!black},
+    asr/.style   ={box, fill=cyan!20,   draw=cyan!60!black},
+    llm/.style   ={box, fill=teal!20,   draw=teal!60!black},
+    nlp/.style   ={box, fill=orange!20, draw=orange!60!black},
+    norm/.style  ={box, fill=purple!15, draw=purple!60!black},
+    fhir/.style  ={box, fill=green!20,  draw=green!60!black},
+    sublabel/.style={
+        font=\scriptsize\itshape,
+        text=gray!75!black,
+        text centered, text width=4.2cm
+    },
+    arr/.style={
+        -{Stealth[length=9pt,width=7pt]},
+        line width=1.8pt, color=gray!65!black
+    },
+    arrdown/.style={
+        -{Stealth[length=9pt,width=7pt]},
+        line width=1.8pt, color=gray!65!black,
+        rounded corners=10pt
+    },
+]
+
+% ROW 1
+\node[audio] (audio) {Clinical Audio Input};
+\node[sublabel, below=0.10cm of audio] (audio-sub) {Patient-provider dialogue / dictation};
+
+\node[asr, right=1.5cm of audio] (asr) {ASR --- Whisper};
+\node[sublabel, below=0.10cm of asr] (asr-sub) {Automatic speech-to-text transcription};
+
+\node[llm, right=1.5cm of asr] (llm) {LLM Post-processing};
+\node[sublabel, below=0.10cm of llm] (llm-sub) {WER reduction \& CoT refinement};
+
+\node[font=\scriptsize\bfseries\color{blue!70!black},   above=0.25cm of audio] {STAGE 1};
+\node[font=\scriptsize\bfseries\color{cyan!70!black},   above=0.25cm of asr]   {STAGE 2};
+\node[font=\scriptsize\bfseries\color{teal!70!black},   above=0.25cm of llm]   {STAGE 3};
+
+\draw[arr] (audio) -- (asr);
+\draw[arr] (asr)   -- (llm);
+
+% ROW 2
+\node[nlp,  below=2.4cm of llm]  (nlp)  {Clinical NLP Extraction};
+\node[sublabel, below=0.10cm of nlp] (nlp-sub) {NER, negation, relation extraction};
+
+\node[norm, left=1.5cm of nlp]   (norm) {Terminology Normalization};
+\node[sublabel, below=0.10cm of norm] (norm-sub) {SNOMED CT, LOINC, RxNorm};
+
+\node[fhir, left=1.5cm of norm]  (fhir) {FHIR Resource Generation};
+\node[sublabel, below=0.10cm of fhir] (fhir-sub) {Patient, Encounter, Observation, Condition};
+
+\node[font=\scriptsize\bfseries\color{orange!70!black}, above=0.25cm of nlp]   {STAGE 4};
+\node[font=\scriptsize\bfseries\color{purple!70!black}, above=0.25cm of norm]  {STAGE 5};
+\node[font=\scriptsize\bfseries\color{green!60!black},  above=0.25cm of fhir]  {STAGE 6};
+
+\draw[arr] (nlp)  -- (norm);
+\draw[arr] (norm) -- (fhir);
+
+% Connecting arrow row1 -> row2
+\draw[arrdown] (llm.south) -- ++(0,-0.9cm) -| (nlp.north);
+
+% Background shading
+\begin{scope}[on background layer]
+    \node[
+        fill=cyan!6, draw=cyan!30, rounded corners=9pt, line width=0.9pt,
+        fit=(asr)(llm)(asr-sub)(llm-sub),
+        inner sep=8pt,
+        label={[font=\scriptsize\itshape, text=cyan!55!black]above:Transcription Layer}
+    ] {};
+
+    \node[
+        fill=orange!6, draw=orange!30, rounded corners=9pt, line width=0.9pt,
+        fit=(nlp)(norm)(nlp-sub)(norm-sub),
+        inner sep=8pt,
+        label={[font=\scriptsize\itshape, text=orange!55!black]below:Extraction \& Normalization Layer}
+    ] {};
+\end{scope}
+
+\end{tikzpicture}
+
+\caption{Overview of the proposed automated pipeline for mapping unstructured
+clinical audio to HL7 FHIR-compliant data structures. The pipeline comprises
+six sequential stages:
+(1)~raw clinical audio input,
+(2)~automatic speech recognition via Whisper~\cite{radford2022whisper},
+(3)~LLM-based post-processing for transcription refinement~\cite{singh2024sound},
+(4)~clinical NLP for named entity recognition and relation extraction,
+(5)~terminology normalization against standard clinical vocabularies
+(SNOMED~CT, LOINC, RxNorm),
+and (6)~generation of validated HL7 FHIR resource instances~\cite{bender2021fhir}.}
+\label{fig:pipeline}
+\end{figure}
