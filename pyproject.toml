@@ -16,4 +16,6 @@ dependencies = [
     "agno>=2.5.9",
     "openai>=2.26.0",
     "fhir-resources>=8.2.0",
+    "gradio>=5.0",
+    "faster-whisper>=1.2.1",
 ]
