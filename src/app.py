@@ -118,16 +118,86 @@ def _fmt_step6(r) -> tuple[str, dict]:
     return "\n".join(lines), r.bundle_with_provenance
 
 
+# ── Step runners ──────────────────────────────────────────────────────────────
+
+def _run_step1(audio_path: str, out_dir: Path):
+    path = out_dir / "step01.wav"
+    cached = path.exists() and path.with_suffix(".json").exists()
+    t0 = time.perf_counter()
+    if cached:
+        return step01.load(path), True, 0.0
+    result = step01.ingest(audio_path)
+    step01.save(result, path)
+    return result, False, time.perf_counter() - t0
+
+
+def _run_step2(ingestion, out_dir: Path):
+    path = out_dir / "step02.json"
+    cached = path.exists()
+    t0 = time.perf_counter()
+    if cached:
+        return step02.load(path), True, 0.0
+    result = step02.diarize(ingestion)
+    step02.save(result, path)
+    return result, False, time.perf_counter() - t0
+
+
+def _run_step3(ingestion, diarization, out_dir: Path):
+    path = out_dir / "step03.json"
+    cached = path.exists()
+    t0 = time.perf_counter()
+    if cached:
+        return step03.load(path), True, 0.0
+    result = step03.transcribe(ingestion, diarization)
+    step03.save(result, path)
+    return result, False, time.perf_counter() - t0
+
+
+def _run_step4(transcription, out_dir: Path, model_id: str):
+    path = out_dir / "step04.json"
+    cached = path.exists()
+    t0 = time.perf_counter()
+    if cached:
+        return step04.load(path), True, 0.0
+    result = step04.postprocess(transcription, model_id=model_id)
+    step04.save(result, path)
+    return result, False, time.perf_counter() - t0
+
+
+def _run_step5(postprocessing, out_dir: Path, model_id: str):
+    path = out_dir / "step05.json"
+    cached = path.exists()
+    t0 = time.perf_counter()
+    if cached:
+        return step05.load(path), True, 0.0
+    result = step05.extract(postprocessing, model_id=model_id)
+    step05.save(result, path)
+    return result, False, time.perf_counter() - t0
+
+
+def _run_step6(extraction, out_dir: Path):
+    path = out_dir / "step06.json"
+    cached = path.exists()
+    t0 = time.perf_counter()
+    if cached:
+        return step06.load(path), True, 0.0
+    result = step06.validate(extraction)
+    step06.save(result, path)
+    return result, False, time.perf_counter() - t0
+
+
 # ── Generator ─────────────────────────────────────────────────────────────────
 
 def run_pipeline(audio_path, name, step4_model, step5_model):
     """Generator: yields [status_md, out1, out2, out3, out4, out5_text, out5_json, out6_text, out6_json]."""
     rows: list[tuple[str, str, str]] = [(l, PENDING, "—") for l in STEP_LABELS]
-    # outs indices: 0=out1, 1=out2, 2=out3, 3=out4, 4=out5_text, 5=out5_json, 6=out6_text, 7=out6_json
     outs: list = ["", "", "", "", "", None, "", None]
 
     def _yield():
         return [_status_table(rows)] + outs
+
+    def _set_status(idx, cached, elapsed):
+        rows[idx] = (STEP_LABELS[idx], CACHED if cached else DONE, "—" if cached else f"{elapsed:.1f}s")
 
     if not audio_path:
         yield _yield()
@@ -135,23 +205,15 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
 
     name = (name.strip().replace(" ", "_") if name.strip()
             else Path(audio_path).stem.replace(" ", "_"))
-    OUTPUTS_DIR.mkdir(exist_ok=True)
+    out_dir = OUTPUTS_DIR / name
+    out_dir.mkdir(parents=True, exist_ok=True)
 
-    # ── Step 1: Ingestion ──────────────────────────────────────────────────────
+    # Step 1: Ingestion
     rows[0] = (STEP_LABELS[0], RUNNING, "—")
     yield _yield()
-
-    step1_wav = OUTPUTS_DIR / f"step01_{name}.wav"
-    is_cached = step1_wav.exists() and step1_wav.with_suffix(".json").exists()
     try:
-        t0 = time.perf_counter()
-        if is_cached:
-            ingestion = step01.load(step1_wav)
-            rows[0] = (STEP_LABELS[0], CACHED, "—")
-        else:
-            ingestion = step01.ingest(audio_path)
-            step01.save(ingestion, step1_wav)
-            rows[0] = (STEP_LABELS[0], DONE, f"{time.perf_counter() - t0:.1f}s")
+        ingestion, cached, elapsed = _run_step1(audio_path, out_dir)
+        _set_status(0, cached, elapsed)
         outs[0] = _fmt_step1(ingestion)
         yield _yield()
     except Exception:
@@ -160,21 +222,12 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # ── Step 2: Diarization ────────────────────────────────────────────────────
+    # Step 2: Diarization
     rows[1] = (STEP_LABELS[1], RUNNING, "—")
     yield _yield()
-
-    step2_json = OUTPUTS_DIR / f"step02_{name}.json"
-    is_cached = step2_json.exists()
     try:
-        t0 = time.perf_counter()
-        if is_cached:
-            diarization = step02.load(step2_json)
-            rows[1] = (STEP_LABELS[1], CACHED, "—")
-        else:
-            diarization = step02.diarize(ingestion)
-            step02.save(diarization, step2_json)
-            rows[1] = (STEP_LABELS[1], DONE, f"{time.perf_counter() - t0:.1f}s")
+        diarization, cached, elapsed = _run_step2(ingestion, out_dir)
+        _set_status(1, cached, elapsed)
         outs[1] = _fmt_step2(diarization)
         yield _yield()
     except Exception:
@@ -183,21 +236,12 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # ── Step 3: Transcription ──────────────────────────────────────────────────
+    # Step 3: Transcription
     rows[2] = (STEP_LABELS[2], RUNNING, "—")
     yield _yield()
-
-    step3_json = OUTPUTS_DIR / f"step03_{name}.json"
-    is_cached = step3_json.exists()
     try:
-        t0 = time.perf_counter()
-        if is_cached:
-            transcription = step03.load(step3_json)
-            rows[2] = (STEP_LABELS[2], CACHED, "—")
-        else:
-            transcription = step03.transcribe(ingestion, diarization)
-            step03.save(transcription, step3_json)
-            rows[2] = (STEP_LABELS[2], DONE, f"{time.perf_counter() - t0:.1f}s")
+        transcription, cached, elapsed = _run_step3(ingestion, diarization, out_dir)
+        _set_status(2, cached, elapsed)
         outs[2] = _fmt_step3(transcription)
         yield _yield()
     except Exception:
@@ -206,21 +250,12 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # ── Step 4: Post-processing ────────────────────────────────────────────────
+    # Step 4: Post-processing
     rows[3] = (STEP_LABELS[3], RUNNING, "—")
     yield _yield()
-
-    step4_json = OUTPUTS_DIR / f"step04_{name}.json"
-    is_cached = step4_json.exists()
     try:
-        t0 = time.perf_counter()
-        if is_cached:
-            postprocessing = step04.load(step4_json)
-            rows[3] = (STEP_LABELS[3], CACHED, "—")
-        else:
-            postprocessing = step04.postprocess(transcription, model_id=step4_model)
-            step04.save(postprocessing, step4_json)
-            rows[3] = (STEP_LABELS[3], DONE, f"{time.perf_counter() - t0:.1f}s")
+        postprocessing, cached, elapsed = _run_step4(transcription, out_dir, step4_model)
+        _set_status(3, cached, elapsed)
         outs[3] = _fmt_step4(postprocessing)
         yield _yield()
     except Exception:
@@ -229,21 +264,12 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # ── Step 5: FHIR Extraction ────────────────────────────────────────────────
+    # Step 5: FHIR Extraction
     rows[4] = (STEP_LABELS[4], RUNNING, "—")
     yield _yield()
-
-    step5_json = OUTPUTS_DIR / f"step05_{name}.json"
-    is_cached = step5_json.exists()
     try:
-        t0 = time.perf_counter()
-        if is_cached:
-            extraction = step05.load(step5_json)
-            rows[4] = (STEP_LABELS[4], CACHED, "—")
-        else:
-            extraction = step05.extract(postprocessing, model_id=step5_model)
-            step05.save(extraction, step5_json)
-            rows[4] = (STEP_LABELS[4], DONE, f"{time.perf_counter() - t0:.1f}s")
+        extraction, cached, elapsed = _run_step5(postprocessing, out_dir, step5_model)
+        _set_status(4, cached, elapsed)
         outs[4], outs[5] = _fmt_step5(extraction)
         yield _yield()
     except Exception:
@@ -252,21 +278,12 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
         yield _yield()
         return
 
-    # ── Step 6: Validation ─────────────────────────────────────────────────────
+    # Step 6: Validation
     rows[5] = (STEP_LABELS[5], RUNNING, "—")
     yield _yield()
-
-    step6_json = OUTPUTS_DIR / f"step06_{name}.json"
-    is_cached = step6_json.exists()
     try:
-        t0 = time.perf_counter()
-        if is_cached:
-            validation = step06.load(step6_json)
-            rows[5] = (STEP_LABELS[5], CACHED, "—")
-        else:
-            validation = step06.validate(extraction)
-            step06.save(validation, step6_json)
-            rows[5] = (STEP_LABELS[5], DONE, f"{time.perf_counter() - t0:.1f}s")
+        validation, cached, elapsed = _run_step6(extraction, out_dir)
+        _set_status(5, cached, elapsed)
         outs[6], outs[7] = _fmt_step6(validation)
         yield _yield()
     except Exception:
@@ -283,11 +300,17 @@ with gr.Blocks(title="RTM Pipeline") as app:
 
     with gr.Row():
         audio_in = gr.Audio(label="Audio file", type="filepath")
-        name_in  = gr.Textbox(label="Consultation name (cache key)", value="ui_session")
+        name_in  = gr.Textbox(label="Consultation name (cache key)", value="")
 
     with gr.Accordion("Settings", open=False):
         step4_model = gr.Textbox(label="Step 4 model", value="gpt-4o-mini")
         step5_model = gr.Textbox(label="Step 5 model", value="gpt-4o-mini")
+
+    audio_in.change(
+        fn=lambda p: Path(p).stem.replace(" ", "_") if p else "",
+        inputs=audio_in,
+        outputs=name_in,
+    )
 
     run_btn = gr.Button("Run Pipeline", variant="primary")
 
