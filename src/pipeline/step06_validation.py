@@ -47,7 +47,7 @@ def _validate_resource(resource: dict) -> list[ValidationIssue]:
 
     try:
         import importlib
-        module = importlib.import_module(f"fhir.resources.{rtype.lower()}")
+        module = importlib.import_module(f"fhir.resources.R4B.{rtype.lower()}")
         cls = getattr(module, rtype)
         cls.model_validate(resource)
     except ImportError:

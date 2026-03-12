@@ -1,4 +1,4 @@
-"""Step 5: LLM Clinical Extraction → FHIR R5 Bundle."""
+"""Step 5: LLM Clinical Extraction → FHIR R4 Bundle."""
 
 from __future__ import annotations
 
@@ -78,14 +78,14 @@ class _LLMExtractionResult(BaseModel):
 
 @dataclass
 class FHIRExtractionResult:
-    bundle: dict  # FHIR R5 Bundle as plain dict
+    bundle: dict  # FHIR R4 Bundle as plain dict
     resource_counts: dict[str, int]
     soap_summary: str
     model_id: str
     source_path: Path
 
 
-# ── FHIR R5 resource builders ─────────────────────────────────────────────────
+# ── FHIR R4 resource builders ─────────────────────────────────────────────────
 
 SOURCE_SEGMENTS_URL = "http://example.org/fhir/StructureDefinition/source-segment-indices"
 
@@ -185,9 +185,9 @@ def _build_medication(m: _Medication, encounter_ref: str) -> dict:
         "resourceType": "MedicationStatement",
         "id": str(uuid4()),
         "status": status,
-        "medication": {"concept": {"coding": coding, "text": m.drug_name}},
+        "medicationCodeableConcept": {"coding": coding, "text": m.drug_name},
         "subject": {"reference": f"Patient/{PATIENT_ID}"},
-        "encounter": {"reference": encounter_ref},
+        "context": {"reference": encounter_ref},
     }
 
     dosage: dict = {}
@@ -316,21 +316,17 @@ def extract(
     encounter = {
         "resourceType": "Encounter",
         "id": encounter_id,
-        "status": "completed",
-        "class": [
-            {
-                "coding": [{
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-                    "code": "AMB",
-                    "display": "ambulatory",
-                }]
-            }
-        ],
+        "status": "finished",
+        "class": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code": "AMB",
+            "display": "ambulatory",
+        },
         "subject": {"reference": f"Patient/{PATIENT_ID}"},
         "participant": [
-            {"actor": {"reference": f"Practitioner/{PRACTITIONER_ID}"}}
+            {"individual": {"reference": f"Practitioner/{PRACTITIONER_ID}"}}
         ],
-        "actualPeriod": {"start": period_start, "end": period_end},
+        "period": {"start": period_start, "end": period_end},
     }
 
     resources = [encounter]
