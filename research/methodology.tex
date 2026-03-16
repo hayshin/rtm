@@ -31,7 +31,7 @@ Step 1 accepts a single audio file and produces a pre-processed float32 waveform
 
 The processing sequence is as follows. The mixed audio file is loaded at 16,000\,Hz and downmixed to mono via librosa. Stationary background noise is suppressed using noisereduce's spectral subtraction method, which estimates a noise profile from nominally silent regions. Voice activity is then detected using WebRTC VAD, applied over non-overlapping 20\,ms frames (320 samples at 16\,kHz) at aggressiveness level 2 on the 0–3 scale. Frames classified as voiced are retained; the remainder are discarded. The output is an \texttt{IngestionResult} containing the voiced float32 array, sample rate, total duration, \textit{speech\_ratio} (voiced frames / total frames), and source path.
 
-Empirically, speech\_ratio $\approx 0.55$ was observed on \texttt{day1\_consultation01\_doctor.wav} (457\,s total; approximately 250\,s voiced content). Filtering silence at this stage meaningfully reduces both ASR transcription time and the volume of non-speech segments passed to the diarization module.
+Empirically, speech\_ratio $\approx 0.85$ was observed on \texttt{day1\_consultation01\_mixed.wav} (387\,s total; approximately 328\,s voiced content). Filtering silence at this stage meaningfully reduces both ASR transcription time and the volume of non-speech segments passed to the diarization module.
 
 \subsection{Automatic Speech Recognition (Steps 2--3)}
 
