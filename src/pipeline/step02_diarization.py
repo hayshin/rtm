@@ -7,7 +7,7 @@ import os
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-import numpy as np
+import librosa
 
 from pipeline.step01_ingestion import IngestionResult
 
@@ -30,9 +30,7 @@ class DiarizationResult:
 def diarize(
     result: IngestionResult,
     *,
-    num_speakers: int | None = None,
-    min_speakers: int = 1,
-    max_speakers: int = 2,
+    num_speakers: int = 2,
     hf_token: str | None = None,
 ) -> DiarizationResult:
     try:
@@ -55,13 +53,12 @@ def diarize(
     )
     pipeline.to(torch.device("cpu"))
 
-    waveform = torch.from_numpy(result.samples).unsqueeze(0)
+    raw_audio, sample_rate = librosa.load(result.source_path, sr=16_000, mono=True)
+    waveform = torch.from_numpy(raw_audio).unsqueeze(0)
 
     output = pipeline(
-        {"waveform": waveform, "sample_rate": result.sample_rate},
+        {"waveform": waveform, "sample_rate": sample_rate},
         num_speakers=num_speakers,
-        min_speakers=min_speakers,
-        max_speakers=max_speakers,
     )
 
     segments: list[Segment] = []

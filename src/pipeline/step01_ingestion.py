@@ -25,7 +25,7 @@ class IngestionResult:
     source_path: Path
 
 
-def _apply_vad(audio: np.ndarray, aggressiveness: int) -> tuple[np.ndarray, float]:
+def _measure_speech_ratio(audio: np.ndarray, aggressiveness: int) -> float:
     try:
         import webrtcvad
     except ImportError:
@@ -42,25 +42,16 @@ def _apply_vad(audio: np.ndarray, aggressiveness: int) -> tuple[np.ndarray, floa
     frames = audio.reshape(-1, VAD_FRAME_SAMPLES)
     pcm_frames = (frames * 32767).clip(-32768, 32767).astype(np.int16)
 
-    voiced_frames = []
     total = len(frames)
     voiced_count = 0
 
     for pcm_frame in pcm_frames:
         frame_bytes = pcm_frame.tobytes()
         if vad.is_speech(frame_bytes, TARGET_SR):
-            voiced_frames.append(pcm_frame)
             voiced_count += 1
 
     speech_ratio = voiced_count / total if total > 0 else 0.0
-
-    if voiced_frames:
-        voiced_pcm = np.concatenate(voiced_frames)
-        voiced_float = voiced_pcm.astype(np.float32) / 32767.0
-    else:
-        voiced_float = np.array([], dtype=np.float32)
-
-    return voiced_float, speech_ratio
+    return speech_ratio
 
 
 def ingest(
@@ -76,12 +67,11 @@ def ingest(
     if noise_reduce:
         audio = nr.reduce_noise(y=audio, sr=TARGET_SR)
 
-    voiced, speech_ratio = _apply_vad(audio, vad_aggressiveness)
-
-    duration_s = len(voiced) / TARGET_SR
+    speech_ratio = _measure_speech_ratio(audio, vad_aggressiveness)
+    duration_s = len(audio) / TARGET_SR
 
     return IngestionResult(
-        samples=voiced,
+        samples=audio.astype(np.float32, copy=False),
         sample_rate=TARGET_SR,
         duration_s=duration_s,
         speech_ratio=speech_ratio,

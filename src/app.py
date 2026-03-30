@@ -270,7 +270,9 @@ def run_pipeline(audio_path, name, step4_model, step5_model):
     rows[4] = (STEP_LABELS[4], RUNNING, "—")
     yield _yield()
     try:
-        extraction, cached, elapsed = _run_step5(postprocessing, out_dir, step5_model)
+        extraction, cached, elapsed = _run_step5(
+            postprocessing, out_dir, step5_model
+        )
         _set_status(4, cached, elapsed)
         outs[4], outs[5] = _fmt_step5(extraction)
         yield _yield()
