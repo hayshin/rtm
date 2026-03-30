@@ -88,15 +88,6 @@
 \end{tikzpicture}%
 }% end resizebox
 
-\caption{Overview of the proposed automated pipeline for mapping unstructured
-clinical audio to HL7 FHIR-compliant data structures. The pipeline comprises
-six sequential steps:
-(1)~audio ingestion and pre-processing (16\,kHz resampling, noise reduction, voice activity detection);
-(2)~speaker diarization via pyannote.audio constrained to two speakers~\cite{tran2022asr};
-(3)~ASR transcription using Medical-Whisper-Large-v3~\cite{banerjee2024medasr};
-(4)~LLM transcript refinement for cleaning and speaker role assignment~\cite{adedeji2024sound};
-(5)~LLM clinical extraction producing a FHIR R4 Bundle via programmatic
-\texttt{fhir.resources} construction~\cite{frei2025inferno};
-and (6)~FHIR validation and provenance tracking~\cite{hl7fhir2022r4b}.}
+\caption{Overview of the proposed six-step pipeline for mapping unstructured clinical audio to HL7 FHIR-compliant data structures.}
 \label{fig:pipeline}
 \end{figure}

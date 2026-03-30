@@ -1,9 +1,13 @@
 
 \section{Methodology}
 
-\subsection{Dataset}
+\noindent This section describes the data foundation, processing pipeline, and implementation choices used to transform clinical consultation audio into validated HL7 FHIR resources. It first motivates the selected data source and its preparation, then outlines the six-stage pipeline, and finally details the design decisions and runtime environment that support end-to-end processing.
 
-The PriMock57 dataset \cite{papadopoulos2022primock57} consists of 57 mock primary care consultations recorded over five days by clinicians at Babylon Health. The corpus comprises 114 mono WAV audio files: a separate doctor track and a separate patient track per consultation, named according to the convention \path{dayN_consultationNN_role.wav}, where \textit{N} indexes the recording day (1–5) and \textit{role} is \texttt{doctor} or \texttt{patient}. Ground-truth annotations include manual utterance-level transcriptions and consultation notes produced by the recording clinicians. PriMock57 is, to our knowledge, the only publicly available clinical audio benchmark with ground-truth transcripts at the consultation level, making it the natural evaluation corpus for end-to-end audio-to-FHIR research.
+\subsection{Data Source and Preparation}
+
+PriMock57 \cite{papadopoulos2022primock57} was selected because it provides a reproducible and clinically relevant benchmark for evaluating the proposed audio-to-FHIR pipeline. Its paired audio and transcript annotations make it suitable for assessing how transcription, post-processing, and structured extraction interact across the full workflow rather than in isolation.
+
+The PriMock57 dataset consists of 57 mock primary care consultations recorded over five days by clinicians at Babylon Health. The corpus comprises 114 mono WAV audio files: a separate doctor track and a separate patient track per consultation, named according to the convention \path{dayN_consultationNN_role.wav}, where \textit{N} indexes the recording day (1–5) and \textit{role} is \texttt{doctor} or \texttt{patient}. Ground-truth annotations include manual utterance-level transcriptions and consultation notes produced by the recording clinicians. PriMock57 is, to our knowledge, the only publicly available clinical audio benchmark with ground-truth transcripts at the consultation level, making it the natural evaluation corpus for end-to-end audio-to-FHIR research.
 
 Prior to pipeline ingestion, the two per-consultation tracks are mixed via additive synthesis: the doctor and patient waveforms are loaded at the same sample rate, summed sample-by-sample, and peak-normalized to amplitude 1.0. This yields a single-channel recording that simulates a room-microphone capture of the consultation dyad. An optional 60-second trim was applied to individual consultations during development to accelerate iterative testing.
 
@@ -19,6 +23,8 @@ The system is organized as a six-step pipeline spanning four functional phases: 
   \item LLM Clinical Extraction \textrightarrow{} FHIR R4 Bundle Construction
   \item FHIR Validation \& Provenance Tracking
 \end{enumerate}
+
+Figure~\ref{fig:pipeline} summarizes how these stages connect in sequence. The pipeline begins with audio ingestion and pre-processing, followed by speaker diarization and ASR transcription. The resulting transcript is then refined with LLM-based cleaning and speaker role assignment before a second LLM pass extracts clinical content and assembles a FHIR R4 Bundle through programmatic \texttt{fhir.resources} construction. The final stage validates the generated resources and appends provenance metadata so each output remains auditable.
 
 \begin{figure}[ht]
 \centering
@@ -109,16 +115,7 @@ The system is organized as a six-step pipeline spanning four functional phases: 
 \end{tikzpicture}%
 }% end resizebox
 
-\caption{Overview of the proposed automated pipeline for mapping unstructured
-clinical audio to HL7 FHIR-compliant data structures. The pipeline comprises
-six sequential steps:
-(1)~audio ingestion and pre-processing (16\,kHz resampling, noise reduction, voice activity detection);
-(2)~speaker diarization via pyannote.audio constrained to two speakers~\cite{tran2022asr};
-(3)~ASR transcription using Medical-Whisper-Large-v3~\cite{banerjee2024medasr};
-(4)~LLM transcript refinement for cleaning and speaker role assignment~\cite{adedeji2024sound};
-(5)~LLM clinical extraction producing a FHIR R4 Bundle via programmatic
-\texttt{fhir.resources} construction~\cite{frei2025inferno};
-and (6)~FHIR validation and provenance tracking~\cite{hl7fhir2022r4b}.}
+\caption{Overview of the proposed six-step pipeline for mapping unstructured clinical audio to HL7 FHIR-compliant data structures.}
 \label{fig:pipeline}
 \end{figure}
 
