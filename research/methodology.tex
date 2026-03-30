@@ -13,7 +13,7 @@ Prior to pipeline ingestion, the two per-consultation tracks are mixed via addit
 
 \subsection{Pipeline Architecture}
 
-The system is organized as a six-step pipeline spanning four functional phases: (1) acoustic pre-processing, (2) automatic speech recognition with speaker attribution, (3) LLM-driven transcript refinement and clinical information extraction, and (4) FHIR resource generation with validation and provenance tracking. The six steps are illustrated in Figure~\ref{fig:pipeline}.
+The system is organized as a six-step pipeline spanning four functional phases: (1) acoustic pre-processing, (2) automatic speech recognition with speaker attribution, (3) LLM-driven transcript refinement and clinical information extraction, and (4) FHIR resource generation with validation and provenance tracking. Figure~\ref{fig:pipeline} presents this design as a workflow, emphasizing how audio and intermediate artifacts move through the pipeline from raw consultation recording to validated structured output.
 
 \begin{enumerate}
   \item Audio Ingestion \& Pre-processing
@@ -24,98 +24,116 @@ The system is organized as a six-step pipeline spanning four functional phases: 
   \item FHIR Validation \& Provenance Tracking
 \end{enumerate}
 
-Figure~\ref{fig:pipeline} summarizes how these stages connect in sequence. The pipeline begins with audio ingestion and pre-processing, followed by speaker diarization and ASR transcription. The resulting transcript is then refined with LLM-based cleaning and speaker role assignment before a second LLM pass extracts clinical content and assembles a FHIR R4 Bundle through programmatic \texttt{fhir.resources} construction. The final stage validates the generated resources and appends provenance metadata so each output remains auditable.
+Figure~\ref{fig:pipeline} summarizes how these stages connect in sequence. The workflow begins with consultation audio ingestion and pre-processing, followed by speaker diarization, segment-level transcription, and transcript assembly. The resulting transcript is then refined with LLM-based cleaning and speaker role assignment before a second LLM pass extracts clinical content and assembles a FHIR R4 Bundle through programmatic \texttt{fhir.resources} construction. The final stage validates the generated resources and appends provenance metadata so each output remains auditable.
 
 \begin{figure}[ht]
 \centering
 \resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[
-    box/.style={
+    node distance=1.35cm and 1.35cm,
+    process/.style={
         rectangle, rounded corners=7pt,
-        minimum width=4.2cm, minimum height=1.4cm,
-        text centered, text width=3.9cm,
-        font=\small\bfseries,
+        minimum width=4.0cm, minimum height=1.35cm,
+        text centered, text width=3.7cm,
+        font=\normalsize\bfseries,
         line width=1.2pt
     },
-    audio/.style ={box, fill=blue!15,   draw=blue!60!black},
-    asr/.style   ={box, fill=cyan!20,   draw=cyan!60!black},
-    llm/.style   ={box, fill=teal!20,   draw=teal!60!black},
-    nlp/.style   ={box, fill=orange!20, draw=orange!60!black},
-    fhir/.style  ={box, fill=green!20,  draw=green!60!black},
-    sublabel/.style={
-        font=\scriptsize\itshape,
+    artifact/.style={
+        trapezium, trapezium left angle=75, trapezium right angle=105,
+        minimum width=3.8cm, minimum height=1.15cm,
+        text centered, text width=3.3cm,
+        font=\normalsize\bfseries,
+        line width=1.1pt
+    },
+    terminal/.style={
+        ellipse,
+        minimum width=3.7cm, minimum height=1.1cm,
+        text centered,
+        font=\normalsize\bfseries,
+        line width=1.2pt
+    },
+    audio/.style   ={process, fill=blue!15,   draw=blue!60!black},
+    asr/.style     ={process, fill=cyan!20,   draw=cyan!60!black},
+    llm/.style     ={process, fill=teal!20,   draw=teal!60!black},
+    fhir/.style    ={process, fill=green!18,  draw=green!50!black},
+    data/.style    ={artifact, fill=gray!10,  draw=gray!60!black},
+    terminus/.style={terminal, fill=orange!18, draw=orange!65!black},
+    note/.style={
+        font=\small\itshape,
         text=gray!75!black,
-        text centered, text width=4.2cm
+        text centered
     },
-    arr/.style={
-        -{Stealth[length=9pt,width=7pt]},
-        line width=1.8pt, color=gray!65!black
-    },
-    arrdown/.style={
-        -{Stealth[length=9pt,width=7pt]},
-        line width=1.8pt, color=gray!65!black,
-        rounded corners=10pt
+    flow/.style={
+        -{Stealth[length=8pt,width=6pt]},
+        line width=1.6pt,
+        color=gray!70!black
     },
 ]
 
-% ROW 1
-\node[audio] (step1) {Audio Ingestion \& Pre-processing};
-\node[sublabel, below=0.10cm of step1] (step1-sub) {16\,kHz mono; noise reduction; VAD};
+\node[terminus] (input) {Consultation Audio Input};
+\node[note, below=0.08cm of input] {mixed doctor/patient recording};
 
-\node[asr, right=1.5cm of step1] (step2) {Speaker Diarization};
-\node[sublabel, below=0.10cm of step2] (step2-sub) {pyannote.audio; max 2 speakers};
+\node[audio, right=1.6cm of input] (step1) {Step 1: Audio Ingestion \& Pre-processing};
+\node[note, below=0.08cm of step1] {16\,kHz mono, denoising, VAD};
 
-\node[asr, right=1.5cm of step2] (step3) {ASR Transcription};
-\node[sublabel, below=0.10cm of step3] (step3-sub) {Medical-Whisper-Large-v3; WER\,0.19};
+\node[asr, right=1.6cm of step1] (step2) {Step 2: Speaker Diarization};
+\node[note, below=0.08cm of step2] {pyannote.audio, max 2 speakers};
 
-\node[font=\scriptsize\bfseries\color{blue!70!black},  above=0.25cm of step1] {STEP 1};
-\node[font=\scriptsize\bfseries\color{cyan!70!black},  above=0.25cm of step2] {STEP 2};
-\node[font=\scriptsize\bfseries\color{cyan!70!black},  above=0.25cm of step3] {STEP 3};
+\node[data, below=1.7cm of step2] (segments) {Diarized Speech Segments};
+\node[note, below=0.08cm of segments] {timestamped speaker-labeled intervals};
 
-\draw[arr] (step1) -- (step2);
-\draw[arr] (step2) -- (step3);
+\node[asr, left=1.6cm of segments] (step3) {Step 3: ASR Transcription};
+\node[note, below=0.08cm of step3] {Medical-Whisper-Large-v3};
 
-% ROW 2
-\node[llm,  below=2.4cm of step3] (step4) {LLM Transcript Refinement};
-\node[sublabel, below=0.10cm of step4] (step4-sub) {GPT-5-mini; cleaning \& role assignment};
+\node[data, left=1.6cm of step3] (transcript) {Raw Transcript Segments};
+\node[note, below=0.08cm of transcript] {text with generic speaker IDs};
 
-\node[nlp, left=1.5cm of step4]   (step5) {Clinical Extraction \& FHIR Bundle};
-\node[sublabel, below=0.10cm of step5] (step5-sub) {NER, negation, terminology coding};
+\node[llm, below=1.8cm of transcript] (step4) {Step 4: Transcript Refinement \& Role Assignment};
+\node[note, below=0.08cm of step4] {cleaning and physician/patient mapping};
 
-\node[fhir, left=1.5cm of step5]  (step6) {FHIR Validation \& Provenance};
-\node[sublabel, below=0.10cm of step6] (step6-sub) {fhir.resources R4B; Provenance};
+\node[data, right=1.6cm of step4] (cleaned) {Post-processed Transcript};
+\node[note, below=0.08cm of cleaned] {clean text plus source traceability};
 
-\node[font=\scriptsize\bfseries\color{teal!70!black},   above=0.25cm of step4] {STEP 4};
-\node[font=\scriptsize\bfseries\color{orange!70!black}, above=0.25cm of step5] {STEP 5};
-\node[font=\scriptsize\bfseries\color{green!60!black},  above=0.25cm of step6] {STEP 6};
+\node[llm, right=1.6cm of cleaned] (step5) {Step 5: Clinical Extraction \& FHIR Construction};
+\node[note, below=0.08cm of step5] {LLM extraction with \texttt{fhir.resources}};
 
-\draw[arr] (step4) -- (step5);
-\draw[arr] (step5) -- (step6);
+\node[fhir, right=1.6cm of step5] (step6) {Step 6: Validation \& Provenance};
+\node[note, below=0.08cm of step6] {R4B checks and provenance records};
 
-% Connecting arrow row1 -> row2
-\draw[arrdown] (step3.south) -- ++(0,-0.9cm) -| (step4.north);
+\node[terminus, below=1.8cm of step5] (output) {Validated FHIR Bundle Output};
+\node[note, below=0.08cm of output] {Bundle plus per-step JSON artifacts};
 
-% Background shading
+\draw[flow] (input) -- (step1);
+\draw[flow] (step1) -- (step2);
+\draw[flow] (step2) -- (segments);
+\draw[flow] (segments) -- (step3);
+\draw[flow] (step3) -- (transcript);
+\draw[flow] (transcript) -- (step4);
+\draw[flow] (step4) -- (cleaned);
+\draw[flow] (cleaned) -- (step5);
+\draw[flow] (step5) -- (step6);
+\draw[flow] (step6) |- (output);
+
 \begin{scope}[on background layer]
     \node[
         fill=cyan!6, draw=cyan!30, rounded corners=9pt, line width=0.9pt,
-        fit=(step2)(step3)(step2-sub)(step3-sub),
-        inner sep=8pt,
-        label={[font=\scriptsize\itshape, text=cyan!55!black]above:Transcription Layer}
+        fit=(step1)(step2)(segments)(step3)(transcript),
+        inner sep=9pt,
+        label={[font=\scriptsize\itshape, text=cyan!55!black]above:Speech Processing Workflow}
     ] {};
 
     \node[
         fill=orange!6, draw=orange!30, rounded corners=9pt, line width=0.9pt,
-        fit=(step4)(step5)(step4-sub)(step5-sub),
-        inner sep=8pt,
-        label={[font=\scriptsize\itshape, text=orange!55!black]below:Extraction \& FHIR Layer}
+        fit=(step4)(cleaned)(step5)(step6)(output),
+        inner sep=9pt,
+        label={[font=\scriptsize\itshape, text=orange!55!black]below:LLM-to-FHIR Workflow}
     ] {};
 \end{scope}
 
 \end{tikzpicture}%
 }% end resizebox
 
-\caption{Overview of the proposed six-step pipeline for mapping unstructured clinical audio to HL7 FHIR-compliant data structures.}
+\caption{Workflow for the proposed six-step clinical audio-to-FHIR pipeline.}
 \label{fig:pipeline}
 \end{figure}
 
