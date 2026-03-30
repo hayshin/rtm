@@ -84,10 +84,8 @@
 %\editor{Associate Editor: Name}
 
 
-\abstract{Abstracts must be able to stand alone and so cannot contain citations to
-the paper's references, equations, etc. An abstract must consist of a single
-paragraph and be concise. Because of online formatting, abstracts must appear
-as plain as possible.}
+\abstract{Clinical documentation imposes a substantial burden on primary care physicians, with patient--clinician consultations generating diagnostically rich spoken dialogue that remains largely inaccessible to automated health information systems in its raw form. This paper presents the design and evaluation of an automated six-step pipeline that transforms unstructured clinical audio recordings directly into validated HL7 FHIR Release 4B-compliant data structures, without requiring custom model development or manual post-editing. Applied to the PriMock57 dataset of 57 mock primary care consultations, the pipeline integrates: acoustic pre-processing with stationary noise suppression and voice activity detection; speaker diarization constrained to the doctor--patient dyad; automatic speech recognition using Medical-Whisper-Large-v3, a domain-adapted Whisper model achieving a word error rate of 0.19 on PriMock57; large language model-driven transcript cleaning and physician/patient role assignment; joint clinical information extraction and FHIR resource generation via structured LLM output constrained to Pydantic schemas and assembled programmatically through the \texttt{fhir.resources} library; and structural FHIR validation with per-resource provenance tracking. A key architectural contribution is the consolidation of traditional multi-stage NLP pipelines into a single LLM extraction pass followed by schema-constrained programmatic FHIR construction, reducing hallucination risk while preserving end-to-end integration. The pipeline produces FHIR R4B Bundles containing Encounter, Condition, MedicationStatement, Observation, and Procedure resources with segment-level provenance links to source transcript segments. To our knowledge, this is the first system evaluated end-to-end from raw clinical audio to conformant FHIR resources on a public benchmark, addressing a gap in the literature where prior work treats transcription, clinical NLP, and FHIR generation as isolated problems.}
+
 \keywords{Automatic Speech Recognition; Speaker Diarization; Clinical Audio Processing; Large Language Models; Clinical Information Extraction; HL7 FHIR; Healthcare Interoperability.}
 
 % \boxedtext{
@@ -126,7 +124,7 @@ Transcription alone is insufficient for clinical informatics applications. To be
 
 \subsection{Problem Statement}
 
-Despite the individual maturity of its constituent technologies (ASR, clinical NLP, and FHIR modelling), no established solution integrates these into a coherent, end-to-end pipeline that transforms raw clinical audio into validated, interoperable FHIR resources. Existing approaches address individual stages in isolation: ASR systems are evaluated for transcription accuracy without downstream clinical structuring; NLP pipelines operate on pre-existing text rather than live transcriptions; and FHIR generation tools assume structured or semi-structured input rather than conversational speech. The full pathway from an audio recording of a clinical encounter to a computable, standards-conformant clinical record thus remains an open engineering problem \cite{hong2020nlp2fhir, riquelme2025llm}.
+Despite the individual maturity of its constituent technologies (ASR, clinical NLP, and FHIR modelling), no established solution integrates these into a coherent, end-to-end pipeline that transforms raw clinical audio into validated, interoperable FHIR resources. Existing approaches address individual stages in isolation: ASR systems are evaluated for transcription accuracy without downstream clinical structuring; NLP pipelines operate on pre-existing text rather than live transcriptions; and FHIR generation tools assume structured or semi-structured input rather than conversational speech. The full pathway from an audio recording of a clinical encounter to a computable, standards-conformant clinical record thus remains an open engineering problem.
 
 This study therefore poses the following question: can an automated pipeline built from existing pretrained components reliably transcribe primary care consultations and produce clinically meaningful, FHIR R4B-conformant resources, without requiring custom model development or manual post-editing?
 
@@ -206,9 +204,6 @@ The system is organized as a six-step pipeline spanning four functional phases: 
   \item LLM Clinical Extraction \textrightarrow{} FHIR R4 Bundle Construction
   \item FHIR Validation \& Provenance Tracking
 \end{enumerate}
-
-
-
 
 \begin{figure}[ht]
 \centering
@@ -312,20 +307,15 @@ and (6)~FHIR validation and provenance tracking~\cite{hl7fhir2022r4b}.}
 \label{fig:pipeline}
 \end{figure}
 
-
-
-
 A central design decision is the collapse of the traditional multi-stage NLP pipeline (typically comprising SOAP segmentation, named entity recognition, negation detection, terminology normalization, and FHIR mapping as discrete components) into a single LLM extraction pass followed by schema-constrained, programmatic FHIR construction (Steps 5–6). This consolidation is motivated by Frei et al., who demonstrated a hallucination rate below 2.3\% when FHIR resources are assembled programmatically via \texttt{fhir.resources} object construction rather than generated as free-form JSON \cite{frei2025inferno}, and by Li et al., who demonstrated the feasibility of joint LLM-driven extraction and FHIR transformation \cite{li2024fhirgpt}.
 
 All intermediate outputs are persisted to disk after each step (\path{outputs/<name>/step0N_<name>.json}). Completed steps are detected at startup and skipped, enabling iterative development and evaluation without full pipeline recomputation.
 
-\subsection{Audio Ingestion and Pre-processing (Step 1)}
+\subsubsection{Audio Ingestion and Pre-processing (Step 1)}
 
 Step 1 accepts a single audio file and produces a pre-processed float32 waveform suitable for downstream ASR and diarization, using three libraries: librosa ($\geq$0.10.2) for loading, noisereduce ($\geq$3.0.0) for stationary noise suppression, and webrtcvad-wheels for voice activity detection (VAD). The mixed audio file is loaded at 16,000\,Hz and downmixed to mono via librosa. Stationary background noise is suppressed using noisereduce's spectral subtraction method, which estimates a noise profile from nominally silent regions. Voice activity is then detected using WebRTC VAD, applied over non-overlapping 20\,ms frames (320 samples at 16\,kHz) at aggressiveness level 2 on the 0--3 scale. Frames classified as voiced are retained; the remainder are discarded. The output is an \texttt{IngestionResult} containing the voiced float32 array, sample rate, total duration, \textit{speech\_ratio} (voiced frames / total frames), and source path.
 
 Empirically, speech\_ratio $\approx 0.85$ was observed on \texttt{day1\_consultation01\_mixed.wav} (387\,s total; approximately 328\,s voiced content). Filtering silence at this stage reduces ASR transcription time and the number of non-speech segments passed to the diarization module.
-
-\subsection{Automatic Speech Recognition (Steps 2--3)}
 
 \subsubsection{Speaker Diarization (Step 2)}
 
@@ -336,8 +326,6 @@ Speaker diarization is performed using pyannote.audio 4.x \cite{tran2022asr} wit
 Transcription uses \path{Na0s/Medical-Whisper-Large-v3}, a 1.55B-parameter model fine-tuned on the PriMock57 training split by Banerjee et al.\ \cite{banerjee2024medasr}. The fine-tuned model achieves a word error rate of 0.19 on the PriMock57 validation split and 0.24 on the test split, representing a 42\% relative WER improvement over the zero-shot Whisper large-v3 baseline (WER 0.33) \cite{radford2023whisper}. The model is loaded via the HuggingFace \texttt{transformers} pipeline using \texttt{torch.float32} on CPU.
 
 For each diarized segment of duration $\geq 0.1$\,s, the corresponding audio is sliced from the waveform using integer sample indices at 16\,kHz and passed to the ASR pipeline with \texttt{language="en"}. Each transcription is emitted as a \texttt{TranscriptSegment} (fields: start, end, speaker, text) carrying the diarization label. Segments shorter than 0.1\,s are discarded to avoid transcription artefacts.
-
-\subsection{LLM-Based Post-processing and Clinical Extraction (Steps 4--5)}
 
 \subsubsection{Transcript Cleaning and Speaker Role Assignment (Step 4)}
 
@@ -361,7 +349,7 @@ FHIR R4 resources are then constructed programmatically via \texttt{fhir.resourc
 
 This unified approach trades an accuracy ceiling (reported at 91\% semantic completeness and 0.88 interoperability for dedicated transformer-based NER pipelines with ontology-grounded normalization \cite{brens2025semantic}) for engineering simplicity and end-to-end pipeline integration. This trade-off is consistent with the demonstrated feasibility of LLM-driven FHIR transformation in the literature \cite{hong2020nlp2fhir, li2024fhirgpt}.
 
-\subsection{FHIR Validation and Provenance Tracking (Step 6)}
+\subsubsection{FHIR Validation and Provenance Tracking (Step 6)}
 
 Step 6 performs structural validation of the generated bundle and attaches provenance metadata to each clinical resource, using \texttt{fhir.resources} Pydantic R4B models \cite{hl7fhir2022r4b}. Validation parses each resource through its corresponding \texttt{fhir.resources} class (Condition, MedicationStatement, Observation, Procedure, Encounter, Bundle). Pydantic \texttt{ValidationError} exceptions are caught and converted to \texttt{ValidationIssue} records (fields: severity, resource\_type, resource\_id, message). The bundle is flagged \texttt{valid=True} if and only if no error-severity issues are raised; warning-severity issues are recorded but do not invalidate the bundle.
 
@@ -371,6 +359,77 @@ For each clinical resource, a FHIR \texttt{Provenance} resource is generated and
 
 The pipeline is implemented in Python 3.13, managed with uv. All inference is CPU-only: pyannote.audio and Whisper run on \texttt{device="cpu"} with \texttt{torch.float32}, with the ASR model requiring approximately 6\,GB of RAM for the 1.55B-parameter checkpoint. LLM calls are made to the OpenAI API (configured via the \texttt{OPENAI\_API\_KEY} environment variable); diarization model weights are retrieved from the HuggingFace Hub (configured via \texttt{HF\_TOKEN}). The runtime environment is NixOS, managed through devenv with direnv-based activation.
 
+
+
+\section{Results and Discussion}
+
+\subsection{Evaluation Scope}
+
+At the time of writing, the proposed pipeline had been executed end-to-end on two PriMock57 consultations for which complete outputs were available across all six stages: \texttt{day1\_consultation01\_mixed} and \texttt{day1\_consultation02\_mixed}. Accordingly, the present results should be interpreted as a pilot end-to-end evaluation of pipeline feasibility rather than as a definitive benchmark over the full PriMock57 corpus. This distinction is important because the primary objective of the study is to assess whether structurally valid and clinically meaningful FHIR resources can be generated from raw consultation audio without manual post-editing.
+
+The reported findings therefore focus on three observable outcome categories supported by the generated artifacts: (1) successful completion of all pipeline stages, (2) structural validity of the generated FHIR bundles, and (3) qualitative characteristics of the intermediate transcripts and extracted clinical resources. No corpus-level word error rate (WER), speaker-role accuracy, or resource-level precision/recall is reported here, as these metrics were not yet computed systematically over the full evaluation set.
+
+\subsection{End-to-End Pipeline Execution}
+
+Both sampled consultations completed all six pipeline stages successfully, producing intermediate JSON outputs for ingestion, diarization, ASR, transcript post-processing, clinical extraction, and final validation. For \texttt{day1\_consultation01\_mixed}, Step 1 reported a total duration of 387.38\,s and a \textit{speech\_ratio} of 0.846, indicating that approximately 84.6\% of the consultation contained voiced material after pre-processing. For \texttt{day1\_consultation02\_mixed}, Step 1 reported a total duration of 447.7\,s and a \textit{speech\_ratio} of 0.801. Step 2 for \texttt{day1\_consultation01\_mixed} produced 107 diarized segments of duration $\geq 0.1$\,s, comprising 85 segments attributed to \texttt{SPEAKER\_00} and 22 to \texttt{SPEAKER\_01}. The cumulative voiced segment duration was 371.93\,s, consistent with the high speech density expected in a dyadic primary-care consultation.
+
+The successful production of complete output artifacts for both cases demonstrates that the proposed orchestration of audio pre-processing, diarization, CPU-based medical ASR, LLM refinement, LLM extraction, and programmatic FHIR construction is operationally feasible as an end-to-end pipeline. No stage-level runtime failure was observed in the completed examples.
+
+\subsection{FHIR Validation Outcomes}
+
+The most robust quantitative result of the current evaluation is the structural validity of the generated FHIR bundles. In both processed consultations, Step 6 returned \texttt{valid=true} with zero recorded validation issues. This indicates that all generated resources could be parsed successfully by the \texttt{fhir.resources} R4B models and that no schema-level errors were detected in required fields, value types, or bundle structure.
+
+This result is non-trivial in the present setting. The pipeline begins from conversational audio, passes through multiple stochastic and error-prone stages, and ultimately constructs typed FHIR resources that must satisfy a strict interoperability schema. The absence of validation errors in both completed cases therefore supports the central architectural decision of constraining LLM output through Pydantic schemas and performing final resource assembly programmatically rather than asking the language model to emit raw FHIR JSON directly.
+
+Table~\ref{tab:results-summary} summarizes the high-level outputs for the two completed consultations.
+
+\begin{table}[ht]
+\centering
+\caption{Summary of end-to-end pipeline outputs for the two completed PriMock57 consultations.}
+\label{tab:results-summary}
+\begin{tabular}{lcccccccc}
+\hline
+Consultation & Duration (s) & Speech ratio & Condition & Medication & Observation & Procedure & Provenance & Valid \\
+\hline
+\texttt{day1\_consultation01} & 387.38 & 0.846 & 10 & 1 & 2 & 2 & 16 & Yes \\
+\texttt{day1\_consultation02} & 447.70 & 0.801 & 4 & 5 & 0 & 0 & 10 & Yes \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Resource Generation Characteristics}
+
+Although both outputs were structurally valid, the composition of the generated bundles differed substantially across consultations. For \texttt{day1\_consultation01}, the pipeline produced 1 \texttt{Encounter}, 10 \texttt{Condition}, 1 \texttt{MedicationStatement}, 2 \texttt{Observation}, and 2 \texttt{Procedure} resources. The corresponding bundle contained 16 \texttt{Provenance} resources, matching the number of non-provenance clinical resources generated. For \texttt{day1\_consultation02}, the output contained 1 \texttt{Encounter}, 4 \texttt{Condition}, and 5 \texttt{MedicationStatement} resources, with no \texttt{Observation} or \texttt{Procedure} instances; the bundle included 10 \texttt{Provenance} resources.
+
+This variation is clinically plausible at a coarse level. The first consultation, centred on acute gastrointestinal symptoms, yielded a broader mix of symptom, finding, management, and follow-up resources. The second consultation, focused on an eczema flare and current/past treatment use, produced a denser medication-oriented bundle. These differences suggest that the extraction stage is sensitive to consultation content rather than emitting a fixed or template-like resource pattern.
+
+At the same time, the observed resource counts also indicate a tendency toward relatively granular \texttt{Condition} generation. In \texttt{day1\_consultation01}, the system emitted separate \texttt{Condition} resources for diarrhea, abdominal pain, vomiting, weakness, and related symptom descriptions. From a clinical-informatics perspective, such granularity may be useful for downstream auditability, but it also raises the possibility of over-segmentation, where closely related manifestations are represented as distinct conditions rather than as attributes or contextual qualifiers of a smaller number of primary problems. This issue should be addressed in future work through resource-level manual annotation and precision/recall analysis.
+
+\subsection{Qualitative Assessment of Intermediate Outputs}
+
+Inspection of the intermediate transcripts indicates that Step 4 improves readability and semantic coherence relative to the raw ASR output. Obvious disfluencies, fragmentary segments, and transcription artefacts are often removed or normalized. For example, malformed ASR fragments such as ``Audrey and loose stall'' are corrected to clinically coherent phrases such as ``watery, loose stool,'' and fragmentary filler utterances are frequently collapsed or removed. This supports the utility of an LLM-based transcript-cleaning pass prior to downstream extraction.
+
+However, the same inspection also reveals an important limitation: speaker-role assignment is not consistently reliable. In \texttt{day1\_consultation01}, the number of non-empty cleaned segments attributed to \textsc{physician} (67) substantially exceeds those attributed to \textsc{patient} (8), despite the consultation containing numerous patient responses. Several utterances that are semantically patient statements appear to remain associated with the physician role. This is likely a consequence of errors introduced upstream by diarization segmentation, mixed turn structure within a single ASR segment, or imperfect LLM role inference. Because the distinction between clinician-reported assessment and patient-reported symptom description is clinically meaningful, this limitation has direct implications for the semantic reliability of the extracted FHIR resources.
+
+The current results therefore suggest that transcript cleaning is more robust than role attribution. The LLM post-processing stage appears effective at improving local lexical quality, but its success at restoring conversation structure is constrained by the quality of the diarized and transcribed input.
+
+\subsection{Interpretation Relative to the Research Question}
+
+The study asked whether an automated pipeline built from existing pretrained components could transform raw primary-care consultation audio into clinically meaningful, FHIR R4B-conformant resources without manual post-editing. The current pilot results provide a qualified positive answer to the structural part of this question. In the two completed cases, the system successfully generated valid FHIR bundles containing multiple clinically relevant resource types and attached provenance links back to source transcript segments.
+
+Nevertheless, structural conformance should not be conflated with semantic correctness. The sampled outputs show that while the pipeline can assemble formally valid resources, clinically important upstream errors remain visible, especially in speaker-role attribution and potentially in the granularity of extracted conditions. The present evidence therefore supports the claim that end-to-end audio-to-FHIR transformation is technically feasible within the proposed architecture, but it does not yet demonstrate that the resulting records are consistently accurate enough for production clinical use.
+
+\subsection{Limitations of the Current Evaluation}
+
+Several limitations constrain the interpretation of the present results. First, the completed end-to-end sample is small, comprising only two consultations, and cannot support strong generalization across PriMock57 as a whole. Second, no gold-standard FHIR annotations are available for direct resource-level comparison, so the evaluation is presently strongest on structural validity and weakest on semantic fidelity. Third, speaker-role accuracy, ASR WER, and extraction precision/recall were not yet computed quantitatively. Finally, terminology normalization was performed on a best-effort basis by the LLM without a dedicated ontology lookup service, which likely limits coding accuracy even when the free-text clinical meaning is broadly correct.
+
+These limitations do not invalidate the current findings, but they define their scope. The contribution of the present work is therefore best understood as the demonstration of a working end-to-end research pipeline and an initial empirical indication that schema-constrained, programmatic FHIR generation from clinical audio is achievable on a public benchmark.
+
+\subsection{Implications for Future Evaluation}
+
+The next stage of evaluation should extend from structural feasibility to semantic measurement. Four quantitative analyses would be especially valuable. First, ASR quality should be measured directly against PriMock57 reference transcripts using WER and, ideally, medical-concept WER. Second, speaker-role assignment should be evaluated against manual doctor/patient labels to quantify the error observed qualitatively in the present sample. Third, extracted resources should be compared with clinician-authored consultation notes or manual annotations to estimate precision, recall, and error typology at the resource and attribute levels. Fourth, larger-scale batch execution across the full PriMock57 corpus would allow reporting of pipeline completion rate, validation pass rate, and variation in resource density across consultation types.
+
+Such analyses would enable a more rigorous answer to the clinical usefulness question. At present, the evidence supports feasibility, auditability, and structural interoperability; future evaluation is needed to establish semantic reliability.
 
 
 
