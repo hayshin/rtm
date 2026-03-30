@@ -1,3 +1,4 @@
+
 \section{Methodology}
 
 \subsection{Dataset}
@@ -18,10 +19,6 @@ The system is organized as a six-step pipeline spanning four functional phases: 
   \item LLM Clinical Extraction \textrightarrow{} FHIR R4 Bundle Construction
   \item FHIR Validation \& Provenance Tracking
 \end{enumerate}
-
-
-
-
 
 \begin{figure}[ht]
 \centering
@@ -125,21 +122,15 @@ and (6)~FHIR validation and provenance tracking~\cite{hl7fhir2022r4b}.}
 \label{fig:pipeline}
 \end{figure}
 
-
-
-
-
 A central design decision is the collapse of the traditional multi-stage NLP pipeline (typically comprising SOAP segmentation, named entity recognition, negation detection, terminology normalization, and FHIR mapping as discrete components) into a single LLM extraction pass followed by schema-constrained, programmatic FHIR construction (Steps 5–6). This consolidation is motivated by Frei et al., who demonstrated a hallucination rate below 2.3\% when FHIR resources are assembled programmatically via \texttt{fhir.resources} object construction rather than generated as free-form JSON \cite{frei2025inferno}, and by Li et al., who demonstrated the feasibility of joint LLM-driven extraction and FHIR transformation \cite{li2024fhirgpt}.
 
 All intermediate outputs are persisted to disk after each step (\path{outputs/<name>/step0N_<name>.json}). Completed steps are detected at startup and skipped, enabling iterative development and evaluation without full pipeline recomputation.
 
-\subsection{Audio Ingestion and Pre-processing (Step 1)}
+\subsubsection{Audio Ingestion and Pre-processing (Step 1)}
 
 Step 1 accepts a single audio file and produces a pre-processed float32 waveform suitable for downstream ASR and diarization, using three libraries: librosa ($\geq$0.10.2) for loading, noisereduce ($\geq$3.0.0) for stationary noise suppression, and webrtcvad-wheels for voice activity detection (VAD). The mixed audio file is loaded at 16,000\,Hz and downmixed to mono via librosa. Stationary background noise is suppressed using noisereduce's spectral subtraction method, which estimates a noise profile from nominally silent regions. Voice activity is then detected using WebRTC VAD, applied over non-overlapping 20\,ms frames (320 samples at 16\,kHz) at aggressiveness level 2 on the 0--3 scale. Frames classified as voiced are retained; the remainder are discarded. The output is an \texttt{IngestionResult} containing the voiced float32 array, sample rate, total duration, \textit{speech\_ratio} (voiced frames / total frames), and source path.
 
 Empirically, speech\_ratio $\approx 0.85$ was observed on \texttt{day1\_consultation01\_mixed.wav} (387\,s total; approximately 328\,s voiced content). Filtering silence at this stage reduces ASR transcription time and the number of non-speech segments passed to the diarization module.
-
-\subsection{Automatic Speech Recognition (Steps 2--3)}
 
 \subsubsection{Speaker Diarization (Step 2)}
 
@@ -150,8 +141,6 @@ Speaker diarization is performed using pyannote.audio 4.x \cite{tran2022asr} wit
 Transcription uses \path{Na0s/Medical-Whisper-Large-v3}, a 1.55B-parameter model fine-tuned on the PriMock57 training split by Banerjee et al.\ \cite{banerjee2024medasr}. The fine-tuned model achieves a word error rate of 0.19 on the PriMock57 validation split and 0.24 on the test split, representing a 42\% relative WER improvement over the zero-shot Whisper large-v3 baseline (WER 0.33) \cite{radford2023whisper}. The model is loaded via the HuggingFace \texttt{transformers} pipeline using \texttt{torch.float32} on CPU.
 
 For each diarized segment of duration $\geq 0.1$\,s, the corresponding audio is sliced from the waveform using integer sample indices at 16\,kHz and passed to the ASR pipeline with \texttt{language="en"}. Each transcription is emitted as a \texttt{TranscriptSegment} (fields: start, end, speaker, text) carrying the diarization label. Segments shorter than 0.1\,s are discarded to avoid transcription artefacts.
-
-\subsection{LLM-Based Post-processing and Clinical Extraction (Steps 4--5)}
 
 \subsubsection{Transcript Cleaning and Speaker Role Assignment (Step 4)}
 
@@ -175,7 +164,7 @@ FHIR R4 resources are then constructed programmatically via \texttt{fhir.resourc
 
 This unified approach trades an accuracy ceiling (reported at 91\% semantic completeness and 0.88 interoperability for dedicated transformer-based NER pipelines with ontology-grounded normalization \cite{brens2025semantic}) for engineering simplicity and end-to-end pipeline integration. This trade-off is consistent with the demonstrated feasibility of LLM-driven FHIR transformation in the literature \cite{hong2020nlp2fhir, li2024fhirgpt}.
 
-\subsection{FHIR Validation and Provenance Tracking (Step 6)}
+\subsubsection{FHIR Validation and Provenance Tracking (Step 6)}
 
 Step 6 performs structural validation of the generated bundle and attaches provenance metadata to each clinical resource, using \texttt{fhir.resources} Pydantic R4B models \cite{hl7fhir2022r4b}. Validation parses each resource through its corresponding \texttt{fhir.resources} class (Condition, MedicationStatement, Observation, Procedure, Encounter, Bundle). Pydantic \texttt{ValidationError} exceptions are caught and converted to \texttt{ValidationIssue} records (fields: severity, resource\_type, resource\_id, message). The bundle is flagged \texttt{valid=True} if and only if no error-severity issues are raised; warning-severity issues are recorded but do not invalidate the bundle.
 
