@@ -41,3 +41,59 @@ Reviewed works collectively advance the constituent technologies of clinical aud
 Evaluation scope is further constrained by narrow resource coverage and proprietary data. Most FHIR generation studies target a single resource type: FHIR-GPT focuses on medication statements \cite{li2024fhirgpt} and Inferno on discharge-letter entities \cite{frei2025inferno}. The 67--73\% attribute-level accuracy reported for RAG-enhanced LLMs \cite{riquelme2025llm} illustrates a substantial gap even on clean structured input, a figure that would likely worsen on upstream ASR output. Hallucination and conformance errors persist across reviewed systems; Inferno reports sub-2.3\% hallucination rates only after applying constrained programmatic FHIR construction \cite{frei2025inferno}, and no reviewed study performs full HL7 FHIR R4B conformance validation on pipeline output derived from spoken audio.
 
 These gaps collectively motivate a unified pipeline that: (a) begins from raw audio rather than pre-existing text; (b) integrates ASR, diarisation, LLM post-processing, clinical NLP, and FHIR generation as a single evaluated system; (c) uses PriMock57, a public and realistic clinical audio benchmark \cite{papadopoulos2022primock57}, to ensure reproducibility; and (d) includes HL7 FHIR R4B conformance validation as a first-class evaluation criterion.
+
+\subsection{Summary of Prior Studies and Critiques}
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.30\textwidth}|>{\raggedright\arraybackslash}p{0.38\textwidth}|}
+\caption{Critical summary of prior studies relevant to automated clinical audio-to-FHIR pipelines.}
+\label{tab:literature-summary}\\
+\hline
+\textbf{Study} & \textbf{Main contribution} & \textbf{Critique / limitation} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Study} & \textbf{Main contribution} & \textbf{Critique / limitation} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+Klusty et al.\ \cite{klusty2024clinical}; Saadat et al.\ \cite{saadat2025enhancing} & Establish the clinical importance of AI-assisted transcription and note generation for reducing documentation burden. & Primarily motivate the problem space at a systems level; they do not provide an end-to-end, openly reproducible pipeline from consultation audio to validated interoperable records. \\
+\hline
+Builtjes et al.\ \cite{builtjes2025leveraging} & Show that open-source LLMs can perform strong zero-shot clinical information extraction and that native-language processing matters. & Focus on text-based extraction rather than noisy conversational audio, diarisation errors, or FHIR-compliant downstream structuring. \\
+\hline
+Radford et al.\ \cite{radford2023whisper} & Provide a robust general-purpose ASR foundation with strong zero-shot multilingual performance. & The study is not clinical-specific and does not evaluate how transcription errors affect downstream clinical extraction or interoperability tasks. \\
+\hline
+Tran et al.\ \cite{tran2022asr} & Benchmark general and medical ASR systems on patient--clinician conversations, including WER, WDER, and medical concept recall. & Evaluation stops at transcription and diarisation; the work exposes low medical concept recall but does not connect this weakness to structured clinical output generation. \\
+\hline
+Banerjee et al.\ \cite{banerjee2024medasr} & Demonstrate privacy-preserving domain adaptation for medical ASR through synthetic vocabulary and semantic correction. & Reports very strong ASR gains, but remains limited to speech recognition quality rather than full clinical information extraction or FHIR validation. \\
+\hline
+Papadopoulos Korfiatis et al.\ \cite{papadopoulos2022primock57} & Release PriMock57, a rare public benchmark of primary care mock consultations with transcripts and notes. & The dataset enables reproducible evaluation but does not itself solve end-to-end structuring; its existence highlights how little public audio data prior systems have been tested on. \\
+\hline
+Efstathiadis et al.\ \cite{efstathiadis2024diarization}; Adedeji et al.\ \cite{adedeji2024sound} & Show that LLM post-processing can improve diarisation and medical transcription quality. & Gains depend on ASR conditions and model compatibility, and neither study evaluates complete audio-to-FHIR performance under cumulative upstream and downstream error. \\
+\hline
+Moldwin et al.\ \cite{moldwin2021phenotyping} & Provide empirical evidence that unstructured text, especially when combined with structured data, improves phenotype modeling. & The work justifies multimodal clinical NLP but does not address spoken input, transcript noise, or standards-based output such as FHIR resources. \\
+\hline
+Hong et al.\ \cite{hong2017integrating} & Introduce a FHIR-based type system for integrating structured and unstructured EHR data. & The pipeline is rule- and tool-driven on clinical text and medication data, assuming relatively clean EHR inputs rather than conversational transcript artifacts. \\
+\hline
+Hong et al.\ \cite{hong2020nlp2fhir} & Extend FHIR normalization into a broader scalable NLP2FHIR pipeline across several resource types. & Still depends on pre-existing textual clinical records and rule-based normalization, leaving resilience to ASR noise and end-to-end audio processing untested. \\
+\hline
+Brens et al.\ \cite{brens2025semantic} & Demonstrate strong transformer-based NER, relation extraction, and ontology normalization for interoperable patient digital twins. & Operates on free-text narratives, not raw clinical speech, and therefore does not capture upstream transcription or speaker-attribution uncertainty. \\
+\hline
+Li et al.\ \cite{li2024fhirgpt} & Show that LLMs can outperform rule-based pipelines for mapping clinical narratives into FHIR medication statements. & Scope is narrow, centered on a single resource type and text input, which limits conclusions about broader bundle generation from noisy consultations. \\
+\hline
+Frei et al.\ \cite{frei2025inferno} & Use agentic LLM workflows plus constrained programmatic FHIR construction to reduce hallucinations in resource synthesis. & Input remains discharge-letter text rather than dialogue; low hallucination rates rely on structured constraints but do not establish robustness on ASR-derived transcripts. \\
+\hline
+Miller et al.\ \cite{miller2023smart} & Present an NLP-centric Text2FHIR pipeline with provenance- and negation-aware mappings from EHR notes. & Assumes cTAKES-processed notes and institutional text infrastructure, not raw audio or LLM-mediated transcript cleanup. \\
+\hline
+Riquelme Tornel et al.\ \cite{riquelme2025llm} & Explore RAG-enhanced LLM mapping of structured clinical data into FHIR with iterative prompting. & Attribute-level accuracy remains moderate even on cleaner structured inputs, suggesting additional degradation is likely when starting from noisy conversational speech. \\
+\hline
+\end{longtable}
