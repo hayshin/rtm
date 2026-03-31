@@ -10,6 +10,7 @@ from pathlib import Path
 import librosa
 
 from pipeline.step01_ingestion import IngestionResult
+from pipeline.runtime import resolve_device
 
 
 @dataclass
@@ -47,11 +48,13 @@ def diarize(
             "HuggingFace token required. Set HF_TOKEN env var or pass hf_token=."
         )
 
+    device = resolve_device()
+
     pipeline = Pipeline.from_pretrained(
         "pyannote/speaker-diarization-community-1",
         token=token,
     )
-    pipeline.to(torch.device("cpu"))
+    pipeline.to(torch.device(device))
 
     raw_audio, sample_rate = librosa.load(result.source_path, sr=16_000, mono=True)
     waveform = torch.from_numpy(raw_audio).unsqueeze(0)

@@ -8,6 +8,7 @@ from pathlib import Path
 
 from pipeline.step01_ingestion import IngestionResult
 from pipeline.step02_diarization import DiarizationResult
+from pipeline.runtime import resolve_compute_type, resolve_device
 
 SAMPLE_RATE = 16_000
 MIN_SEGMENT_DURATION = 0.1
@@ -43,17 +44,24 @@ def _load_model(backend: str, model_id: str):
     if key in _MODEL_CACHE:
         return _MODEL_CACHE[key]
 
+    device = resolve_device()
+
     if backend == BACKEND_FASTER_WHISPER:
         from faster_whisper import WhisperModel
-        model = WhisperModel(model_id, device="cpu", compute_type="int8")
+        model = WhisperModel(
+            model_id,
+            device=device,
+            compute_type=resolve_compute_type(device),
+        )
     elif backend == BACKEND_TRANSFORMERS:
         import torch
         from transformers import pipeline
+        dtype = torch.float16 if device == "cuda" else torch.float32
         model = pipeline(
             "automatic-speech-recognition",
             model=model_id,
-            dtype=torch.float32,
-            device="cpu",
+            dtype=dtype,
+            device=0 if device == "cuda" else -1,
         )
     else:
         raise ValueError(f"Unknown backend: {backend!r}. Use 'faster-whisper' or 'transformers'.")
