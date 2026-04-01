@@ -2,7 +2,8 @@
 
 Default input is the PriMock57 mixed dataset in ``outputs/mixed``.
 Results are written to a separate root, ``batch_outputs/primock57_pipeline``,
-so they do not collide with the application output folders.
+with one subfolder per consultation so they do not collide with the
+application output folders.
 
 Usage:
     uv run python scripts/run_pipeline_folder.py
@@ -54,33 +55,42 @@ def run_pipeline_for_file(
     step5_model: str,
 ) -> None:
     name = _consultation_name(audio_path)
+    consultation_output_dir = output_dir / name
+    consultation_output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"\n=== {name} ===")
     print(f"Input:  {audio_path}")
+    print(f"Output: {consultation_output_dir}")
 
-    ingestion = run_ingestion(output_dir, name, audio_path)
-    diarization = run_diarization(output_dir, name, ingestion)
-    transcription = run_transcription(output_dir, name, ingestion, diarization)
+    ingestion = run_ingestion(consultation_output_dir, name, audio_path)
+    diarization = run_diarization(consultation_output_dir, name, ingestion)
+    transcription = run_transcription(
+        consultation_output_dir, name, ingestion, diarization
+    )
 
-    step04_path = output_dir / f"step04_{name}.json"
+    step04_path = consultation_output_dir / f"step04_{name}.json"
     if step04_path.exists():
-        postprocessing = run_postprocessing(output_dir, name, transcription)
+        postprocessing = run_postprocessing(
+            consultation_output_dir, name, transcription
+        )
     else:
         print(f"Using post-processing model: {step4_model}")
         postprocessing = run_postprocessing_with_model(
-            output_dir, name, transcription, step4_model
+            consultation_output_dir, name, transcription, step4_model
         )
 
-    step05_path = output_dir / f"step05_{name}.json"
+    step05_path = consultation_output_dir / f"step05_{name}.json"
     if step05_path.exists():
-        extraction = run_fhir_extraction(output_dir, name, postprocessing)
+        extraction = run_fhir_extraction(
+            consultation_output_dir, name, postprocessing
+        )
     else:
         print(f"Using extraction model: {step5_model}")
         extraction = run_fhir_extraction_with_model(
-            output_dir, name, postprocessing, step5_model
+            consultation_output_dir, name, postprocessing, step5_model
         )
 
-    run_validation(output_dir, name, extraction)
+    run_validation(consultation_output_dir, name, extraction)
 
 
 def run_postprocessing_with_model(output_dir: Path, name: str, transcription, model_id: str):

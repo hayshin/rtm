@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gc
 import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -17,11 +18,28 @@ BACKEND_FASTER_WHISPER = "faster-whisper"
 BACKEND_TRANSFORMERS = "transformers"
 
 _DEFAULTS = {
-    BACKEND_FASTER_WHISPER: "large-v3",
+    BACKEND_FASTER_WHISPER: "distil-large-v3",
     BACKEND_TRANSFORMERS: "Na0s/Medical-Whisper-Large-v3",
 }
 
 _MODEL_CACHE: dict = {}
+
+
+def _release_cuda_cache() -> None:
+    """Release reserved CUDA memory before loading the ASR model."""
+    gc.collect()
+
+    try:
+        import torch
+    except ImportError:
+        return
+
+    if not torch.cuda.is_available():
+        return
+
+    torch.cuda.empty_cache()
+    if hasattr(torch.cuda, "ipc_collect"):
+        torch.cuda.ipc_collect()
 
 
 @dataclass
@@ -60,7 +78,7 @@ def _load_model(backend: str, model_id: str):
         model = pipeline(
             "automatic-speech-recognition",
             model=model_id,
-            dtype=dtype,
+            torch_dtype=dtype,
             device=0 if device == "cuda" else -1,
         )
     else:
@@ -84,12 +102,13 @@ def transcribe(
     ingestion: IngestionResult,
     diarization: DiarizationResult,
     *,
-    backend: str = BACKEND_FASTER_WHISPER,
+    backend: str = BACKEND_TRANSFORMERS,
     model_id: str | None = None,
     language: str = "en",
 ) -> TranscriptionResult:
     """Transcribe diarized segments with the selected backend and model."""
     resolved_model = model_id or _DEFAULTS[backend]
+    _release_cuda_cache()
     model = _load_model(backend, resolved_model)
 
     if backend == BACKEND_FASTER_WHISPER:

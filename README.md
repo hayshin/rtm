@@ -46,6 +46,15 @@ export RTM_COMPUTE_TYPE=float16
 
 `RTM_COMPUTE_TYPE` controls the `faster-whisper` compute mode. Typical values are `float16` for RTX GPUs and `int8` for CPU.
 
+## Transcription backend
+
+Step 3 now defaults to the Hugging Face transformers backend with
+`Na0s/Medical-Whisper-Large-v3` so the pipeline matches the Medical Whisper
+setup described in the paper.
+
+Before loading the ASR model, the pipeline explicitly clears reserved CUDA
+memory to reduce out-of-memory failures after GPU diarization.
+
 ## Verify CUDA is active
 
 ```bash
