@@ -1,0 +1,1727 @@
+{
+  "source_path": "/home/hayshin/dev/study/rtm/outputs/mixed/day1_consultation03_mixed.wav",
+  "segments": [
+    {
+      "start": 1.44846875,
+      "end": 1.81971875,
+      "speaker": "SPEAKER_00",
+      "text": "Hello?",
+      "duration": 0.3712500000000001
+    },
+    {
+      "start": 2.52846875,
+      "end": 2.98409375,
+      "speaker": "SPEAKER_01",
+      "text": "Bye.",
+      "duration": 0.45562499999999995
+    },
+    {
+      "start": 3.5072187500000003,
+      "end": 6.308468750000001,
+      "speaker": "SPEAKER_00",
+      "text": "Hello there, it's Dr. C there. How can I help you this afternoon?",
+      "duration": 2.801250000000001
+    },
+    {
+      "start": 7.16909375,
+      "end": 10.30784375,
+      "speaker": "SPEAKER_01",
+      "text": "Oh, I've just got terrible headaches in the day.",
+      "duration": 3.13875
+    },
+    {
+      "start": 10.98284375,
+      "end": 13.868468750000002,
+      "speaker": "SPEAKER_01",
+      "text": "arm on the left side, which is making me feel so ill.",
+      "duration": 2.885625000000001
+    },
+    {
+      "start": 14.47596875,
+      "end": 14.94846875,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.47250000000000014
+    },
+    {
+      "start": 15.387218750000002,
+      "end": 15.960968750000003,
+      "speaker": "SPEAKER_01",
+      "text": "vomit",
+      "duration": 0.5737500000000004
+    },
+    {
+      "start": 16.41659375,
+      "end": 17.395343750000002,
+      "speaker": "SPEAKER_00",
+      "text": "So it's near this.",
+      "duration": 0.9787500000000016
+    },
+    {
+      "start": 17.83409375,
+      "end": 19.52159375,
+      "speaker": "SPEAKER_00",
+      "text": "Can you tell me a bit more about that headache?",
+      "duration": 1.6875
+    },
+    {
+      "start": 21.10784375,
+      "end": 26.558468750000003,
+      "speaker": "SPEAKER_01",
+      "text": "Well, you know, I noticed some zigzag lines in my vision a few minutes before the headache started.",
+      "duration": 5.450625000000002
+    },
+    {
+      "start": 27.06471875,
+      "end": 27.300968750000003,
+      "speaker": "SPEAKER_00",
+      "text": "Hmm?",
+      "duration": 0.23625000000000185
+    },
+    {
+      "start": 27.11534375,
+      "end": 29.00534375,
+      "speaker": "SPEAKER_01",
+      "text": "My face is blurred.",
+      "duration": 1.8900000000000006
+    },
+    {
+      "start": 30.675968750000003,
+      "end": 31.249718750000003,
+      "speaker": "SPEAKER_01",
+      "text": "You know...",
+      "duration": 0.5737500000000004
+    },
+    {
+      "start": 31.570343750000003,
+      "end": 32.05971875,
+      "speaker": "SPEAKER_01",
+      "text": "It's just...",
+      "duration": 0.489374999999999
+    },
+    {
+      "start": 33.42659375,
+      "end": 34.47284375,
+      "speaker": "SPEAKER_01",
+      "text": "I, yeah.",
+      "duration": 1.0462500000000006
+    },
+    {
+      "start": 35.14784375,
+      "end": 38.96159375,
+      "speaker": "SPEAKER_01",
+      "text": "Hayden's just horrible, just making me feel so unwell.",
+      "duration": 3.813749999999999
+    },
+    {
+      "start": 38.96159375,
+      "end": 39.400343750000005,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.43875000000000597
+    },
+    {
+      "start": 39.95721875,
+      "end": 41.32409375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 1.3668750000000003
+    },
+    {
+      "start": 41.76284375,
+      "end": 44.09159375,
+      "speaker": "SPEAKER_01",
+      "text": "I just want you to do something.",
+      "duration": 2.3287499999999994
+    },
+    {
+      "start": 44.41221875,
+      "end": 47.534093750000004,
+      "speaker": "SPEAKER_00",
+      "text": "Well, let's try our best. Let's try and get you well soon.",
+      "duration": 3.121875000000003
+    },
+    {
+      "start": 47.77034375,
+      "end": 52.20846875,
+      "speaker": "SPEAKER_00",
+      "text": "You mentioned it's on your left hand side, is that right?  And it started at midday a few hours ago.",
+      "duration": 4.438124999999999
+    },
+    {
+      "start": 52.73159375,
+      "end": 53.085968750000006,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah.",
+      "duration": 0.35437500000000455
+    },
+    {
+      "start": 53.085968750000006,
+      "end": 53.18721875,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.10124999999999318
+    },
+    {
+      "start": 53.507843750000006,
+      "end": 57.35534375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay. Did it pain come on quite suddenly, or was it more of a gradual?",
+      "duration": 3.8474999999999966
+    },
+    {
+      "start": 57.79409375,
+      "end": 58.31721875,
+      "speaker": "SPEAKER_00",
+      "text": "You're done.",
+      "duration": 0.5231250000000003
+    },
+    {
+      "start": 58.502843750000004,
+      "end": 59.68409375,
+      "speaker": "SPEAKER_01",
+      "text": "I know really.",
+      "duration": 1.1812499999999986
+    },
+    {
+      "start": 59.80221875,
+      "end": 60.494093750000005,
+      "speaker": "SPEAKER_01",
+      "text": "happens.",
+      "duration": 0.6918750000000031
+    },
+    {
+      "start": 60.74721875,
+      "end": 61.20284375000001,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.45562500000000483
+    },
+    {
+      "start": 61.50659375,
+      "end": 66.26534375,
+      "speaker": "SPEAKER_00",
+      "text": "Now you have to describe what kind of headache it was.  For example, was it throbbing or was it more of a sharp pain?",
+      "duration": 4.758749999999999
+    },
+    {
+      "start": 67.00784375,
+      "end": 67.96971875,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, I guess it's...",
+      "duration": 0.961874999999992
+    },
+    {
+      "start": 68.27346875,
+      "end": 69.26909375000001,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, I guess so.",
+      "duration": 0.995625000000004
+    },
+    {
+      "start": 69.57284375,
+      "end": 70.68659375,
+      "speaker": "SPEAKER_01",
+      "text": "probing and",
+      "duration": 1.113749999999996
+    },
+    {
+      "start": 71.26034375,
+      "end": 72.52596875,
+      "speaker": "SPEAKER_01",
+      "text": "on that left side.",
+      "duration": 1.265625
+    },
+    {
+      "start": 73.03221875,
+      "end": 74.48346875,
+      "speaker": "SPEAKER_00",
+      "text": "it isn't moving anywhere else at all",
+      "duration": 1.4512500000000017
+    },
+    {
+      "start": 75.71534375,
+      "end": 77.47034375,
+      "speaker": "SPEAKER_01",
+      "text": "No, but it's worse when I do.",
+      "duration": 1.7549999999999955
+    },
+    {
+      "start": 78.68534375,
+      "end": 80.87909375000001,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, is that when you move your neck?",
+      "duration": 2.1937500000000085
+    },
+    {
+      "start": 82.02659375,
+      "end": 84.50721875,
+      "speaker": "SPEAKER_01",
+      "text": "well, like my lead forward or...",
+      "duration": 2.4806250000000034
+    },
+    {
+      "start": 84.64221875000001,
+      "end": 87.76409375,
+      "speaker": "SPEAKER_01",
+      "text": "like move my head or neck, yeah, the headache gets worse.",
+      "duration": 3.1218749999999886
+    },
+    {
+      "start": 88.40534375,
+      "end": 88.86096875000001,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.45562500000001194
+    },
+    {
+      "start": 89.08034375000001,
+      "end": 89.75534375000001,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.6749999999999972
+    },
+    {
+      "start": 90.16034375000001,
+      "end": 93.07971875000001,
+      "speaker": "SPEAKER_01",
+      "text": "I'm just really worried that I'm just Googling and like...",
+      "duration": 2.9193750000000023
+    },
+    {
+      "start": 93.55221875000001,
+      "end": 93.90659375,
+      "speaker": "SPEAKER_01",
+      "text": "I've read.",
+      "duration": 0.35437499999999034
+    },
+    {
+      "start": 94.61534375000001,
+      "end": 95.44221875000001,
+      "speaker": "SPEAKER_01",
+      "text": "you know, if you're...",
+      "duration": 0.8268750000000011
+    },
+    {
+      "start": 96.11721875,
+      "end": 98.20971875000001,
+      "speaker": "SPEAKER_01",
+      "text": "headache gets worse",
+      "duration": 2.092500000000001
+    },
+    {
+      "start": 98.66534375,
+      "end": 100.20096875,
+      "speaker": "SPEAKER_01",
+      "text": "inside brain cancer.",
+      "duration": 1.535624999999996
+    },
+    {
+      "start": 100.69034375000001,
+      "end": 101.98971875000001,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, is that what you're worried about?",
+      "duration": 1.2993749999999977
+    },
+    {
+      "start": 102.66471875,
+      "end": 102.98534375000001,
+      "speaker": "SPEAKER_01",
+      "text": "that.",
+      "duration": 0.3206250000000068
+    },
+    {
+      "start": 104.33534375,
+      "end": 105.97221875000001,
+      "speaker": "SPEAKER_00",
+      "text": "Is that what your main worry is today?",
+      "duration": 1.6368750000000034
+    },
+    {
+      "start": 106.54596875,
+      "end": 108.04784375000001,
+      "speaker": "SPEAKER_01",
+      "text": "Oh yeah, yeah, and I'd like to...",
+      "duration": 1.5018750000000125
+    },
+    {
+      "start": 108.25034375000001,
+      "end": 108.67221875000001,
+      "speaker": "SPEAKER_01",
+      "text": "Thanks.",
+      "duration": 0.421875
+    },
+    {
+      "start": 110.42721875000001,
+      "end": 110.79846875000001,
+      "speaker": "SPEAKER_01",
+      "text": "My",
+      "duration": 0.3712500000000034
+    },
+    {
+      "start": 111.43971875000001,
+      "end": 117.32909375000001,
+      "speaker": "SPEAKER_01",
+      "text": "My friend's mum, she recently died of a brain tumour, so it's really concerning me actually.",
+      "duration": 5.889375000000001
+    },
+    {
+      "start": 117.76784375000001,
+      "end": 119.87721875000001,
+      "speaker": "SPEAKER_00",
+      "text": "I'm sure you can hear that. I can understand.",
+      "duration": 2.109375
+    },
+    {
+      "start": 120.07971875000001,
+      "end": 121.64909375,
+      "speaker": "SPEAKER_00",
+      "text": "why is it affecting you?",
+      "duration": 1.5693749999999937
+    },
+    {
+      "start": 122.20596875000001,
+      "end": 128.41596875000002,
+      "speaker": "SPEAKER_00",
+      "text": "But why don't we take a good history first and let me examine you and then we'll chat afterwards to see what's going on here.",
+      "duration": 6.210000000000008
+    },
+    {
+      "start": 128.85471875000002,
+      "end": 134.03534375,
+      "speaker": "SPEAKER_00",
+      "text": "So you mentioned a few things, you mentioned headaches,  and you also mentioned some zigzag lines before the headaches came on.",
+      "duration": 5.180624999999992
+    },
+    {
+      "start": 134.57534375,
+      "end": 139.35096875000002,
+      "speaker": "SPEAKER_00",
+      "text": "and your vision has been blurry as well, is that right?  Is that on both eyes or just left?",
+      "duration": 4.775625000000019
+    },
+    {
+      "start": 139.63784375,
+      "end": 140.22846875000002,
+      "speaker": "SPEAKER_00",
+      "text": "Let's try it.",
+      "duration": 0.590625000000017
+    },
+    {
+      "start": 140.66721875000002,
+      "end": 142.27034375,
+      "speaker": "SPEAKER_01",
+      "text": "and it feels like it some days.",
+      "duration": 1.6031249999999773
+    },
+    {
+      "start": 142.72596875000002,
+      "end": 143.51909375,
+      "speaker": "SPEAKER_00",
+      "text": "both ways it could be.",
+      "duration": 0.793124999999975
+    },
+    {
+      "start": 143.82284375,
+      "end": 146.40471875,
+      "speaker": "SPEAKER_00",
+      "text": "Have you had any difficulty with seeing bright lights at all?",
+      "duration": 2.5818749999999966
+    },
+    {
+      "start": 147.77159375000002,
+      "end": 151.14659375000002,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, well, I'm wearing sunglasses right now.",
+      "duration": 3.375
+    },
+    {
+      "start": 151.61909375000002,
+      "end": 151.90596875,
+      "speaker": "SPEAKER_01",
+      "text": "Okay.",
+      "duration": 0.2868749999999807
+    },
+    {
+      "start": 152.42909375000002,
+      "end": 154.13346875000002,
+      "speaker": "SPEAKER_01",
+      "text": "light really hurts my eyes.",
+      "duration": 1.7043749999999989
+    },
+    {
+      "start": 154.36971875,
+      "end": 159.14534375000002,
+      "speaker": "SPEAKER_00",
+      "text": "Oh, absolutely.  And you mentioned that you felt quite nauseous.  Have you formatted at all?",
+      "duration": 4.775625000000019
+    },
+    {
+      "start": 160.37721875,
+      "end": 160.81596875,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah.",
+      "duration": 0.43874999999999886
+    },
+    {
+      "start": 162.25034375,
+      "end": 163.29659375,
+      "speaker": "SPEAKER_01",
+      "text": "vomited twice",
+      "duration": 1.0462499999999864
+    },
+    {
+      "start": 163.73534375,
+      "end": 164.64659375000002,
+      "speaker": "SPEAKER_00",
+      "text": "points leading.",
+      "duration": 0.9112500000000239
+    },
+    {
+      "start": 165.23721875,
+      "end": 167.83596875,
+      "speaker": "SPEAKER_00",
+      "text": "earlier today.",
+      "duration": 2.5987499999999955
+    },
+    {
+      "start": 168.13971875000001,
+      "end": 169.50659375,
+      "speaker": "SPEAKER_00",
+      "text": "any temperatures or fevers",
+      "duration": 1.3668749999999932
+    },
+    {
+      "start": 170.50221875,
+      "end": 172.62846875000002,
+      "speaker": "SPEAKER_01",
+      "text": "and now I don't feel feverish.",
+      "duration": 2.1262500000000273
+    },
+    {
+      "start": 173.28659375,
+      "end": 173.79284375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.5062499999999943
+    },
+    {
+      "start": 174.13034375,
+      "end": 177.21846875,
+      "speaker": "SPEAKER_00",
+      "text": "Any other funny skin rashes that you may have noticed?",
+      "duration": 3.088124999999991
+    },
+    {
+      "start": 177.70784375000002,
+      "end": 179.53034375000001,
+      "speaker": "SPEAKER_01",
+      "text": "No, I haven't noticed anything like that.",
+      "duration": 1.822499999999991
+    },
+    {
+      "start": 180.37409375000001,
+      "end": 181.82534375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 1.4512499999999875
+    },
+    {
+      "start": 182.68596875,
+      "end": 183.14159375,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 183.46221875,
+      "end": 184.17096875000001,
+      "speaker": "SPEAKER_00",
+      "text": "um",
+      "duration": 0.7087500000000091
+    },
+    {
+      "start": 184.64346875,
+      "end": 186.01034375,
+      "speaker": "SPEAKER_00",
+      "text": "And do you normally get headaches?",
+      "duration": 1.3668749999999932
+    },
+    {
+      "start": 187.36034375,
+      "end": 188.05221875,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.6918750000000102
+    },
+    {
+      "start": 188.92971875,
+      "end": 190.60034375,
+      "speaker": "SPEAKER_01",
+      "text": "I'm not really prone to them, no.",
+      "duration": 1.6706250000000011
+    },
+    {
+      "start": 190.90409375000002,
+      "end": 194.16096875000002,
+      "speaker": "SPEAKER_01",
+      "text": "No, but I did have a similar headache a few weeks ago.",
+      "duration": 3.256875000000008
+    },
+    {
+      "start": 194.41409375,
+      "end": 194.86971875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 195.24096875,
+      "end": 196.10159375,
+      "speaker": "SPEAKER_00",
+      "text": "And what happened then?",
+      "duration": 0.8606249999999989
+    },
+    {
+      "start": 196.91159375,
+      "end": 197.68784375,
+      "speaker": "SPEAKER_01",
+      "text": "It's similar.",
+      "duration": 0.7762500000000045
+    },
+    {
+      "start": 198.27846875,
+      "end": 199.27409375000002,
+      "speaker": "SPEAKER_00",
+      "text": "along the law school",
+      "duration": 0.9956250000000182
+    },
+    {
+      "start": 200.53971875000002,
+      "end": 201.26534375,
+      "speaker": "SPEAKER_01",
+      "text": "for the day.",
+      "duration": 0.7256249999999795
+    },
+    {
+      "start": 202.41284375,
+      "end": 203.81346875000003,
+      "speaker": "SPEAKER_00",
+      "text": "We do anything that made it better.",
+      "duration": 1.4006250000000193
+    },
+    {
+      "start": 205.39971875,
+      "end": 209.98971875,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, I had to take painkillers and had to go to bed and rest.",
+      "duration": 4.590000000000003
+    },
+    {
+      "start": 210.54659375,
+      "end": 210.98534375000003,
+      "speaker": "SPEAKER_00",
+      "text": "Yeah.",
+      "duration": 0.4387500000000273
+    },
+    {
+      "start": 211.32284375,
+      "end": 212.95971875,
+      "speaker": "SPEAKER_01",
+      "text": "couple days of work and the work",
+      "duration": 1.6368750000000034
+    },
+    {
+      "start": 213.21284375000002,
+      "end": 214.74846875,
+      "speaker": "SPEAKER_01",
+      "text": "fashion industry.",
+      "duration": 1.5356249999999818
+    },
+    {
+      "start": 214.83284375000002,
+      "end": 215.13659375,
+      "speaker": "SPEAKER_01",
+      "text": "Good night.",
+      "duration": 0.30374999999997954
+    },
+    {
+      "start": 214.93409375000002,
+      "end": 215.17034375,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.23624999999998408
+    },
+    {
+      "start": 215.22096875000003,
+      "end": 217.00971875000002,
+      "speaker": "SPEAKER_01",
+      "text": "without wondering what's going on.",
+      "duration": 1.7887499999999932
+    },
+    {
+      "start": 217.41471875000002,
+      "end": 218.54534375,
+      "speaker": "SPEAKER_01",
+      "text": "take sick days.",
+      "duration": 1.1306249999999807
+    },
+    {
+      "start": 218.81534375,
+      "end": 219.77721875,
+      "speaker": "SPEAKER_00",
+      "text": "Yes.",
+      "duration": 0.961874999999992
+    },
+    {
+      "start": 219.55784375000002,
+      "end": 219.72659375,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.16874999999998863
+    },
+    {
+      "start": 220.04721875,
+      "end": 221.41409375,
+      "speaker": "SPEAKER_01",
+      "text": "to work today but",
+      "duration": 1.3668749999999932
+    },
+    {
+      "start": 221.81909375,
+      "end": 224.67096875000001,
+      "speaker": "SPEAKER_01",
+      "text": "you know, what if it is a brain tumour, what's going to happen with my...",
+      "duration": 2.851875000000007
+    },
+    {
+      "start": 224.97471875000002,
+      "end": 226.51034375,
+      "speaker": "SPEAKER_01",
+      "text": "future, my career.",
+      "duration": 1.5356249999999818
+    },
+    {
+      "start": 227.10096875000002,
+      "end": 228.33284375000002,
+      "speaker": "SPEAKER_00",
+      "text": "No.  Yeah.",
+      "duration": 1.2318750000000023
+    },
+    {
+      "start": 227.13471875000002,
+      "end": 227.72534375,
+      "speaker": "SPEAKER_01",
+      "text": "No.",
+      "duration": 0.5906249999999886
+    },
+    {
+      "start": 228.01221875000002,
+      "end": 228.26534375000003,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.25312500000001137
+    },
+    {
+      "start": 228.60284375,
+      "end": 229.05846875,
+      "speaker": "SPEAKER_00",
+      "text": "Great.",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 228.78846875000002,
+      "end": 229.14284375000003,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.35437500000000455
+    },
+    {
+      "start": 229.34534375,
+      "end": 231.26909375000002,
+      "speaker": "SPEAKER_01",
+      "text": "about this never had headaches like",
+      "duration": 1.9237500000000125
+    },
+    {
+      "start": 231.50534375,
+      "end": 233.53034375000001,
+      "speaker": "SPEAKER_01",
+      "text": "Oh, why she's getting now.",
+      "duration": 2.0250000000000057
+    },
+    {
+      "start": 232.11284375000002,
+      "end": 232.36596875,
+      "speaker": "SPEAKER_00",
+      "text": "And one.",
+      "duration": 0.25312499999998295
+    },
+    {
+      "start": 233.96909375,
+      "end": 237.15846875000003,
+      "speaker": "SPEAKER_00",
+      "text": "Yeah, sure. And I can see your concerns, obviously. There's a lot of worry there.",
+      "duration": 3.1893750000000125
+    },
+    {
+      "start": 237.58034375000003,
+      "end": 248.27909375000002,
+      "speaker": "SPEAKER_00",
+      "text": "But you know, let's take it step by step and see exactly what the causes of these headaches are first.  I'm just going to ask you some very yes-no questions, if that's okay.",
+      "duration": 10.69874999999999
+    },
+    {
+      "start": 248.83596875,
+      "end": 249.42659375000002,
+      "speaker": "SPEAKER_00",
+      "text": "um",
+      "duration": 0.590625000000017
+    },
+    {
+      "start": 249.64596875,
+      "end": 252.83534375000002,
+      "speaker": "SPEAKER_00",
+      "text": "Have you noticed any problems with your speech at all in talking with your words?",
+      "duration": 3.1893750000000125
+    },
+    {
+      "start": 253.30784375000002,
+      "end": 253.54409375000003,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.2362500000000125
+    },
+    {
+      "start": 253.96596875000003,
+      "end": 257.47596875,
+      "speaker": "SPEAKER_00",
+      "text": "any problems with your arms and legs, numbness or weakness",
+      "duration": 3.5099999999999625
+    },
+    {
+      "start": 257.96534375,
+      "end": 258.30284375,
+      "speaker": "SPEAKER_01",
+      "text": "Bye.",
+      "duration": 0.3375000000000341
+    },
+    {
+      "start": 258.70784375,
+      "end": 259.51784375,
+      "speaker": "SPEAKER_00",
+      "text": "and he did what he did.",
+      "duration": 0.8100000000000023
+    },
+    {
+      "start": 259.73721875,
+      "end": 262.03221875,
+      "speaker": "SPEAKER_00",
+      "text": "balance your balance or coordination",
+      "duration": 2.295000000000016
+    },
+    {
+      "start": 262.74096875000004,
+      "end": 263.11221875,
+      "speaker": "SPEAKER_01",
+      "text": "Night.",
+      "duration": 0.371249999999975
+    },
+    {
+      "start": 263.48346875000004,
+      "end": 268.05659375,
+      "speaker": "SPEAKER_00",
+      "text": "And if you had any injuries to your head, if you had a fall recently or been knocked on the head,",
+      "duration": 4.573124999999948
+    },
+    {
+      "start": 268.69784375,
+      "end": 269.01846875,
+      "speaker": "SPEAKER_01",
+      "text": "Bye.",
+      "duration": 0.3206250000000068
+    },
+    {
+      "start": 269.52471875000003,
+      "end": 270.68909375000004,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, all right.",
+      "duration": 1.1643750000000068
+    },
+    {
+      "start": 270.84096875,
+      "end": 271.56659375000004,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.7256250000000364
+    },
+    {
+      "start": 271.75221875,
+      "end": 276.03846875,
+      "speaker": "SPEAKER_00",
+      "text": "and you're feeling otherwise okay, so for example you're",
+      "duration": 4.2862499999999955
+    },
+    {
+      "start": 277.00034375,
+      "end": 280.71284375,
+      "speaker": "SPEAKER_00",
+      "text": "breathing is okay, you're not feeling breathless.",
+      "duration": 3.7124999999999773
+    },
+    {
+      "start": 282.41721875,
+      "end": 283.91909375,
+      "speaker": "SPEAKER_00",
+      "text": "No, okay.",
+      "duration": 1.501874999999984
+    },
+    {
+      "start": 284.25659375000004,
+      "end": 286.29846875000004,
+      "speaker": "SPEAKER_00",
+      "text": "Do you have any other medical history I should be aware of?",
+      "duration": 2.0418750000000045
+    },
+    {
+      "start": 288.15471875000003,
+      "end": 288.47534375000004,
+      "speaker": "SPEAKER_00",
+      "text": "Nice.",
+      "duration": 0.3206250000000068
+    },
+    {
+      "start": 288.99846875000003,
+      "end": 289.36971875,
+      "speaker": "SPEAKER_00",
+      "text": "Right.",
+      "duration": 0.371249999999975
+    },
+    {
+      "start": 290.04471875,
+      "end": 293.18346875000003,
+      "speaker": "SPEAKER_00",
+      "text": "So for example, if someone told you you've had migraines in the past.",
+      "duration": 3.138750000000016
+    },
+    {
+      "start": 293.48721875,
+      "end": 293.90909375,
+      "speaker": "SPEAKER_01",
+      "text": "Next.",
+      "duration": 0.421875
+    },
+    {
+      "start": 294.14534375,
+      "end": 296.18721875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 2.0418750000000045
+    },
+    {
+      "start": 296.18721875,
+      "end": 296.89596875,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.7087500000000091
+    },
+    {
+      "start": 297.23346875000004,
+      "end": 297.92534375,
+      "speaker": "SPEAKER_01",
+      "text": "My mum had...",
+      "duration": 0.6918749999999818
+    },
+    {
+      "start": 298.21221875000003,
+      "end": 299.64659375,
+      "speaker": "SPEAKER_01",
+      "text": "has migraines",
+      "duration": 1.4343749999999886
+    },
+    {
+      "start": 300.06846875,
+      "end": 300.45659375,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.3881250000000023
+    },
+    {
+      "start": 300.10221875,
+      "end": 301.50284375,
+      "speaker": "SPEAKER_01",
+      "text": "I'm not denying those.",
+      "duration": 1.400624999999991
+    },
+    {
+      "start": 301.50284375,
+      "end": 308.15159375,
+      "speaker": "SPEAKER_00",
+      "text": "Right, so my next question was about family history.  Is there anything in the family, so apart from migraines,  is there anything else, anything related to the brain?",
+      "duration": 6.648750000000007
+    },
+    {
+      "start": 308.26971875000004,
+      "end": 308.96159375,
+      "speaker": "SPEAKER_01",
+      "text": "as well.",
+      "duration": 0.6918749999999818
+    },
+    {
+      "start": 309.36659375,
+      "end": 309.95721875000004,
+      "speaker": "SPEAKER_00",
+      "text": "What was that, sir?",
+      "duration": 0.5906250000000455
+    },
+    {
+      "start": 310.69971875000005,
+      "end": 312.96096875,
+      "speaker": "SPEAKER_01",
+      "text": "My mum has an undirected thyroid as well.",
+      "duration": 2.2612499999999613
+    },
+    {
+      "start": 312.94409375000004,
+      "end": 319.42409375,
+      "speaker": "SPEAKER_00",
+      "text": "I like fire as well.  Okay.  Okay.  Any other problems with the brain or?",
+      "duration": 6.479999999999961
+    },
+    {
+      "start": 319.55909375000005,
+      "end": 322.29284375000003,
+      "speaker": "SPEAKER_00",
+      "text": "you mentioned brain cancer, how many should we ask?",
+      "duration": 2.7337499999999864
+    },
+    {
+      "start": 322.96784375000004,
+      "end": 323.38971875000004,
+      "speaker": "SPEAKER_01",
+      "text": "Bye.",
+      "duration": 0.421875
+    },
+    {
+      "start": 323.50784375,
+      "end": 324.28409375,
+      "speaker": "SPEAKER_00",
+      "text": "move.  Okay.",
+      "duration": 0.7762500000000045
+    },
+    {
+      "start": 324.62159375000005,
+      "end": 328.13159375000004,
+      "speaker": "SPEAKER_00",
+      "text": "In terms of medications, do you take anything on a regular basis?",
+      "duration": 3.509999999999991
+    },
+    {
+      "start": 328.82346875,
+      "end": 331.50659375000004,
+      "speaker": "SPEAKER_01",
+      "text": "I take the pill, Microgynon.",
+      "duration": 2.683125000000018
+    },
+    {
+      "start": 332.55284375,
+      "end": 334.22346875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, and how long have you been on that for?",
+      "duration": 1.6706249999999727
+    },
+    {
+      "start": 334.88159375000004,
+      "end": 335.94471875000005,
+      "speaker": "SPEAKER_01",
+      "text": "three months",
+      "duration": 1.0631250000000136
+    },
+    {
+      "start": 336.36659375000005,
+      "end": 337.61534375,
+      "speaker": "SPEAKER_00",
+      "text": "three months, okay.",
+      "duration": 1.2487499999999727
+    },
+    {
+      "start": 338.02034375,
+      "end": 341.22659375,
+      "speaker": "SPEAKER_00",
+      "text": "And is that mainly for contraception or is that for something else?",
+      "duration": 3.2062500000000114
+    },
+    {
+      "start": 341.42909375000005,
+      "end": 341.59784375000004,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.16874999999998863
+    },
+    {
+      "start": 341.85096875000005,
+      "end": 343.13346875,
+      "speaker": "SPEAKER_01",
+      "text": "It's the conception.",
+      "duration": 1.2824999999999704
+    },
+    {
+      "start": 343.52159375,
+      "end": 345.36096875000004,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 1.8393750000000182
+    },
+    {
+      "start": 345.79971875,
+      "end": 348.98909375,
+      "speaker": "SPEAKER_00",
+      "text": "something we may need to have a little discussion about today as well.",
+      "duration": 3.189374999999984
+    },
+    {
+      "start": 349.69784375,
+      "end": 355.63784375,
+      "speaker": "SPEAKER_00",
+      "text": "My next question was about your social and your situation at home.  You mentioned you work in the fashion industry.",
+      "duration": 5.939999999999998
+    },
+    {
+      "start": 356.11034375,
+      "end": 358.38846875,
+      "speaker": "SPEAKER_00",
+      "text": "Is your job quite stressful at the moment?",
+      "duration": 2.2781249999999886
+    },
+    {
+      "start": 358.92846875000004,
+      "end": 360.90284375000005,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, it's really stressful actually.",
+      "duration": 1.974375000000009
+    },
+    {
+      "start": 361.64534375,
+      "end": 361.86471875,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.21937500000001364
+    },
+    {
+      "start": 362.38784375,
+      "end": 363.70409375,
+      "speaker": "SPEAKER_01",
+      "text": "It's like, it's at work.",
+      "duration": 1.316250000000025
+    },
+    {
+      "start": 364.42971875,
+      "end": 368.17596875000004,
+      "speaker": "SPEAKER_01",
+      "text": "you know, managers put a lot of pressure on me to deliver.",
+      "duration": 3.746250000000032
+    },
+    {
+      "start": 368.85096875000005,
+      "end": 369.18846875,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.33749999999997726
+    },
+    {
+      "start": 369.47534375000004,
+      "end": 369.91409375,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah.",
+      "duration": 0.43874999999997044
+    },
+    {
+      "start": 370.11659375000005,
+      "end": 370.99409375000005,
+      "speaker": "SPEAKER_01",
+      "text": "It's not a good time.",
+      "duration": 0.8774999999999977
+    },
+    {
+      "start": 370.28534375000004,
+      "end": 370.62284375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.33749999999997726
+    },
+    {
+      "start": 371.19659375000003,
+      "end": 372.09096875,
+      "speaker": "SPEAKER_00",
+      "text": "Is it getting you down?",
+      "duration": 0.8943749999999682
+    },
+    {
+      "start": 373.62659375000004,
+      "end": 375.93846875,
+      "speaker": "SPEAKER_01",
+      "text": "I don't feel down, I just feel a bit stressed.",
+      "duration": 2.3118749999999864
+    },
+    {
+      "start": 376.24221875,
+      "end": 377.38971875000004,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, right.",
+      "duration": 1.1475000000000364
+    },
+    {
+      "start": 377.72721875,
+      "end": 380.32596875,
+      "speaker": "SPEAKER_00",
+      "text": "And what kind of things do you do to alleviate your stress normally?",
+      "duration": 2.5987499999999955
+    },
+    {
+      "start": 381.08534375000005,
+      "end": 382.08096875,
+      "speaker": "SPEAKER_01",
+      "text": "Nothing really.",
+      "duration": 0.9956249999999613
+    },
+    {
+      "start": 382.60409375,
+      "end": 384.71346875,
+      "speaker": "SPEAKER_00",
+      "text": "If you do much in the way of exercise.",
+      "duration": 2.109375
+    },
+    {
+      "start": 385.65846875,
+      "end": 386.06346875,
+      "speaker": "SPEAKER_01",
+      "text": "Nice.",
+      "duration": 0.40500000000002956
+    },
+    {
+      "start": 386.55284375,
+      "end": 389.21909375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay. Who's at home with you?",
+      "duration": 2.666249999999991
+    },
+    {
+      "start": 390.21471875000003,
+      "end": 391.68284375,
+      "speaker": "SPEAKER_01",
+      "text": "I live on my own.",
+      "duration": 1.4681249999999864
+    },
+    {
+      "start": 392.07096875,
+      "end": 392.52659375,
+      "speaker": "SPEAKER_00",
+      "text": "Peace out.",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 393.10034375000004,
+      "end": 395.44596875,
+      "speaker": "SPEAKER_00",
+      "text": "Are you coping okay at the moment?",
+      "duration": 2.345624999999984
+    },
+    {
+      "start": 396.54284375000003,
+      "end": 396.96471875000003,
+      "speaker": "SPEAKER_01",
+      "text": "Bye.",
+      "duration": 0.421875
+    },
+    {
+      "start": 397.09971875,
+      "end": 397.48784375,
+      "speaker": "SPEAKER_00",
+      "text": "Yep.",
+      "duration": 0.3881250000000023
+    },
+    {
+      "start": 397.60596875000005,
+      "end": 398.71971875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 1.1137499999999818
+    },
+    {
+      "start": 398.95596875,
+      "end": 399.79971875,
+      "speaker": "SPEAKER_00",
+      "text": "Do you smoke as well?",
+      "duration": 0.84375
+    },
+    {
+      "start": 400.55909375000005,
+      "end": 400.96409375,
+      "speaker": "SPEAKER_00",
+      "text": "Nice.",
+      "duration": 0.4049999999999727
+    },
+    {
+      "start": 400.59284375000004,
+      "end": 400.98096875000005,
+      "speaker": "SPEAKER_01",
+      "text": "Night.",
+      "duration": 0.3881250000000023
+    },
+    {
+      "start": 401.21721875000003,
+      "end": 403.39409375,
+      "speaker": "SPEAKER_00",
+      "text": "And do you drink much in the way of alcohol?",
+      "duration": 2.1768749999999955
+    },
+    {
+      "start": 403.84971875,
+      "end": 404.18721875,
+      "speaker": "SPEAKER_01",
+      "text": "Hi.",
+      "duration": 0.33749999999997726
+    },
+    {
+      "start": 404.64284375000005,
+      "end": 405.73971875,
+      "speaker": "SPEAKER_00",
+      "text": "voice.",
+      "duration": 1.0968749999999545
+    },
+    {
+      "start": 406.31346875,
+      "end": 406.88721875000005,
+      "speaker": "SPEAKER_00",
+      "text": "Um...",
+      "duration": 0.5737500000000182
+    },
+    {
+      "start": 407.32596875,
+      "end": 408.37221875,
+      "speaker": "SPEAKER_00",
+      "text": "So now I will start",
+      "duration": 1.0462499999999864
+    },
+    {
+      "start": 408.64221875000004,
+      "end": 411.32534375,
+      "speaker": "SPEAKER_00",
+      "text": "Can we proceed to examination?",
+      "duration": 2.6831249999999613
+    },
+    {
+      "start": 411.66284375000004,
+      "end": 412.40534375000004,
+      "speaker": "SPEAKER_00",
+      "text": "But, um...",
+      "duration": 0.7425000000000068
+    },
+    {
+      "start": 413.26596875,
+      "end": 415.15596875,
+      "speaker": "SPEAKER_00",
+      "text": "based on your story.",
+      "duration": 1.8899999999999864
+    },
+    {
+      "start": 415.89846875,
+      "end": 417.07971875000004,
+      "speaker": "SPEAKER_00",
+      "text": "I wonder whether you may...",
+      "duration": 1.181250000000034
+    },
+    {
+      "start": 417.80534375,
+      "end": 421.80471875,
+      "speaker": "SPEAKER_00",
+      "text": "may have migraine, migraine type headache.  It sounds...",
+      "duration": 3.9993749999999864
+    },
+    {
+      "start": 422.54721875,
+      "end": 423.20534375000005,
+      "speaker": "SPEAKER_00",
+      "text": "Um,",
+      "duration": 0.6581250000000409
+    },
+    {
+      "start": 424.15034375000005,
+      "end": 430.14096875,
+      "speaker": "SPEAKER_00",
+      "text": "very classical of that nature, the headache on one side, the throbbing nature, the",
+      "duration": 5.990624999999966
+    },
+    {
+      "start": 430.54596875000004,
+      "end": 432.97596875000005,
+      "speaker": "SPEAKER_00",
+      "text": "nausea, vomiting,",
+      "duration": 2.430000000000007
+    },
+    {
+      "start": 433.00971875000005,
+      "end": 434.54534375000003,
+      "speaker": "SPEAKER_00",
+      "text": "sensitive to bright lights",
+      "duration": 1.5356249999999818
+    },
+    {
+      "start": 435.35534375000003,
+      "end": 440.38409375000003,
+      "speaker": "SPEAKER_00",
+      "text": "I'm reassured that you don't have anything more serious such as meningitis or indeed",
+      "duration": 5.028750000000002
+    },
+    {
+      "start": 441.07596875,
+      "end": 443.82659375000003,
+      "speaker": "SPEAKER_00",
+      "text": "brain cancer and that was what big warrior view was initially",
+      "duration": 2.7506250000000136
+    },
+    {
+      "start": 444.19784375,
+      "end": 444.40034375000005,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.2025000000000432
+    },
+    {
+      "start": 444.67034375000003,
+      "end": 445.49721875,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.8268749999999727
+    },
+    {
+      "start": 445.80096875000004,
+      "end": 448.48409375000006,
+      "speaker": "SPEAKER_01",
+      "text": "Thanks so much. I was so worried.",
+      "duration": 2.683125000000018
+    },
+    {
+      "start": 449.29409375,
+      "end": 449.56409375000004,
+      "speaker": "SPEAKER_01",
+      "text": "that.",
+      "duration": 0.27000000000003865
+    },
+    {
+      "start": 449.86784375,
+      "end": 450.15471875000003,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.2868750000000091
+    },
+    {
+      "start": 450.32346875,
+      "end": 451.70721875000004,
+      "speaker": "SPEAKER_01",
+      "text": "cancer and",
+      "duration": 1.3837500000000205
+    },
+    {
+      "start": 452.01096875,
+      "end": 455.03159375,
+      "speaker": "SPEAKER_01",
+      "text": "Now you say migraine.  Yeah, I guess my mum had similar symptoms.",
+      "duration": 3.0206249999999955
+    },
+    {
+      "start": 455.41971875,
+      "end": 456.16221875,
+      "speaker": "SPEAKER_01",
+      "text": "me",
+      "duration": 0.7425000000000068
+    },
+    {
+      "start": 456.28034375000004,
+      "end": 456.83721875000003,
+      "speaker": "SPEAKER_00",
+      "text": "Yeah.",
+      "duration": 0.5568749999999909
+    },
+    {
+      "start": 456.53346875000005,
+      "end": 456.75284375,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah.",
+      "duration": 0.2193749999999568
+    },
+    {
+      "start": 457.12409375000004,
+      "end": 457.74846875000003,
+      "speaker": "SPEAKER_01",
+      "text": "That's right.",
+      "duration": 0.6243749999999864
+    },
+    {
+      "start": 457.25909375000003,
+      "end": 457.51221875000005,
+      "speaker": "SPEAKER_00",
+      "text": "Right.",
+      "duration": 0.25312500000001137
+    },
+    {
+      "start": 458.42346875000004,
+      "end": 460.98846875000004,
+      "speaker": "SPEAKER_00",
+      "text": "Well, I hope that puts you in minor ease.",
+      "duration": 2.5649999999999977
+    },
+    {
+      "start": 461.25846875,
+      "end": 464.66721875,
+      "speaker": "SPEAKER_00",
+      "text": "Certainly this is the second market you've had in the space of a month.",
+      "duration": 3.4087499999999977
+    },
+    {
+      "start": 465.00471875000005,
+      "end": 467.80596875000003,
+      "speaker": "SPEAKER_00",
+      "text": "So I think moving forwards, there's a couple of options.",
+      "duration": 2.801249999999982
+    },
+    {
+      "start": 468.04221875,
+      "end": 471.53534375000004,
+      "speaker": "SPEAKER_00",
+      "text": "keeping a headache diary quite important. Let's see exactly what's going on.",
+      "duration": 3.4931250000000205
+    },
+    {
+      "start": 471.77159375,
+      "end": 472.73346875000004,
+      "speaker": "SPEAKER_00",
+      "text": "Trudon's headache.",
+      "duration": 0.9618750000000205
+    },
+    {
+      "start": 473.34096875000006,
+      "end": 477.22221875,
+      "speaker": "SPEAKER_00",
+      "text": "We should also try and treat your headaches today.  Some strong painkillers would be...",
+      "duration": 3.881249999999966
+    },
+    {
+      "start": 477.44159375000004,
+      "end": 478.97721875,
+      "speaker": "SPEAKER_00",
+      "text": "advisable so",
+      "duration": 1.5356249999999818
+    },
+    {
+      "start": 479.78721875,
+      "end": 480.56346875,
+      "speaker": "SPEAKER_00",
+      "text": "You know, I think about...",
+      "duration": 0.7762500000000045
+    },
+    {
+      "start": 480.98534375,
+      "end": 483.33096875,
+      "speaker": "SPEAKER_00",
+      "text": "Paracetamol or even Cocodamol.",
+      "duration": 2.345624999999984
+    },
+    {
+      "start": 483.60096875000005,
+      "end": 484.17471875,
+      "speaker": "SPEAKER_00",
+      "text": "Um...",
+      "duration": 0.5737499999999613
+    },
+    {
+      "start": 484.73159375000006,
+      "end": 488.42721875,
+      "speaker": "SPEAKER_00",
+      "text": "and some anti-inflammatories such as ibuprofen and naproxen.  How does that sound to you?",
+      "duration": 3.69562499999995
+    },
+    {
+      "start": 488.91659375,
+      "end": 490.03034375000004,
+      "speaker": "SPEAKER_01",
+      "text": "Okay, that sounds good.",
+      "duration": 1.1137500000000387
+    },
+    {
+      "start": 490.78971875,
+      "end": 491.53221875,
+      "speaker": "SPEAKER_00",
+      "text": "Um...",
+      "duration": 0.7425000000000068
+    },
+    {
+      "start": 492.32534375000006,
+      "end": 495.29534375000003,
+      "speaker": "SPEAKER_00",
+      "text": "and if your headaches were to become more...",
+      "duration": 2.9699999999999704
+    },
+    {
+      "start": 495.90284375000005,
+      "end": 499.24409375000005,
+      "speaker": "SPEAKER_00",
+      "text": "persistent and maybe think about getting some medications that will stop",
+      "duration": 3.3412500000000023
+    },
+    {
+      "start": 499.44659375000003,
+      "end": 502.72034375000004,
+      "speaker": "SPEAKER_00",
+      "text": "your headaches from happening in the first place, something prophylactic medicines.",
+      "duration": 3.273750000000007
+    },
+    {
+      "start": 503.37846875,
+      "end": 503.95221875000004,
+      "speaker": "SPEAKER_01",
+      "text": "Okay.",
+      "duration": 0.5737500000000182
+    },
+    {
+      "start": 503.47971875,
+      "end": 503.59784375000004,
+      "speaker": "SPEAKER_00",
+      "text": "Bye.",
+      "duration": 0.11812500000002046
+    },
+    {
+      "start": 503.98596875000004,
+      "end": 506.06159375000004,
+      "speaker": "SPEAKER_00",
+      "text": "We'll have a discussion next time.  I'll see you next week.",
+      "duration": 2.0756250000000023
+    },
+    {
+      "start": 506.51721875000004,
+      "end": 506.73659375000005,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.21937500000001364
+    },
+    {
+      "start": 506.63534375000006,
+      "end": 507.20909375,
+      "speaker": "SPEAKER_01",
+      "text": "Okay.",
+      "duration": 0.5737499999999613
+    },
+    {
+      "start": 507.64784375000005,
+      "end": 508.08659375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.43874999999997044
+    },
+    {
+      "start": 508.60971875,
+      "end": 509.06534375,
+      "speaker": "SPEAKER_00",
+      "text": "Um,",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 509.57159375000003,
+      "end": 516.06846875,
+      "speaker": "SPEAKER_00",
+      "text": "Now, one of the things I want you to think about is, you know, if your symptoms aren't getting better in the next two, three days, or indeed are getting worse.",
+      "duration": 6.496874999999932
+    },
+    {
+      "start": 516.7097187500001,
+      "end": 522.5990937500001,
+      "speaker": "SPEAKER_00",
+      "text": "I'd like you to come back and see me straight away if possible.  So if your headache's getting worse, not responding to medications.",
+      "duration": 5.889374999999973
+    },
+    {
+      "start": 523.2065937500001,
+      "end": 524.4722187500001,
+      "speaker": "SPEAKER_00",
+      "text": "or your",
+      "duration": 1.265625
+    },
+    {
+      "start": 524.69159375,
+      "end": 531.40784375,
+      "speaker": "SPEAKER_00",
+      "text": "neck pain getting worse or you're developing weakness in your arms and legs or your vision then I want you to come back to see me straight away",
+      "duration": 6.716249999999945
+    },
+    {
+      "start": 531.72846875,
+      "end": 532.13346875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.4049999999999727
+    },
+    {
+      "start": 532.4709687500001,
+      "end": 532.9097187500001,
+      "speaker": "SPEAKER_01",
+      "text": "Okay.",
+      "duration": 0.4387500000000273
+    },
+    {
+      "start": 533.7365937500001,
+      "end": 534.6984687500001,
+      "speaker": "SPEAKER_00",
+      "text": "That's how you do it all okay?",
+      "duration": 0.9618749999999636
+    },
+    {
+      "start": 535.4072187500001,
+      "end": 535.5590937500001,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.1518750000000182
+    },
+    {
+      "start": 535.93034375,
+      "end": 536.33534375,
+      "speaker": "SPEAKER_01",
+      "text": "That's great.",
+      "duration": 0.4049999999999727
+    },
+    {
+      "start": 536.5378437500001,
+      "end": 537.63471875,
+      "speaker": "SPEAKER_00",
+      "text": "Great, any questions for me?",
+      "duration": 1.0968749999999545
+    },
+    {
+      "start": 538.03971875,
+      "end": 539.18721875,
+      "speaker": "SPEAKER_01",
+      "text": "No, thank you.",
+      "duration": 1.1475000000000364
+    },
+    {
+      "start": 539.42346875,
+      "end": 540.3178437500001,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, have a good day.",
+      "duration": 0.8943750000000819
+    },
+    {
+      "start": 540.70596875,
+      "end": 541.51596875,
+      "speaker": "SPEAKER_01",
+      "text": "Thanks. Bye.",
+      "duration": 0.8099999999999454
+    },
+    {
+      "start": 541.56659375,
+      "end": 541.81971875,
+      "speaker": "SPEAKER_00",
+      "text": "What?",
+      "duration": 0.2531249999999545
+    }
+  ]
+}

@@ -1,0 +1,698 @@
+{
+  "source_path": "/home/hayshin/dev/study/rtm/outputs/mixed/day1_consultation01_mixed.wav",
+  "resource_counts": {
+    "Encounter": 1,
+    "Condition": 10,
+    "MedicationStatement": 3,
+    "Observation": 3,
+    "Procedure": 1
+  },
+  "soap_summary": "Patient reports 3 days of loose watery diarrhea (6-7/day) with left lower crampy abdominal pain, initial vomiting now resolved, subjective fever at onset, weakness, and loss of appetite. No blood in stool or vomit. Asthma controlled with inhaler. Likely gastroenteritis (unconfirmed). Management: hydration / oral rehydration solution, consider stool testing if not improving, paracetamol for fever/weakness, 2-3 days off work.",
+  "model_id": "gpt-5-mini",
+  "bundle": {
+    "resourceType": "Bundle",
+    "id": "7dcafe3d-0fc0-4a55-a76d-afe3b25d383f",
+    "type": "collection",
+    "entry": [
+      {
+        "resource": {
+          "resourceType": "Encounter",
+          "id": "697a4116-dc63-456d-9e6a-dd49fe1455b7",
+          "status": "finished",
+          "class": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code": "AMB",
+            "display": "ambulatory"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "participant": [
+            {
+              "individual": {
+                "reference": "Practitioner/practitioner-001"
+              }
+            }
+          ],
+          "period": {
+            "start": "2024-01-01T00:00:02Z",
+            "end": "2024-01-01T00:07:36Z"
+          }
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "46754eaa-71a8-4709-ab00-6f1d4a488a61",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "62315008",
+                "display": "Diarrhoea"
+              },
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "R19.7"
+              }
+            ],
+            "text": "Diarrhoea (loose, watery stools)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "8,14,21,24,159"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "a12d869e-16e2-4f28-8578-d7c7143b7874",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "unconfirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Probable gastroenteritis (physician: may have gastroenteritis)"
+              }
+            ],
+            "text": "Probable gastroenteritis (physician: may have gastroenteritis)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "163,164,165"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "012eafbe-debb-48b5-971b-05b628e63161",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "21522001",
+                "display": "Abdominal pain"
+              },
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "R10.32"
+              }
+            ],
+            "text": "Lower abdominal pain, left sided (cramp-like)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "17,30,32,35,38,39,160"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "386b4a58-6eb3-469e-839f-8e249f6effc9",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "resolved"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "R11.10"
+              }
+            ],
+            "text": "Vomiting (occurred at start of illness, now stopped)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "63,64,69"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "d5cd92e9-4298-4d3a-8265-cf357a0b509f",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "resolved"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "R50.9"
+              }
+            ],
+            "text": "Subjective fever / raised temperature (around onset, ~3-4 days ago)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "51,54,56"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "74b7c1da-d542-4be5-99ac-a067077571be",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "R63.0"
+              }
+            ],
+            "text": "Loss of appetite"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "74"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "ae46eb0a-72a0-4cb4-a128-0b0e3110dc90",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "R53.1"
+              }
+            ],
+            "text": "Weakness / feeling shaky"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "41,160"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "990ad1ca-b758-4711-bfe0-4c3e25d1bfcf",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "unknown"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Rectal bleeding / blood in stool (denied)"
+              }
+            ],
+            "text": "Rectal bleeding / blood in stool (denied)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "23,24"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "55c6362a-6b83-433c-9167-a34691d3f3a9",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "unknown"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Blood in vomit (denied)"
+              }
+            ],
+            "text": "Blood in vomit (denied)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "69"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "b704f870-7672-4df1-aa51-edb9fae20f89",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "195967001",
+                "display": "Asthma"
+              },
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "J45.9"
+              }
+            ],
+            "text": "Asthma (controlled with inhaler)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "107,108,111"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "50315d92-7131-40e8-9c39-ce2fe3736479",
+          "status": "active",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "Unspecified inhaler (for asthma)"
+              }
+            ],
+            "text": "Unspecified inhaler (for asthma)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "107,108,111,119"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "c3ba0359-3038-4477-b68c-86af7f182c05",
+          "status": "unknown",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "Paracetamol (advice for symptomatic relief)"
+              }
+            ],
+            "text": "Paracetamol (advice for symptomatic relief)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "dosage": [
+            {
+              "route": {
+                "text": "oral"
+              },
+              "timing": {
+                "code": {
+                  "text": "up to four times a day"
+                }
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "181,182"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "7b7480f2-e7da-46ea-8a02-f3e10d1f6310",
+          "status": "unknown",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "Oral rehydration solution (Dioralyte recommended)"
+              }
+            ],
+            "text": "Oral rehydration solution (Dioralyte recommended)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "dosage": [
+            {
+              "route": {
+                "text": "oral"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "176,177,178,180"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "b51f3fb0-7c6b-42e3-a2a2-37c0b375eb66",
+          "status": "final",
+          "code": {
+            "coding": [
+              {
+                "display": "Bowel movement frequency"
+              }
+            ],
+            "text": "Bowel movement frequency"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "valueString": "6-7 times per day",
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "21"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "d7f55605-483a-4700-8ecf-1e0890bd8703",
+          "status": "final",
+          "code": {
+            "coding": [
+              {
+                "display": "Able to keep fluids down"
+              }
+            ],
+            "text": "Able to keep fluids down"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "valueString": "yes",
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "75"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "23fd7c2f-4204-4dba-b94c-436cdd019583",
+          "status": "final",
+          "code": {
+            "coding": [
+              {
+                "display": "Subjective fever reported at onset (not measured)"
+              }
+            ],
+            "text": "Subjective fever reported at onset (not measured)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "valueString": "reported raised temperature ~3-4 days ago",
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "51,54,56"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Procedure",
+          "id": "c1d5f7cd-b02d-4cd1-9e44-b85358bff16a",
+          "status": "completed",
+          "code": {
+            "coding": [
+              {
+                "display": "Stool sample for testing (may be needed)"
+              }
+            ],
+            "text": "Stool sample for testing (may be needed)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/697a4116-dc63-456d-9e6a-dd49fe1455b7"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "192,435"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

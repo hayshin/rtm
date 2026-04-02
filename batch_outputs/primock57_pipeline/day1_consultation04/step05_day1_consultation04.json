@@ -1,0 +1,855 @@
+{
+  "source_path": "/home/hayshin/dev/study/rtm/outputs/mixed/day1_consultation04_mixed.wav",
+  "resource_counts": {
+    "Encounter": 1,
+    "Condition": 18,
+    "MedicationStatement": 2,
+    "Observation": 0,
+    "Procedure": 0
+  },
+  "soap_summary": "4-day history of sore throat (improving), clear rhinorrhea with nasal congestion, new dry cough (since yesterday), initial fever now settling, fatigue/weakness, muscle aches, intermittent general headaches, visual light spots, and shortness of breath on exertion. Patient taking paracetamol and ibuprofen. Working diagnosis: likely viral upper respiratory tract infection; possible early influenza. No chest pain, no ear symptoms, no rash. Advised rest, fluids, continue paracetamol/ibuprofen, and return if worsening or not improved in one week.",
+  "model_id": "gpt-5-mini",
+  "bundle": {
+    "resourceType": "Bundle",
+    "id": "aae5b3a0-e466-444a-a0fc-3fdffd98b7c7",
+    "type": "collection",
+    "entry": [
+      {
+        "resource": {
+          "resourceType": "Encounter",
+          "id": "0a49ebfa-a2fa-476c-bc1f-ed5382f1d826",
+          "status": "finished",
+          "class": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code": "AMB",
+            "display": "ambulatory"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "participant": [
+            {
+              "individual": {
+                "reference": "Practitioner/practitioner-001"
+              }
+            }
+          ],
+          "period": {
+            "start": "2024-01-01T00:00:00Z",
+            "end": "2024-01-01T00:10:13Z"
+          }
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "829c2ffd-ff8b-41ed-a177-e8311c1a73d6",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "sore throat"
+              }
+            ],
+            "text": "sore throat"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "10,11,16,41,43,47,50,255"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "9c1616e9-0ac1-4854-9120-88447b103630",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "runny nose (clear rhinorrhea)"
+              }
+            ],
+            "text": "runny nose (clear rhinorrhea)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "11,60,62,255"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "b0620c4d-1078-4ee8-8569-a4650cf79460",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "nasal congestion"
+              }
+            ],
+            "text": "nasal congestion"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "65,68,69,255"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "5432ba17-3749-4f85-ad3b-4a4fae69a845",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "dry cough"
+              }
+            ],
+            "text": "dry cough"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "14,17,71,72,74,86,255"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "fd162e13-fc2c-42b1-a836-66526336ac3b",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "resolved"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "fever (initial, now settling)"
+              }
+            ],
+            "text": "fever (initial, now settling)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "106,256"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "fb6becc5-2469-4c53-945d-ef4167285978",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "shortness of breath on exertion"
+              }
+            ],
+            "text": "shortness of breath on exertion"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "114,115,117,121,123,124"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "38bfdce6-b283-486d-b80f-4808e8c01f39",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "chest pain"
+              }
+            ],
+            "text": "chest pain"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "112,114"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "de7d3cb7-901b-4d74-aaac-74763e91600f",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "headaches (general, intermittent)"
+              }
+            ],
+            "text": "headaches (general, intermittent)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "139,142,145,147"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "523d412e-545c-48ea-b570-b7b00ac91bd0",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "seeing light spots (visual disturbance)"
+              }
+            ],
+            "text": "seeing light spots (visual disturbance)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "92,94"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "b79157b1-4000-4907-a4bd-7e9fbd9b11b2",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "fatigue / tiredness / weakness"
+              }
+            ],
+            "text": "fatigue / tiredness / weakness"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "23,95,255"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "6f0703ce-142e-4968-a704-2f5634b98b5e",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "muscle aches (myalgia)"
+              }
+            ],
+            "text": "muscle aches (myalgia)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "180,255"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "4a4e252f-235c-4a6c-9ece-44e904c5c8e4",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "unconfirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "viral upper respiratory tract infection (likely)"
+              }
+            ],
+            "text": "viral upper respiratory tract infection (likely)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "258"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "b0391fc2-cf4b-4608-a95e-118447eea619",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "unconfirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "influenza (possible / early)"
+              }
+            ],
+            "text": "influenza (possible / early)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "260"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "659a9151-6bb8-49cb-81ac-9b940acb1205",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "ear pain"
+              }
+            ],
+            "text": "ear pain"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "130,135"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "6af15daa-fff7-430f-a007-4395070b24a2",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "ear discharge"
+              }
+            ],
+            "text": "ear discharge"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "133,135"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "a5064add-dc1e-4860-8e43-fe78e50fedc8",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "rash"
+              }
+            ],
+            "text": "rash"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "176,177"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "4e820718-29a0-47b5-993c-d4880697969e",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "photophobia / sensitivity to bright lights"
+              }
+            ],
+            "text": "photophobia / sensitivity to bright lights"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "151,152"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "2db1b8d5-5afe-46ec-be2c-44a0abab4c8d",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "bowel movement problem (unspecified)"
+              }
+            ],
+            "text": "bowel movement problem (unspecified)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "158,162"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "30dad0ec-4892-4f77-bdee-248c3ba1f666",
+          "status": "active",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "paracetamol"
+              }
+            ],
+            "text": "paracetamol"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "106,266"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "694ec86f-38a5-424f-819c-9230cb10c99e",
+          "status": "active",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "ibuprofen"
+              }
+            ],
+            "text": "ibuprofen"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/0a49ebfa-a2fa-476c-bc1f-ed5382f1d826"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "106,266"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

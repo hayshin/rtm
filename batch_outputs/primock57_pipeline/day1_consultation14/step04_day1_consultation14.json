@@ -1,0 +1,2282 @@
+{
+  "source_path": "/home/hayshin/dev/study/rtm/outputs/mixed/day1_consultation14_mixed.wav",
+  "segments": [
+    {
+      "start": 0.13221875,
+      "end": 0.5372187500000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Yeah.",
+      "cleaned_text": "",
+      "duration": 0.4050000000000001
+    },
+    {
+      "start": 2.03909375,
+      "end": 2.8997187500000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Hello?",
+      "cleaned_text": "Hello?",
+      "duration": 0.8606250000000002
+    },
+    {
+      "start": 3.49034375,
+      "end": 4.31721875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Hi there. Um",
+      "cleaned_text": "Hi there.",
+      "duration": 0.8268750000000002
+    },
+    {
+      "start": 5.29596875,
+      "end": 8.89034375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Before I go any further can I confirm your name and your date of birth?",
+      "cleaned_text": "Before I go any further, can I confirm your name and date of birth?",
+      "duration": 3.5943749999999994
+    },
+    {
+      "start": 9.953468750000003,
+      "end": 13.15971875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Uh yeah. Uh my name is April and I'm fifty.",
+      "cleaned_text": "My name is April and I am 50 years old.",
+      "duration": 3.206249999999997
+    },
+    {
+      "start": 13.750343750000003,
+      "end": 14.796593750000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "You're fifty again.",
+      "cleaned_text": "You are 50?",
+      "duration": 1.0462500000000006
+    },
+    {
+      "start": 14.83034375,
+      "end": 16.551593750000002,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "April how can I help you this afternoon?",
+      "cleaned_text": "April, how can I help you this afternoon?",
+      "duration": 1.7212500000000013
+    },
+    {
+      "start": 17.51346875,
+      "end": 22.44096875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Well I've just been having this like cough for quite a few days and my nose is running",
+      "cleaned_text": "I've had a cough for several days and a runny nose.",
+      "duration": 4.927499999999998
+    },
+    {
+      "start": 23.132843750000003,
+      "end": 25.883468750000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um and it's just been annoying and it's not going away.",
+      "cleaned_text": "It's been persistent and not resolving.",
+      "duration": 2.7506249999999994
+    },
+    {
+      "start": 26.22096875,
+      "end": 27.95909375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "where did it all start?",
+      "cleaned_text": "Where did it start?",
+      "duration": 1.7381250000000001
+    },
+    {
+      "start": 29.00534375,
+      "end": 34.52346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Uh I think it started like maybe a bit less than a week ago like maybe maybe five or six days ago.",
+      "cleaned_text": "It started about five or six days ago.",
+      "duration": 5.518124999999998
+    },
+    {
+      "start": 34.69221875,
+      "end": 35.23221875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.5399999999999991
+    },
+    {
+      "start": 35.51909375,
+      "end": 40.07534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "And you mentioned a couple of things there. You mentioned a cough. You mentioned a bit of a runny nose. Is that right?",
+      "cleaned_text": "You mentioned a cough and a runny nose \u2014 is that correct?",
+      "duration": 4.556249999999999
+    },
+    {
+      "start": 41.00346875,
+      "end": 41.23971875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "out.",
+      "cleaned_text": "Yes.",
+      "duration": 0.2362499999999983
+    },
+    {
+      "start": 41.45909375,
+      "end": 45.01971875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK. Yeah. Let's focus on your cough first. Can you tell me a bit more about your cough?",
+      "cleaned_text": "Let's focus on your cough. Tell me more about it.",
+      "duration": 3.5606250000000017
+    },
+    {
+      "start": 46.08284375,
+      "end": 53.76096875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Uh it's just so continuous it's really really frustrating. It's quite dry and it's just all day it like keeps me up at night as well which is really annoying.",
+      "cleaned_text": "The cough is continuous, dry, present all day, and keeps me awake at night.",
+      "duration": 7.678125000000001
+    },
+    {
+      "start": 54.21659375,
+      "end": 56.34284375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK it's just a dry cough so you're not bringing up any more",
+      "cleaned_text": "So it's a dry cough and you are not bringing up any sputum.",
+      "duration": 2.126249999999999
+    },
+    {
+      "start": 56.56221875000001,
+      "end": 57.92909375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "You don't bring up any memories.",
+      "cleaned_text": "You are not bringing up any mucus.",
+      "duration": 1.3668749999999932
+    },
+    {
+      "start": 58.21596875,
+      "end": 59.39721875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Ohh I can hear that yeah.",
+      "cleaned_text": "I can hear your cough.",
+      "duration": 1.1812499999999986
+    },
+    {
+      "start": 59.835968750000006,
+      "end": 63.666593750000004,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "you're not bringing up any uh mucky phlegm or anything like that.",
+      "cleaned_text": "You're not producing any mucous phlegm.",
+      "duration": 3.8306249999999977
+    },
+    {
+      "start": 64.24034375000001,
+      "end": 64.71284375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "you know",
+      "cleaned_text": "",
+      "duration": 0.4724999999999966
+    },
+    {
+      "start": 64.89846875,
+      "end": 65.77596875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "No OK.",
+      "cleaned_text": "No, okay.",
+      "duration": 0.8774999999999977
+    },
+    {
+      "start": 66.14721875000001,
+      "end": 67.78409375000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "So it keeps you up at night. Um",
+      "cleaned_text": "So it keeps you awake at night.",
+      "duration": 1.6368750000000034
+    },
+    {
+      "start": 68.12159375,
+      "end": 73.26846875000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "You mentioned uh the cold symptoms as well the runny nose. Do you have a sore throat at all?",
+      "cleaned_text": "You mentioned cold symptoms and a runny nose. Do you have a sore throat?",
+      "duration": 5.1468750000000085
+    },
+    {
+      "start": 74.38221875,
+      "end": 74.87159375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I mean...",
+      "cleaned_text": "A little.",
+      "duration": 0.48937499999999545
+    },
+    {
+      "start": 75.12471875,
+      "end": 78.43221875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "apart from I mean the coughing is giving me a sore throat but it's not like",
+      "cleaned_text": "The coughing is causing throat irritation, but it is not severe.",
+      "duration": 3.3075000000000045
+    },
+    {
+      "start": 78.75284375000001,
+      "end": 80.42346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "you know not more than than that.",
+      "cleaned_text": "",
+      "duration": 1.670624999999987
+    },
+    {
+      "start": 80.49096875000001,
+      "end": 83.93346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "you know just just my throat is irritated from coughing but it's not like",
+      "cleaned_text": "",
+      "duration": 3.4424999999999955
+    },
+    {
+      "start": 84.42284375,
+      "end": 86.24534375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "it's not that bad when I swallow or anything.",
+      "cleaned_text": "It is not painful when I swallow.",
+      "duration": 1.8225000000000051
+    },
+    {
+      "start": 86.39721875000001,
+      "end": 87.03846875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Right.",
+      "cleaned_text": "Right.",
+      "duration": 0.6412499999999994
+    },
+    {
+      "start": 87.30846875,
+      "end": 90.75096875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Do you have any uh how are your ears? Do your ears feel blocked",
+      "cleaned_text": "How are your ears? Do they feel blocked?",
+      "duration": 3.4424999999999955
+    },
+    {
+      "start": 91.25721875,
+      "end": 91.39221875000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.13500000000000512
+    },
+    {
+      "start": 92.01659375000001,
+      "end": 94.24409375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "No. They feel OK actually.",
+      "cleaned_text": "No, my ears feel fine.",
+      "duration": 2.227499999999992
+    },
+    {
+      "start": 94.51409375,
+      "end": 94.91909375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Yeah.",
+      "cleaned_text": "",
+      "duration": 0.40500000000000114
+    },
+    {
+      "start": 95.17221875,
+      "end": 97.34909375000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "no pain no discharge coming from your ears.",
+      "cleaned_text": "Any pain or discharge from your ears?",
+      "duration": 2.1768750000000097
+    },
+    {
+      "start": 97.56846875000001,
+      "end": 99.74534375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Nothing nothing on the ears.",
+      "cleaned_text": "No, no pain or discharge from my ears.",
+      "duration": 2.1768749999999955
+    },
+    {
+      "start": 99.94784375,
+      "end": 101.14596875000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK alright.",
+      "cleaned_text": "Okay.",
+      "duration": 1.1981250000000045
+    },
+    {
+      "start": 101.50034375000001,
+      "end": 102.42846875000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um.",
+      "cleaned_text": "",
+      "duration": 0.9281249999999943
+    },
+    {
+      "start": 103.00221875000001,
+      "end": 103.39034375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Fine.",
+      "cleaned_text": "Fine.",
+      "duration": 0.38812499999998806
+    },
+    {
+      "start": 103.86284375000001,
+      "end": 105.28034375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "In terms of your breathing",
+      "cleaned_text": "In terms of your breathing,",
+      "duration": 1.4174999999999898
+    },
+    {
+      "start": 105.43221875,
+      "end": 105.92159375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um.",
+      "cleaned_text": "",
+      "duration": 0.48937499999999545
+    },
+    {
+      "start": 106.19159375000001,
+      "end": 109.26284375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "How is your breathe? How's your chest? Is your breathing more laboured?",
+      "cleaned_text": "How is your breathing? Is it more labored? Any chest symptoms?",
+      "duration": 3.071249999999992
+    },
+    {
+      "start": 111.28784375000001,
+      "end": 111.76034375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um",
+      "cleaned_text": "",
+      "duration": 0.4724999999999966
+    },
+    {
+      "start": 112.46909375000001,
+      "end": 113.80221875000001,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I don't think so.",
+      "cleaned_text": "I don't think so.",
+      "duration": 1.3331249999999955
+    },
+    {
+      "start": 114.34221875,
+      "end": 117.48096875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I guess like it's labour is when I'm coughing and I talc breathe but I",
+      "cleaned_text": "It feels labored when I'm coughing, but otherwise not.",
+      "duration": 3.1387500000000017
+    },
+    {
+      "start": 117.75096875000001,
+      "end": 119.97846875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "No yeah no I I don't think so.",
+      "cleaned_text": "No, I don't think so.",
+      "duration": 2.227499999999992
+    },
+    {
+      "start": 119.18534375,
+      "end": 122.79659375000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "day when you walk around you don't feel breathless you",
+      "cleaned_text": "During the day when you walk around, you don't feel breathless?",
+      "duration": 3.6112500000000125
+    },
+    {
+      "start": 123.37034375,
+      "end": 124.48409375000001,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I don't feel restless.",
+      "cleaned_text": "I don't feel breathless.",
+      "duration": 1.1137500000000102
+    },
+    {
+      "start": 124.85534375,
+      "end": 125.36159375000001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "No.",
+      "cleaned_text": "No.",
+      "duration": 0.5062500000000085
+    },
+    {
+      "start": 125.00721875,
+      "end": 128.21346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "No I feel you know generally tired.",
+      "cleaned_text": "I generally feel tired.",
+      "duration": 3.206249999999997
+    },
+    {
+      "start": 128.51721875,
+      "end": 129.36096875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.84375
+    },
+    {
+      "start": 130.05284375000002,
+      "end": 131.03159375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "yeah but not",
+      "cleaned_text": "",
+      "duration": 0.9787499999999909
+    },
+    {
+      "start": 131.11596875,
+      "end": 132.51659375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Not anything special with my chest.",
+      "cleaned_text": "No specific chest pain.",
+      "duration": 1.400624999999991
+    },
+    {
+      "start": 132.75284375,
+      "end": 133.98471875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "any pain in your chest.",
+      "cleaned_text": "Any chest pain?",
+      "duration": 1.2318750000000023
+    },
+    {
+      "start": 135.13221875000002,
+      "end": 136.43159375000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "No not not that either.",
+      "cleaned_text": "No.",
+      "duration": 1.2993749999999977
+    },
+    {
+      "start": 136.78596875,
+      "end": 137.15721875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.3712500000000034
+    },
+    {
+      "start": 137.46096875,
+      "end": 139.36784375000002,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "You mentioned feeling tired. Um",
+      "cleaned_text": "You mentioned feeling tired.",
+      "duration": 1.9068750000000136
+    },
+    {
+      "start": 139.97534375,
+      "end": 142.21971875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Have you felt feverish at all at a temperature?",
+      "cleaned_text": "Have you felt feverish or measured a temperature?",
+      "duration": 2.244374999999991
+    },
+    {
+      "start": 143.63721875000002,
+      "end": 144.81846875000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um and having like",
+      "cleaned_text": "",
+      "duration": 1.1812500000000057
+    },
+    {
+      "start": 145.17284375,
+      "end": 148.24409375000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "like shiver even when I'm in when I'm in bed.",
+      "cleaned_text": "I have been shivering in bed.",
+      "duration": 3.0712500000000205
+    },
+    {
+      "start": 148.68284375000002,
+      "end": 153.10409375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "you know like when you when you go to sleep and and you feel like I I should be warm but I'm still",
+      "cleaned_text": "When I went to sleep I felt like I should be warm but I was still",
+      "duration": 4.421249999999986
+    },
+    {
+      "start": 153.57659375,
+      "end": 155.63534375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "still you know shivering a little bit.",
+      "cleaned_text": "shivering a little.",
+      "duration": 2.0587500000000034
+    },
+    {
+      "start": 155.93909375,
+      "end": 156.39471875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Bye.",
+      "cleaned_text": "",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 155.98971875,
+      "end": 159.58409375000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "But I haven't taken my temperature so I'm not a hundred percent sure if I had a fever but",
+      "cleaned_text": "I haven't taken my temperature so I'm not sure if I had a fever.",
+      "duration": 3.5943750000000136
+    },
+    {
+      "start": 159.82034375,
+      "end": 167.04284375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Feels like I probably did. Cause I was just I was next to my boyfriend. And he was completely warm and totally fine. And I just like couldn't",
+      "cleaned_text": "I felt like I probably did, because when I was next to my boyfriend he was warm and fine and I was shivering.",
+      "duration": 7.222499999999997
+    },
+    {
+      "start": 166.41846875000002,
+      "end": 166.95846875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "just like couldn't.",
+      "cleaned_text": "I see.",
+      "duration": 0.539999999999992
+    },
+    {
+      "start": 167.07659375,
+      "end": 167.90346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I'm Shepard.",
+      "cleaned_text": "",
+      "duration": 0.8268750000000011
+    },
+    {
+      "start": 168.00471875000002,
+      "end": 168.47721875000002,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Me.",
+      "cleaned_text": "",
+      "duration": 0.4724999999999966
+    },
+    {
+      "start": 168.13971875000001,
+      "end": 168.35909375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "We can.",
+      "cleaned_text": "",
+      "duration": 0.21937499999998522
+    },
+    {
+      "start": 168.47721875000002,
+      "end": 168.57846875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye.",
+      "cleaned_text": "",
+      "duration": 0.10124999999999318
+    },
+    {
+      "start": 168.67971875,
+      "end": 170.36721875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "more sweaters on and I was still cold.",
+      "cleaned_text": "I put more sweaters on and I was still cold.",
+      "duration": 1.6875
+    },
+    {
+      "start": 170.55284375000002,
+      "end": 173.45534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK. OK. Alright. Um",
+      "cleaned_text": "Okay.",
+      "duration": 2.902499999999975
+    },
+    {
+      "start": 174.26534375,
+      "end": 178.92284375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "on? And in terms of any other senses so have you had any nausea have you had any vomiting",
+      "cleaned_text": "Any other symptoms \u2014 nausea or vomiting?",
+      "duration": 4.657499999999999
+    },
+    {
+      "start": 179.90159375000002,
+      "end": 182.21346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "No. No no nausea. No vomiting.",
+      "cleaned_text": "No nausea or vomiting.",
+      "duration": 2.3118749999999864
+    },
+    {
+      "start": 182.65221875,
+      "end": 183.05721875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "but",
+      "cleaned_text": "",
+      "duration": 0.40500000000000114
+    },
+    {
+      "start": 183.54659375,
+      "end": 185.30159375000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um yeah nothing like that.",
+      "cleaned_text": "",
+      "duration": 1.7550000000000239
+    },
+    {
+      "start": 185.67284375,
+      "end": 186.58409375000002,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "How's your appetite?",
+      "cleaned_text": "How is your appetite?",
+      "duration": 0.9112500000000239
+    },
+    {
+      "start": 188.00159375,
+      "end": 190.71846875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um I mean it's OK.",
+      "cleaned_text": "My appetite is okay.",
+      "duration": 2.7168749999999875
+    },
+    {
+      "start": 190.76909375000002,
+      "end": 195.40971875000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "at the beginning like when I was starting to have the listen to the the coughing and stuff.",
+      "cleaned_text": "At the beginning when the cough started,",
+      "duration": 4.640625
+    },
+    {
+      "start": 196.21971875,
+      "end": 198.41346875000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um I had a little bit of diarrhea",
+      "cleaned_text": "I had some diarrhea.",
+      "duration": 2.1937500000000227
+    },
+    {
+      "start": 199.22346875000002,
+      "end": 199.72971875000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um.",
+      "cleaned_text": "",
+      "duration": 0.5062499999999943
+    },
+    {
+      "start": 200.01659375000003,
+      "end": 200.38784375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "But.",
+      "cleaned_text": "",
+      "duration": 0.371249999999975
+    },
+    {
+      "start": 200.05034375000002,
+      "end": 200.35409375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "But.",
+      "cleaned_text": "",
+      "duration": 0.30374999999997954
+    },
+    {
+      "start": 201.14721875,
+      "end": 203.45909375000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "But it didn't it didn't cut my appetite or anything.",
+      "cleaned_text": "It did not reduce my appetite.",
+      "duration": 2.311875000000015
+    },
+    {
+      "start": 203.89784375000002,
+      "end": 204.62346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I just like.",
+      "cleaned_text": "",
+      "duration": 0.7256249999999795
+    },
+    {
+      "start": 205.43346875,
+      "end": 206.85096875000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "my stomach wasn't feeling great.",
+      "cleaned_text": "My stomach was upset.",
+      "duration": 1.4175000000000182
+    },
+    {
+      "start": 207.67784375000002,
+      "end": 209.31471875000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK. It's all got better now the diarrhea.",
+      "cleaned_text": "Has the diarrhea resolved?",
+      "duration": 1.6368750000000034
+    },
+    {
+      "start": 209.75346875000002,
+      "end": 211.94721875000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "yeah yeah yeah it got better. It was only like first",
+      "cleaned_text": "Yes, it got better; it only lasted at the beginning.",
+      "duration": 2.1937499999999943
+    },
+    {
+      "start": 212.50409375,
+      "end": 216.82409375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "like it started at the same time as the cough started and then it stopped so I thought everything would be fine.",
+      "cleaned_text": "It started with the cough and then stopped, so I thought everything would be fine.",
+      "duration": 4.319999999999993
+    },
+    {
+      "start": 217.27971875,
+      "end": 217.65096875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "But then.",
+      "cleaned_text": "But then?",
+      "duration": 0.3712500000000034
+    },
+    {
+      "start": 217.31346875000003,
+      "end": 217.60034375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "But then.",
+      "cleaned_text": "",
+      "duration": 0.2868749999999807
+    },
+    {
+      "start": 217.65096875,
+      "end": 218.86596875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "costs just are going.",
+      "cleaned_text": "But then the cough just continued.",
+      "duration": 1.2150000000000034
+    },
+    {
+      "start": 219.15284375000002,
+      "end": 220.26659375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK fine.",
+      "cleaned_text": "Okay.",
+      "duration": 1.1137500000000102
+    },
+    {
+      "start": 220.35096875000002,
+      "end": 221.02596875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um",
+      "cleaned_text": "",
+      "duration": 0.674999999999983
+    },
+    {
+      "start": 222.93284375000002,
+      "end": 224.70471875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "any problems your waterworks have.",
+      "cleaned_text": "Any urinary problems?",
+      "duration": 1.7718749999999943
+    },
+    {
+      "start": 225.75096875000003,
+      "end": 226.37534375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "With my what?",
+      "cleaned_text": "With my what?",
+      "duration": 0.6243749999999864
+    },
+    {
+      "start": 226.62846875000002,
+      "end": 228.51846875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "uh your waterworks your urine",
+      "cleaned_text": "I mean your urine \u2014 any issues?",
+      "duration": 1.8899999999999864
+    },
+    {
+      "start": 229.22721875000002,
+      "end": 231.35346875000002,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Ohh. Uh no. No no that's.",
+      "cleaned_text": "No.",
+      "duration": 2.126249999999999
+    },
+    {
+      "start": 231.01596875,
+      "end": 234.57659375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "you're passing urine OK. You're drinking plenty of fluids you're passing urine OK.",
+      "cleaned_text": "You are drinking plenty of fluids and passing urine normally?",
+      "duration": 3.560625000000016
+    },
+    {
+      "start": 235.23471875,
+      "end": 240.80346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "No I I drank loads of water when I started having the diarrhea. Now that it's stopped I just go back to normal.",
+      "cleaned_text": "I drank a lot of water during the diarrhea; now I have returned to normal.",
+      "duration": 5.568749999999994
+    },
+    {
+      "start": 241.34346875000003,
+      "end": 242.15346875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Anyways.",
+      "cleaned_text": "",
+      "duration": 0.8099999999999739
+    },
+    {
+      "start": 242.59221875000003,
+      "end": 243.28409375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um",
+      "cleaned_text": "",
+      "duration": 0.6918749999999818
+    },
+    {
+      "start": 243.80721875,
+      "end": 247.85721875000002,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "In terms of any other things you notice any any finding skin rashes",
+      "cleaned_text": "Any rashes or any problems with muscles or joints?",
+      "duration": 4.050000000000011
+    },
+    {
+      "start": 248.39721875,
+      "end": 251.29971875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "or um problems with your muscles or joints.",
+      "cleaned_text": "",
+      "duration": 2.9025000000000034
+    },
+    {
+      "start": 252.12659375,
+      "end": 253.49346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "uh like my",
+      "cleaned_text": "",
+      "duration": 1.3668749999999932
+    },
+    {
+      "start": 253.81409375,
+      "end": 259.02846875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "You know when I had when I was telling you I had like the I had chills and I was really cold. My muscle was really hurting.",
+      "cleaned_text": "When I had chills, my muscles were very painful.",
+      "duration": 5.21437499999999
+    },
+    {
+      "start": 257.42534375,
+      "end": 257.79659375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Yeah.",
+      "cleaned_text": "Okay.",
+      "duration": 0.371249999999975
+    },
+    {
+      "start": 259.26471875000004,
+      "end": 259.88909375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.6243749999999864
+    },
+    {
+      "start": 260.05784375,
+      "end": 260.91846875000005,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Do pilates.",
+      "cleaned_text": "I do Pilates.",
+      "duration": 0.8606250000000273
+    },
+    {
+      "start": 261.57659375000003,
+      "end": 262.03221875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "But I could.",
+      "cleaned_text": "But I couldn't \u2014 it is hurting me at the moment.",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 262.25159375000004,
+      "end": 263.83784375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "hurting me so much at the moment.",
+      "cleaned_text": "",
+      "duration": 1.58624999999995
+    },
+    {
+      "start": 263.87159375000005,
+      "end": 264.47909375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Right.",
+      "cleaned_text": "Right.",
+      "duration": 0.6074999999999591
+    },
+    {
+      "start": 264.56346875,
+      "end": 265.44096875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Bye.",
+      "cleaned_text": "",
+      "duration": 0.8774999999999977
+    },
+    {
+      "start": 265.69409375000004,
+      "end": 268.12409375000004,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "To be honest all I feel like doing is just lying in bed.",
+      "cleaned_text": "To be honest, I just feel like lying in bed.",
+      "duration": 2.430000000000007
+    },
+    {
+      "start": 268.22534375000004,
+      "end": 269.92971875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "You're right. You're right. You're right.",
+      "cleaned_text": "I understand; that must be difficult.",
+      "duration": 1.7043749999999704
+    },
+    {
+      "start": 269.96346875,
+      "end": 271.93784375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "I'm sorry. That must be very difficult for you.",
+      "cleaned_text": "I'm sorry \u2014 that must be very difficult for you.",
+      "duration": 1.974375000000009
+    },
+    {
+      "start": 272.51159375000003,
+      "end": 273.05159375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "you know,",
+      "cleaned_text": "",
+      "duration": 0.5399999999999636
+    },
+    {
+      "start": 273.45659375,
+      "end": 273.79409375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Right.",
+      "cleaned_text": "",
+      "duration": 0.33749999999997726
+    },
+    {
+      "start": 274.21596875,
+      "end": 274.95846875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Yeah.",
+      "cleaned_text": "",
+      "duration": 0.7425000000000068
+    },
+    {
+      "start": 275.17784375,
+      "end": 275.46471875000003,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "keep",
+      "cleaned_text": "",
+      "duration": 0.2868750000000091
+    },
+    {
+      "start": 275.76846875,
+      "end": 278.23221875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "my arms my legs like just everywhere basically.",
+      "cleaned_text": "My arms and legs ache all over.",
+      "duration": 2.4637500000000045
+    },
+    {
+      "start": 278.43471875,
+      "end": 280.13909375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "I'm getting quite lethargic and weak.",
+      "cleaned_text": "You are feeling quite lethargic and weak.",
+      "duration": 1.7043750000000273
+    },
+    {
+      "start": 280.34159375,
+      "end": 280.94909375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "mentioned.",
+      "cleaned_text": "",
+      "duration": 0.6075000000000159
+    },
+    {
+      "start": 280.94909375000003,
+      "end": 281.35409375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Ciao.",
+      "cleaned_text": "",
+      "duration": 0.4049999999999727
+    },
+    {
+      "start": 281.64096875,
+      "end": 282.19784375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Thank you very much.",
+      "cleaned_text": "Thank you very much.",
+      "duration": 0.5568749999999909
+    },
+    {
+      "start": 281.72534375000004,
+      "end": 282.02909375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "You're on.",
+      "cleaned_text": "You're welcome.",
+      "duration": 0.30374999999997954
+    },
+    {
+      "start": 282.99096875000004,
+      "end": 284.27346875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 1.2824999999999704
+    },
+    {
+      "start": 284.93159375,
+      "end": 286.92284375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "April are you normally otherwise fit and well?",
+      "cleaned_text": "April, are you normally fit and well?",
+      "duration": 1.9912500000000364
+    },
+    {
+      "start": 288.30659375,
+      "end": 289.03221875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Am I normally what?",
+      "cleaned_text": "Am I normally what?",
+      "duration": 0.7256250000000364
+    },
+    {
+      "start": 289.20096875,
+      "end": 291.56346875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "uh fit and well? So do you have any other medical history?",
+      "cleaned_text": "Fit and well \u2014 do you have any other medical history?",
+      "duration": 2.3625000000000114
+    },
+    {
+      "start": 292.33971875000003,
+      "end": 294.53346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Uh well I have type two diabetes.",
+      "cleaned_text": "I have type 2 diabetes.",
+      "duration": 2.193749999999966
+    },
+    {
+      "start": 294.85409375,
+      "end": 295.22534375000004,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.37125000000003183
+    },
+    {
+      "start": 295.88346875,
+      "end": 297.14909375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "quite high blood pressure.",
+      "cleaned_text": "I also have high blood pressure.",
+      "duration": 1.265625
+    },
+    {
+      "start": 298.29659375,
+      "end": 304.35471875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK. And what do you take for your blood pressure any or what medications do you take on a regular basis?",
+      "cleaned_text": "What medications do you take regularly, including for blood pressure?",
+      "duration": 6.058125000000018
+    },
+    {
+      "start": 304.96221875000003,
+      "end": 306.49784375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um I take much",
+      "cleaned_text": "I take metformin for my diabetes.",
+      "duration": 1.5356249999999818
+    },
+    {
+      "start": 306.58221875000004,
+      "end": 308.50596875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Metformin for the diabetes.",
+      "cleaned_text": "",
+      "duration": 1.923749999999984
+    },
+    {
+      "start": 308.57346875,
+      "end": 308.75909375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Yep.",
+      "cleaned_text": "Okay.",
+      "duration": 0.18562500000001592
+    },
+    {
+      "start": 308.99534375,
+      "end": 311.49284375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I take Lupinopril for the high blood pressure.",
+      "cleaned_text": "I take lisinopril for high blood pressure.",
+      "duration": 2.4975000000000023
+    },
+    {
+      "start": 311.61096875000004,
+      "end": 314.83409375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "You're perfect. OK fine. Any allergies at all to the medications? No.",
+      "cleaned_text": "Great. Any medication allergies?",
+      "duration": 3.223124999999982
+    },
+    {
+      "start": 315.22221875,
+      "end": 315.93096875000003,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Technologies.",
+      "cleaned_text": "No.",
+      "duration": 0.7087500000000091
+    },
+    {
+      "start": 316.25159375000004,
+      "end": 316.85909375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "No OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.6074999999999591
+    },
+    {
+      "start": 317.29784375,
+      "end": 320.11596875000004,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Regarding any family history is there anything I should be aware of?",
+      "cleaned_text": "Any relevant family history I should be aware of?",
+      "duration": 2.818125000000009
+    },
+    {
+      "start": 321.06096875000003,
+      "end": 323.82846875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "My dad also has types of diabetes.",
+      "cleaned_text": "My father has diabetes.",
+      "duration": 2.767499999999984
+    },
+    {
+      "start": 323.94659375000003,
+      "end": 324.53721875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Think about it.",
+      "cleaned_text": "",
+      "duration": 0.5906249999999886
+    },
+    {
+      "start": 324.75659375000004,
+      "end": 325.85346875000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "of course.",
+      "cleaned_text": "Of course.",
+      "duration": 1.0968750000000114
+    },
+    {
+      "start": 326.71409375,
+      "end": 331.55721875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Who's looking after your diabetes? Is there anyone? Do you have a doctor in a hospital who's looking after your diabetes?",
+      "cleaned_text": "Who is managing your diabetes? Do you have a GP or hospital team?",
+      "duration": 4.843124999999986
+    },
+    {
+      "start": 331.27034375,
+      "end": 331.54034375000003,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Bye.",
+      "cleaned_text": "",
+      "duration": 0.27000000000003865
+    },
+    {
+      "start": 331.86096875000004,
+      "end": 334.37534375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I just regularly go see a doctor.",
+      "cleaned_text": "I have regular follow-up with my doctor.",
+      "duration": 2.5143749999999727
+    },
+    {
+      "start": 334.62846875,
+      "end": 339.15096875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um it just checks up on it. Same with the high blood pressure. Like I I have it under control and",
+      "cleaned_text": "They check it regularly. My diabetes and blood pressure are under control.",
+      "duration": 4.5224999999999795
+    },
+    {
+      "start": 334.67909375000005,
+      "end": 335.11784375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um.",
+      "cleaned_text": "",
+      "duration": 0.43874999999997044
+    },
+    {
+      "start": 335.33721875000003,
+      "end": 335.48909375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Thank you.",
+      "cleaned_text": "Thank you.",
+      "duration": 0.15187499999996135
+    },
+    {
+      "start": 339.42096875000004,
+      "end": 342.20534375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "since I've started taking this medication I've just been like regularly",
+      "cleaned_text": "Since I started these medications I've been regularly monitored.",
+      "duration": 2.7843749999999545
+    },
+    {
+      "start": 342.69471875000005,
+      "end": 344.24721875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "talking about it it's under control.",
+      "cleaned_text": "They say it's under control.",
+      "duration": 1.5524999999999523
+    },
+    {
+      "start": 344.38221875000005,
+      "end": 345.12471875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Great. Excellent.",
+      "cleaned_text": "Great.",
+      "duration": 0.74249999999995
+    },
+    {
+      "start": 345.74909375000004,
+      "end": 348.98909375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "And in terms of your social situation who lives at home with you?",
+      "cleaned_text": "Who lives at home with you?",
+      "duration": 3.2399999999999523
+    },
+    {
+      "start": 349.78221875,
+      "end": 351.41909375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Uh it's just it's just me and my partner.",
+      "cleaned_text": "I live with my partner.",
+      "duration": 1.636874999999975
+    },
+    {
+      "start": 351.68909375000004,
+      "end": 355.16534375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "you're OK. Um fine. Is your partner well at the moment?",
+      "cleaned_text": "Is your partner unwell?",
+      "duration": 3.476249999999993
+    },
+    {
+      "start": 355.72221875,
+      "end": 357.89909375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "yeah he has none of this like he should",
+      "cleaned_text": "He does not have these symptoms.",
+      "duration": 2.1768749999999955
+    },
+    {
+      "start": 358.20284375,
+      "end": 362.59034375000005,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "going ahead like like nothing. Like I was a bit worried that I would pass to him but",
+      "cleaned_text": "He is fine; I was worried I might pass it to him.",
+      "duration": 4.3875000000000455
+    },
+    {
+      "start": 362.60721875,
+      "end": 363.58596875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Nice. OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.9787499999999909
+    },
+    {
+      "start": 363.58596875,
+      "end": 366.45471875000004,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Or not uh diarrhea nothing it's fine.",
+      "cleaned_text": "No diarrhea or anything; he's fine.",
+      "duration": 2.868750000000034
+    },
+    {
+      "start": 366.53909375,
+      "end": 369.22221875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "away he's got away with it at the moment. OK.",
+      "cleaned_text": "He has gotten away with it so far.",
+      "duration": 2.683125000000018
+    },
+    {
+      "start": 369.67784375,
+      "end": 371.55096875000004,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "And uh are you working at the moment April?",
+      "cleaned_text": "Are you working at the moment, April?",
+      "duration": 1.873125000000016
+    },
+    {
+      "start": 372.66471875,
+      "end": 376.42784375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Uh yeah I am working but the the first day I skipped.",
+      "cleaned_text": "I am working, but I skipped the first day.",
+      "duration": 3.7631250000000023
+    },
+    {
+      "start": 376.74846875000003,
+      "end": 378.62159375000005,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "because I was feeling just too shit.",
+      "cleaned_text": "I felt too unwell.",
+      "duration": 1.873125000000016
+    },
+    {
+      "start": 378.75659375000004,
+      "end": 379.09409375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "yeah.",
+      "cleaned_text": "Okay.",
+      "duration": 0.33749999999997726
+    },
+    {
+      "start": 379.48221875,
+      "end": 379.61721875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Thank you.",
+      "cleaned_text": "Thank you.",
+      "duration": 0.1349999999999909
+    },
+    {
+      "start": 379.70159375000003,
+      "end": 380.39346875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "but then",
+      "cleaned_text": "",
+      "duration": 0.6918749999999818
+    },
+    {
+      "start": 381.08534375000005,
+      "end": 383.51534375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I just felt like had to go back because I had so much to do.",
+      "cleaned_text": "I felt I had to go back because of workload.",
+      "duration": 2.42999999999995
+    },
+    {
+      "start": 383.58284375000005,
+      "end": 384.13971875000004,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Hmm.",
+      "cleaned_text": "I see.",
+      "duration": 0.5568749999999909
+    },
+    {
+      "start": 384.46034375000005,
+      "end": 386.62034375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "so I've been going in but it's not been fun.",
+      "cleaned_text": "I've been going in to work but it's been unpleasant.",
+      "duration": 2.159999999999968
+    },
+    {
+      "start": 386.75534375,
+      "end": 389.18534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "No I can imagine. What is it that you do for work?",
+      "cleaned_text": "What do you do for work?",
+      "duration": 2.430000000000007
+    },
+    {
+      "start": 390.45096875,
+      "end": 393.13409375000003,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Uh I am a developer.",
+      "cleaned_text": "I am a developer.",
+      "duration": 2.683125000000018
+    },
+    {
+      "start": 393.96096875,
+      "end": 396.08721875000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Uh so you work in the IT field. OK.",
+      "cleaned_text": "So you work in IT.",
+      "duration": 2.1262500000000273
+    },
+    {
+      "start": 396.93096875000003,
+      "end": 397.65659375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Organize.",
+      "cleaned_text": "",
+      "duration": 0.7256249999999795
+    },
+    {
+      "start": 396.99846875000003,
+      "end": 397.33596875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "organized.",
+      "cleaned_text": "",
+      "duration": 0.33749999999997726
+    },
+    {
+      "start": 397.75784375,
+      "end": 399.19221875000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Makes you OK.",
+      "cleaned_text": "",
+      "duration": 1.4343750000000455
+    },
+    {
+      "start": 399.22596875000005,
+      "end": 399.59721875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.371249999999975
+    },
+    {
+      "start": 399.27659375,
+      "end": 401.74034375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Not too active a job.",
+      "cleaned_text": "It's not a very active job.",
+      "duration": 2.4637500000000045
+    },
+    {
+      "start": 402.28034375000004,
+      "end": 404.82846875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "No. I've been quite stressful recently.",
+      "cleaned_text": "Has work been stressful recently?",
+      "duration": 2.5481249999999704
+    },
+    {
+      "start": 402.61784375,
+      "end": 402.73596875000004,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "you",
+      "cleaned_text": "",
+      "duration": 0.11812500000002046
+    },
+    {
+      "start": 406.31346875,
+      "end": 411.89909375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Not more than usual. I don't think it's related to stress. Like I I don't feel like I've had a particularly hard time",
+      "cleaned_text": "Not more than usual. I don't think it's related to stress; I haven't had a particularly hard time at work.",
+      "duration": 5.585624999999993
+    },
+    {
+      "start": 412.16909375,
+      "end": 412.60784375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "At work.",
+      "cleaned_text": "At work?",
+      "duration": 0.4387500000000273
+    },
+    {
+      "start": 412.18596875000003,
+      "end": 413.99159375000005,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "That works for me. Um",
+      "cleaned_text": "That sounds right.",
+      "duration": 1.8056250000000205
+    },
+    {
+      "start": 414.43034375,
+      "end": 415.56096875000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "The reason I ask is because",
+      "cleaned_text": "The reason I ask is because...",
+      "duration": 1.130625000000009
+    },
+    {
+      "start": 415.78034375000004,
+      "end": 418.41284375000004,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "take a day off to try and recover. So yeah I don't",
+      "cleaned_text": "I could take a day off to try to recover, but I didn't.",
+      "duration": 2.632499999999993
+    },
+    {
+      "start": 418.22721875,
+      "end": 418.46346875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye. Bye.",
+      "cleaned_text": "",
+      "duration": 0.23624999999998408
+    },
+    {
+      "start": 418.75034375,
+      "end": 418.96971875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Yeah.",
+      "cleaned_text": "Yes.",
+      "duration": 0.21937500000001364
+    },
+    {
+      "start": 418.96971875,
+      "end": 419.10471875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye. Bye-bye.",
+      "cleaned_text": "",
+      "duration": 0.1349999999999909
+    },
+    {
+      "start": 419.71221875000003,
+      "end": 422.59784375000004,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "The reason I ask is because sometimes stress can really affect your immune system.",
+      "cleaned_text": "Stress can affect your immune system.",
+      "duration": 2.8856250000000045
+    },
+    {
+      "start": 423.13784375,
+      "end": 423.93096875000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um.",
+      "cleaned_text": "",
+      "duration": 0.7931250000000318
+    },
+    {
+      "start": 424.20096875,
+      "end": 427.03596875000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "but uh it's good to know you're you're you're not feeling stressed.",
+      "cleaned_text": "It's good to know you're not feeling particularly stressed.",
+      "duration": 2.8350000000000364
+    },
+    {
+      "start": 427.15409375,
+      "end": 429.48284375000003,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um do you smoke at all April?",
+      "cleaned_text": "Do you smoke?",
+      "duration": 2.3287500000000136
+    },
+    {
+      "start": 430.36034375,
+      "end": 433.71846875000006,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I used to but I've stopped for about six months now.",
+      "cleaned_text": "I used to smoke but quit about six months ago.",
+      "duration": 3.3581250000000296
+    },
+    {
+      "start": 434.68034375,
+      "end": 437.68409375000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK. Um and what about alcohol?",
+      "cleaned_text": "And what about alcohol?",
+      "duration": 3.003750000000025
+    },
+    {
+      "start": 439.16909375,
+      "end": 441.80159375000005,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I mean yeah I I don't think I drink that much.",
+      "cleaned_text": "I don't drink much.",
+      "duration": 2.63250000000005
+    },
+    {
+      "start": 442.05471875,
+      "end": 446.23971875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "like I I don't really know how you copy units. I guess like I don't drink more than like",
+      "cleaned_text": "I don't really know how you count units, but I don't drink more than",
+      "duration": 4.185000000000002
+    },
+    {
+      "start": 447.47159375,
+      "end": 450.15471875000003,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "like let's say three evenings a week and I rarely",
+      "cleaned_text": "about three evenings a week.",
+      "duration": 2.683125000000018
+    },
+    {
+      "start": 450.28971875,
+      "end": 452.17971875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "get like properly drunk or anything.",
+      "cleaned_text": "I rarely get properly drunk.",
+      "duration": 1.8899999999999864
+    },
+    {
+      "start": 452.56784375,
+      "end": 453.64784375000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "And what is it that you drink?",
+      "cleaned_text": "What do you usually drink?",
+      "duration": 1.080000000000041
+    },
+    {
+      "start": 454.84596875000005,
+      "end": 455.31846875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "wine.",
+      "cleaned_text": "Mostly wine.",
+      "duration": 0.47249999999996817
+    },
+    {
+      "start": 455.57159375000003,
+      "end": 456.12846875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "mostly.",
+      "cleaned_text": "",
+      "duration": 0.5568749999999909
+    },
+    {
+      "start": 456.34784375000004,
+      "end": 457.56284375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "and why not how much do you drink?",
+      "cleaned_text": "How much on those nights?",
+      "duration": 1.214999999999975
+    },
+    {
+      "start": 457.76534375000006,
+      "end": 458.82846875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "on those nights.",
+      "cleaned_text": "",
+      "duration": 1.0631249999999568
+    },
+    {
+      "start": 459.63846875,
+      "end": 462.16971875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Uh I'd say like maybe two or three glasses.",
+      "cleaned_text": "About two to three glasses.",
+      "duration": 2.53125
+    },
+    {
+      "start": 463.14846875,
+      "end": 464.24534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK so",
+      "cleaned_text": "Okay.",
+      "duration": 1.0968750000000114
+    },
+    {
+      "start": 464.44784375,
+      "end": 465.66284375000004,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um",
+      "cleaned_text": "",
+      "duration": 1.2150000000000318
+    },
+    {
+      "start": 466.40534375000004,
+      "end": 468.91971875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "yeah so you're probably just about under the limit of",
+      "cleaned_text": "You're probably around the recommended alcohol limit.",
+      "duration": 2.5143749999999727
+    },
+    {
+      "start": 469.35846875000004,
+      "end": 470.18534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um.",
+      "cleaned_text": "",
+      "duration": 0.8268749999999727
+    },
+    {
+      "start": 470.97846875000005,
+      "end": 471.82221875000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "the recommended limit.",
+      "cleaned_text": "Given your blood pressure and diabetes, you may want to cut down.",
+      "duration": 0.84375
+    },
+    {
+      "start": 472.85159375,
+      "end": 478.99409375000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Something we think about just because of your blood pressure and diabetes and it's something that you can maybe cut down on if you can.",
+      "cleaned_text": "",
+      "duration": 6.142500000000041
+    },
+    {
+      "start": 479.53409375,
+      "end": 479.90534375000004,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Yeah.",
+      "cleaned_text": "Okay.",
+      "duration": 0.37125000000003183
+    },
+    {
+      "start": 479.97284375000004,
+      "end": 480.93471875000006,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "I love you. I love you.",
+      "cleaned_text": "",
+      "duration": 0.9618750000000205
+    },
+    {
+      "start": 481.18784375,
+      "end": 482.67284375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "I should cut down on that.",
+      "cleaned_text": "I should cut down on alcohol.",
+      "duration": 1.4850000000000136
+    },
+    {
+      "start": 482.79096875000005,
+      "end": 489.47346875000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "really ideally the the right answer is to cut down completely. But so in practice I know that's not realistic. So",
+      "cleaned_text": "Ideally cut down completely, but that may not be realistic.",
+      "duration": 6.6825000000000045
+    },
+    {
+      "start": 489.86159375000005,
+      "end": 493.27034375000005,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "maybe for the first few weeks why don't you cut that to two glasses a week and then",
+      "cleaned_text": "For the first few weeks, reduce to two glasses per week,",
+      "duration": 3.4087499999999977
+    },
+    {
+      "start": 493.33784375000005,
+      "end": 494.73846875000004,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "one week thereafter.",
+      "cleaned_text": "then one per week thereafter.",
+      "duration": 1.400624999999991
+    },
+    {
+      "start": 495.48096875000005,
+      "end": 499.22721875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um and if you are coping OK then you can maybe try and cut down altogether.",
+      "cleaned_text": "If you cope well, consider cutting out alcohol entirely.",
+      "duration": 3.746249999999975
+    },
+    {
+      "start": 500.91471875,
+      "end": 501.28596875000005,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "OK.",
+      "cleaned_text": "Okay.",
+      "duration": 0.37125000000003183
+    },
+    {
+      "start": 501.53909375,
+      "end": 502.83846875000006,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK. Just something for you to think about.",
+      "cleaned_text": "Just something to consider.",
+      "duration": 1.2993750000000546
+    },
+    {
+      "start": 503.36159375000005,
+      "end": 503.93534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Um. Yeah.",
+      "cleaned_text": "",
+      "duration": 0.5737499999999613
+    },
+    {
+      "start": 503.53034375000004,
+      "end": 503.86784375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Um.",
+      "cleaned_text": "",
+      "duration": 0.33749999999997726
+    },
+    {
+      "start": 504.57659375000003,
+      "end": 507.83346875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Right so uh just as we wrap up really um",
+      "cleaned_text": "To wrap up,",
+      "duration": 3.2568749999999795
+    },
+    {
+      "start": 508.35659375000006,
+      "end": 515.4440937500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "April I think based on your story I think uh essentially I think you're you're going through a bit of a viral illness. Um I don't think there's anything to worry about.",
+      "cleaned_text": "Based on your history, this is likely a viral illness and not concerning.",
+      "duration": 7.087500000000034
+    },
+    {
+      "start": 516.08534375,
+      "end": 516.62534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "you know you've had.",
+      "cleaned_text": "",
+      "duration": 0.5399999999999636
+    },
+    {
+      "start": 517.04721875,
+      "end": 520.8103437500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "bit of a cough bit of a runny nose feeling quite weak and lethargic",
+      "cleaned_text": "You have a cough, runny nose, and are feeling weak and lethargic.",
+      "duration": 3.763125000000173
+    },
+    {
+      "start": 521.56971875,
+      "end": 527.47596875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "I'm hoping that you know you're probably over the worst of it now. It's been five days. I'm hoping you're maybe going to get better next",
+      "cleaned_text": "You are probably over the worst now; it has been five days and may improve over the next",
+      "duration": 5.90625
+    },
+    {
+      "start": 527.50971875,
+      "end": 530.2265937500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "couple of days. It normally lasts about a week to ten days.",
+      "cleaned_text": "couple of days; viral illnesses usually last 7\u201310 days.",
+      "duration": 2.7168750000000728
+    },
+    {
+      "start": 530.8003437500001,
+      "end": 535.5928437499999,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "what should I do if it just keeps going on and on? Like if it's still going on it's going to stay four days.",
+      "cleaned_text": "What should I do if it keeps going on? What if it continues beyond a few days?",
+      "duration": 4.792499999999791
+    },
+    {
+      "start": 535.66034375,
+      "end": 540.55409375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Yeah absolutely. So you know things you can do to help yourself in the meantime is to you know get some nice good rest.",
+      "cleaned_text": "Self-care: get good rest,",
+      "duration": 4.8937499999999545
+    },
+    {
+      "start": 541.0772187499999,
+      "end": 545.48159375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Drink plenty of fluids. Keep yourself well-hydrated. You can take regular Paracetamol",
+      "cleaned_text": "drink plenty of fluids, and you can take regular paracetamol.",
+      "duration": 4.404375000000073
+    },
+    {
+      "start": 545.93721875,
+      "end": 551.4722187500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "if you feel like you're still not getting any better in two to three days it's probably worth coming back to see me again. We can check you over.",
+      "cleaned_text": "If you are not improving in 2\u20133 days, come back for review.",
+      "duration": 5.535000000000082
+    },
+    {
+      "start": 552.21471875,
+      "end": 559.7578437500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "And if you are still feeling feverish um and your cough isn't getting any better then we may look to keep some antibiotics for your chest.",
+      "cleaned_text": "If you are still feverish and your cough is not improving, we may consider antibiotics for a possible chest infection.",
+      "duration": 7.5431250000001455
+    },
+    {
+      "start": 560.28096875,
+      "end": 562.5928437499999,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "a common source of infection. Um",
+      "cleaned_text": "",
+      "duration": 2.3118749999998727
+    },
+    {
+      "start": 563.23409375,
+      "end": 565.57971875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "Do you think I should keep going to work? Or do you think I should just",
+      "cleaned_text": "Should I keep going to work or stay off?",
+      "duration": 2.3456249999999272
+    },
+    {
+      "start": 566.0690937500001,
+      "end": 568.93784375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "yeah so I think really I think it depends on you.",
+      "cleaned_text": "It depends on you.",
+      "duration": 2.8687499999998636
+    },
+    {
+      "start": 569.8659687500001,
+      "end": 572.1440937500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "it's um if you are coughing then",
+      "cleaned_text": "If you are coughing, you may still be infectious.",
+      "duration": 2.2781250000000455
+    },
+    {
+      "start": 572.7178437499999,
+      "end": 578.2865937500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "there is a risk that you're maybe slightly infectious still. So I would say maybe take",
+      "cleaned_text": "I would suggest taking a day or two off work if you can.",
+      "duration": 5.568750000000136
+    },
+    {
+      "start": 578.4384687500001,
+      "end": 580.09221875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "day or two off work if you can.",
+      "cleaned_text": "Get good bed rest.",
+      "duration": 1.6537499999999454
+    },
+    {
+      "start": 580.76721875,
+      "end": 583.04534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "uh get some good bed rest. Um",
+      "cleaned_text": "Maybe think about returning to work early next week.",
+      "duration": 2.2781250000000455
+    },
+    {
+      "start": 583.29846875,
+      "end": 585.0365937500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PATIENT",
+      "original_text": "maybe you think about work early next week.",
+      "cleaned_text": "Okay.",
+      "duration": 1.7381250000000819
+    },
+    {
+      "start": 586.40346875,
+      "end": 587.38221875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK. OK.",
+      "cleaned_text": "",
+      "duration": 0.9787499999999909
+    },
+    {
+      "start": 587.78721875,
+      "end": 588.25971875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "But um.",
+      "cleaned_text": "If your cough is not getting better or your breathing worsens, come back sooner.",
+      "duration": 0.47250000000008185
+    },
+    {
+      "start": 588.4453437500001,
+      "end": 593.5078437500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PATIENT",
+      "original_text": "If your cough isn't getting any better or your breathing is getting worse you need to come back and see me sooner OK?",
+      "cleaned_text": "Okay, so otherwise I don't need to worry?",
+      "duration": 5.0625
+    },
+    {
+      "start": 594.0984687499999,
+      "end": 595.7522187500001,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK but otherwise I don't need to worry.",
+      "cleaned_text": "No, nothing else to worry about otherwise.",
+      "duration": 1.6537500000001728
+    },
+    {
+      "start": 595.9040937500001,
+      "end": 597.81096875,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PATIENT",
+      "original_text": "No no nothing to worry about otherwise.",
+      "cleaned_text": "Okay.",
+      "duration": 1.9068749999999
+    },
+    {
+      "start": 598.38471875,
+      "end": 598.78971875,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "OK.",
+      "cleaned_text": "All right.",
+      "duration": 0.4049999999999727
+    },
+    {
+      "start": 599.05971875,
+      "end": 599.3803437500001,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PATIENT",
+      "original_text": "All right.",
+      "cleaned_text": "All right.",
+      "duration": 0.32062500000006366
+    },
+    {
+      "start": 599.07659375,
+      "end": 599.44784375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PATIENT",
+      "original_text": "All right.",
+      "cleaned_text": "Great.",
+      "duration": 0.37124999999991815
+    },
+    {
+      "start": 599.7009687500001,
+      "end": 600.1397187499999,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Great.",
+      "cleaned_text": "Okay.",
+      "duration": 0.4387499999997999
+    },
+    {
+      "start": 599.73471875,
+      "end": 600.05534375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PHYSICIAN",
+      "original_text": "Right.",
+      "cleaned_text": "Have a good day.",
+      "duration": 0.32062500000006366
+    },
+    {
+      "start": 600.4265937499999,
+      "end": 601.47284375,
+      "speaker": "SPEAKER_01",
+      "speaker_role": "PATIENT",
+      "original_text": "Have a good day. Appreciate it.",
+      "cleaned_text": "Thank you, goodbye.",
+      "duration": 1.0462500000001
+    },
+    {
+      "start": 601.9622187500001,
+      "end": 603.26159375,
+      "speaker": "SPEAKER_00",
+      "speaker_role": "UNKNOWN",
+      "original_text": "Thank you. Bye.",
+      "cleaned_text": "Thank you. Bye.",
+      "duration": 1.2993749999998272
+    }
+  ]
+}

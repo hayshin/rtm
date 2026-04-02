@@ -1,0 +1,1710 @@
+{
+  "source_path": "/home/hayshin/dev/study/rtm/outputs/mixed/day1_consultation14_mixed.wav",
+  "valid": true,
+  "resource_counts": {
+    "Encounter": 1,
+    "Condition": 17,
+    "MedicationStatement": 3,
+    "Observation": 0,
+    "Procedure": 0
+  },
+  "issues": [],
+  "bundle_with_provenance": {
+    "resourceType": "Bundle",
+    "id": "f36b00c0-5518-4e6e-8fd1-10530ed463fe",
+    "type": "collection",
+    "entry": [
+      {
+        "resource": {
+          "resourceType": "Encounter",
+          "id": "a722b0c9-abe6-4b39-a2f0-a17cc88d4072",
+          "status": "finished",
+          "class": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code": "AMB",
+            "display": "ambulatory"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "participant": [
+            {
+              "individual": {
+                "reference": "Practitioner/practitioner-001"
+              }
+            }
+          ],
+          "period": {
+            "start": "2024-01-01T00:00:00Z",
+            "end": "2024-01-01T00:10:03Z"
+          }
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "5c95bd44-4d1a-4c7b-9b7d-6011bbce322b",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Dry cough, persistent, present all day and at night (started ~5-6 days ago)"
+              }
+            ],
+            "text": "Dry cough, persistent, present all day and at night (started ~5-6 days ago)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "7,8,10,12,15,16,17,18,19,22,25,91,225"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "638afdb4-7cbc-4f89-89e9-037ac871ea51",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Runny nose (rhinorrhea)"
+              }
+            ],
+            "text": "Runny nose (rhinorrhea)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "7,12,23,225"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "ed58f2fd-b93c-4a99-b7db-9bc2c2121812",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Sputum production (bringing up sputum/mucus)"
+              }
+            ],
+            "text": "Sputum production (bringing up sputum/mucus)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "16,17,19"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "0e344eed-efb9-4f3e-80e4-9d729c83c24d",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Sore throat (mild)"
+              }
+            ],
+            "text": "Sore throat (mild)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "24,25"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "4bdcac56-2b48-4bb5-9dfa-1eb27b0b289a",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Painful swallowing (odynophagia)"
+              }
+            ],
+            "text": "Painful swallowing (odynophagia)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "28"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "5e3e7b73-b5cd-47b1-b934-b611b2126ded",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Ear pain"
+              }
+            ],
+            "text": "Ear pain"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "32,35"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "b78f4984-e09d-48e9-97aa-ac1ba8ad3b30",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Ear discharge"
+              }
+            ],
+            "text": "Ear discharge"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "35"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "a11be0c5-fc4e-4f1e-a424-b2ce59004028",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Labored breathing when coughing (dyspnea associated with coughing)"
+              }
+            ],
+            "text": "Labored breathing when coughing (dyspnea associated with coughing)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "41,44,46,47"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "97f9bb22-cf9d-4e7e-99c0-7faa7933248b",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Chest pain"
+              }
+            ],
+            "text": "Chest pain"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "52,54"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "f515b595-2918-4a36-921c-ce92e29ef07a",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Fatigue / tiredness / lethargy"
+              }
+            ],
+            "text": "Fatigue / tiredness / lethargy"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "49,56,113,121"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "315df54b-d816-49d1-b474-c5589cda0229",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Muscle aches / myalgia (arms and legs aching)"
+              }
+            ],
+            "text": "Muscle aches / myalgia (arms and legs aching)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "105,109,120"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "4a3a15e6-75ed-4c21-96a9-1940cca937ac",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Chills / shivering"
+              }
+            ],
+            "text": "Chills / shivering"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "59,60,61,70"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "a38b1b49-b3d2-4b14-b2d5-be6ab4979ff8",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "unconfirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Fever (patient uncertain / not measured)"
+              }
+            ],
+            "text": "Fever (patient uncertain / not measured)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "63,64,70"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "08354f0c-a0c1-440b-86d0-292a3ed80d2b",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "resolved"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Diarrhea (occurred at onset, now resolved)"
+              }
+            ],
+            "text": "Diarrhea (occurred at onset, now resolved)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "79,87,88"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "2ed36655-7e31-4e11-8da6-20366759dea7",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "resolved"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Stomach upset (gastrointestinal upset)"
+              }
+            ],
+            "text": "Stomach upset (gastrointestinal upset)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "85,87"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "d60bb8f2-cfa0-41fb-ab71-1c2b7495ffec",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Nausea or vomiting"
+              }
+            ],
+            "text": "Nausea or vomiting"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "72,73"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "7da7de25-46b0-4d68-93a5-9faf1498167d",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Urinary problems / issues with urine"
+              }
+            ],
+            "text": "Urinary problems / issues with urine"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "94,96,97"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "50f5e7ae-ddda-42b2-9929-ccdaf32918ca",
+          "status": "active",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "metformin"
+              }
+            ],
+            "text": "metformin"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "134"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "3a91a106-8935-4c65-b41c-75c103e0bc36",
+          "status": "active",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "lisinopril"
+              }
+            ],
+            "text": "lisinopril"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "137"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "303939ef-21cf-4a55-afd6-15c43781ec94",
+          "status": "active",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "paracetamol (acetaminophen) - recommended"
+              }
+            ],
+            "text": "paracetamol (acetaminophen) - recommended"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+          },
+          "dosage": [
+            {
+              "timing": {
+                "code": {
+                  "text": "regular (per advice)"
+                }
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "230"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "735fc26c-0154-46be-a71b-60cd6e454f64",
+          "target": [
+            {
+              "reference": "Encounter/a722b0c9-abe6-4b39-a2f0-a17cc88d4072"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "e88a7651-abc1-406c-827b-fadba8ecd787",
+          "target": [
+            {
+              "reference": "Condition/5c95bd44-4d1a-4c7b-9b7d-6011bbce322b"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "7027a974-08ec-4be9-9ac8-c3a9ad582d2c",
+          "target": [
+            {
+              "reference": "Condition/638afdb4-7cbc-4f89-89e9-037ac871ea51"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "cfef9617-7e96-4712-9a1f-df2615c3a97c",
+          "target": [
+            {
+              "reference": "Condition/ed58f2fd-b93c-4a99-b7db-9bc2c2121812"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "ce084bfa-5809-4888-b2b0-57df95e41a58",
+          "target": [
+            {
+              "reference": "Condition/0e344eed-efb9-4f3e-80e4-9d729c83c24d"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "6f5627dc-1a37-4d09-a815-b451a6f03b62",
+          "target": [
+            {
+              "reference": "Condition/4bdcac56-2b48-4bb5-9dfa-1eb27b0b289a"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "c47acf8c-445a-45af-91cb-02de01f83bca",
+          "target": [
+            {
+              "reference": "Condition/5e3e7b73-b5cd-47b1-b934-b611b2126ded"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "c3de81f7-385b-4e12-94dd-587f46db2423",
+          "target": [
+            {
+              "reference": "Condition/b78f4984-e09d-48e9-97aa-ac1ba8ad3b30"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "9e668d9c-ce8d-49a4-a480-9c4ebcac4ef6",
+          "target": [
+            {
+              "reference": "Condition/a11be0c5-fc4e-4f1e-a424-b2ce59004028"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "1035f407-b1d7-4043-b815-8c8aa57066eb",
+          "target": [
+            {
+              "reference": "Condition/97f9bb22-cf9d-4e7e-99c0-7faa7933248b"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "8fff9594-2de3-4b12-85a3-283d2a903d29",
+          "target": [
+            {
+              "reference": "Condition/f515b595-2918-4a36-921c-ce92e29ef07a"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "ad6c71be-c2cd-4a25-ab39-45e319c94cfa",
+          "target": [
+            {
+              "reference": "Condition/315df54b-d816-49d1-b474-c5589cda0229"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "0b511100-2ab8-412e-88bc-e3b7cb82a5b0",
+          "target": [
+            {
+              "reference": "Condition/4a3a15e6-75ed-4c21-96a9-1940cca937ac"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "e671bb38-243c-4191-887a-e64cf219e16c",
+          "target": [
+            {
+              "reference": "Condition/a38b1b49-b3d2-4b14-b2d5-be6ab4979ff8"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "f0fe7fa9-b544-45e2-b2fc-109f5e6ac3bd",
+          "target": [
+            {
+              "reference": "Condition/08354f0c-a0c1-440b-86d0-292a3ed80d2b"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "2d55be06-cbf3-4a27-8b50-ac76bd5732dc",
+          "target": [
+            {
+              "reference": "Condition/2ed36655-7e31-4e11-8da6-20366759dea7"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "eb046193-5532-4e59-a652-60fe9f85f5df",
+          "target": [
+            {
+              "reference": "Condition/d60bb8f2-cfa0-41fb-ab71-1c2b7495ffec"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "eba18aad-5d59-44d2-865d-2e1325ef5e05",
+          "target": [
+            {
+              "reference": "Condition/7da7de25-46b0-4d68-93a5-9faf1498167d"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "d528a323-5962-47f7-98ea-646d51ec35f7",
+          "target": [
+            {
+              "reference": "MedicationStatement/50f5e7ae-ddda-42b2-9929-ccdaf32918ca"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "027c29e5-a258-4de5-9e11-05a41c39a25c",
+          "target": [
+            {
+              "reference": "MedicationStatement/3a91a106-8935-4c65-b41c-75c103e0bc36"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Provenance",
+          "id": "5e26f42a-6fda-4810-89c5-59d030bb6bc8",
+          "target": [
+            {
+              "reference": "MedicationStatement/303939ef-21cf-4a55-afd6-15c43781ec94"
+            }
+          ],
+          "recorded": "2026-04-02T07:28:12Z",
+          "agent": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                    "code": "assembler"
+                  }
+                ]
+              },
+              "who": {
+                "display": "rtm-pipeline/step05/gpt-5-mini"
+              }
+            }
+          ],
+          "entity": [
+            {
+              "role": "source",
+              "what": {
+                "display": "day1_consultation14_mixed.wav"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/nlp-system",
+              "valueString": "rtm-pipeline/step05/gpt-5-mini"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

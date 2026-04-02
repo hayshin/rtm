@@ -1,0 +1,510 @@
+{
+  "source_path": "/home/hayshin/dev/study/rtm/outputs/mixed/day1_consultation10_mixed.wav",
+  "resource_counts": {
+    "Encounter": 1,
+    "Condition": 9,
+    "MedicationStatement": 2,
+    "Observation": 0,
+    "Procedure": 1
+  },
+  "soap_summary": "19-year-old female with ~<1 week history of dysuria, increased urinary frequency, lower abdominal achy pain, and pink-tinged urine. No fever reported. Exam/assessment: clinician suspects a simple urinary tract infection/cystitis (unconfirmed). Patient reports IBS (self-reported, unconfirmed) and an allergy to clindamycin. Current medications: combined oral contraceptive pill and mebeverine. Plan: arrange urine sample for testing, consider antibiotics if indicated (trimethoprim or nitrofurantoin discussed), advise hydration and paracetamol for pain, return if not improved or if fever/back pain/vomiting develop.",
+  "model_id": "gpt-5-mini",
+  "bundle": {
+    "resourceType": "Bundle",
+    "id": "6ab811af-995e-4836-ab13-50f0a9396f33",
+    "type": "collection",
+    "entry": [
+      {
+        "resource": {
+          "resourceType": "Encounter",
+          "id": "6234a9ee-6e9f-4110-86ed-3f623049898a",
+          "status": "finished",
+          "class": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code": "AMB",
+            "display": "ambulatory"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "participant": [
+            {
+              "individual": {
+                "reference": "Practitioner/practitioner-001"
+              }
+            }
+          ],
+          "period": {
+            "start": "2024-01-01T00:00:00Z",
+            "end": "2024-01-01T00:10:16Z"
+          }
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "e2953aea-538e-40b3-938e-1cb86dee9fd0",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Dysuria (burning on urination)"
+              }
+            ],
+            "text": "Dysuria (burning on urination)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "11,22,52,53"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "08264f37-f531-43e8-8054-8fc94bcc44ec",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Increased urinary frequency"
+              }
+            ],
+            "text": "Increased urinary frequency"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "13,15,17,23"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "bbcd81af-9901-4927-826d-75cb46b31842",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Lower abdominal pain (achy)"
+              }
+            ],
+            "text": "Lower abdominal pain (achy)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "19,20,51,60"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "baa15fd4-d1e1-4365-8d4f-906544363739",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Pink-tinged urine / hematuria (patient-reported)"
+              }
+            ],
+            "text": "Pink-tinged urine / hematuria (patient-reported)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "34,39,45,46"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "d5eee964-dfc7-4b7b-a814-2068172ec98b",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Fever"
+              }
+            ],
+            "text": "Fever"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "69,70,71"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "466fce3b-7119-44ac-81d8-0cc0d661d6ac",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "unconfirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Irritable bowel syndrome (patient report: \"I think I have IBS\")"
+              }
+            ],
+            "text": "Irritable bowel syndrome (patient report: \"I think I have IBS\")"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "80"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "1f08885d-b69c-4de4-b7ce-3ad862cc2d51",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Allergy to clindamycin"
+              }
+            ],
+            "text": "Allergy to clindamycin"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "178"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "84441fbf-7977-4013-ab56-09bb39fa9cc9",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "unconfirmed"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "68566005",
+                "display": "Urinary tract infection"
+              },
+              {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "N39.0"
+              }
+            ],
+            "text": "Suspected urinary tract infection / cystitis (clinician assessment: \"probably a simple urinary tract infection or cystitis\")"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "240"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "id": "123f27cf-5fed-4752-b8ed-3ee4ef92b833",
+          "clinicalStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "inactive"
+              }
+            ]
+          },
+          "verificationStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "refuted"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "display": "Back pain"
+              }
+            ],
+            "text": "Back pain"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "241,242"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "ff6b389a-6b06-4bab-bac8-d84f9b594764",
+          "status": "active",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "Combined oral contraceptive pill"
+              }
+            ],
+            "text": "Combined oral contraceptive pill"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "115,117"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "MedicationStatement",
+          "id": "a9408e99-3f9b-42a7-b077-79ad0620b051",
+          "status": "active",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "display": "Mebeverine"
+              }
+            ],
+            "text": "Mebeverine"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "context": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "168,171,173"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Procedure",
+          "id": "120c94f8-1e63-4eb4-8b44-6b3b8a4fbb25",
+          "status": "completed",
+          "code": {
+            "coding": [
+              {
+                "display": "Urine sample collection / urinalysis (to be arranged)"
+              }
+            ],
+            "text": "Urine sample collection / urinalysis (to be arranged)"
+          },
+          "subject": {
+            "reference": "Patient/patient-001"
+          },
+          "encounter": {
+            "reference": "Encounter/6234a9ee-6e9f-4110-86ed-3f623049898a"
+          },
+          "extension": [
+            {
+              "url": "http://example.org/fhir/StructureDefinition/source-segment-indices",
+              "valueString": "251,261,263,264,265"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

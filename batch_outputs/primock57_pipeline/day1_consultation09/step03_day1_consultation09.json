@@ -1,0 +1,1461 @@
+{
+  "source_path": "/home/hayshin/dev/study/rtm/outputs/mixed/day1_consultation09_mixed.wav",
+  "segments": [
+    {
+      "start": 0.21659375000000003,
+      "end": 0.38534375,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.16874999999999996
+    },
+    {
+      "start": 1.11096875,
+      "end": 1.56659375,
+      "speaker": "SPEAKER_00",
+      "text": "Hello?",
+      "duration": 0.45562499999999995
+    },
+    {
+      "start": 4.48596875,
+      "end": 4.8572187499999995,
+      "speaker": "SPEAKER_00",
+      "text": "Hello?",
+      "duration": 0.37124999999999986
+    },
+    {
+      "start": 4.8572187499999995,
+      "end": 5.076593750000001,
+      "speaker": "SPEAKER_01",
+      "text": "Bye.",
+      "duration": 0.2193750000000012
+    },
+    {
+      "start": 5.48159375,
+      "end": 6.03846875,
+      "speaker": "SPEAKER_01",
+      "text": "Hear me.",
+      "duration": 0.5568749999999998
+    },
+    {
+      "start": 6.13971875,
+      "end": 7.21971875,
+      "speaker": "SPEAKER_00",
+      "text": "I can hear you. Can you hear me?",
+      "duration": 1.08
+    },
+    {
+      "start": 7.96221875,
+      "end": 8.755343750000002,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, I can hear you now.",
+      "duration": 0.7931250000000016
+    },
+    {
+      "start": 8.92409375,
+      "end": 12.88971875,
+      "speaker": "SPEAKER_00",
+      "text": "Excellent. So if I'll get any further, can you confirm your name and your age?",
+      "duration": 3.9656249999999993
+    },
+    {
+      "start": 13.952843750000003,
+      "end": 17.37846875,
+      "speaker": "SPEAKER_01",
+      "text": "Oh yeah, my name is Jessica Smith and I'm 19 years old.",
+      "duration": 3.4256249999999966
+    },
+    {
+      "start": 17.68221875,
+      "end": 18.03659375,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.354375000000001
+    },
+    {
+      "start": 18.37409375,
+      "end": 19.62284375,
+      "speaker": "SPEAKER_00",
+      "text": "And how can I help you, Mrs. Smith?",
+      "duration": 1.2487500000000011
+    },
+    {
+      "start": 21.83346875,
+      "end": 25.140968750000003,
+      "speaker": "SPEAKER_01",
+      "text": "Um, yeah, so, uh, I mean, this is a bit embarrassing, but...",
+      "duration": 3.307500000000001
+    },
+    {
+      "start": 25.32659375,
+      "end": 26.32221875,
+      "speaker": "SPEAKER_01",
+      "text": "It's Kiva.",
+      "duration": 0.9956250000000004
+    },
+    {
+      "start": 26.96346875,
+      "end": 29.76471875,
+      "speaker": "SPEAKER_01",
+      "text": "hurting when I when I used to bathe in my feet and um",
+      "duration": 2.8012499999999996
+    },
+    {
+      "start": 30.59159375,
+      "end": 35.11409375,
+      "speaker": "SPEAKER_01",
+      "text": "It's been going on for a few days. I'm a little bit worried about it. Not sure what to do.",
+      "duration": 4.522500000000001
+    },
+    {
+      "start": 35.55284375,
+      "end": 38.877218750000004,
+      "speaker": "SPEAKER_00",
+      "text": "Right, well, thank you for coming in.  So hopefully we can help with your symptoms.",
+      "duration": 3.3243750000000034
+    },
+    {
+      "start": 39.21471875,
+      "end": 41.087843750000005,
+      "speaker": "SPEAKER_00",
+      "text": "As you mentioned, it started a few days ago.",
+      "duration": 1.8731250000000017
+    },
+    {
+      "start": 41.509718750000005,
+      "end": 41.99909375,
+      "speaker": "SPEAKER_00",
+      "text": "Um,",
+      "duration": 0.48937499999999545
+    },
+    {
+      "start": 42.53909375,
+      "end": 42.84284375,
+      "speaker": "SPEAKER_00",
+      "text": "So",
+      "duration": 0.30375000000000085
+    },
+    {
+      "start": 43.24784375,
+      "end": 45.55971875,
+      "speaker": "SPEAKER_00",
+      "text": "Can you tell me a bit more about what kind of pain it is?",
+      "duration": 2.3118750000000006
+    },
+    {
+      "start": 45.846593750000004,
+      "end": 46.673468750000005,
+      "speaker": "SPEAKER_00",
+      "text": "that you're experiencing.",
+      "duration": 0.8268750000000011
+    },
+    {
+      "start": 48.040343750000005,
+      "end": 52.64721875,
+      "speaker": "SPEAKER_01",
+      "text": "Um, it's not too bad. It's like a stinging kind of pain.",
+      "duration": 4.606874999999995
+    },
+    {
+      "start": 53.17034375,
+      "end": 55.431593750000005,
+      "speaker": "SPEAKER_01",
+      "text": "It's not unbearable, but it's...",
+      "duration": 2.261250000000004
+    },
+    {
+      "start": 55.76909375,
+      "end": 58.367843750000006,
+      "speaker": "SPEAKER_01",
+      "text": "It's definitely bothers me in IT.",
+      "duration": 2.5987500000000026
+    },
+    {
+      "start": 59.009093750000005,
+      "end": 59.68409375,
+      "speaker": "SPEAKER_01",
+      "text": "And uh...",
+      "duration": 0.6749999999999972
+    },
+    {
+      "start": 59.025968750000004,
+      "end": 59.38034375,
+      "speaker": "SPEAKER_00",
+      "text": "and",
+      "duration": 0.35437499999999744
+    },
+    {
+      "start": 60.291593750000004,
+      "end": 62.265968750000006,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, I also maybe sometimes get some, like...",
+      "duration": 1.974375000000002
+    },
+    {
+      "start": 62.789093750000006,
+      "end": 66.38346875,
+      "speaker": "SPEAKER_01",
+      "text": "pain kind of lowers down in my tummy when I go to the bathroom.",
+      "duration": 3.5943749999999994
+    },
+    {
+      "start": 66.60284375,
+      "end": 66.97409375000001,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah.",
+      "duration": 0.3712500000000034
+    },
+    {
+      "start": 66.67034375,
+      "end": 66.95721875000001,
+      "speaker": "SPEAKER_00",
+      "text": "We have.",
+      "duration": 0.2868750000000091
+    },
+    {
+      "start": 67.42971875,
+      "end": 67.91909375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.48937499999999545
+    },
+    {
+      "start": 67.91909375,
+      "end": 68.13846875,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.21937499999999943
+    },
+    {
+      "start": 68.40846875,
+      "end": 71.17596875000001,
+      "speaker": "SPEAKER_00",
+      "text": "And the pain in your tummy, is it?",
+      "duration": 2.7675000000000125
+    },
+    {
+      "start": 71.29409375,
+      "end": 73.80846875,
+      "speaker": "SPEAKER_00",
+      "text": "can describe the fear the pain to me is it",
+      "duration": 2.514375000000001
+    },
+    {
+      "start": 73.85909375,
+      "end": 75.54659375,
+      "speaker": "SPEAKER_00",
+      "text": "cramping burning sharp",
+      "duration": 1.6875
+    },
+    {
+      "start": 77.50409375000001,
+      "end": 77.87534375,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.3712499999999892
+    },
+    {
+      "start": 78.19596875,
+      "end": 79.73159375,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, I don't know, maybe, uh...",
+      "duration": 1.535624999999996
+    },
+    {
+      "start": 80.71034375,
+      "end": 87.03846875,
+      "speaker": "SPEAKER_01",
+      "text": "It's sort of cramping. I'm not really sure.  But it's not like cramping like when I have periods.  It's like, I don't know.",
+      "duration": 6.328125
+    },
+    {
+      "start": 86.07659375,
+      "end": 86.85284375,
+      "speaker": "SPEAKER_00",
+      "text": "Right.",
+      "duration": 0.7762500000000045
+    },
+    {
+      "start": 87.25784375,
+      "end": 87.91596875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.6581249999999983
+    },
+    {
+      "start": 88.48971875000001,
+      "end": 89.26596875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, um...",
+      "duration": 0.7762499999999903
+    },
+    {
+      "start": 89.63721875,
+      "end": 92.62409375,
+      "speaker": "SPEAKER_00",
+      "text": "Fine, and have you found yourself going to the toilet more often than normal?",
+      "duration": 2.9868749999999977
+    },
+    {
+      "start": 94.80096875000001,
+      "end": 96.65721875000001,
+      "speaker": "SPEAKER_01",
+      "text": "Not, I don't think so.",
+      "duration": 1.8562500000000028
+    },
+    {
+      "start": 97.19721875,
+      "end": 98.59784375000001,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, fine.",
+      "duration": 1.4006250000000051
+    },
+    {
+      "start": 99.39096875000001,
+      "end": 102.66471875,
+      "speaker": "SPEAKER_00",
+      "text": "Have you noticed any funny colour to your urine?  Has it been...",
+      "duration": 3.2737499999999926
+    },
+    {
+      "start": 103.22159375000001,
+      "end": 106.39409375000001,
+      "speaker": "SPEAKER_00",
+      "text": "any blood in your urine or have you seen any other darkening of urine",
+      "duration": 3.1724999999999994
+    },
+    {
+      "start": 107.47409375000001,
+      "end": 107.92971875,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 108.65534375,
+      "end": 112.73909375000001,
+      "speaker": "SPEAKER_01",
+      "text": "There was a little bit of blood earlier today, but besides that...",
+      "duration": 4.083750000000009
+    },
+    {
+      "start": 113.12721875000001,
+      "end": 114.74721875,
+      "speaker": "SPEAKER_01",
+      "text": "Not at all, no.",
+      "duration": 1.6199999999999903
+    },
+    {
+      "start": 115.32096875,
+      "end": 116.06346875000001,
+      "speaker": "SPEAKER_01",
+      "text": "It does kind of...",
+      "duration": 0.7425000000000068
+    },
+    {
+      "start": 117.39659375000001,
+      "end": 119.45534375000001,
+      "speaker": "SPEAKER_01",
+      "text": "Kind of like, doesn't smell very...",
+      "duration": 2.0587500000000034
+    },
+    {
+      "start": 119.45534375000001,
+      "end": 120.16409375,
+      "speaker": "SPEAKER_00",
+      "text": "Yes.",
+      "duration": 0.7087499999999949
+    },
+    {
+      "start": 120.16409375,
+      "end": 120.33284375000001,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.16875000000000284
+    },
+    {
+      "start": 120.46784375000001,
+      "end": 121.75034375000001,
+      "speaker": "SPEAKER_01",
+      "text": "I guess but",
+      "duration": 1.2824999999999989
+    },
+    {
+      "start": 122.40846875000001,
+      "end": 124.60221875,
+      "speaker": "SPEAKER_01",
+      "text": "No, not really anything drastic.",
+      "duration": 2.1937499999999943
+    },
+    {
+      "start": 125.09159375,
+      "end": 125.42909375,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.3375000000000057
+    },
+    {
+      "start": 125.71596875,
+      "end": 126.50909375,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.7931250000000034
+    },
+    {
+      "start": 126.76221875,
+      "end": 130.32284375,
+      "speaker": "SPEAKER_00",
+      "text": "Right, let me just write a few notes down as well.",
+      "duration": 3.5606250000000017
+    },
+    {
+      "start": 131.82471875000002,
+      "end": 134.81159375000001,
+      "speaker": "SPEAKER_00",
+      "text": "And you mentioned the tummy pain, that also started a few days ago.",
+      "duration": 2.9868749999999977
+    },
+    {
+      "start": 135.16596875000002,
+      "end": 139.70534375,
+      "speaker": "SPEAKER_00",
+      "text": "Does the pain move anywhere else? Does it move towards the back or towards your flank?",
+      "duration": 4.539374999999978
+    },
+    {
+      "start": 140.16096875,
+      "end": 140.92034375,
+      "speaker": "SPEAKER_00",
+      "text": "Besides...",
+      "duration": 0.7593750000000057
+    },
+    {
+      "start": 142.33784375000002,
+      "end": 143.87346875,
+      "speaker": "SPEAKER_01",
+      "text": "No, not really, no.",
+      "duration": 1.5356249999999818
+    },
+    {
+      "start": 144.14346875,
+      "end": 145.05471875,
+      "speaker": "SPEAKER_00",
+      "text": "No, okay.",
+      "duration": 0.9112499999999955
+    },
+    {
+      "start": 145.47659375,
+      "end": 145.94909375,
+      "speaker": "SPEAKER_00",
+      "text": "Fine.",
+      "duration": 0.4724999999999966
+    },
+    {
+      "start": 146.35409375,
+      "end": 149.54346875000002,
+      "speaker": "SPEAKER_00",
+      "text": "Buddhist symptoms, if you notice any other symptoms like nausea, vomiting.",
+      "duration": 3.1893750000000125
+    },
+    {
+      "start": 151.29846875,
+      "end": 152.93534375000002,
+      "speaker": "SPEAKER_01",
+      "text": "uh... no",
+      "duration": 1.6368750000000034
+    },
+    {
+      "start": 153.39096875,
+      "end": 155.39909375000002,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, any fevers or temperatures?",
+      "duration": 2.008125000000007
+    },
+    {
+      "start": 163.41471875000002,
+      "end": 166.36784375000002,
+      "speaker": "SPEAKER_00",
+      "text": "Sorry, any fevers or temperatures?  Sorry, I didn't hear you.",
+      "duration": 2.953125
+    },
+    {
+      "start": 167.31284375,
+      "end": 168.40971875000002,
+      "speaker": "SPEAKER_01",
+      "text": "No, no, no, no.",
+      "duration": 1.0968750000000114
+    },
+    {
+      "start": 168.47721875000002,
+      "end": 170.73846875,
+      "speaker": "SPEAKER_00",
+      "text": "No, people, okay, fine, sorry.",
+      "duration": 2.2612499999999898
+    },
+    {
+      "start": 170.90721875,
+      "end": 173.84346875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, in terms of your bowel, are your bowels making okay?",
+      "duration": 2.936250000000001
+    },
+    {
+      "start": 175.73346875000001,
+      "end": 175.96971875,
+      "speaker": "SPEAKER_00",
+      "text": "Oh.",
+      "duration": 0.23624999999998408
+    },
+    {
+      "start": 175.96971875,
+      "end": 176.37471875,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.40500000000000114
+    },
+    {
+      "start": 176.56034375000002,
+      "end": 177.99471875,
+      "speaker": "SPEAKER_01",
+      "text": "I think so, yeah.",
+      "duration": 1.4343749999999886
+    },
+    {
+      "start": 177.99471875,
+      "end": 181.63971875000001,
+      "speaker": "SPEAKER_00",
+      "text": "Any diarrhea?  Least two?",
+      "duration": 3.6450000000000102
+    },
+    {
+      "start": 178.38284375,
+      "end": 178.72034375,
+      "speaker": "SPEAKER_01",
+      "text": "Bye.",
+      "duration": 0.3375000000000057
+    },
+    {
+      "start": 182.17971875,
+      "end": 184.77846875,
+      "speaker": "SPEAKER_01",
+      "text": "Uh, no. Not that I, not that I've noticed.",
+      "duration": 2.5987499999999955
+    },
+    {
+      "start": 185.11596875,
+      "end": 185.97659375,
+      "speaker": "SPEAKER_00",
+      "text": "All right.",
+      "duration": 0.8606249999999989
+    },
+    {
+      "start": 186.34784375,
+      "end": 191.88284375,
+      "speaker": "SPEAKER_00",
+      "text": "And Jessica, sometimes we have to ask very private sensitive questions just to get a full history.",
+      "duration": 5.534999999999997
+    },
+    {
+      "start": 192.28784375,
+      "end": 194.93721875,
+      "speaker": "SPEAKER_00",
+      "text": "Hope you don't mind me asking, are you currently sexually active?",
+      "duration": 2.649374999999992
+    },
+    {
+      "start": 196.25346875000002,
+      "end": 197.28284375,
+      "speaker": "SPEAKER_01",
+      "text": "Uh, yeah, I am.",
+      "duration": 1.0293749999999875
+    },
+    {
+      "start": 197.87346875,
+      "end": 199.62846875000002,
+      "speaker": "SPEAKER_00",
+      "text": "Ended up with a regular partner.",
+      "duration": 1.7550000000000239
+    },
+    {
+      "start": 201.29909375000003,
+      "end": 203.72909375,
+      "speaker": "SPEAKER_01",
+      "text": "Um, yeah, so I've had a boyfriend for about...",
+      "duration": 2.4299999999999784
+    },
+    {
+      "start": 204.18471875,
+      "end": 205.18034375000002,
+      "speaker": "SPEAKER_01",
+      "text": "couple months now.",
+      "duration": 0.9956250000000182
+    },
+    {
+      "start": 206.32784375,
+      "end": 207.15471875,
+      "speaker": "SPEAKER_00",
+      "text": "Fine, okay.",
+      "duration": 0.8268750000000011
+    },
+    {
+      "start": 207.72846875000002,
+      "end": 211.12034375000002,
+      "speaker": "SPEAKER_00",
+      "text": "Have you noticed any other discharge from down below?",
+      "duration": 3.391874999999999
+    },
+    {
+      "start": 214.71471875,
+      "end": 215.55846875,
+      "speaker": "SPEAKER_01",
+      "text": "I haven't noticed that.",
+      "duration": 0.84375
+    },
+    {
+      "start": 216.21659375000002,
+      "end": 217.19534375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.9787499999999909
+    },
+    {
+      "start": 217.65096875,
+      "end": 221.05971875,
+      "speaker": "SPEAKER_00",
+      "text": "When was your last STD screen?",
+      "duration": 3.4087499999999977
+    },
+    {
+      "start": 222.00471875000002,
+      "end": 222.84846875000002,
+      "speaker": "SPEAKER_00",
+      "text": "If ever.",
+      "duration": 0.84375
+    },
+    {
+      "start": 224.18159375000002,
+      "end": 224.67096875000001,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.48937499999999545
+    },
+    {
+      "start": 226.29096875000002,
+      "end": 228.19784375,
+      "speaker": "SPEAKER_01",
+      "text": "Don't think I've ever, I don't think I've ever had.",
+      "duration": 1.9068749999999852
+    },
+    {
+      "start": 228.88971875000001,
+      "end": 232.66971875000002,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, go on.",
+      "duration": 3.780000000000001
+    },
+    {
+      "start": 234.00284375,
+      "end": 236.24721875,
+      "speaker": "SPEAKER_00",
+      "text": "Do you use any form of contraception?",
+      "duration": 2.244374999999991
+    },
+    {
+      "start": 237.66471875000002,
+      "end": 239.08221875,
+      "speaker": "SPEAKER_01",
+      "text": "Oh yeah, we just called it a day.",
+      "duration": 1.4174999999999898
+    },
+    {
+      "start": 239.21721875000003,
+      "end": 240.19596875000002,
+      "speaker": "SPEAKER_00",
+      "text": "these condoms",
+      "duration": 0.9787499999999909
+    },
+    {
+      "start": 240.83721875,
+      "end": 241.69784375,
+      "speaker": "SPEAKER_00",
+      "text": "The moment you lost",
+      "duration": 0.8606249999999989
+    },
+    {
+      "start": 242.10284375,
+      "end": 242.57534375,
+      "speaker": "SPEAKER_00",
+      "text": "Period.",
+      "duration": 0.4724999999999966
+    },
+    {
+      "start": 243.99284375000002,
+      "end": 245.07284375,
+      "speaker": "SPEAKER_01",
+      "text": "a couple weeks ago.",
+      "duration": 1.079999999999984
+    },
+    {
+      "start": 245.71409375000002,
+      "end": 246.59159375000002,
+      "speaker": "SPEAKER_00",
+      "text": "That's good.",
+      "duration": 0.8774999999999977
+    },
+    {
+      "start": 247.45221875000001,
+      "end": 249.35909375000003,
+      "speaker": "SPEAKER_00",
+      "text": "Is there any chance you could be pregnant perhaps?",
+      "duration": 1.9068750000000136
+    },
+    {
+      "start": 250.94534375,
+      "end": 251.35034375,
+      "speaker": "SPEAKER_01",
+      "text": "So you can.",
+      "duration": 0.40500000000000114
+    },
+    {
+      "start": 251.53596875000002,
+      "end": 253.49346875,
+      "speaker": "SPEAKER_00",
+      "text": "any chance you could be pregnant.",
+      "duration": 1.9574999999999818
+    },
+    {
+      "start": 254.75909375,
+      "end": 255.23159375000003,
+      "speaker": "SPEAKER_01",
+      "text": "Uh...",
+      "duration": 0.472500000000025
+    },
+    {
+      "start": 255.61971875,
+      "end": 256.53096875,
+      "speaker": "SPEAKER_01",
+      "text": "I don't think so.",
+      "duration": 0.9112499999999955
+    },
+    {
+      "start": 257.13846875,
+      "end": 260.24346875000003,
+      "speaker": "SPEAKER_00",
+      "text": "It's always worth asking young females like yourself.",
+      "duration": 3.105000000000018
+    },
+    {
+      "start": 257.17221875,
+      "end": 257.42534375,
+      "speaker": "SPEAKER_01",
+      "text": "I don't know.",
+      "duration": 0.25312500000001137
+    },
+    {
+      "start": 260.69909375000003,
+      "end": 261.32346875,
+      "speaker": "SPEAKER_00",
+      "text": "Yeah.",
+      "duration": 0.6243749999999864
+    },
+    {
+      "start": 261.49221875,
+      "end": 263.82096875,
+      "speaker": "SPEAKER_00",
+      "text": "So if you are worried about the pain",
+      "duration": 2.3287500000000136
+    },
+    {
+      "start": 264.46221875000003,
+      "end": 269.27159375,
+      "speaker": "SPEAKER_00",
+      "text": "and not getting any better, then I would always advise you to get a pregnancy test.",
+      "duration": 4.809374999999989
+    },
+    {
+      "start": 269.30534375,
+      "end": 270.52034375,
+      "speaker": "SPEAKER_00",
+      "text": "to rule out pregnancy.",
+      "duration": 1.214999999999975
+    },
+    {
+      "start": 270.84096875,
+      "end": 271.44846875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.6075000000000159
+    },
+    {
+      "start": 272.07284375,
+      "end": 272.74784375,
+      "speaker": "SPEAKER_00",
+      "text": "Um.",
+      "duration": 0.6750000000000114
+    },
+    {
+      "start": 273.30471875,
+      "end": 274.95846875,
+      "speaker": "SPEAKER_00",
+      "text": "Alright, so this is moving on",
+      "duration": 1.6537500000000023
+    },
+    {
+      "start": 275.07659375000003,
+      "end": 276.88221875,
+      "speaker": "SPEAKER_00",
+      "text": "Are you otherwise fitting well?",
+      "duration": 1.8056249999999636
+    },
+    {
+      "start": 278.63721875000005,
+      "end": 281.37096875000003,
+      "speaker": "SPEAKER_01",
+      "text": "Um, yeah, I think I'm feeling okay, otherwise, yeah.",
+      "duration": 2.7337499999999864
+    },
+    {
+      "start": 281.57346875,
+      "end": 285.45471875000004,
+      "speaker": "SPEAKER_00",
+      "text": "And so by that I mean, do you have any other medical problems, medical history?",
+      "duration": 3.8812500000000227
+    },
+    {
+      "start": 287.05784375,
+      "end": 291.51284375,
+      "speaker": "SPEAKER_01",
+      "text": "So in the past I've had some IBS.",
+      "duration": 4.454999999999984
+    },
+    {
+      "start": 292.33971875000003,
+      "end": 296.38971875000004,
+      "speaker": "SPEAKER_01",
+      "text": "But other than that, I think there were a series of problems that seemed...",
+      "duration": 4.050000000000011
+    },
+    {
+      "start": 296.81159375000004,
+      "end": 297.11534375,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah.",
+      "duration": 0.30374999999997954
+    },
+    {
+      "start": 297.30096875000004,
+      "end": 297.58784375000005,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.2868750000000091
+    },
+    {
+      "start": 298.16159375,
+      "end": 299.74784375,
+      "speaker": "SPEAKER_00",
+      "text": "Do you take any regular medications?",
+      "duration": 1.5862500000000068
+    },
+    {
+      "start": 301.40159375,
+      "end": 303.35909375,
+      "speaker": "SPEAKER_01",
+      "text": "Oh, no.  I did a...",
+      "duration": 1.9574999999999818
+    },
+    {
+      "start": 303.66284375000004,
+      "end": 306.26159375000003,
+      "speaker": "SPEAKER_01",
+      "text": "I did a little bit ago or a couple days ago.",
+      "duration": 2.5987499999999955
+    },
+    {
+      "start": 306.80159375,
+      "end": 311.54346875000005,
+      "speaker": "SPEAKER_01",
+      "text": "try some over-the-counter bicarbonate to try and help with the pain, but it wasn't really helping.",
+      "duration": 4.74187500000005
+    },
+    {
+      "start": 311.79659375,
+      "end": 314.22659375,
+      "speaker": "SPEAKER_00",
+      "text": "you've tried that and didn't help, ok, alright",
+      "duration": 2.430000000000007
+    },
+    {
+      "start": 314.24346875000003,
+      "end": 316.82534375,
+      "speaker": "SPEAKER_00",
+      "text": "Do you have any allergies to any medications?",
+      "duration": 2.581874999999968
+    },
+    {
+      "start": 318.49596875000003,
+      "end": 321.07784375,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah, I'm allergic to clindamycin.",
+      "duration": 2.581874999999968
+    },
+    {
+      "start": 322.34346875,
+      "end": 323.87909375000004,
+      "speaker": "SPEAKER_00",
+      "text": "And what happens when you take Indamycin?",
+      "duration": 1.5356250000000387
+    },
+    {
+      "start": 326.05596875000003,
+      "end": 328.70534375,
+      "speaker": "SPEAKER_01",
+      "text": "I get some, like, a swelling.",
+      "duration": 2.6493749999999636
+    },
+    {
+      "start": 329.12721875,
+      "end": 329.59971875,
+      "speaker": "SPEAKER_01",
+      "text": "Peace.",
+      "duration": 0.472500000000025
+    },
+    {
+      "start": 329.86971875,
+      "end": 331.92846875000004,
+      "speaker": "SPEAKER_00",
+      "text": "but it seems quite severe.",
+      "duration": 2.058750000000032
+    },
+    {
+      "start": 332.08034375,
+      "end": 333.64971875000003,
+      "speaker": "SPEAKER_00",
+      "text": "allergy to it. Am I right?",
+      "duration": 1.5693750000000364
+    },
+    {
+      "start": 333.71721875000003,
+      "end": 334.30784375,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.5906249999999886
+    },
+    {
+      "start": 334.52721875000003,
+      "end": 335.11784375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.5906249999999886
+    },
+    {
+      "start": 335.67471875,
+      "end": 339.38721875000005,
+      "speaker": "SPEAKER_00",
+      "text": "In terms of your family history, is there anything you're actually aware of?",
+      "duration": 3.712500000000034
+    },
+    {
+      "start": 339.97784375000003,
+      "end": 341.83409375,
+      "speaker": "SPEAKER_00",
+      "text": "relax the kidneys, bladder",
+      "duration": 1.8562499999999886
+    },
+    {
+      "start": 342.34034375000005,
+      "end": 343.35284375000003,
+      "speaker": "SPEAKER_00",
+      "text": "bowels, guts.",
+      "duration": 1.0124999999999886
+    },
+    {
+      "start": 344.83784375000005,
+      "end": 347.08221875000004,
+      "speaker": "SPEAKER_01",
+      "text": "Uh, no, I don't think so. Not that I...",
+      "duration": 2.244374999999991
+    },
+    {
+      "start": 347.18346875000003,
+      "end": 348.26346875,
+      "speaker": "SPEAKER_01",
+      "text": "Not anything I know about.",
+      "duration": 1.079999999999984
+    },
+    {
+      "start": 348.51659375,
+      "end": 349.37721875,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.8606249999999704
+    },
+    {
+      "start": 349.86659375000005,
+      "end": 352.81971875000005,
+      "speaker": "SPEAKER_00",
+      "text": "And tell me a bit more about your home situation.  Who lives at home with you?",
+      "duration": 2.953125
+    },
+    {
+      "start": 354.42284375,
+      "end": 359.63721875000005,
+      "speaker": "SPEAKER_01",
+      "text": "So I live in a flat in my college with a",
+      "duration": 5.214375000000018
+    },
+    {
+      "start": 359.95784375,
+      "end": 364.44659375000003,
+      "speaker": "SPEAKER_01",
+      "text": "couple of like friends of mine uh so i'm not looking at film or anything um",
+      "duration": 4.488750000000039
+    },
+    {
+      "start": 364.76721875000004,
+      "end": 365.56034375,
+      "speaker": "SPEAKER_00",
+      "text": "It would be.",
+      "duration": 0.793124999999975
+    },
+    {
+      "start": 366.11721875,
+      "end": 366.89346875,
+      "speaker": "SPEAKER_01",
+      "text": "Sorry.",
+      "duration": 0.7762500000000045
+    },
+    {
+      "start": 367.77096875,
+      "end": 370.75784375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, and are you working at the moment or are you a student?",
+      "duration": 2.9868749999999977
+    },
+    {
+      "start": 371.65221875000003,
+      "end": 372.20909375,
+      "speaker": "SPEAKER_00",
+      "text": "I'm a student.",
+      "duration": 0.5568749999999909
+    },
+    {
+      "start": 372.59721875,
+      "end": 373.64346875,
+      "speaker": "SPEAKER_00",
+      "text": "Okay, what are you studying?",
+      "duration": 1.0462499999999864
+    },
+    {
+      "start": 374.65596875,
+      "end": 375.98909375000005,
+      "speaker": "SPEAKER_01",
+      "text": "I'm studying biology.",
+      "duration": 1.3331250000000523
+    },
+    {
+      "start": 376.57971875000004,
+      "end": 377.37284375,
+      "speaker": "SPEAKER_00",
+      "text": "How's that going?",
+      "duration": 0.793124999999975
+    },
+    {
+      "start": 378.90846875,
+      "end": 381.65909375,
+      "speaker": "SPEAKER_01",
+      "text": "It's good, yeah. It's really interesting.",
+      "duration": 2.7506250000000136
+    },
+    {
+      "start": 382.08096875,
+      "end": 382.84034375000005,
+      "speaker": "SPEAKER_01",
+      "text": "learning about.",
+      "duration": 0.7593750000000341
+    },
+    {
+      "start": 383.29596875000004,
+      "end": 385.20284375,
+      "speaker": "SPEAKER_01",
+      "text": "learning about how the world works.",
+      "duration": 1.9068749999999568
+    },
+    {
+      "start": 385.30409375000005,
+      "end": 385.60784375000003,
+      "speaker": "SPEAKER_01",
+      "text": "Yeah.",
+      "duration": 0.30374999999997954
+    },
+    {
+      "start": 385.75971875000005,
+      "end": 388.61159375,
+      "speaker": "SPEAKER_00",
+      "text": "Great. Do you have any aspirations for the future in terms of careers?",
+      "duration": 2.85187499999995
+    },
+    {
+      "start": 391.27784375000005,
+      "end": 393.89346875,
+      "speaker": "SPEAKER_01",
+      "text": "Uh, I don't know. Maybe a doctor someday. You never know.",
+      "duration": 2.615624999999966
+    },
+    {
+      "start": 394.14659375,
+      "end": 396.28971875,
+      "speaker": "SPEAKER_00",
+      "text": "I'm going to let PeeDee talk to us.",
+      "duration": 2.1431249999999977
+    },
+    {
+      "start": 396.62721875,
+      "end": 397.33596875,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.7087500000000091
+    },
+    {
+      "start": 397.89284375000005,
+      "end": 402.43221875,
+      "speaker": "SPEAKER_00",
+      "text": "What about smoking and alcohol? Do you smoke or do you drink much in the way of alcohol?",
+      "duration": 4.53937499999995
+    },
+    {
+      "start": 403.46159375,
+      "end": 407.17409375000005,
+      "speaker": "SPEAKER_01",
+      "text": "I don't smoke. I do drink, like, cans.",
+      "duration": 3.712500000000034
+    },
+    {
+      "start": 407.42721875,
+      "end": 408.72659375,
+      "speaker": "SPEAKER_00",
+      "text": "So socially.",
+      "duration": 1.2993749999999977
+    },
+    {
+      "start": 409.31721875000005,
+      "end": 411.34221875000003,
+      "speaker": "SPEAKER_00",
+      "text": "Right.",
+      "duration": 2.0249999999999773
+    },
+    {
+      "start": 412.20284375,
+      "end": 415.93221875,
+      "speaker": "SPEAKER_00",
+      "text": "Right, excellent. So, they said I'll proceed to examination.",
+      "duration": 3.7293750000000045
+    },
+    {
+      "start": 416.35409375,
+      "end": 418.90221875000003,
+      "speaker": "SPEAKER_00",
+      "text": "but basically your story...",
+      "duration": 2.5481250000000273
+    },
+    {
+      "start": 419.22284375000004,
+      "end": 423.88034375,
+      "speaker": "SPEAKER_00",
+      "text": "just to summarize really it's the last three days you've been having a bit of burning pain  and passing urine a bit of",
+      "duration": 4.65749999999997
+    },
+    {
+      "start": 424.45409375,
+      "end": 426.58034375000005,
+      "speaker": "SPEAKER_00",
+      "text": "crampy tummy pain lower down.",
+      "duration": 2.1262500000000273
+    },
+    {
+      "start": 427.00221875000005,
+      "end": 427.62659375000004,
+      "speaker": "SPEAKER_00",
+      "text": "Um,",
+      "duration": 0.6243749999999864
+    },
+    {
+      "start": 428.38596875,
+      "end": 433.49909375000004,
+      "speaker": "SPEAKER_00",
+      "text": "essentially but no other fevers or back pain if I understand correctly",
+      "duration": 5.113125000000025
+    },
+    {
+      "start": 434.20784375000005,
+      "end": 434.46096875,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.2531249999999545
+    },
+    {
+      "start": 434.68034375,
+      "end": 439.15221875000003,
+      "speaker": "SPEAKER_00",
+      "text": "probably do have what we call a simple UTI or a urinary tract infection.",
+      "duration": 4.471875000000011
+    },
+    {
+      "start": 439.43909375000004,
+      "end": 440.21534375000005,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.7762500000000045
+    },
+    {
+      "start": 440.89034375000006,
+      "end": 444.29909375000005,
+      "speaker": "SPEAKER_00",
+      "text": "which can be readily treated so I'll give you a course of antibiotics today",
+      "duration": 3.4087499999999977
+    },
+    {
+      "start": 444.88971875000004,
+      "end": 445.59846875000005,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.7087500000000091
+    },
+    {
+      "start": 445.24409375000005,
+      "end": 445.64909375,
+      "speaker": "SPEAKER_01",
+      "text": "Okay.",
+      "duration": 0.4049999999999727
+    },
+    {
+      "start": 445.64909375,
+      "end": 449.42909375000005,
+      "speaker": "SPEAKER_00",
+      "text": "called either nitrofurantoin or trimethoprine",
+      "duration": 3.7800000000000296
+    },
+    {
+      "start": 449.81721875000005,
+      "end": 454.20471875000004,
+      "speaker": "SPEAKER_00",
+      "text": "And it's normally a three day course as I want to have it twice a day for three days",
+      "duration": 4.387499999999989
+    },
+    {
+      "start": 454.77846875,
+      "end": 456.82034375,
+      "speaker": "SPEAKER_00",
+      "text": "and should help with symptoms.",
+      "duration": 2.0418750000000045
+    },
+    {
+      "start": 455.26784375000005,
+      "end": 455.53784375000004,
+      "speaker": "SPEAKER_01",
+      "text": "Okay.",
+      "duration": 0.2699999999999818
+    },
+    {
+      "start": 457.24221875,
+      "end": 467.87346875000003,
+      "speaker": "SPEAKER_00",
+      "text": "I also advise you to drink plenty of fluids, just try and flush that infection out of your body if you can.  You can try cranberry juice, that can sometimes help with your symptoms.",
+      "duration": 10.631250000000023
+    },
+    {
+      "start": 468.29534375000003,
+      "end": 468.93659375000004,
+      "speaker": "SPEAKER_00",
+      "text": "Um,",
+      "duration": 0.6412500000000136
+    },
+    {
+      "start": 469.07159375000003,
+      "end": 470.53971875,
+      "speaker": "SPEAKER_00",
+      "text": "and if you still look better",
+      "duration": 1.4681249999999864
+    },
+    {
+      "start": 470.57346875,
+      "end": 473.25659375000004,
+      "speaker": "SPEAKER_00",
+      "text": "by the end of this week. I want you to give me a call or come back and see me.",
+      "duration": 2.683125000000018
+    },
+    {
+      "start": 473.98221875,
+      "end": 476.05784375,
+      "speaker": "SPEAKER_00",
+      "text": "and we've got another lipid symptoms",
+      "duration": 2.0756250000000023
+    },
+    {
+      "start": 477.39096875,
+      "end": 477.84659375,
+      "speaker": "SPEAKER_00",
+      "text": "Okay.",
+      "duration": 0.4556249999999977
+    },
+    {
+      "start": 477.49221875,
+      "end": 481.22159375,
+      "speaker": "SPEAKER_01",
+      "text": "Okay, so three days of medication and then wait a little bit.",
+      "duration": 3.7293750000000045
+    },
+    {
+      "start": 481.55909375000005,
+      "end": 482.84159375,
+      "speaker": "SPEAKER_01",
+      "text": "It sort of go away.",
+      "duration": 1.2824999999999704
+    },
+    {
+      "start": 483.02721875000003,
+      "end": 483.44909375000003,
+      "speaker": "SPEAKER_01",
+      "text": "I'll be back.",
+      "duration": 0.421875
+    },
+    {
+      "start": 483.12846875,
+      "end": 483.36471875,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.23624999999998408
+    },
+    {
+      "start": 483.70221875000004,
+      "end": 499.68284375,
+      "speaker": "SPEAKER_00",
+      "text": "Yeah, absolutely. And things to look out for would be, you know, if you are having kind of high temperatures, back pain, just generally feeling more unwell, you know, do make a call back because you do worry whether your infection may be spreading up towards your kidneys, which is something we want to avoid.",
+      "duration": 15.980624999999975
+    },
+    {
+      "start": 484.22534375000004,
+      "end": 484.32659375000003,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.10124999999999318
+    },
+    {
+      "start": 493.86096875000004,
+      "end": 494.16471875,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.30374999999997954
+    },
+    {
+      "start": 500.17221875,
+      "end": 502.77096875,
+      "speaker": "SPEAKER_00",
+      "text": "so do give me a call if you have any concerns  okay",
+      "duration": 2.5987499999999955
+    },
+    {
+      "start": 503.61471875,
+      "end": 506.87159375000005,
+      "speaker": "SPEAKER_01",
+      "text": "Okay. Is there anything, like, should I be worried about, like...",
+      "duration": 3.2568750000000364
+    },
+    {
+      "start": 507.07409375000003,
+      "end": 509.79096875000005,
+      "speaker": "SPEAKER_01",
+      "text": "not having sex or anything for the next week or anything like that",
+      "duration": 2.716875000000016
+    },
+    {
+      "start": 509.79096875000005,
+      "end": 521.58659375,
+      "speaker": "SPEAKER_00",
+      "text": "I mean if you can try and avoid it I think that would be sensible.  It's great that you're using barrier contraception, I would recommend you to continue using barrier  contraception but if you can avoid it while your symptoms clear up.",
+      "duration": 11.795624999999973
+    },
+    {
+      "start": 522.31221875,
+      "end": 524.11784375,
+      "speaker": "SPEAKER_00",
+      "text": "That would be the best for you, boyfriend.",
+      "duration": 1.8056249999999636
+    },
+    {
+      "start": 524.2022187499999,
+      "end": 524.8940937500001,
+      "speaker": "SPEAKER_00",
+      "text": "",
+      "duration": 0.6918750000002092
+    },
+    {
+      "start": 525.90659375,
+      "end": 526.1765937499999,
+      "speaker": "SPEAKER_01",
+      "text": "Okay.",
+      "duration": 0.2699999999999818
+    },
+    {
+      "start": 526.4297187500001,
+      "end": 526.90221875,
+      "speaker": "SPEAKER_00",
+      "text": "What?",
+      "duration": 0.4724999999998545
+    },
+    {
+      "start": 526.51409375,
+      "end": 527.1553437499999,
+      "speaker": "SPEAKER_01",
+      "text": "",
+      "duration": 0.6412499999999
+    },
+    {
+      "start": 527.4084687500001,
+      "end": 528.43784375,
+      "speaker": "SPEAKER_01",
+      "text": "That makes sense.",
+      "duration": 1.0293749999998454
+    },
+    {
+      "start": 528.57284375,
+      "end": 528.8428437499999,
+      "speaker": "SPEAKER_00",
+      "text": "Right.",
+      "duration": 0.2699999999999818
+    },
+    {
+      "start": 529.16346875,
+      "end": 529.33221875,
+      "speaker": "SPEAKER_01",
+      "text": "Oh",
+      "duration": 0.16875000000004547
+    },
+    {
+      "start": 529.85534375,
+      "end": 531.0365937500001,
+      "speaker": "SPEAKER_01",
+      "text": "Okay, thank you so much.",
+      "duration": 1.181250000000091
+    },
+    {
+      "start": 530.7834687500001,
+      "end": 531.9140937500001,
+      "speaker": "SPEAKER_00",
+      "text": "wish you all the best",
+      "duration": 1.130625000000009
+    },
+    {
+      "start": 532.7409687500001,
+      "end": 533.4497187500001,
+      "speaker": "SPEAKER_01",
+      "text": "Thank you.",
+      "duration": 0.7087500000000091
+    },
+    {
+      "start": 533.4497187500001,
+      "end": 534.0234687500001,
+      "speaker": "SPEAKER_00",
+      "text": "Thank you.",
+      "duration": 0.5737500000000182
+    }
+  ]
+}
