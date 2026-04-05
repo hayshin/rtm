@@ -1,15 +1,3 @@
-"""Mix doctor + patient audio tracks from the PriMock57 dataset.
-
-For each consultation, loads the separate doctor and patient WAV files,
-sums them together, normalises, and writes a mixed WAV to the output dir.
-
-Usage:
-    uv run python scripts/mix_primock57.py                         # all consultations
-    uv run python scripts/mix_primock57.py day1_consultation01     # one consultation
-    uv run python scripts/mix_primock57.py --trim 120              # trim to 2 min
-    uv run python scripts/mix_primock57.py -o /tmp/mixed           # custom output dir
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -56,8 +44,7 @@ def mix_pair(name: str, audio_dir: Path, out_dir: Path, trim_s: int | None) -> P
 
 def find_consultations(audio_dir: Path) -> list[str]:
     names = sorted(
-        p.stem.removesuffix("_doctor")
-        for p in audio_dir.glob("*_doctor.wav")
+        p.stem.removesuffix("_doctor") for p in audio_dir.glob("*_doctor.wav")
     )
     return names
 
@@ -78,7 +65,8 @@ def main() -> None:
         help="Trim output to this many seconds (default: no trim)",
     )
     parser.add_argument(
-        "-o", "--output",
+        "-o",
+        "--output",
         type=Path,
         default=OUTPUT_DIR,
         help=f"Output directory (default: {OUTPUT_DIR})",

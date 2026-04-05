@@ -1,17 +1,3 @@
-"""Summarize aggregate metrics for the results table in research/results.tex.
-
-By default this script reads the batch pipeline outputs from
-``batch_outputs/primock57_pipeline`` and prints the numeric values used in the
-aggregate results table. It can emit either plain text, JSON, or LaTeX table
-rows for direct reuse in the paper.
-
-Usage:
-    python scripts/summarize_results_table.py
-    python scripts/summarize_results_table.py --format json
-    python scripts/summarize_results_table.py --format latex
-    python scripts/summarize_results_table.py --input-dir batch_outputs/primock57_pipeline
-"""
-
 from __future__ import annotations
 
 import argparse

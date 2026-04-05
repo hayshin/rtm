@@ -1,17 +1,3 @@
-"""Run the full RTM pipeline for every mixed audio file in a folder.
-
-Default input is the PriMock57 mixed dataset in ``outputs/mixed``.
-Results are written to a separate root, ``batch_outputs/primock57_pipeline``,
-with one subfolder per consultation so they do not collide with the
-application output folders.
-
-Usage:
-    uv run python scripts/run_pipeline_folder.py
-    uv run python scripts/run_pipeline_folder.py --input-dir outputs/mixed
-    uv run python scripts/run_pipeline_folder.py --consultation day1_consultation01
-    uv run python scripts/run_pipeline_folder.py --step4-model gpt-5 --step5-model gpt-5
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -81,9 +67,7 @@ def run_pipeline_for_file(
 
     step05_path = consultation_output_dir / f"step05_{name}.json"
     if step05_path.exists():
-        extraction = run_fhir_extraction(
-            consultation_output_dir, name, postprocessing
-        )
+        extraction = run_fhir_extraction(consultation_output_dir, name, postprocessing)
     else:
         print(f"Using extraction model: {step5_model}")
         extraction = run_fhir_extraction_with_model(
@@ -93,7 +77,9 @@ def run_pipeline_for_file(
     run_validation(consultation_output_dir, name, extraction)
 
 
-def run_postprocessing_with_model(output_dir: Path, name: str, transcription, model_id: str):
+def run_postprocessing_with_model(
+    output_dir: Path, name: str, transcription, model_id: str
+):
     import pipeline.step04_postprocessing as step04
 
     out = output_dir / f"step04_{name}.json"
@@ -102,11 +88,15 @@ def run_postprocessing_with_model(output_dir: Path, name: str, transcription, mo
     print("\n[Post-processing]")
     print(f"Total segments: {len(result.segments)}")
     for seg in result.segments:
-        print(f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker_role}: {seg.cleaned_text}")
+        print(
+            f"  [{seg.start:7.2f}s - {seg.end:7.2f}s] {seg.speaker_role}: {seg.cleaned_text}"
+        )
     return result
 
 
-def run_fhir_extraction_with_model(output_dir: Path, name: str, postprocessing, model_id: str):
+def run_fhir_extraction_with_model(
+    output_dir: Path, name: str, postprocessing, model_id: str
+):
     import pipeline.step05_fhir_extraction as step05
 
     out = output_dir / f"step05_{name}.json"
@@ -164,10 +154,7 @@ def main() -> None:
         print(f"No .wav files found in {args.input_dir}", file=sys.stderr)
         sys.exit(1)
 
-    selected = {
-        name.removesuffix("_mixed")
-        for name in args.consultation
-    }
+    selected = {name.removesuffix("_mixed") for name in args.consultation}
     if selected:
         files = [path for path in files if _consultation_name(path) in selected]
         if not files:
