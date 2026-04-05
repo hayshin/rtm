@@ -2,53 +2,53 @@
 
 \subsection{Evaluation Scope}
 
-At the time of writing, the proposed pipeline had been executed end-to-end on 14 PriMock57 consultations for which complete outputs were available across all six stages in \texttt{batch\_outputs/primock57\_pipeline}. The present results should therefore be interpreted as a batch evaluation of structural feasibility over the currently processed subset of the corpus. The primary objective remains the same: to assess whether structurally valid and clinically meaningful FHIR resources can be generated from raw consultation audio without manual post-editing.
+At the time of writing, the proposed pipeline had been executed end-to-end on all 15 PriMock57 consultations from Day~1, including \texttt{day1\_consultation15}, for which complete outputs were available across all six stages in \texttt{batch\_outputs/primock57\_pipeline}. The present results should therefore be interpreted as a batch evaluation of structural feasibility over the full first-day subset of the corpus. The primary objective remains the same: to assess whether structurally valid and clinically meaningful FHIR resources can be generated from raw consultation audio without manual post-editing.
 
 The reported findings focus on three observable outcome categories supported by the generated artifacts: (1) successful completion of all pipeline stages, (2) structural validity of the generated FHIR bundles, and (3) qualitative characteristics of the intermediate transcripts and extracted clinical resources. No corpus-level word error rate (WER), speaker-role accuracy benchmark, or resource-level precision/recall is reported here, as these metrics have not yet been computed systematically against external reference annotations.
 
 \subsection{End-to-End Pipeline Execution}
 
-All 14 sampled consultations completed all six pipeline stages successfully, producing intermediate JSON outputs for ingestion, diarization, ASR, transcript post-processing, clinical extraction, and final validation. Across the batch, the total processed audio duration was 8402.34\,s (approximately 140.0\,min), with a mean consultation length of 600.17\,s. Step~1 reported a mean \textit{speech\_ratio} of 0.790, with values ranging from 0.717 to 0.846, indicating that the recordings were consistently speech-dense after pre-processing.
+All 15 sampled consultations completed all six pipeline stages successfully, producing intermediate JSON outputs for ingestion, diarization, ASR, transcript post-processing, clinical extraction, and final validation. Across the batch, the total processed audio duration was 8894.16\,s (approximately 148.2\,min), with a mean consultation length of 592.94\,s. Step~1 reported a mean \textit{speech\_ratio} of 0.787, with values ranging from 0.717 to 0.846, indicating that the recordings were consistently speech-dense after pre-processing.
 
-Step~2 identified two speakers in every processed consultation. When considering diarized segments of duration $\geq 0.1$\,s, the mean segment count was 263.4 per consultation, with a range from 196 to 425. The cumulative voiced segment duration across the batch was 6464.17\,s, which is broadly consistent with the speech-ratio estimates reported at ingestion time. These results show that the proposed orchestration of audio pre-processing, diarization, CPU-based medical ASR, LLM refinement, LLM extraction, and programmatic FHIR construction is operationally feasible as an end-to-end batch pipeline. No stage-level runtime failure was observed in the completed set.
+Step~2 identified two speakers in every processed consultation. When considering diarized segments of duration $\geq 0.1$\,s, the mean segment count was 260.3 per consultation, with a range from 196 to 425. The cumulative voiced segment duration across the batch was 6819.05\,s, which is broadly consistent with the speech-ratio estimates reported at ingestion time. These results show that the proposed orchestration of audio pre-processing, diarization, CPU-based medical ASR, LLM refinement, LLM extraction, and programmatic FHIR construction is operationally feasible as an end-to-end batch pipeline. No stage-level runtime failure was observed in the completed set.
 
 \subsection{FHIR Validation Outcomes}
 
-The strongest quantitative result of the current evaluation is the structural validity of the generated FHIR bundles. In all 14 processed consultations, Step~6 returned \texttt{valid=true} with zero recorded validation issues. This indicates that all generated resources could be parsed successfully by the \texttt{fhir.resources} R4B models and that no schema-level errors were detected in required fields, value types, or bundle structure.
+The strongest quantitative result of the current evaluation is the structural validity of the generated FHIR bundles. In all 15 processed consultations, Step~6 returned \texttt{valid=true} with zero recorded validation issues. This indicates that all generated resources could be parsed successfully by the \texttt{fhir.resources} R4B models and that no schema-level errors were detected in required fields, value types, or bundle structure.
 
 This result is non-trivial in the present setting. The pipeline begins from conversational audio, passes through multiple stochastic and error-prone stages, and ultimately constructs typed FHIR resources that must satisfy a strict interoperability schema. The absence of validation errors across the full processed batch therefore supports the central architectural decision of constraining LLM output through Pydantic schemas and performing final resource assembly programmatically rather than asking the language model to emit raw FHIR JSON directly.
 
-Table~\ref{tab:results-summary} summarizes the aggregate outputs for the 14 completed consultations.
+Table~\ref{tab:results-summary} summarizes the aggregate outputs for all 15 completed Day~1 consultations.
 
 \begin{table}[ht]
 \centering
-\caption{Aggregate summary of end-to-end pipeline outputs for the 14 completed PriMock57 consultations.}
+\caption{Aggregate summary of end-to-end pipeline outputs for all 15 completed PriMock57 Day~1 consultations.}
 \label{tab:results-summary}
 \begin{tabular}{lc}
 \hline
 Metric & Value \\
 \hline
-Completed consultations & 14 \\
-Validation pass rate & 14/14 (100\%) \\
+Completed consultations & 15 \\
+Validation pass rate & 15/15 (100\%) \\
 Validation issues & 0 \\
-Total duration (s) & 8402.34 \\
-Mean duration (s) & 600.17 \\
-Mean speech ratio & 0.790 \\
+Total duration (s) & 8894.16 \\
+Mean duration (s) & 592.94 \\
+Mean speech ratio & 0.787 \\
 Speech-ratio range & 0.717--0.846 \\
-Mean diarized segments ($\geq 0.1$\,s) & 263.4 \\
-\texttt{Encounter} resources & 14 \\
-\texttt{Condition} resources & 174 \\
-\texttt{MedicationStatement} resources & 48 \\
+Mean diarized segments ($\geq 0.1$\,s) & 260.3 \\
+\texttt{Encounter} resources & 15 \\
+\texttt{Condition} resources & 186 \\
+\texttt{MedicationStatement} resources & 51 \\
 \texttt{Observation} resources & 13 \\
 \texttt{Procedure} resources & 6 \\
-\texttt{Provenance} resources & 255 \\
+\texttt{Provenance} resources & 271 \\
 \hline
 \end{tabular}
 \end{table}
 
 \subsection{Resource Generation Characteristics}
 
-Although all outputs were structurally valid, the composition of the generated bundles differed substantially across consultations. Every case yielded exactly one \texttt{Encounter}, but the number and mix of downstream clinical resources varied. Across the batch, the pipeline produced 174 \texttt{Condition}, 48 \texttt{MedicationStatement}, 13 \texttt{Observation}, and 6 \texttt{Procedure} resources, together with 255 \texttt{Provenance} resources linking generated content back to transcript evidence. At the consultation level, \texttt{Condition} counts ranged from 8 to 18, \texttt{MedicationStatement} counts from 1 to 6, \texttt{Observation} counts from 0 to 4, and \texttt{Procedure} counts from 0 to 2.
+Although all outputs were structurally valid, the composition of the generated bundles differed substantially across consultations. Every case yielded exactly one \texttt{Encounter}, but the number and mix of downstream clinical resources varied. Across the batch, the pipeline produced 186 \texttt{Condition}, 51 \texttt{MedicationStatement}, 13 \texttt{Observation}, and 6 \texttt{Procedure} resources, together with 271 \texttt{Provenance} resources linking generated content back to transcript evidence. At the consultation level, \texttt{Condition} counts ranged from 8 to 18, \texttt{MedicationStatement} counts from 1 to 6, \texttt{Observation} counts from 0 to 4, and \texttt{Procedure} counts from 0 to 2.
 
 This variation is clinically plausible at a coarse level and suggests that the extraction stage is sensitive to consultation content rather than emitting a fixed or template-like resource pattern. Some encounters yielded medication-heavy bundles, whereas others were dominated by symptom and diagnosis statements. Resource density also varied independently of consultation duration, indicating that the extraction stage is responding to conversational content rather than simply to recording length.
 
@@ -64,13 +64,13 @@ The current results therefore suggest that transcript cleaning is more robust th
 
 \subsection{Interpretation Relative to the Research Question}
 
-The study asked whether an automated pipeline built from existing pretrained components could transform raw primary-care consultation audio into clinically meaningful, FHIR R4B-conformant resources without manual post-editing. The current batch results provide a qualified positive answer to the structural part of this question. Across 14 completed cases, the system consistently generated valid FHIR bundles containing multiple clinically relevant resource types and attached provenance links back to source transcript segments.
+The study asked whether an automated pipeline built from existing pretrained components could transform raw primary-care consultation audio into clinically meaningful, FHIR R4B-conformant resources without manual post-editing. The current batch results provide a qualified positive answer to the structural part of this question. Across all 15 Day~1 cases, the system consistently generated valid FHIR bundles containing multiple clinically relevant resource types and attached provenance links back to source transcript segments.
 
 Nevertheless, structural conformance should not be conflated with semantic correctness. The sampled outputs show that while the pipeline can assemble formally valid resources at batch scale, clinically important upstream errors remain visible, especially in speaker-role attribution and potentially in the granularity of extracted conditions. The present evidence therefore supports the claim that end-to-end audio-to-FHIR transformation is technically feasible within the proposed architecture, but it does not yet demonstrate that the resulting records are consistently accurate enough for production clinical use.
 
 \subsection{Limitations of the Current Evaluation}
 
-Several limitations constrain the interpretation of the present results. First, the completed end-to-end sample covers only the 14 consultations currently processed in the batch output directory and therefore cannot support strong generalization across PriMock57 as a whole. Second, no gold-standard FHIR annotations are available for direct resource-level comparison, so the evaluation is presently strongest on structural validity and weakest on semantic fidelity. Third, speaker-role accuracy, ASR WER, and extraction precision/recall were not yet computed quantitatively. Finally, terminology normalization was performed on a best-effort basis by the LLM without a dedicated ontology lookup service, which likely limits coding accuracy even when the free-text clinical meaning is broadly correct.
+Several limitations constrain the interpretation of the present results. First, the completed end-to-end sample covers only the 15 consultations from Day~1 currently processed in the batch output directory and therefore cannot support strong generalization across PriMock57 as a whole. Second, no gold-standard FHIR annotations are available for direct resource-level comparison, so the evaluation is presently strongest on structural validity and weakest on semantic fidelity. Third, speaker-role accuracy, ASR WER, and extraction precision/recall were not yet computed quantitatively. Finally, terminology normalization was performed on a best-effort basis by the LLM without a dedicated ontology lookup service, which likely limits coding accuracy even when the free-text clinical meaning is broadly correct.
 
 These limitations do not invalidate the current findings, but they define their scope. The contribution of the present work is therefore best understood as the demonstration of a working end-to-end research pipeline and an empirical indication that schema-constrained, programmatic FHIR generation from clinical audio is achievable on a meaningful batch of a public benchmark.
 
