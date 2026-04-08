@@ -32,8 +32,8 @@
     data/.style    ={artifact, fill=gray!10,  draw=gray!60!black},
     terminus/.style={terminal, fill=orange!18, draw=orange!65!black},
     note/.style={
-        font=\small\itshape,
-        text=gray!75!black,
+        font=\normalsize\itshape,
+        text=black,
         text centered
     },
     flow/.style={
@@ -91,15 +91,15 @@
     \node[
         fill=cyan!6, draw=cyan!30, rounded corners=9pt, line width=0.9pt,
         fit=(step1)(step2)(segments)(step3)(transcript),
-        inner sep=9pt,
-        label={[font=\scriptsize\itshape, text=cyan!55!black]above:Speech Processing Workflow}
+        inner sep=15pt,
+        label={[font=\small\itshape, text=cyan!80!black]above:Speech Processing Workflow}
     ] {};
 
     \node[
         fill=orange!6, draw=orange!30, rounded corners=9pt, line width=0.9pt,
         fit=(step4)(cleaned)(step5)(step6)(output),
-        inner sep=9pt,
-        label={[font=\scriptsize\itshape, text=orange!55!black]below:LLM-to-FHIR Workflow}
+        inner sep=15pt,
+        label={[font=\small\itshape, text=orange!80!black]below:LLM-to-FHIR Workflow}
     ] {};
 \end{scope}
 
