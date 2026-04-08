@@ -1,0 +1,187 @@
+# day1_consultation03 Transcript Packet
+
+Use this file to annotate `gold_resources` in the paired JSON scaffold.
+Only annotate explicit clinical content for Condition, MedicationStatement, Observation, and Procedure.
+
+## Segments
+
+- [0] PHYSICIAN 1.45s-1.82s: Hello?
+- [2] PHYSICIAN 3.51s-6.31s: Hello, it's Dr. C. How can I help you this afternoon?
+- [3] PATIENT 7.17s-10.31s: I've had a terrible headache today.
+- [4] PATIENT 10.98s-13.87s: The pain is on the left side, which is making me feel so ill.
+- [6] PATIENT 15.39s-15.96s: I feel like vomiting.
+- [7] PHYSICIAN 16.42s-17.40s: So it's near that area.
+- [8] PHYSICIAN 17.83s-19.52s: Can you tell me a bit more about the headache?
+- [9] PATIENT 21.11s-26.56s: I noticed some zigzag lines in my vision a few minutes before the headache started.
+- [11] PATIENT 27.12s-29.01s: My vision is blurred.
+- [15] PATIENT 35.15s-38.96s: The headache is just horrible, just making me feel so unwell.
+- [16] PHYSICIAN 38.96s-39.40s: Thank you.
+- [17] PHYSICIAN 39.96s-41.32s: Okay.
+- [18] PATIENT 41.76s-44.09s: I just want you to do something.
+- [19] PHYSICIAN 44.41s-47.53s: Let's try our best to get you well soon.
+- [20] PHYSICIAN 47.77s-52.21s: You mentioned it's on your left-hand side, and it started around midday a few hours ago, is that right?
+- [21] PATIENT 52.73s-53.09s: Yes.
+- [22] PHYSICIAN 53.09s-53.19s: Thank you.
+- [23] PHYSICIAN 53.51s-57.36s: Did the pain come on quite suddenly, or was it more gradual?
+- [25] PATIENT 58.50s-59.68s: I don't know, really.
+- [26] PATIENT 59.80s-60.49s: It just happens.
+- [27] PHYSICIAN 60.75s-61.20s: Thank you.
+- [28] PHYSICIAN 61.51s-66.27s: Can you describe what kind of headache it is? For example, is it throbbing or a sharp pain?
+- [29] PATIENT 67.01s-67.97s: I guess it's throbbing.
+- [31] PATIENT 69.57s-70.69s: Throbbing.
+- [32] PATIENT 71.26s-72.53s: It's on the left side.
+- [33] PHYSICIAN 73.03s-74.48s: It isn't moving anywhere else.
+- [34] PATIENT 75.72s-77.47s: No, but it's worse when I move.
+- [35] PHYSICIAN 78.69s-80.88s: Is it worse when you move your neck?
+- [36] PATIENT 82.03s-84.51s: Well, like if I lean forward...
+- [37] PATIENT 84.64s-87.76s: If I move my head or neck, the headache gets worse.
+- [38] PHYSICIAN 88.41s-88.86s: Okay.
+- [40] PATIENT 90.16s-93.08s: I'm really worried because I've been Googling.
+- [43] PATIENT 96.12s-98.21s: If your headache gets worse,
+- [44] PATIENT 98.67s-100.20s: it could be brain cancer.
+- [45] PHYSICIAN 100.69s-101.99s: Is that what you're worried about?
+- [46] PATIENT 102.66s-102.99s: Yes.
+- [47] PHYSICIAN 104.34s-105.97s: Is that your main worry today?
+- [48] PATIENT 106.55s-108.05s: Yes, that's my main worry.
+- [50] PATIENT 110.43s-110.80s: My...
+- [51] PATIENT 111.44s-117.33s: My friend's mum recently died of a brain tumour, so it's really concerning me.
+- [52] PHYSICIAN 117.77s-119.88s: I can understand why that is worrying you.
+- [54] PHYSICIAN 122.21s-128.42s: Let's take a good history and examine you, then we'll discuss what's going on.
+- [55] PHYSICIAN 128.85s-134.04s: You mentioned headaches and some zigzag lines before the headaches came on.
+- [56] PHYSICIAN 134.58s-139.35s: Your vision has been blurry as well; is it in both eyes or just the left?
+- [58] PATIENT 140.67s-142.27s: It feels like that sometimes.
+- [59] PHYSICIAN 142.73s-143.52s: It could be either.
+- [60] PHYSICIAN 143.82s-146.40s: Have you had any difficulty with bright lights?
+- [61] PATIENT 147.77s-151.15s: Yes, I'm wearing sunglasses right now.
+- [63] PATIENT 152.43s-154.13s: Bright light really hurts my eyes.
+- [64] PHYSICIAN 154.37s-159.15s: You mentioned feeling quite nauseous. Have you vomited at all?
+- [65] PATIENT 160.38s-160.82s: Yes.
+- [66] PATIENT 162.25s-163.30s: I have vomited twice.
+- [68] PHYSICIAN 165.24s-167.84s: Did that happen earlier today?
+- [69] PHYSICIAN 168.14s-169.51s: Have you had any fever?
+- [70] PATIENT 170.50s-172.63s: I don't feel feverish now.
+- [71] PHYSICIAN 173.29s-173.79s: Okay.
+- [72] PHYSICIAN 174.13s-177.22s: Have you noticed any rashes?
+- [73] PATIENT 177.71s-179.53s: No, I haven't noticed anything like that.
+- [74] PHYSICIAN 180.37s-181.83s: Okay.
+- [77] PHYSICIAN 184.64s-186.01s: Do you normally get headaches?
+- [79] PATIENT 188.93s-190.60s: I'm not usually prone to headaches.
+- [80] PATIENT 190.90s-194.16s: I did have a similar headache a few weeks ago.
+- [81] PHYSICIAN 194.41s-194.87s: Okay.
+- [82] PHYSICIAN 195.24s-196.10s: And what happened then?
+- [83] PATIENT 196.91s-197.69s: It was similar.
+- [84] PHYSICIAN 198.28s-199.27s: Along the lines of this?
+- [85] PATIENT 200.54s-201.27s: It lasted for the day.
+- [86] PHYSICIAN 202.41s-203.81s: Did you do anything that made it better?
+- [87] PATIENT 205.40s-209.99s: I took painkillers and had to rest in bed.
+- [88] PHYSICIAN 210.55s-210.99s: Okay.
+- [89] PATIENT 211.32s-212.96s: I took a couple of days off work.
+- [90] PATIENT 213.21s-214.75s: I work in the fashion industry.
+- [92] PHYSICIAN 214.93s-215.17s: Thank you.
+- [93] PATIENT 215.22s-217.01s: I was wondering what's going on.
+- [94] PATIENT 217.41s-218.55s: I had to take sick days.
+- [95] PHYSICIAN 218.82s-219.78s: Yes.
+- [96] PATIENT 219.56s-219.73s: Thank you.
+- [97] PATIENT 220.05s-221.41s: I came to work today, but...
+- [98] PATIENT 221.82s-224.67s: What if it is a brain tumour? What's going to happen with my...
+- [99] PATIENT 224.97s-226.51s: future, my career?
+- [100] PHYSICIAN 227.10s-228.33s: No.
+- [101] PATIENT 227.13s-227.73s: No.
+- [103] PHYSICIAN 228.60s-229.06s: Great.
+- [105] PATIENT 229.35s-231.27s: I've never had headaches like this before.
+- [106] PATIENT 231.51s-233.53s: I don't know why it's happening now.
+- [108] PHYSICIAN 233.97s-237.16s: I can see your concerns; there's a lot of worry.
+- [109] PHYSICIAN 237.58s-248.28s: Let's take it step by step and see what the causes of these headaches are. I'm going to ask some yes-or-no questions, if that's okay.
+- [111] PHYSICIAN 249.65s-252.84s: Have you noticed any problems with your speech?
+- [113] PHYSICIAN 253.97s-257.48s: Any problems with your arms or legs, such as numbness or weakness?
+- [116] PHYSICIAN 259.74s-262.03s: Any issues with balance or coordination?
+- [118] PHYSICIAN 263.48s-268.06s: Have you had any recent head injury, such as a fall or being knocked on the head?
+- [120] PHYSICIAN 269.52s-270.69s: Okay.
+- [122] PHYSICIAN 271.75s-276.04s: You're feeling otherwise okay; for example, your breathing is fine?
+- [123] PHYSICIAN 277.00s-280.71s: Your breathing is okay; you're not breathless?
+- [125] PHYSICIAN 284.26s-286.30s: Do you have any other medical history I should be aware of?
+- [128] PHYSICIAN 290.04s-293.18s: Have you ever been told you have migraines in the past?
+- [130] PHYSICIAN 294.15s-296.19s: Okay.
+- [132] PATIENT 297.23s-297.93s: My mum has migraines.
+- [135] PATIENT 300.10s-301.50s: I'm not denying those.
+- [136] PHYSICIAN 301.50s-308.15s: Aside from migraines, is there any other family history related to the brain?
+- [137] PATIENT 308.27s-308.96s: Yes.
+- [138] PHYSICIAN 309.37s-309.96s: What was that?
+- [139] PATIENT 310.70s-312.96s: My mum has an underactive thyroid as well.
+- [140] PHYSICIAN 312.94s-319.42s: I see. Any other brain-related problems in the family?
+- [141] PHYSICIAN 319.56s-322.29s: You mentioned brain cancer; who had that?
+- [144] PHYSICIAN 324.62s-328.13s: Do you take any regular medications?
+- [145] PATIENT 328.82s-331.51s: I take the combined oral contraceptive pill, Microgynon.
+- [146] PHYSICIAN 332.55s-334.22s: How long have you been on that?
+- [147] PATIENT 334.88s-335.94s: Three months.
+- [148] PHYSICIAN 336.37s-337.62s: Three months, okay.
+- [149] PHYSICIAN 338.02s-341.23s: Is that mainly for contraception?
+- [151] PATIENT 341.85s-343.13s: It's for contraception.
+- [152] PHYSICIAN 343.52s-345.36s: Okay.
+- [153] PHYSICIAN 345.80s-348.99s: That's something we may need to discuss today as well.
+- [154] PHYSICIAN 349.70s-355.64s: Can you tell me about your social situation and work? You mentioned you work in the fashion industry.
+- [155] PHYSICIAN 356.11s-358.39s: Is your job quite stressful at the moment?
+- [156] PATIENT 358.93s-360.90s: Yes, it's really stressful at the moment.
+- [158] PATIENT 362.39s-363.70s: It's at work.
+- [159] PATIENT 364.43s-368.18s: Managers put a lot of pressure on me to deliver.
+- [161] PATIENT 369.48s-369.91s: Yes.
+- [162] PATIENT 370.12s-370.99s: It's not a good time.
+- [163] PHYSICIAN 370.29s-370.62s: Okay.
+- [164] PHYSICIAN 371.20s-372.09s: Is it making you feel low?
+- [165] PATIENT 373.63s-375.94s: I don't feel down, just stressed.
+- [166] PHYSICIAN 376.24s-377.39s: Okay.
+- [167] PHYSICIAN 377.73s-380.33s: What do you normally do to alleviate stress?
+- [168] PATIENT 381.09s-382.08s: Not much.
+- [169] PHYSICIAN 382.60s-384.71s: Do you do much exercise?
+- [171] PHYSICIAN 386.55s-389.22s: Who do you live with?
+- [172] PATIENT 390.21s-391.68s: I live on my own.
+- [174] PHYSICIAN 393.10s-395.45s: Are you coping okay at the moment?
+- [176] PHYSICIAN 397.10s-397.49s: Yes.
+- [177] PHYSICIAN 397.61s-398.72s: Okay.
+- [178] PHYSICIAN 398.96s-399.80s: Do you smoke?
+- [181] PHYSICIAN 401.22s-403.39s: Do you drink alcohol?
+- [185] PHYSICIAN 407.33s-408.37s: So now I will start the examination.
+- [186] PHYSICIAN 408.64s-411.33s: Can we proceed to examination?
+- [188] PHYSICIAN 413.27s-415.16s: Based on your story,
+- [189] PHYSICIAN 415.90s-417.08s: I wonder whether you may have a migraine-type headache.
+- [192] PHYSICIAN 424.15s-430.14s: It is very classical: headache on one side, throbbing nature,
+- [193] PHYSICIAN 430.55s-432.98s: with nausea and vomiting,
+- [194] PHYSICIAN 433.01s-434.55s: and sensitivity to bright light.
+- [195] PHYSICIAN 435.36s-440.38s: I'm reassured that you don't have signs of meningitis or brain cancer, which you were worried about initially.
+- [197] PATIENT 444.20s-444.40s: Thank you.
+- [198] PATIENT 444.67s-445.50s: Thank you.
+- [199] PATIENT 445.80s-448.48s: Thanks so much. I was so worried.
+- [203] PATIENT 452.01s-455.03s: You say migraine. I guess my mum had similar symptoms.
+- [205] PHYSICIAN 456.28s-456.84s: Yes.
+- [206] PATIENT 456.53s-456.75s: Yes.
+- [207] PATIENT 457.12s-457.75s: That's right.
+- [208] PHYSICIAN 457.26s-457.51s: Right.
+- [209] PHYSICIAN 458.42s-460.99s: I hope that helps put your mind at ease.
+- [210] PHYSICIAN 461.26s-464.67s: This is the second migraine you've had in the past month.
+- [211] PHYSICIAN 465.00s-467.81s: Moving forward, there are a couple of options.
+- [212] PHYSICIAN 468.04s-471.54s: Keeping a headache diary is important to see what's going on.
+- [214] PHYSICIAN 473.34s-477.22s: We should treat your headaches today; some stronger painkillers would be appropriate.
+- [217] PHYSICIAN 480.99s-483.33s: Consider paracetamol or even co-codamol.
+- [219] PHYSICIAN 484.73s-488.43s: Also anti-inflammatories such as ibuprofen or naproxen. How does that sound?
+- [220] PATIENT 488.92s-490.03s: That sounds good.
+- [222] PHYSICIAN 492.33s-495.30s: If your headaches become more persistent,
+- [223] PHYSICIAN 495.90s-499.24s: we would consider medications to prevent them,
+- [224] PHYSICIAN 499.45s-502.72s: so-called prophylactic medicines.
+- [225] PATIENT 503.38s-503.95s: Okay.
+- [227] PHYSICIAN 503.99s-506.06s: We'll discuss this further next time; I'll see you next week.
+- [228] PHYSICIAN 506.52s-506.74s: Okay.
+- [229] PATIENT 506.64s-507.21s: Okay.
+- [230] PHYSICIAN 507.65s-508.09s: Okay.
+- [232] PHYSICIAN 509.57s-516.07s: If your symptoms are not getting better in the next two to three days, or if they worsen,
+- [233] PHYSICIAN 516.71s-522.60s: please come back and see me straight away if possible, for example if the headache worsens or does not respond to medications.
+- [235] PHYSICIAN 524.69s-531.41s: Or if your neck pain worsens, you develop weakness in your arms or legs, or your vision worsens, come back straight away.
+- [236] PHYSICIAN 531.73s-532.13s: Okay.
+- [237] PATIENT 532.47s-532.91s: Okay.
+- [238] PHYSICIAN 533.74s-534.70s: Does that sound okay?
+- [239] PATIENT 535.41s-535.56s: Thank you.
+- [240] PATIENT 535.93s-536.34s: That's great.
+- [241] PHYSICIAN 536.54s-537.63s: Any questions?
+- [242] PATIENT 538.04s-539.19s: No, thank you.
+- [243] PHYSICIAN 539.42s-540.32s: Okay, have a good day.
+- [244] PATIENT 540.71s-541.52s: Thanks. Bye.
+- [245] PHYSICIAN 541.57s-541.82s: What?

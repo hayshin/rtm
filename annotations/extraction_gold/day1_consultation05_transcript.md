@@ -1,0 +1,167 @@
+# day1_consultation05 Transcript Packet
+
+Use this file to annotate `gold_resources` in the paired JSON scaffold.
+Only annotate explicit clinical content for Condition, MedicationStatement, Observation, and Procedure.
+
+## Segments
+
+- [0] PHYSICIAN 2.38s-2.82s: Hello.
+- [1] PHYSICIAN 4.77s-5.33s: Thank you.
+- [2] PHYSICIAN 5.79s-10.04s: Good morning, Tim. I'll be helping you this morning.
+- [3] PATIENT 12.18s-13.58s: I'm here.
+- [4] PATIENT 14.95s-15.61s: Okay.
+- [5] PATIENT 15.74s-19.20s: I have some pain in my lower abdomen.
+- [6] PHYSICIAN 19.67s-20.15s: Okay.
+- [9] PATIENT 22.56s-23.57s: I'm feeling hot and sweaty.
+- [10] PHYSICIAN 24.04s-27.72s: I'm sorry to hear that. When did your symptoms start?
+- [11] PATIENT 29.48s-30.59s: They started two days ago.
+- [12] PHYSICIAN 31.22s-31.71s: Okay.
+- [13] PHYSICIAN 31.98s-34.68s: Where exactly in your abdomen is the pain?
+- [14] PATIENT 37.80s-39.11s: Just below my belly button.
+- [15] PATIENT 39.32s-41.44s: It's quite sore when I press on it.
+- [16] PHYSICIAN 41.88s-42.37s: Okay.
+- [17] PHYSICIAN 42.56s-45.32s: Did the pain come on suddenly or was the onset gradual?
+- [18] PATIENT 47.67s-52.61s: It's gradual and it's been getting a bit worse.
+- [19] PHYSICIAN 52.87s-55.75s: Can you describe the pain?
+- [21] PATIENT 59.72s-62.00s: It's kind of a burning pain.
+- [23] PATIENT 63.28s-64.81s: It's just in that spot.
+- [24] PATIENT 65.29s-66.50s: It is localized to that area.
+- [25] PATIENT 66.77s-70.30s: That's mostly where I'm feeling it; it hasn't spread.
+- [26] PHYSICIAN 68.64s-68.98s: Thank you.
+- [27] PHYSICIAN 70.38s-72.48s: You mentioned it is just below your belly button.
+- [28] PATIENT 73.59s-73.91s: Yes.
+- [29] PHYSICIAN 74.10s-74.60s: Okay.
+- [30] PHYSICIAN 74.91s-77.52s: Is the pain constant or does it come and go?
+- [31] PATIENT 79.60s-82.53s: It's becoming constant and getting worse.
+- [32] PATIENT 83.38s-86.77s: I can still walk around.
+- [34] PATIENT 87.38s-90.57s: I'm still functioning, but I'm aware of the pain.
+- [36] PHYSICIAN 91.27s-92.12s: Mm-hmm, okay.
+- [37] PHYSICIAN 92.66s-98.85s: Have you noticed any other symptoms? For example, are your bowel movements normal?
+- [38] PATIENT 99.44s-104.40s: I had some constipation last week but that has improved.
+- [39] PHYSICIAN 104.74s-108.89s: So no diarrhea or loose stools?
+- [40] PATIENT 110.02s-110.39s: No.
+- [42] PATIENT 111.64s-113.18s: My bowel movements are normal now.
+- [43] PHYSICIAN 113.38s-116.60s: And what about urinary symptoms? Are you passing urine normally?
+- [44] PATIENT 117.73s-121.65s: Yes, but I noticed the urine was a little pink.
+- [45] PATIENT 121.68s-125.16s: It was pink in color, but it has not been burning.
+- [46] PATIENT 125.43s-128.45s: It hasn't been painful when I urinate.
+- [47] PATIENT 129.01s-132.11s: I noticed I was urinating more frequently.
+- [48] PATIENT 132.80s-136.87s: I've been going more often, but I've been drinking a lot of fluids so I'm not sure.
+- [49] PATIENT 137.76s-139.45s: I wasn't sure.
+- [51] PATIENT 140.33s-142.95s: I'm not sure if that's related to the abdominal pain.
+- [52] PHYSICIAN 143.84s-148.26s: When you say pink urine, was there any blood, or is it difficult to tell?
+- [53] PATIENT 148.82s-150.57s: I can't say for sure, maybe.
+- [54] PHYSICIAN 151.52s-156.02s: So it doesn't hurt or sting when you urinate?
+- [55] PATIENT 156.70s-159.45s: I haven't noticed any burning when I urinate.
+- [58] PATIENT 161.24s-163.40s: I'm urinating more than four times regularly.
+- [59] PHYSICIAN 163.63s-164.19s: Okay.
+- [61] PHYSICIAN 165.71s-172.75s: Have you had any vomiting or nausea?
+- [62] PATIENT 173.49s-176.64s: Just a little nausea, no vomiting.
+- [64] PHYSICIAN 178.10s-179.24s: Have you had any fevers?
+- [65] PATIENT 180.58s-184.96s: I felt a bit hot and sweaty but I haven't measured my temperature.
+- [66] PHYSICIAN 185.69s-186.08s: Okay.
+- [69] PHYSICIAN 190.11s-195.04s: As this is a female patient, I need to ask about your menstrual cycle, if you don't mind.
+- [70] PHYSICIAN 195.44s-195.93s: All right.
+- [72] PHYSICIAN 198.33s-199.75s: Are you currently sexually active?
+- [73] PATIENT 200.66s-205.64s: Yes, I have the same partner and we last had sex...
+- [74] PATIENT 205.77s-206.78s: Four days ago.
+- [75] PATIENT 207.04s-211.17s: My last sexually transmitted infection screen was normal about six months ago.
+- [76] PHYSICIAN 211.53s-212.12s: Okay.
+- [77] PHYSICIAN 212.39s-214.07s: So you have had no other partners since then?
+- [78] PATIENT 214.56s-215.74s: No.
+- [79] PHYSICIAN 216.06s-217.50s: Okay.
+- [80] PHYSICIAN 218.38s-220.60s: Do you use any contraception?
+- [81] PATIENT 221.60s-225.16s: I'm on the Implanon implant; it was inserted about a year ago.
+- [82] PHYSICIAN 225.65s-227.03s: Okay.
+- [83] PHYSICIAN 227.34s-228.74s: Are you still having periods?
+- [84] PATIENT 230.61s-231.25s: Yes.
+- [85] PHYSICIAN 231.64s-232.75s: How are your menstrual periods? Any changes in bleeding?
+- [86] PATIENT 233.83s-236.03s: My last period was about...
+- [87] PATIENT 236.08s-236.92s: Three weeks ago.
+- [88] PATIENT 237.19s-238.32s: I mean, two weeks ago.
+- [90] PHYSICIAN 240.13s-247.00s: Is there any chance you could be pregnant? It's worth considering despite the implant.
+- [91] PATIENT 248.19s-254.03s: We don't use barrier methods; I only have the implant and the same partner.
+- [92] PATIENT 254.81s-258.59s: Theoretically if the implant isn't working I could be pregnant, but I don't suspect so.
+- [93] PHYSICIAN 259.16s-261.17s: Okay, something to consider.
+- [94] PHYSICIAN 261.58s-264.63s: We may need to do a pregnancy test to confirm.
+- [96] PHYSICIAN 266.22s-269.17s: Okay, to summarise so far:
+- [97] PHYSICIAN 269.41s-272.85s: For the last couple of days this abdominal pain has been affecting you,
+- [98] PHYSICIAN 273.19s-275.48s: located lower, around your belly button.
+- [100] PHYSICIAN 276.04s-277.98s: You described it as burning and getting worse.
+- [101] PHYSICIAN 278.45s-280.32s: You noticed some pink discoloration in your urine.
+- [102] PHYSICIAN 280.78s-282.82s: but no burning with urination.
+- [103] PHYSICIAN 283.01s-285.76s: No stinging with urination, and your bowels are working okay.
+- [104] PHYSICIAN 286.33s-290.31s: You've felt a little nauseous and sweaty. Is that correct?
+- [105] PATIENT 290.75s-292.83s: Yes, that's accurate.
+- [106] PHYSICIAN 292.51s-297.13s: Is there anything else you want to tell me?
+- [107] PATIENT 297.94s-301.76s: No, I think we've covered everything.
+- [108] PHYSICIAN 302.01s-303.04s: Okay.
+- [110] PHYSICIAN 304.68s-309.10s: Tell me about your medical history. Are you generally well?
+- [111] PATIENT 310.19s-315.53s: I don't have any surgical history.
+- [112] PATIENT 316.47s-322.88s: I haven't had any operations, and I'm not on any regular medications besides the implant.
+- [113] PHYSICIAN 323.29s-323.68s: Okay.
+- [115] PHYSICIAN 325.48s-327.83s: Have you had anything like this before? Have you seen anyone for it?
+- [116] PATIENT 328.87s-331.03s: I've never had this before.
+- [117] PHYSICIAN 331.22s-333.51s: Okay.
+- [118] PHYSICIAN 335.35s-339.79s: Any relevant family history I should be aware of?
+- [121] PATIENT 344.74s-346.63s: No, not that I'm aware of.
+- [122] PHYSICIAN 346.78s-348.62s: Okay.
+- [123] PHYSICIAN 348.85s-351.99s: Tell me about your social situation. Who do you live with?
+- [125] PATIENT 354.24s-358.96s: I live in a share house with two roommates.
+- [126] PHYSICIAN 359.96s-361.11s: Okay.
+- [127] PHYSICIAN 361.65s-363.72s: Are you currently working?
+- [128] PATIENT 365.10s-367.05s: Yes.
+- [129] PHYSICIAN 367.30s-368.16s: What do you do for work?
+- [130] PATIENT 370.42s-371.45s: I work as an accountant.
+- [133] PATIENT 376.48s-377.19s: Thank you.
+- [134] PHYSICIAN 377.31s-378.89s: Do you smoke?
+- [136] PHYSICIAN 380.60s-382.64s: Do you drink alcohol?
+- [137] PATIENT 384.36s-386.49s: I drink socially.
+- [140] PHYSICIAN 389.59s-390.37s: Thank you.
+- [142] PATIENT 391.72s-392.24s: Thanks.
+- [143] PHYSICIAN 392.37s-392.81s: Okay.
+- [144] PHYSICIAN 393.32s-398.30s: Before I examine you, I'll ask some screening questions; yes or no answers are fine.
+- [145] PHYSICIAN 398.74s-400.95s: We've covered that already.
+- [146] PHYSICIAN 401.25s-403.46s: Just to make sure I'm not missing anything.
+- [148] PHYSICIAN 404.39s-407.06s: How is your chest? Any shortness of breath?
+- [151] PATIENT 409.08s-414.30s: I don't feel short of breath and I don't have a cough.
+- [155] PHYSICIAN 416.94s-420.10s: Any palpitations or irregular heartbeats?
+- [156] PATIENT 421.38s-422.28s: No.
+- [157] PHYSICIAN 422.55s-425.75s: Any headaches or vision problems?
+- [159] PHYSICIAN 427.71s-430.36s: Okay.
+- [160] PHYSICIAN 432.08s-433.80s: Fine, okay.
+- [162] PHYSICIAN 436.00s-442.04s: Based on your history,
+- [163] PHYSICIAN 442.05s-444.01s: this is a typical presentation.
+- [164] PHYSICIAN 444.62s-449.38s: You have lower abdominal pain and there are several possible causes.
+- [165] PHYSICIAN 449.97s-454.85s: It could be a urinary tract infection or a gastrointestinal problem.
+- [167] PHYSICIAN 456.74s-463.06s: It could also be pregnancy-related, so we should do some initial tests.
+- [168] PHYSICIAN 463.69s-466.41s: These tests will help determine the cause.
+- [170] PHYSICIAN 468.90s-470.30s: I can arrange those tests today.
+- [172] PHYSICIAN 473.49s-477.59s: Based on the results, we'll decide how to proceed.
+- [176] PHYSICIAN 485.37s-492.71s: Since it's been a couple of days, it may be reasonable to treat empirically for a urinary tract infection.
+- [177] PATIENT 493.30s-497.20s: Can we treat empirically instead of waiting for test results?
+- [178] PHYSICIAN 497.44s-500.44s: Yes, that's reasonable.
+- [179] PHYSICIAN 501.22s-503.07s: I'll cover you with some antibiotics today.
+- [180] PHYSICIAN 503.43s-509.47s: We should still do a pregnancy test to make sure we're not missing anything.
+- [181] PHYSICIAN 509.96s-515.60s: Please come back if symptoms don't improve in a few days.
+- [182] PHYSICIAN 515.97s-517.33s: Or if the symptoms become worse.
+- [184] PHYSICIAN 519.09s-521.67s: Watch for worsening abdominal pain.
+- [185] PHYSICIAN 522.30s-525.89s: If you develop a high fever or persistent sweating.
+- [186] PHYSICIAN 526.45s-529.80s: Or persistent vomiting.
+- [187] PATIENT 530.46s-532.18s: Yes, I'm happy with that plan.
+- [188] PHYSICIAN 532.84s-533.28s: Okay.
+- [189] PHYSICIAN 533.69s-537.67s: You can take regular paracetamol for pain.
+- [190] PHYSICIAN 537.97s-541.85s: Make sure you drink plenty of fluids.
+- [191] PHYSICIAN 542.48s-546.75s: You can try cranberry juice which may help with urinary symptoms.
+- [192] PHYSICIAN 547.52s-552.30s: Take the antibiotics and call if you are worried.
+- [193] PATIENT 553.97s-559.17s: Sure, that sounds good. Do I just collect the prescription at my pharmacy?
+- [195] PHYSICIAN 559.17s-560.55s: You can collect it from your pharmacy.
+- [196] PHYSICIAN 560.85s-563.23s: Start the antibiotic today. Take one tablet twice a day for three days.
+- [197] PHYSICIAN 563.86s-568.01s: Take one tablet twice daily for three days.
+- [198] PHYSICIAN 568.72s-569.90s: Okay.
+- [200] PHYSICIAN 570.41s-571.25s: Let's see how you respond to them.
+- [201] PATIENT 571.96s-572.95s: Okay, thank you very much.
+- [202] PHYSICIAN 573.16s-573.41s: Great.
+- [203] PHYSICIAN 573.63s-574.17s: All the best.
+- [204] PATIENT 574.68s-575.03s: Goodbye.
+- [205] PHYSICIAN 575.11s-575.42s: Goodbye.

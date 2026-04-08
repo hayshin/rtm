@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "consultation": "day1_consultation01",
+  "annotation_status": "draft",
+  "annotator": "",
+  "notes": "",
+  "transcript_packet": "day1_consultation01_transcript.md",
+  "prediction_path": "/home/hayshin/dev/study/rtm/batch_outputs/primock57_pipeline/day1_consultation01/step05_day1_consultation01.json",
+  "instructions": "Fill gold_resources only. Use segment_indices from the transcript packet. predicted_candidates are context only and are ignored by the evaluator.",
+  "gold_resources": {
+    "Condition": [],
+    "MedicationStatement": [],
+    "Observation": [],
+    "Procedure": []
+  },
+  "predicted_candidates": {
+    "Condition": [
+      {
+        "text": "Diarrhoea (loose, watery stools)",
+        "segment_indices": [
+          8,
+          14,
+          21,
+          24,
+          159
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Probable gastroenteritis (physician: may have gastroenteritis)",
+        "segment_indices": [
+          163,
+          164,
+          165
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "unconfirmed"
+        }
+      },
+      {
+        "text": "Lower abdominal pain, left sided (cramp-like)",
+        "segment_indices": [
+          17,
+          30,
+          32,
+          35,
+          38,
+          39,
+          160
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Vomiting (occurred at start of illness, now stopped)",
+        "segment_indices": [
+          63,
+          64,
+          69
+        ],
+        "attributes": {
+          "clinical_status": "resolved",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Subjective fever / raised temperature (around onset, ~3-4 days ago)",
+        "segment_indices": [
+          51,
+          54,
+          56
+        ],
+        "attributes": {
+          "clinical_status": "resolved",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Loss of appetite",
+        "segment_indices": [
+          74
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Weakness / feeling shaky",
+        "segment_indices": [
+          41,
+          160
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Rectal bleeding / blood in stool (denied)",
+        "segment_indices": [
+          23,
+          24
+        ],
+        "attributes": {
+          "clinical_status": "unknown",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Blood in vomit (denied)",
+        "segment_indices": [
+          69
+        ],
+        "attributes": {
+          "clinical_status": "unknown",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Asthma (controlled with inhaler)",
+        "segment_indices": [
+          107,
+          108,
+          111
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "text": "Unspecified inhaler (for asthma)",
+        "segment_indices": [
+          107,
+          108,
+          111,
+          119
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      },
+      {
+        "text": "Paracetamol (advice for symptomatic relief)",
+        "segment_indices": [
+          181,
+          182
+        ],
+        "attributes": {
+          "status": "unknown",
+          "dose": "",
+          "route": "oral",
+          "frequency": "up to four times a day"
+        }
+      },
+      {
+        "text": "Oral rehydration solution (Dioralyte recommended)",
+        "segment_indices": [
+          176,
+          177,
+          178,
+          180
+        ],
+        "attributes": {
+          "status": "unknown",
+          "dose": "",
+          "route": "oral",
+          "frequency": ""
+        }
+      }
+    ],
+    "Observation": [
+      {
+        "text": "Bowel movement frequency",
+        "segment_indices": [
+          21
+        ],
+        "attributes": {
+          "value": "6-7 times per day"
+        }
+      },
+      {
+        "text": "Able to keep fluids down",
+        "segment_indices": [
+          75
+        ],
+        "attributes": {
+          "value": "yes"
+        }
+      },
+      {
+        "text": "Subjective fever reported at onset (not measured)",
+        "segment_indices": [
+          51,
+          54,
+          56
+        ],
+        "attributes": {
+          "value": "reported raised temperature ~3-4 days ago"
+        }
+      }
+    ],
+    "Procedure": [
+      {
+        "text": "Stool sample for testing (may be needed)",
+        "segment_indices": [
+          192,
+          435
+        ],
+        "attributes": {
+          "status": "completed"
+        }
+      }
+    ]
+  }
+}

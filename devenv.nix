@@ -6,7 +6,11 @@
 }:
 {
   dotenv.enable = true;
-  packages = [ pkgs.ffmpeg pkgs.zlib ];
+  packages = [
+    pkgs.ffmpeg
+    pkgs.zlib
+    pkgs.texliveMedium
+  ];
   env.LD_LIBRARY_PATH = lib.makeLibraryPath [
     pkgs.stdenv.cc.cc
     pkgs.zlib

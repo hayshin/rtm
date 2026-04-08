@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "consultation": "day1_consultation03",
+  "annotation_status": "draft",
+  "annotator": "",
+  "notes": "",
+  "transcript_packet": "day1_consultation03_transcript.md",
+  "prediction_path": "/home/hayshin/dev/study/rtm/batch_outputs/primock57_pipeline/day1_consultation03/step05_day1_consultation03.json",
+  "instructions": "Fill gold_resources only. Use segment_indices from the transcript packet. predicted_candidates are context only and are ignored by the evaluator.",
+  "gold_resources": {
+    "Condition": [],
+    "MedicationStatement": [],
+    "Observation": [],
+    "Procedure": []
+  },
+  "predicted_candidates": {
+    "Condition": [
+      {
+        "text": "Headache",
+        "segment_indices": [
+          3,
+          15,
+          20,
+          28,
+          31,
+          32,
+          33,
+          34,
+          36,
+          37,
+          55,
+          80,
+          214
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Left-sided headache",
+        "segment_indices": [
+          4,
+          20,
+          32
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Throbbing headache (quality)",
+        "segment_indices": [
+          29,
+          31
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Visual aura (zigzag lines before headache)",
+        "segment_indices": [
+          9
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Blurred vision",
+        "segment_indices": [
+          11,
+          56,
+          58
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Photophobia / sensitivity to bright light",
+        "segment_indices": [
+          61,
+          63,
+          194
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Nausea",
+        "segment_indices": [
+          6,
+          154,
+          193
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Headache worse with movement / neck movement",
+        "segment_indices": [
+          34,
+          36,
+          37
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Migraine-type headache (suspected)",
+        "segment_indices": [
+          189,
+          192,
+          193,
+          194,
+          210
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "unconfirmed"
+        }
+      },
+      {
+        "text": "Similar prior headache a few weeks ago",
+        "segment_indices": [
+          80,
+          83,
+          85
+        ],
+        "attributes": {
+          "clinical_status": "resolved",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Fever",
+        "segment_indices": [
+          69,
+          70
+        ],
+        "attributes": {
+          "clinical_status": "unknown",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Rash",
+        "segment_indices": [
+          72,
+          73
+        ],
+        "attributes": {
+          "clinical_status": "unknown",
+          "verification_status": "refuted"
+        }
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "text": "Microgynon (combined oral contraceptive pill)",
+        "segment_indices": [
+          145,
+          147
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      },
+      {
+        "text": "Painkillers (unspecified) - taken during prior headache",
+        "segment_indices": [
+          87
+        ],
+        "attributes": {
+          "status": "stopped",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      },
+      {
+        "text": "Paracetamol (recommended)",
+        "segment_indices": [
+          217
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      },
+      {
+        "text": "Co-codamol (recommended)",
+        "segment_indices": [
+          217
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      },
+      {
+        "text": "Ibuprofen (recommended)",
+        "segment_indices": [
+          219,
+          484
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      },
+      {
+        "text": "Naproxen (recommended)",
+        "segment_indices": [
+          219,
+          484
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      }
+    ],
+    "Observation": [
+      {
+        "text": "Vomited",
+        "segment_indices": [
+          66
+        ],
+        "attributes": {
+          "value": "2 episodes"
+        }
+      }
+    ],
+    "Procedure": []
+  }
+}

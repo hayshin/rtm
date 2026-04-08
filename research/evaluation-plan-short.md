@@ -5,10 +5,10 @@ This is a reduced evaluation plan designed for limited time and current repo rea
 Right now the project has:
 - pipeline outputs for a subset of PriMock57 consultations
 - PriMock57 reference transcripts in TextGrid format
-- no current evaluation harness
+- a working audio evaluation harness
 - no current gold extraction or gold FHIR annotations
 
-Because of that, the first defensible milestone is to benchmark the existing pipeline on audio and transcript quality before promising downstream semantic evaluation.
+The first defensible milestone was to benchmark the existing pipeline on audio and transcript quality before promising downstream semantic evaluation. That milestone is now complete for the 15 processed Day~1 consultations.
 
 ## 1. Evaluation Strategy
 
@@ -16,25 +16,29 @@ This short plan uses a phased rollout:
 
 ### Phase 1. Audio -> Transcript Benchmarking
 
-Evaluate the current pipeline against PriMock57 reference transcripts.
+Status: done.
 
-Required metrics:
+The current pipeline has been evaluated against PriMock57 reference transcripts for the 15 processed Day~1 consultations.
+
+Implemented metrics:
 - `WER`
-- optional `CER`
+- optional `CER` remains available but is not part of the default fast run
 
-Comparison targets:
+Implemented comparison targets:
 - `step03` raw ASR transcript
-- optional `step04` cleaned transcript as an ablation
+- `step04` cleaned transcript as an ablation
 
-Why first:
+Current outcome:
 - reference data already exists
 - pipeline outputs already exist
 - no new annotation is required
-- this produces the first real benchmark numbers for the project
+- this produced the first real benchmark numbers for the project
+- `step03` corpus-level `WER = 0.3224`
+- `step04` corpus-level `WER = 0.5946`
 
 ### Phase 1b. Speaker Roles If Feasible
 
-Evaluate speaker-role attribution only if it can be derived reliably from existing PriMock57 transcript timings.
+Status: done for the current Day~1 batch via overlap with existing PriMock57 transcript timings.
 
 Metrics:
 - segment-level speaker-role accuracy
@@ -46,7 +50,12 @@ Reference:
 Fallback:
 - if alignment is not reliable enough, defer role evaluation to the same manually annotated subset used later for extraction
 
+Current outcome:
+- `step04` speaker-role accuracy = `0.8963` over 2651 scored segments
+
 ### Phase 2. Transcript -> Clinical Extraction
+
+Status: pending.
 
 Evaluate extraction only after creating a small annotated subset.
 
@@ -71,6 +80,8 @@ Why deferred:
 
 ### Phase 3. FHIR Output
 
+Status: structurally done, semantically pending.
+
 Evaluate structural validity on all processed consultations after transcript benchmarking is in place.
 
 Metrics:
@@ -92,11 +103,17 @@ Recommended framing:
 
 The minimum benchmark package to implement now is:
 
+Done:
+
 1. export reference transcripts from PriMock57 TextGrids
 2. export predicted transcripts from pipeline outputs
 3. compute `WER` on all currently processed consultations
-4. compute optional `CER`
-5. compute speaker-role accuracy only if role alignment from TextGrids is reliable
+4. compare `step03` and `step04`
+5. compute speaker-role accuracy from TextGrid overlap
+
+Still optional:
+
+6. compute `CER`
 
 Expected artifacts:
 - reference transcript export
@@ -104,11 +121,11 @@ Expected artifacts:
 - benchmark results table
 - optional speaker-role comparison table
 
-## 4. Metrics to Implement Now
+## 4. Metrics Implemented Now
 
 ### A. Audio -> Transcript
 
-Evaluate on all consultations already processed in `batch_outputs/primock57_pipeline/`.
+Evaluated on all consultations currently processed in `batch_outputs/primock57_pipeline/`.
 
 Required metric:
 - `WER`
@@ -127,6 +144,7 @@ Recommended prediction source of truth:
 ### B. Speaker Roles
 
 Evaluate only if role labels can be matched from existing PriMock57 timing information.
+This has been implemented for the current Day~1 subset using interval overlap.
 
 Metrics:
 - segment-level role accuracy
@@ -232,23 +250,22 @@ Columns:
 - accuracy or support
 - confusion counts
 
-## 9. Implementation Order
+## 9. Next Implementation Order
 
-Implement in this order:
+Phase 1 is complete. Next:
 
-1. parse PriMock57 TextGrid transcripts into merged reference transcripts
-2. read pipeline `step03` outputs and compute `WER`
-3. add optional `CER`
-4. compare `step04` cleaned transcripts as an ablation
-5. compute speaker-role accuracy from TextGrid overlaps if reliable
-6. only then define the lightweight annotation format for extraction
+1. define the lightweight annotation format for extraction
+2. annotate 5 consultations minimum
+3. evaluate extraction precision / recall / F1
+4. extend structural FHIR reporting if needed
+5. add optional `CER` or concept-sensitive transcript metrics later
 
 ## 10. Shortest Defensible Package
 
 The shortest defensible evaluation package is:
 - `WER` on all currently processed consultations
+- `step03` vs `step04` comparison
+- speaker-role accuracy from existing PriMock57 labels
 - optional `CER`
-- optional `step03` vs `step04` comparison
-- optional speaker-role accuracy if existing PriMock57 labels support it
 
-This is realistic, publishable as a feasibility-focused benchmark, and does not require new gold extraction or FHIR annotations before producing results.
+This package is now implemented for the processed Day~1 subset. The next missing piece is extraction evaluation on a small annotated gold subset.

@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "consultation": "day1_consultation04",
+  "annotation_status": "draft",
+  "annotator": "",
+  "notes": "",
+  "transcript_packet": "day1_consultation04_transcript.md",
+  "prediction_path": "/home/hayshin/dev/study/rtm/batch_outputs/primock57_pipeline/day1_consultation04/step05_day1_consultation04.json",
+  "instructions": "Fill gold_resources only. Use segment_indices from the transcript packet. predicted_candidates are context only and are ignored by the evaluator.",
+  "gold_resources": {
+    "Condition": [],
+    "MedicationStatement": [],
+    "Observation": [],
+    "Procedure": []
+  },
+  "predicted_candidates": {
+    "Condition": [
+      {
+        "text": "sore throat",
+        "segment_indices": [
+          10,
+          11,
+          16,
+          41,
+          43,
+          47,
+          50,
+          255
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "runny nose (clear rhinorrhea)",
+        "segment_indices": [
+          11,
+          60,
+          62,
+          255
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "nasal congestion",
+        "segment_indices": [
+          65,
+          68,
+          69,
+          255
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "dry cough",
+        "segment_indices": [
+          14,
+          17,
+          71,
+          72,
+          74,
+          86,
+          255
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "fever (initial, now settling)",
+        "segment_indices": [
+          106,
+          256
+        ],
+        "attributes": {
+          "clinical_status": "resolved",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "shortness of breath on exertion",
+        "segment_indices": [
+          114,
+          115,
+          117,
+          121,
+          123,
+          124
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "chest pain",
+        "segment_indices": [
+          112,
+          114
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "headaches (general, intermittent)",
+        "segment_indices": [
+          139,
+          142,
+          145,
+          147
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "seeing light spots (visual disturbance)",
+        "segment_indices": [
+          92,
+          94
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "fatigue / tiredness / weakness",
+        "segment_indices": [
+          23,
+          95,
+          255
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "muscle aches (myalgia)",
+        "segment_indices": [
+          180,
+          255
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "viral upper respiratory tract infection (likely)",
+        "segment_indices": [
+          258
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "unconfirmed"
+        }
+      },
+      {
+        "text": "influenza (possible / early)",
+        "segment_indices": [
+          260
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "unconfirmed"
+        }
+      },
+      {
+        "text": "ear pain",
+        "segment_indices": [
+          130,
+          135
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "ear discharge",
+        "segment_indices": [
+          133,
+          135
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "rash",
+        "segment_indices": [
+          176,
+          177
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "photophobia / sensitivity to bright lights",
+        "segment_indices": [
+          151,
+          152
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "bowel movement problem (unspecified)",
+        "segment_indices": [
+          158,
+          162
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "text": "paracetamol",
+        "segment_indices": [
+          106,
+          266
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      },
+      {
+        "text": "ibuprofen",
+        "segment_indices": [
+          106,
+          266
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": ""
+        }
+      }
+    ],
+    "Observation": [],
+    "Procedure": []
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "consultation": "day1_consultation05",
+  "annotation_status": "draft",
+  "annotator": "",
+  "notes": "",
+  "transcript_packet": "day1_consultation05_transcript.md",
+  "prediction_path": "/home/hayshin/dev/study/rtm/batch_outputs/primock57_pipeline/day1_consultation05/step05_day1_consultation05.json",
+  "instructions": "Fill gold_resources only. Use segment_indices from the transcript packet. predicted_candidates are context only and are ignored by the evaluator.",
+  "gold_resources": {
+    "Condition": [],
+    "MedicationStatement": [],
+    "Observation": [],
+    "Procedure": []
+  },
+  "predicted_candidates": {
+    "Condition": [
+      {
+        "text": "Lower abdominal pain (just below the belly button), burning, localized, gradually worsening, now constant",
+        "segment_indices": [
+          5,
+          14,
+          15,
+          18,
+          21,
+          23,
+          24,
+          25,
+          31,
+          100
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Nausea (mild)",
+        "segment_indices": [
+          62,
+          104
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Feeling hot and sweaty (subjective feverishness)",
+        "segment_indices": [
+          9,
+          65,
+          104
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Constipation (last week, has improved)",
+        "segment_indices": [
+          38
+        ],
+        "attributes": {
+          "clinical_status": "resolved",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Increased urinary frequency",
+        "segment_indices": [
+          47,
+          48,
+          58
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "confirmed"
+        }
+      },
+      {
+        "text": "Dysuria / burning on urination",
+        "segment_indices": [
+          45,
+          55
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Diarrhea",
+        "segment_indices": [
+          40
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Cough",
+        "segment_indices": [
+          151
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Shortness of breath",
+        "segment_indices": [
+          151
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Palpitations",
+        "segment_indices": [
+          156
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Vomiting",
+        "segment_indices": [
+          62
+        ],
+        "attributes": {
+          "clinical_status": "inactive",
+          "verification_status": "refuted"
+        }
+      },
+      {
+        "text": "Urinary tract infection (possible)",
+        "segment_indices": [
+          165,
+          176,
+          179
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "unconfirmed"
+        }
+      },
+      {
+        "text": "Pregnancy (possible/unconfirmed)",
+        "segment_indices": [
+          90,
+          92,
+          94
+        ],
+        "attributes": {
+          "clinical_status": "active",
+          "verification_status": "unconfirmed"
+        }
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "text": "Etonogestrel implant (Implanon)",
+        "segment_indices": [
+          81,
+          112
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "subdermal (implant)",
+          "frequency": ""
+        }
+      },
+      {
+        "text": "Antibiotic (unspecified) \u2014 empirical treatment for suspected UTI",
+        "segment_indices": [
+          179,
+          192,
+          196,
+          197
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "one tablet",
+          "route": "",
+          "frequency": "twice daily"
+        }
+      },
+      {
+        "text": "Paracetamol (acetaminophen)",
+        "segment_indices": [
+          189
+        ],
+        "attributes": {
+          "status": "active",
+          "dose": "",
+          "route": "",
+          "frequency": "as needed / regular for pain (unspecified dose)"
+        }
+      }
+    ],
+    "Observation": [
+      {
+        "text": "Urine discoloration (pink)",
+        "segment_indices": [
+          44,
+          45,
+          53
+        ],
+        "attributes": {
+          "value": "pink"
+        }
+      },
+      {
+        "text": "Increased urinary frequency (patient reports urinating more than four times regularly)",
+        "segment_indices": [
+          47,
+          48,
+          58
+        ],
+        "attributes": {
+          "value": "more than 4 times/day (patient report) times/day"
+        }
+      }
+    ],
+    "Procedure": [
+      {
+        "text": "Insertion of Implanon (etonogestrel) contraceptive implant (about one year ago)",
+        "segment_indices": [
+          81,
+          112
+        ],
+        "attributes": {
+          "status": "completed"
+        }
+      },
+      {
+        "text": "Pregnancy test (planned)",
+        "segment_indices": [
+          94,
+          170
+        ],
+        "attributes": {
+          "status": "completed"
+        }
+      }
+    ]
+  }
+}

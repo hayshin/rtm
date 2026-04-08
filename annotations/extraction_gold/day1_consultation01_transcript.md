@@ -1,0 +1,165 @@
+# day1_consultation01 Transcript Packet
+
+Use this file to annotate `gold_resources` in the paired JSON scaffold.
+Only annotate explicit clinical content for Condition, MedicationStatement, Observation, and Procedure.
+
+## Segments
+
+- [0] PHYSICIAN 2.97s-3.29s: Hello.
+- [1] PATIENT 4.00s-4.84s: Hello, how are you?
+- [2] PHYSICIAN 4.92s-5.28s: Bye.
+- [6] PHYSICIAN 8.89s-9.67s: Hello.
+- [7] PHYSICIAN 10.39s-11.96s: How can I help you this morning?
+- [8] PATIENT 12.64s-17.65s: Hi, I've had diarrhea for the last three days.
+- [9] PATIENT 18.09s-22.09s: It has been affecting me; I need to stay close to the toilet.
+- [11] PATIENT 23.15s-25.51s: It is affecting my day-to-day activities.
+- [12] PHYSICIAN 25.93s-26.29s: Thank you.
+- [13] PHYSICIAN 26.47s-34.10s: Sorry to hear that. When you say diarrhea, do you mean you are going to the toilet more often or are your stools more loose?
+- [14] PATIENT 34.62s-39.20s: My stools are loose and watery, and I am going to the toilet quite often.
+- [17] PATIENT 42.49s-43.69s: The discomfort is in my lower stomach.
+- [18] PHYSICIAN 43.92s-44.31s: Okay.
+- [19] PHYSICIAN 44.67s-47.03s: How many times a day have you been going to the toilet?
+- [21] PATIENT 48.36s-50.37s: Probably six to seven times a day.
+- [23] PHYSICIAN 51.80s-56.14s: You said it's mainly watery. Have you noticed any blood in your stool?
+- [24] PATIENT 56.56s-59.36s: No blood, just watery, loose stool.
+- [25] PHYSICIAN 59.60s-60.02s: Okay.
+- [26] PHYSICIAN 60.24s-62.35s: You mentioned you've had some abdominal pain as well.
+- [27] PATIENT 62.81s-63.30s: Yes.
+- [28] PHYSICIAN 63.30s-64.46s: Where is the pain located?
+- [30] PATIENT 64.93s-68.10s: It is in my lower abdomen.
+- [32] PATIENT 69.62s-70.86s: It's on one side.
+- [34] PATIENT 71.75s-72.73s: Which side is that?
+- [35] PATIENT 73.25s-74.38s: On the left side.
+- [36] PHYSICIAN 74.62s-74.82s: Yes.
+- [37] PHYSICIAN 74.89s-77.55s: Can you describe the pain?
+- [38] PATIENT 78.31s-80.71s: It feels like a cramp.
+- [39] PATIENT 81.17s-83.17s: Like a muscular cramp.
+- [41] PATIENT 84.49s-86.57s: I feel a bit weak and shaky.
+- [42] PHYSICIAN 86.92s-87.36s: Thank you.
+- [43] PHYSICIAN 87.65s-90.65s: Is the pain constant, or does it come and go?
+- [44] PHYSICIAN 90.87s-92.73s: It comes and goes.
+- [45] PHYSICIAN 92.98s-95.34s: Does the pain move anywhere else, such as into your back?
+- [46] PATIENT 96.10s-98.83s: No, just mainly my stomach.
+- [47] PATIENT 99.19s-99.49s: Thank you.
+- [48] PATIENT 99.80s-100.10s: Bye.
+- [49] PHYSICIAN 100.40s-104.50s: You said you feel weak and shaky. By 'shaky', do you mean tremors or something else?
+- [50] PHYSICIAN 104.98s-106.66s: Are you feeling feverish?
+- [51] PATIENT 107.31s-115.29s: I haven't had a fever at the moment, but I noticed a raised temperature when the symptoms started.
+- [54] PATIENT 118.88s-120.69s: Around three to four days ago.
+- [55] PHYSICIAN 121.11s-122.14s: You should measure your temperature.
+- [56] PATIENT 122.97s-126.83s: I did not measure it, but I felt a bit hot.
+- [57] PHYSICIAN 127.35s-127.81s: Okay.
+- [59] PHYSICIAN 128.80s-131.20s: Any other symptoms, such as sweating?
+- [60] PHYSICIAN 131.71s-132.69s: No.
+- [61] PHYSICIAN 132.84s-133.12s: Let's go.
+- [62] PHYSICIAN 133.73s-135.33s: Any vomiting at all?
+- [63] PATIENT 135.87s-139.94s: I vomited at the start of the illness.
+- [64] PATIENT 140.08s-142.32s: I have stopped vomiting now.
+- [65] PHYSICIAN 143.06s-147.37s: Was the vomit normal in appearance? For example, was there blood or an unusual colour?
+- [66] PHYSICIAN 147.97s-148.90s: Was there any unusual colour?
+- [67] PATIENT 149.49s-151.60s: One moment.
+- [68] PHYSICIAN 151.26s-151.53s: Yes.
+- [69] PATIENT 151.69s-155.35s: There was no blood in the vomit.
+- [70] PHYSICIAN 155.82s-156.14s: Okay.
+- [71] PHYSICIAN 156.65s-161.90s: Any other symptoms at all? You mentioned tummy pain, diarrhea, and vomiting.
+- [72] PHYSICIAN 162.25s-164.11s: Anything else?
+- [73] PATIENT 162.28s-162.60s: Yes.
+- [74] PATIENT 164.70s-169.05s: I have had a loss of appetite and haven't been eating much.
+- [75] PATIENT 169.35s-172.56s: I have been able to keep fluids down.
+- [77] PHYSICIAN 173.51s-174.74s: So you are drinking fluids?
+- [78] PHYSICIAN 175.08s-178.03s: What kind of foods have you managed to eat?
+- [79] PATIENT 179.11s-180.39s: I've mainly had soups.
+- [80] PATIENT 180.56s-184.54s: Light foods like smoothies.
+- [81] PATIENT 185.27s-186.69s: Mostly liquid foods.
+- [82] PATIENT 187.04s-187.26s: Okay.
+- [85] PHYSICIAN 189.47s-196.32s: The symptoms started three days ago. Are you aware of any triggers, for example takeaway foods, eating out, or being around other people with similar symptoms?
+- [86] PHYSICIAN 196.81s-201.82s: For example, takeaway foods, eating out, or contacts with others with similar symptoms?
+- [87] PATIENT 202.26s-205.11s: I had takeaway about four days ago.
+- [89] PATIENT 206.77s-208.50s: But other than that, I have been eating normally.
+- [91] PATIENT 210.11s-211.24s: I was eating normally.
+- [92] PATIENT 211.78s-213.65s: I don't think anything unusual.
+- [93] PHYSICIAN 213.92s-214.88s: Do you remember what you ate?
+- [94] PATIENT 215.73s-219.30s: I ate at a Chinese restaurant with friends.
+- [95] PHYSICIAN 219.63s-220.03s: Thank you.
+- [96] PHYSICIAN 220.40s-221.72s: Is anyone else unwell?
+- [97] PHYSICIAN 221.92s-222.81s: Anyone with similar symptoms?
+- [98] PATIENT 223.30s-228.28s: No one else in the family is unwell. I have a wife and two children.
+- [99] PATIENT 228.54s-230.12s: One child was vomiting.
+- [100] PATIENT 230.27s-233.73s: They have not had diarrhea; they did not have the same symptoms.
+- [101] PHYSICIAN 233.99s-234.46s: Okay.
+- [102] PHYSICIAN 234.54s-234.95s: Okay.
+- [105] PHYSICIAN 237.33s-239.50s: Right, and in terms of your overall health...
+- [106] PHYSICIAN 239.72s-242.73s: Regarding your overall health, are you normally feeling well?
+- [107] PATIENT 243.35s-246.96s: Yes. Other than asthma, I'm fine.
+- [108] PATIENT 247.17s-249.92s: I use an inhaler; everything else is fine.
+- [109] PHYSICIAN 250.78s-251.20s: Okay.
+- [110] PHYSICIAN 251.32s-252.90s: Is your asthma well controlled?
+- [111] PATIENT 253.78s-258.64s: Yes. My asthma is under control with an inhaler.
+- [112] PHYSICIAN 258.99s-259.21s: Thank you.
+- [113] PHYSICIAN 259.45s-262.64s: Do you have any other bowel or abdominal problems I should be aware of?
+- [114] PATIENT 263.23s-263.72s: No.
+- [115] PHYSICIAN 263.26s-263.67s: No.
+- [117] PATIENT 264.34s-264.45s: Thank you.
+- [118] PHYSICIAN 264.45s-264.73s: Okay.
+- [119] PHYSICIAN 265.22s-268.33s: Apart from your inhaler, do you take any other medications?
+- [120] PATIENT 269.15s-271.43s: No other medications.
+- [121] PHYSICIAN 271.43s-272.38s: Thank you.
+- [122] PHYSICIAN 272.46s-275.82s: You said it's been affecting your day-to-day life.
+- [123] PHYSICIAN 276.19s-276.75s: Yes.
+- [124] PATIENT 276.43s-276.71s: Yes.
+- [125] PHYSICIAN 276.98s-278.54s: In what way has it been affecting your life?
+- [126] PATIENT 279.26s-285.91s: I need to stay close to the toilet because I have been going quite frequently over the past three days.
+- [127] PATIENT 286.03s-286.33s: Thank you.
+- [128] PATIENT 286.53s-288.29s: Other than that, it's okay.
+- [129] PATIENT 288.75s-290.18s: That's the main concern.
+- [130] PHYSICIAN 290.42s-292.51s: Are you currently working?
+- [132] PATIENT 293.89s-294.96s: Yes, I work.
+- [135] PATIENT 296.91s-298.14s: I work for the council.
+- [136] PHYSICIAN 298.43s-300.96s: Have you been going to work the last few days or have you been at home?
+- [137] PATIENT 301.57s-302.97s: Yes, I've been going to work.
+- [138] PATIENT 303.43s-303.73s: Okay.
+- [143] PHYSICIAN 307.54s-310.94s: You mentioned you live with a wife and two children, is that right?
+- [144] PATIENT 311.34s-312.08s: Yes.
+- [145] PHYSICIAN 312.35s-312.67s: Okay.
+- [146] PHYSICIAN 312.94s-316.15s: Just a couple of other questions. Do you smoke at all?
+- [147] PATIENT 316.83s-317.92s: No, I don't smoke.
+- [148] PHYSICIAN 316.96s-317.48s: No.
+- [149] PHYSICIAN 318.34s-319.76s: Do you drink alcohol?
+- [150] PATIENT 320.37s-322.50s: No, I don't drink alcohol.
+- [152] PATIENT 322.70s-323.10s: Thank you.
+- [157] PATIENT 330.24s-330.39s: Yes.
+- [158] PHYSICIAN 330.63s-333.24s: Having listened to your history, I think...
+- [159] PHYSICIAN 333.95s-337.68s: To recap: for the last three days you have had loose stools and diarrhea.
+- [160] PHYSICIAN 337.94s-342.64s: You have abdominal pain mainly on the left side, vomiting, and feeling weak and lethargic.
+- [162] PATIENT 343.27s-343.39s: Yes.
+- [163] PHYSICIAN 343.66s-348.57s: You mentioned the Chinese takeaway a few days ago; that may be the cause of your symptoms.
+- [164] PHYSICIAN 348.67s-350.86s: It seems like you may have gastroenteritis.
+- [165] PHYSICIAN 351.35s-353.68s: Gastroenteritis is essentially a stomach bug or infection.
+- [168] PHYSICIAN 358.81s-359.35s: It is mainly caused by viruses but can also be caused by bacteria.
+- [173] PHYSICIAN 369.04s-378.91s: At this stage we recommend conservative management. You do not need antibiotics. Ensure you stay well hydrated.
+- [176] PHYSICIAN 383.11s-384.60s: There are oral rehydration solutions available from the pharmacy.
+- [177] PHYSICIAN 384.95s-388.27s: Dioralyte is available from pharmacies.
+- [178] PHYSICIAN 388.58s-391.68s: These help replenish electrolytes.
+- [179] PATIENT 391.92s-392.43s: Okay.
+- [180] PHYSICIAN 392.43s-397.13s: If you have vomiting and diarrhea, consider oral rehydration for the first couple of days.
+- [181] PHYSICIAN 397.44s-401.89s: If you feel feverish or weak, take paracetamol.
+- [182] PHYSICIAN 402.38s-406.01s: You can take paracetamol up to four times a day for symptom relief.
+- [183] PHYSICIAN 406.47s-412.62s: I advise you to take two to three days off work to rest and allow this to resolve.
+- [185] PHYSICIAN 413.94s-417.48s: Take time off and rest while it clears.
+- [187] PHYSICIAN 419.22s-424.47s: If your symptoms have not improved in three to four days, please return for review.
+- [188] PHYSICIAN 424.83s-429.04s: If symptoms persist, we need to investigate other causes.
+- [189] PATIENT 424.96s-425.26s: Thank you.
+- [190] PATIENT 429.47s-429.74s: Yes.
+- [191] PHYSICIAN 429.52s-432.54s: We may need to do further tests.
+- [192] PHYSICIAN 432.72s-435.10s: We may need to take a stool sample to test.
+- [194] PATIENT 438.02s-438.95s: Yes, sure.
+- [195] PHYSICIAN 439.25s-439.88s: How does that sound?
+- [196] PATIENT 440.54s-441.58s: That sounds good.
+- [197] PATIENT 441.73s-442.12s: Yes.
+- [198] PHYSICIAN 442.12s-443.05s: Do you have any questions for me?
+- [199] PATIENT 443.96s-446.41s: No, no further questions.
+- [200] PHYSICIAN 446.80s-448.69s: Okay. Is the treatment plan clear?
+- [201] PATIENT 449.68s-451.98s: Yes, that's very clear. Thank you.
+- [202] PHYSICIAN 452.23s-453.31s: I wish you all the best.
+- [203] PATIENT 453.65s-455.15s: Okay. Thank you.
+- [204] PATIENT 455.64s-456.33s: Goodbye.

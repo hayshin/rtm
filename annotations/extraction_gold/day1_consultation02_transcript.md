@@ -1,0 +1,200 @@
+# day1_consultation02 Transcript Packet
+
+Use this file to annotate `gold_resources` in the paired JSON scaffold.
+Only annotate explicit clinical content for Condition, MedicationStatement, Observation, and Procedure.
+
+## Segments
+
+- [0] PATIENT 2.16s-2.53s: Later.
+- [1] PATIENT 3.64s-4.03s: Hello.
+- [2] PATIENT 4.57s-5.28s: Can you hear me well?
+- [3] PHYSICIAN 5.52s-7.29s: Yes.
+- [4] PHYSICIAN 7.44s-9.72s: I think it's a bit better; it's a little clearer.
+- [5] PHYSICIAN 10.11s-12.25s: It's not very clear, but let's continue anyway.
+- [6] PATIENT 12.99s-13.43s: Okay.
+- [7] PHYSICIAN 13.02s-13.31s: Okay.
+- [8] PHYSICIAN 13.67s-15.54s: Let's start again. How can I help you, sir?
+- [9] PATIENT 16.75s-19.17s: Yes, it's been a few days now.
+- [10] PATIENT 19.49s-22.10s: I have a sore, red area on my skin.
+- [11] PATIENT 22.31s-24.77s: It's very itchy and extremely annoying.
+- [12] PATIENT 25.09s-26.20s: I'd like help to treat it.
+- [14] PATIENT 26.39s-27.81s: I want to find something quick to treat it.
+- [15] PHYSICIAN 27.94s-29.39s: No problem, I'll try to help.
+- [16] PHYSICIAN 29.48s-31.91s: Where on your body is the skin affected?
+- [17] PATIENT 32.72s-36.95s: Mostly my chest, hands, and arms.
+- [18] PATIENT 37.51s-41.39s: It's very itchy all the time.
+- [19] PATIENT 41.66s-43.08s: I can't sleep at night because of it.
+- [20] PATIENT 43.38s-46.59s: I really need something to treat it because it affects me even at work.
+- [21] PATIENT 47.01s-50.93s: When I'm in a meeting I cannot concentrate.
+- [22] PATIENT 50.98s-53.04s: I cannot focus on my work.
+- [23] PATIENT 53.37s-54.84s: I wake up early because I can't sleep.
+- [25] PATIENT 56.33s-58.33s: But what I mean is...
+- [26] PATIENT 58.69s-61.10s: I'm always disturbed by this condition.
+- [27] PHYSICIAN 61.10s-67.09s: I understand this is affecting you, and we'll do our best to sort it out.
+- [28] PHYSICIAN 67.31s-69.61s: Have you had this before?
+- [29] PATIENT 71.18s-75.39s: Yes, I have had eczema before.
+- [30] PHYSICIAN 75.78s-76.20s: Okay.
+- [31] PATIENT 76.05s-76.17s: Thank you.
+- [32] PATIENT 76.20s-76.36s: Thank you.
+- [33] PATIENT 77.30s-78.42s: They gave me a cream.
+- [34] PATIENT 78.58s-80.10s: And something else.
+- [35] PATIENT 80.49s-81.18s: When I used it...
+- [36] PATIENT 81.47s-84.49s: For example, when I was in the shower I applied something.
+- [37] PHYSICIAN 84.59s-85.00s: Okay.
+- [39] PHYSICIAN 86.79s-87.34s: Did it help?
+- [40] PATIENT 89.20s-93.69s: At that time it helped, but the symptoms returned.
+- [41] PATIENT 94.31s-96.99s: When the symptoms returned, those treatments did not work.
+- [42] PATIENT 97.47s-98.68s: I tried a few things, like...
+- [43] PATIENT 99.15s-99.68s: I'm not sure.
+- [44] PATIENT 99.83s-102.29s: I bought an over-the-counter steroid cream at the pharmacy last night, but...
+- [45] PATIENT 103.02s-105.63s: It didn't help because it's still itching a lot today.
+- [46] PHYSICIAN 105.72s-106.36s: Okay.
+- [47] PATIENT 106.83s-107.14s: Yes.
+- [48] PHYSICIAN 107.24s-108.82s: Do you remember the name of the cream you bought?
+- [49] PATIENT 109.95s-111.10s: Just a steroid cream.
+- [50] PHYSICIAN 111.29s-113.57s: Okay.
+- [51] PHYSICIAN 114.14s-118.58s: Would you say these symptoms are very similar to your previous eczema or different?
+- [53] PATIENT 121.50s-123.30s: It's more widespread now.
+- [54] PATIENT 123.49s-127.30s: My eczema used to be only on my arm; now it's also on my chest.
+- [55] PATIENT 127.35s-129.99s: And on my hands as well.
+- [56] PHYSICIAN 130.02s-130.47s: Okay.
+- [57] PATIENT 130.26s-130.37s: Bye.
+- [58] PATIENT 130.80s-131.50s: Yes, what...
+- [59] PATIENT 131.84s-134.73s: I enjoy hiking on weekends.
+- [60] PHYSICIAN 133.73s-134.00s: Thank you.
+- [61] PATIENT 135.03s-137.65s: I can't really do it anymore because it is affecting me.
+- [62] PATIENT 138.03s-138.76s: It's very uncomfortable.
+- [63] PATIENT 139.13s-139.33s: Thank you.
+- [64] PATIENT 139.77s-141.71s: As I mentioned, last weekend it was worse.
+- [65] PATIENT 141.98s-146.66s: It's very painful and I have to shower every day to try to relieve it.
+- [66] PATIENT 146.86s-147.20s: To help.
+- [67] PATIENT 147.47s-148.56s: To ease it.
+- [68] PATIENT 148.78s-150.98s: I shower to ease the itching, which is very annoying.
+- [69] PHYSICIAN 151.16s-153.73s: So you mentioned the itchiness.
+- [70] PHYSICIAN 154.30s-156.16s: And you also mentioned it's been quite sore.
+- [71] PHYSICIAN 156.63s-162.25s: Have you noticed any bleeding or discharge from your skin?
+- [72] PHYSICIAN 163.55s-163.94s: No.
+- [73] PATIENT 163.94s-164.16s: Thank you.
+- [74] PATIENT 164.17s-166.15s: So my skin is a bit...
+- [75] PATIENT 166.67s-167.21s: Bye.
+- [76] PATIENT 167.28s-170.86s: In some areas it is cracked.
+- [77] PATIENT 171.21s-171.38s: Thank you.
+- [78] PHYSICIAN 171.85s-176.00s: Does it have any pus or bleeding coming from the skin?
+- [79] PATIENT 177.20s-177.30s: Thank you.
+- [80] PHYSICIAN 177.30s-177.93s: No, not this.
+- [81] PHYSICIAN 178.18s-180.10s: You mentioned it all started three or four days ago.
+- [82] PHYSICIAN 181.02s-185.27s: Are you aware of any triggers or anything you may have done that could have caused your symptoms to start?
+- [84] PHYSICIAN 188.02s-189.15s: For example, have you changed your shower gel or clothing?
+- [86] PHYSICIAN 191.58s-193.94s: Have you been around anyone else with similar symptoms?
+- [87] PATIENT 194.82s-196.00s: No.
+- [88] PATIENT 195.63s-196.19s: No, I haven't noticed anyone else with it.
+- [89] PATIENT 197.00s-197.89s: It's actually just me.
+- [90] PATIENT 198.13s-200.44s: It's really annoying because it makes me think about what to change.
+- [91] PATIENT 200.89s-204.02s: Maybe I should change something, but I haven't and I don't understand why this is happening.
+- [92] PATIENT 204.32s-204.88s: I'm afraid of asking people around me about it because it's quite intimate.
+- [94] PATIENT 208.72s-210.24s: I don't feel comfortable asking about these things.
+- [95] PATIENT 210.43s-214.97s: It's intimate, so I wanted to discuss it with you.
+- [96] PHYSICIAN 213.28s-213.90s: So...
+- [97] PHYSICIAN 215.27s-216.87s: No, that's okay.
+- [99] PHYSICIAN 218.65s-225.57s: To summarise, for the last four days you've had very itchy, sore skin, mainly on your chest.
+- [100] PHYSICIAN 226.00s-228.00s: Did you also mention your arms and legs?
+- [102] PATIENT 229.80s-231.61s: No, just the chest.
+- [104] PHYSICIAN 231.72s-232.20s: We'll be right back.
+- [105] PATIENT 233.11s-234.41s: Like inside the armpits.
+- [106] PHYSICIAN 234.63s-236.55s: Are you applying anything to your face?
+- [108] PHYSICIAN 238.90s-239.69s: On your face?
+- [109] PATIENT 240.89s-242.41s: No, not on my face.
+- [110] PHYSICIAN 242.68s-247.25s: Apart from this, any other symptoms? For example, have you had any temperature or fever?
+- [111] PATIENT 248.99s-250.44s: No, just itching.
+- [112] PHYSICIAN 250.61s-251.00s: Itching.
+- [113] PATIENT 251.00s-251.52s: Nothing else.
+- [114] PHYSICIAN 251.52s-254.15s: Okay, so your bowels are working okay?
+- [116] PHYSICIAN 256.21s-258.93s: No cough or breathing difficulties?
+- [117] PATIENT 260.16s-260.46s: No.
+- [118] PHYSICIAN 261.39s-262.66s: Are you passing urine okay?
+- [119] PATIENT 264.63s-265.51s: I think so.
+- [120] PHYSICIAN 265.69s-266.12s: Okay.
+- [121] PHYSICIAN 266.35s-266.79s: Right.
+- [123] PHYSICIAN 269.29s-273.64s: Do you have any ideas as to what could be causing the symptoms?
+- [124] PATIENT 275.40s-275.95s: Thank you, Wes.
+- [125] PHYSICIAN 276.14s-278.81s: Any ideas as to what could be causing your symptoms?
+- [126] PATIENT 279.65s-283.36s: I had eczema before, so maybe it's that.
+- [127] PATIENT 283.63s-284.68s: It seems more widespread now.
+- [128] PATIENT 285.18s-289.84s: My eczema was only on my arm before, so I'm not sure.
+- [129] PHYSICIAN 289.99s-290.37s: Okay.
+- [130] PHYSICIAN 290.79s-291.87s: Okay, so...
+- [131] PHYSICIAN 292.19s-294.43s: Normally at this stage I would like to examine you.
+- [132] PHYSICIAN 295.36s-298.16s: I would like to see the rash itself to determine the type.
+- [133] PHYSICIAN 298.48s-300.29s: But from what you've told me...
+- [134] PHYSICIAN 300.52s-303.97s: You have some dry and cracked skin as well.
+- [135] PHYSICIAN 304.66s-307.98s: And it's been very itchy.
+- [137] PHYSICIAN 310.06s-312.25s: Given your background of eczema...
+- [138] PHYSICIAN 312.67s-320.20s: Sorry, a couple of questions: apart from the eczema, do you have any other medical problems?
+- [139] PATIENT 320.84s-322.98s: No, I used to have asthma.
+- [140] PATIENT 323.17s-324.32s: And that's about it.
+- [141] PHYSICIAN 324.32s-324.67s: Okay.
+- [142] PATIENT 324.67s-324.96s: Thank you.
+- [143] PHYSICIAN 325.23s-328.59s: Not anymore. Do you take any regular medication at the moment?
+- [144] PATIENT 329.82s-330.93s: No.
+- [145] PHYSICIAN 331.22s-333.38s: Do you have any allergies to anything?
+- [146] PATIENT 333.67s-333.85s: No.
+- [147] PATIENT 334.27s-334.44s: Thank you.
+- [148] PATIENT 334.92s-335.42s: Sorry.
+- [149] PHYSICIAN 336.67s-339.30s: Sorry, I was going to say, give me those details.
+- [150] PHYSICIAN 346.98s-347.39s: Hello.
+- [151] PHYSICIAN 348.01s-350.85s: Hello? Yes. Can you hear me?
+- [152] PHYSICIAN 351.35s-352.75s: Do you have any allergies at all?
+- [153] PATIENT 353.21s-354.66s: No known allergies.
+- [154] PHYSICIAN 355.25s-355.89s: Okay.
+- [156] PHYSICIAN 357.22s-358.79s: And tell me about your...
+- [157] PHYSICIAN 359.27s-361.51s: Your situation at home — who do you live with?
+- [158] PATIENT 363.30s-367.16s: I live with a few flatmates.
+- [161] PATIENT 369.95s-371.64s: I have a full-time job.
+- [162] PATIENT 372.06s-374.01s: I'm living with a few people to save money.
+- [163] PHYSICIAN 375.30s-376.66s: Okay, and what do you do for work?
+- [165] PATIENT 379.21s-381.14s: I work at a pharmaceutical company.
+- [166] PHYSICIAN 379.38s-379.75s: Okay.
+- [167] PATIENT 381.41s-384.46s: I've been there a few years now.
+- [168] PATIENT 384.71s-387.82s: It's interesting; we're working on a platform.
+- [169] PATIENT 388.07s-389.61s: I'm a project manager.
+- [170] PATIENT 389.83s-390.54s: I didn't mean to.
+- [171] PATIENT 391.09s-392.75s: Do you want to know more about it?
+- [172] PHYSICIAN 392.88s-393.34s: Thank you.
+- [173] PHYSICIAN 393.76s-394.84s: No, that's up to you.
+- [174] PHYSICIAN 394.97s-396.05s: That's fine.
+- [176] PHYSICIAN 397.13s-401.71s: A couple of questions that can affect your symptoms: do you smoke at all?
+- [177] PATIENT 403.17s-403.44s: No.
+- [178] PHYSICIAN 403.61s-405.94s: And do you drink much alcohol?
+- [179] PATIENT 407.29s-411.48s: I drink occasionally, when I hang out with people.
+- [180] PATIENT 411.73s-414.60s: A few beers per week, something like that.
+- [181] PATIENT 414.85s-416.08s: Nothing crazy; I used to drink more when I was younger.
+- [182] PATIENT 416.51s-418.38s: It has been less recently.
+- [184] PHYSICIAN 419.81s-420.22s: Thank you.
+- [185] PHYSICIAN 420.76s-423.66s: The sound quality is not great, but I will continue.
+- [186] PHYSICIAN 424.07s-433.70s: Based on what you've said, I think this may be a flare-up of your eczema.
+- [187] PHYSICIAN 434.11s-439.29s: You said it's quite itchy and mainly affecting your chest and back.
+- [191] PHYSICIAN 442.19s-443.74s: Having looked at your skin,
+- [192] PHYSICIAN 444.03s-445.50s: the rash appears familiar.
+- [195] PHYSICIAN 447.69s-450.36s: You mentioned you used steroid creams yesterday.
+- [197] PHYSICIAN 452.69s-458.86s: I wonder whether prescribing a stronger topical steroid would be beneficial.
+- [198] PHYSICIAN 459.23s-489.12s: I can prescribe a stronger steroid and emollients to moisturise the skin. Use them for seven to ten days before we reassess. Over‑the‑counter antihistamines such as loratadine or chlorphenamine can help with the itching.
+- [199] PATIENT 459.47s-459.81s: Bye.
+- [200] PHYSICIAN 489.95s-497.69s: It's also worth keeping a diary of any triggers affecting your symptoms, such as clothing, shower gel, or soap.
+- [202] PHYSICIAN 499.78s-503.31s: Keep notes because we can discuss triggers at your next appointment.
+- [203] PATIENT 504.34s-504.69s: Okay.
+- [204] PATIENT 504.86s-509.25s: I have tried antihistamines lately but they didn't really help.
+- [205] PHYSICIAN 510.60s-511.73s: Could you say that again, please?
+- [206] PATIENT 512.54s-514.48s: I have tried the antihistamines.
+- [207] PHYSICIAN 514.48s-514.70s: Okay.
+- [208] PATIENT 515.09s-516.71s: But they did not help.
+- [209] PHYSICIAN 516.90s-540.03s: I can prescribe a stronger topical steroid today to try, together with emollients. It is reasonable to try this and it should not cause harm when used as directed.
+- [210] PHYSICIAN 540.32s-542.78s: Please come back and see me next week if things do not improve.
+- [211] PHYSICIAN 543.95s-544.50s: That sounds good.
+- [212] PATIENT 544.03s-544.49s: Sounds good.
+- [213] PATIENT 544.81s-545.18s: Okay.
+- [214] PHYSICIAN 545.53s-547.14s: Do you have any questions for me?
+- [215] PATIENT 548.06s-549.38s: No, that's it.
+- [216] PHYSICIAN 549.73s-551.03s: Okay, well I wish you all the best.
+- [217] PATIENT 552.05s-553.63s: Thank you very much. Have a good day.
+- [218] PHYSICIAN 552.20s-552.48s: Thank you very much.
+- [219] PATIENT 554.53s-555.72s: Bye.

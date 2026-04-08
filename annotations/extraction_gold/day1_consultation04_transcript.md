@@ -1,0 +1,159 @@
+# day1_consultation04 Transcript Packet
+
+Use this file to annotate `gold_resources` in the paired JSON scaffold.
+Only annotate explicit clinical content for Condition, MedicationStatement, Observation, and Procedure.
+
+## Segments
+
+- [0] PHYSICIAN 0.42s-0.79s: Alex?
+- [2] PHYSICIAN 1.99s-2.43s: Hello.
+- [3] PHYSICIAN 2.88s-3.42s: I can hear myself.
+- [7] PHYSICIAN 7.10s-8.38s: How can I help you this morning?
+- [8] PATIENT 10.16s-11.93s: I've been feeling unwell.
+- [9] PATIENT 12.32s-15.61s: I've been under the weather for the past four days.
+- [10] PATIENT 16.32s-18.71s: It started with a sore throat.
+- [11] PATIENT 19.69s-22.76s: I had a sore throat and a runny nose.
+- [14] PATIENT 25.97s-28.14s: It's now progressing to a cough.
+- [16] PATIENT 29.53s-31.89s: The sore throat is starting to ease.
+- [17] PATIENT 32.26s-33.44s: However, I'm starting to cough.
+- [20] PHYSICIAN 36.11s-36.90s: I see.
+- [22] PATIENT 37.90s-38.67s: I'm feeling a bit off.
+- [23] PATIENT 39.38s-40.45s: I'm feeling generally unwell and tired.
+- [25] PHYSICIAN 41.54s-43.53s: Okay, I see. It seems like there's a lot going on.
+- [26] PHYSICIAN 43.84s-47.50s: Let's start with your sore throat.
+- [27] PHYSICIAN 47.97s-49.96s: Tell me more about your sore throat.
+- [31] PATIENT 53.74s-56.33s: I think it started when a colleague was sneezing next to me.
+- [33] PATIENT 57.07s-58.60s: A colleague of mine was sneezing a lot.
+- [36] PHYSICIAN 62.22s-63.45s: I suspect her children brought something from kindergarten.
+- [39] PATIENT 65.81s-68.54s: Maybe from their kindergarten.
+- [41] PHYSICIAN 70.91s-72.96s: It started as a typical sore throat.
+- [43] PATIENT 74.42s-76.85s: It was quite painful for a couple of days, then it improved quickly.
+- [46] PHYSICIAN 78.43s-81.05s: Did you have any pain or difficulty swallowing?
+- [47] PATIENT 83.39s-85.37s: Yes, it was quite painful to swallow.
+- [50] PATIENT 87.78s-88.78s: It was like that for one of the days.
+- [51] PHYSICIAN 89.57s-92.30s: Did you look at the back of your throat in a mirror?
+- [52] PATIENT 93.64s-95.05s: No, not really.
+- [53] PHYSICIAN 95.39s-100.03s: You didn't notice any abnormalities such as white spots or redness in the back of your throat?
+- [57] PATIENT 105.74s-106.73s: I didn't think to check.
+- [60] PHYSICIAN 108.44s-111.93s: That's fine. You mentioned a runny nose.
+- [61] PHYSICIAN 112.17s-116.72s: What kind of discharge is it — clear or more discolored?
+- [62] PATIENT 118.71s-120.69s: It's clear.
+- [65] PATIENT 124.40s-127.64s: My nose is very congested and it's hard to clear.
+- [68] PHYSICIAN 129.29s-130.64s: You feel quite congested.
+- [69] PATIENT 131.30s-132.30s: Yes, quite congested.
+- [71] PHYSICIAN 133.82s-137.19s: You also mentioned a cough; can you tell me more about it?
+- [72] PATIENT 138.34s-141.41s: The cough started recently, perhaps yesterday.
+- [74] PATIENT 144.70s-146.91s: It's currently a dry cough.
+- [80] PHYSICIAN 151.15s-153.39s: Is it worse at any particular time of day?
+- [82] PHYSICIAN 155.35s-160.38s: Is it worse in the mornings, evenings, at night, or is it throughout the day?
+- [85] PHYSICIAN 162.08s-162.93s: Or is it constant throughout the day?
+- [86] PATIENT 165.10s-167.13s: No, it's fairly constant throughout the day.
+- [89] PATIENT 170.00s-171.03s: I forgot to mention something.
+- [92] PATIENT 174.50s-175.35s: I'm seeing light spots.
+- [94] PATIENT 177.02s-179.34s: That's very odd.
+- [95] PATIENT 180.02s-181.35s: I'm extremely tired.
+- [99] PHYSICIAN 186.15s-190.63s: And this has been going on for the last three to four days?
+- [100] PATIENT 190.80s-191.66s: Yes.
+- [103] PHYSICIAN 194.26s-197.28s: Have you noticed any fevers?
+- [106] PATIENT 200.52s-208.47s: I had a fever at the beginning but it is settling. I've been taking paracetamol and ibuprofen.
+- [108] PATIENT 210.95s-211.61s: That has helped.
+- [109] PHYSICIAN 212.25s-213.09s: That's sensible.
+- [112] PHYSICIAN 216.01s-220.98s: Have you had any difficulty breathing or any chest pain?
+- [114] PATIENT 223.22s-227.40s: No chest pain, but I have noticed I get breathless.
+- [115] PATIENT 228.28s-230.91s: I feel a bit winded on exertion.
+- [117] PATIENT 233.51s-236.53s: I haven't been going to the gym because of that.
+- [119] PHYSICIAN 238.63s-240.53s: When you feel breathless, is it on exertion?
+- [120] PHYSICIAN 241.16s-244.41s: Do you get shortness of breath on exertion?
+- [121] PATIENT 243.35s-243.82s: Yes.
+- [123] PHYSICIAN 244.94s-249.54s: So it is mainly with exercise; when resting there is no problem.
+- [124] PATIENT 250.96s-256.02s: When I'm resting it's okay; I have been going to work.
+- [126] PATIENT 256.48s-257.51s: It's not a major problem.
+- [130] PHYSICIAN 259.28s-263.11s: A couple of other questions: any ear pain?
+- [133] PHYSICIAN 266.99s-269.56s: Do you have blocked ears or any ear discharge?
+- [135] PATIENT 271.99s-273.09s: I don't think so.
+- [137] PHYSICIAN 274.06s-282.43s: I'm going to run through a few yes/no questions. Any headaches?
+- [139] PATIENT 285.61s-286.20s: Yes.
+- [142] PATIENT 287.68s-289.05s: The headaches are still present.
+- [143] PHYSICIAN 289.56s-291.14s: Where are the headaches located?
+- [145] PATIENT 293.50s-294.53s: They're fairly general.
+- [147] PATIENT 296.10s-301.05s: They are intermittent; they come and go.
+- [149] PHYSICIAN 302.26s-305.69s: Do the headaches affect your vision?
+- [151] PHYSICIAN 308.96s-311.75s: Any sensitivity to bright lights?
+- [152] PATIENT 313.50s-314.75s: No.
+- [155] PHYSICIAN 316.84s-321.08s: Any nausea or vomiting?
+- [158] PHYSICIAN 324.47s-326.41s: How are your bowel movements? Any problems?
+- [162] PATIENT 332.74s-333.38s: Yes.
+- [164] PHYSICIAN 334.54s-335.49s: How is your appetite?
+- [165] PATIENT 335.93s-339.56s: I've been drinking more than usual.
+- [167] PATIENT 340.62s-341.56s: I'm not sure.
+- [170] PHYSICIAN 344.20s-346.54s: Are you eating and drinking okay otherwise?
+- [171] PATIENT 347.52s-350.47s: Maybe a bit less than usual.
+- [176] PATIENT 353.83s-356.85s: Have you noticed any rashes on your skin?
+- [177] PATIENT 357.98s-359.60s: No.
+- [178] PHYSICIAN 359.96s-362.74s: Any general muscle aches or joint pain?
+- [180] PATIENT 364.28s-368.14s: Yes, I've had some muscle aches recently.
+- [183] PHYSICIAN 371.20s-376.23s: Are you otherwise fit and well, or do you have any other medical problems I should be aware of?
+- [184] PATIENT 377.49s-379.35s: No, otherwise that's it.
+- [186] PATIENT 380.12s-381.30s: I'm fine.
+- [188] PATIENT 382.59s-385.22s: I'm not taking any regular medications.
+- [191] PHYSICIAN 387.38s-387.99s: Okay.
+- [193] PHYSICIAN 390.21s-395.24s: Any allergies or medications I should be aware of?
+- [198] PHYSICIAN 401.28s-407.73s: Any family history of conditions like diabetes or high blood pressure?
+- [199] PATIENT 408.78s-412.47s: My grandmother has diabetes.
+- [200] PHYSICIAN 413.03s-413.59s: Any siblings with similar conditions?
+- [201] PATIENT 413.08s-413.76s: Do you mean my brother?
+- [202] PATIENT 414.48s-415.38s: I meant my grandmother.
+- [203] PHYSICIAN 415.63s-418.09s: You said grandmother, okay.
+- [204] PHYSICIAN 418.72s-421.13s: Do you know what type of diabetes she has?
+- [207] PHYSICIAN 424.64s-424.98s: Okay.
+- [208] PHYSICIAN 426.19s-428.52s: Anything else that you think is significant?
+- [211] PATIENT 432.64s-435.29s: One of my great-grandfathers had eczema.
+- [214] PHYSICIAN 438.06s-444.03s: Now, social history: who do you live with at home?
+- [215] PATIENT 445.77s-447.44s: I live alone.
+- [216] PHYSICIAN 448.03s-448.33s: Okay.
+- [217] PHYSICIAN 448.97s-451.05s: You're working at the moment, correct?
+- [219] PATIENT 452.21s-452.45s: Yes.
+- [220] PHYSICIAN 452.75s-453.58s: What do you do for work?
+- [222] PATIENT 457.24s-458.12s: I'm an accountant.
+- [223] PHYSICIAN 458.79s-462.73s: Has this been affecting your work?
+- [224] PATIENT 463.79s-467.99s: I've been a bit slower at work.
+- [225] PATIENT 468.09s-470.59s: It's been a stressful period lately.
+- [227] PHYSICIAN 471.65s-472.04s: Right.
+- [228] PHYSICIAN 472.63s-473.05s: Okay.
+- [229] PHYSICIAN 473.48s-477.21s: Is that stress affecting your mood?
+- [231] PATIENT 479.53s-482.99s: No, I think I'm fine.
+- [235] PHYSICIAN 485.37s-491.65s: If you want to discuss mood, stress, or anxiety, you can come and see me; I'd be happy to help.
+- [236] PATIENT 491.65s-492.81s: All right.
+- [237] PATIENT 493.17s-495.55s: I like my job; it's just busier at the moment.
+- [240] PHYSICIAN 497.52s-500.73s: Do you smoke?
+- [241] PATIENT 501.67s-506.42s: Occasionally at company parties, I smoke cigars.
+- [242] PHYSICIAN 506.82s-508.04s: It's not regular smoking.
+- [244] PHYSICIAN 509.57s-510.55s: What about alcohol?
+- [245] PATIENT 511.60s-513.39s: I drink alcohol occasionally.
+- [248] PHYSICIAN 516.14s-517.22s: Mostly social drinking with work.
+- [254] PHYSICIAN 523.56s-525.84s: So, just having listened to your story...
+- [255] PHYSICIAN 526.48s-535.26s: In summary: for the last four days you've had sore throat, runny nose, dry cough, muscle aches, and weakness.
+- [256] PHYSICIAN 535.81s-538.48s: You had an initial fever that has now settled.
+- [258] PHYSICIAN 539.74s-543.41s: I don't think there is much to worry about; this is likely a viral upper respiratory tract infection.
+- [260] PHYSICIAN 548.42s-549.67s: It could be early influenza.
+- [261] PHYSICIAN 550.41s-555.72s: These illnesses usually last 7 to 10 days and improve with time.
+- [262] PHYSICIAN 556.30s-562.34s: Rest, and consider taking one or two days off work.
+- [265] PHYSICIAN 564.63s-568.28s: Drink plenty of fluids and stay well hydrated.
+- [266] PHYSICIAN 568.87s-571.38s: Continue paracetamol and ibuprofen for symptom relief.
+- [268] PHYSICIAN 573.17s-576.18s: We should see how things progress.
+- [269] PHYSICIAN 576.65s-577.93s: If you are not much better in a week, come back.
+- [270] PHYSICIAN 578.51s-579.72s: Please come back if you are not improving.
+- [272] PHYSICIAN 581.56s-583.28s: Does that make sense?
+- [273] PATIENT 583.50s-588.92s: Yes, that makes sense. I'll take a couple of days off.
+- [276] PATIENT 591.13s-592.12s: Yes, it does.
+- [278] PHYSICIAN 592.12s-598.59s: Things to look out for: high fever, worsening breathlessness, or chest pain.
+- [279] PHYSICIAN 599.03s-601.49s: If those occur, come back sooner or call us.
+- [281] PHYSICIAN 603.63s-604.65s: We can help you if needed.
+- [282] PATIENT 605.39s-608.19s: I understand. I'll take care.
+- [283] PHYSICIAN 608.56s-608.88s: Great.
+- [284] PHYSICIAN 609.00s-610.57s: Have a great day. Good luck with work.
+- [285] PATIENT 610.97s-611.29s: Thank you.
+- [286] PHYSICIAN 611.56s-612.78s: Thank you. Take care.
+- [287] PATIENT 611.72s-612.91s: Thank you.
+- [288] PHYSICIAN 613.27s-613.49s: Goodbye.
+- [289] PATIENT 613.49s-613.72s: Goodbye.
