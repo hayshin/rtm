@@ -1,61 +1,54 @@
 # Short Evaluation Plan for Fast Implementation
 
-This is a reduced evaluation plan designed for limited time.
+This is a reduced evaluation plan designed for limited time and current repo reality.
 
-It keeps the strongest metrics that can be implemented quickly and avoids any requirement to create full gold-standard FHIR resources.
+Right now the project has:
+- pipeline outputs for a subset of PriMock57 consultations
+- PriMock57 reference transcripts in TextGrid format
+- no current evaluation harness
+- no current gold extraction or gold FHIR annotations
 
-## 1. Evaluation Scope
+Because of that, the first defensible milestone is to benchmark the existing pipeline on audio and transcript quality before promising downstream semantic evaluation.
 
-This short plan evaluates the pipeline at four practical levels:
-- audio transcription quality
-- speaker-role attribution
-- clinical information extraction
-- FHIR structural validity
+## 1. Evaluation Strategy
 
-It does not attempt full semantic evaluation of generated FHIR bundles.
+This short plan uses a phased rollout:
 
-## 2. Core Claim
+### Phase 1. Audio -> Transcript Benchmarking
 
-Recommended framing:
+Evaluate the current pipeline against PriMock57 reference transcripts.
 
-> PriMock57 provides a benchmark for clinical audio and transcript-level evaluation, but there is no standard protocol for end-to-end audio-to-FHIR assessment. Given time and annotation constraints, this study evaluates the pipeline through transcription quality, speaker-role attribution, extraction accuracy on a small manually annotated subset, and FHIR structural validity.
-
-## 3. Metrics to Implement
-
-### A. Audio -> Transcript
-
-Evaluate on all available PriMock57 consultations.
-
-Metrics:
+Required metrics:
 - `WER`
 - optional `CER`
 
-Reference:
-- PriMock57 reference transcripts
+Comparison targets:
+- `step03` raw ASR transcript
+- optional `step04` cleaned transcript as an ablation
 
-Why keep it:
-- easy to compute
-- necessary for grounding all downstream results
+Why first:
+- reference data already exists
+- pipeline outputs already exist
+- no new annotation is required
+- this produces the first real benchmark numbers for the project
 
-### B. Transcript -> Speaker Roles
+### Phase 1b. Speaker Roles If Feasible
 
-Evaluate on a small manually annotated subset.
+Evaluate speaker-role attribution only if it can be derived reliably from existing PriMock57 transcript timings.
 
 Metrics:
-- speaker-role accuracy
-- confusion matrix for `physician` vs `patient`
+- segment-level speaker-role accuracy
+- confusion matrix for `PHYSICIAN` vs `PATIENT`
 
 Reference:
-- PriMock57 labels if available
-- otherwise manual annotation for 5 to 10 consultations
+- PriMock57 doctor and patient TextGrid intervals
 
-Why keep it:
-- directly relevant to dialogue meaning
-- still feasible with a small subset
+Fallback:
+- if alignment is not reliable enough, defer role evaluation to the same manually annotated subset used later for extraction
 
-### C. Transcript -> Clinical Extraction
+### Phase 2. Transcript -> Clinical Extraction
 
-Evaluate on a small manually annotated subset.
+Evaluate extraction only after creating a small annotated subset.
 
 Metrics:
 - precision
@@ -69,165 +62,193 @@ Recommended categories:
 - `Observation`
 - `Procedure`
 
-Optional attributes if feasible:
-- negation
-- dosage
-- frequency
-- temporal mention
-
 Reference:
 - manual gold annotations on 5 consultations minimum
 
-Why keep it:
-- this is the strongest semantic evaluation you can produce quickly
+Why deferred:
+- no extraction gold set exists yet
+- extraction evaluation is the strongest downstream metric, but it requires new annotation work
 
-### D. FHIR Output
+### Phase 3. FHIR Output
 
-Evaluate on all processed consultations.
+Evaluate structural validity on all processed consultations after transcript benchmarking is in place.
 
 Metrics:
 - FHIR schema validation pass rate
 - number of validation errors per consultation
 
 Why keep it:
-- this is fast to implement
-- it supports the interoperability part of the paper even without gold FHIR bundles
+- it is cheap to compute
+- it supports the interoperability claim
+- it does not require gold FHIR bundles
 
-## 4. What Not to Promise
+## 2. Core Claim
+
+Recommended framing:
+
+> PriMock57 provides the benchmark source for clinical audio and transcript-level evaluation, but there is no established protocol for end-to-end audio-to-FHIR assessment. This study therefore begins by benchmarking transcription quality on PriMock57, adds speaker-role evaluation where existing labels support it, and defers extraction-level semantic evaluation to a small manually annotated subset.
+
+## 3. Phase 1 Benchmark Package
+
+The minimum benchmark package to implement now is:
+
+1. export reference transcripts from PriMock57 TextGrids
+2. export predicted transcripts from pipeline outputs
+3. compute `WER` on all currently processed consultations
+4. compute optional `CER`
+5. compute speaker-role accuracy only if role alignment from TextGrids is reliable
+
+Expected artifacts:
+- reference transcript export
+- predicted transcript export
+- benchmark results table
+- optional speaker-role comparison table
+
+## 4. Metrics to Implement Now
+
+### A. Audio -> Transcript
+
+Evaluate on all consultations already processed in `batch_outputs/primock57_pipeline/`.
+
+Required metric:
+- `WER`
+
+Optional metrics:
+- `CER`
+- comparison of `step03` vs `step04`
+
+Reference:
+- PriMock57 doctor and patient TextGrid transcripts merged in timestamp order
+
+Recommended prediction source of truth:
+- use `step03` for the primary ASR benchmark
+- use `step04` only as a cleanup ablation
+
+### B. Speaker Roles
+
+Evaluate only if role labels can be matched from existing PriMock57 timing information.
+
+Metrics:
+- segment-level role accuracy
+- confusion matrix
+
+Prediction source:
+- `step04.speaker_role`
+
+Reference source:
+- doctor and patient TextGrid intervals
+
+## 5. What Not to Promise Yet
 
 Do not claim:
+- that the project already has a full benchmark suite
 - full end-to-end semantic correctness
 - gold-standard FHIR bundle fidelity
-- complete clinical validity of the structured output
+- extraction precision / recall / F1 before the gold subset exists
 
 Claim instead:
-- feasibility of the pipeline
-- benchmarked transcription and extraction performance
-- structurally valid FHIR generation
+- the project now has a reproducible transcript benchmark
+- audio-first evaluation is the first completed milestone
+- downstream extraction and FHIR semantic evaluation are planned separately
 
-## 5. Minimal Annotation Plan
+## 6. Minimal Annotation Plan for Later Phases
 
-Annotate only what is needed for fast F1 evaluation.
+After Phase 1 is complete, annotate only what is needed for fast extraction F1.
 
 Recommended subset:
 - 5 consultations minimum
 - 10 consultations if feasible
 
 For each consultation annotate:
-- speaker role by utterance or segment
+- speaker role by utterance or segment if still needed
 - spans for conditions
 - spans for medications
 - spans for observations
 - spans for procedures
 
-If time allows, also annotate:
+Optional if time allows:
 - negation
-- dosage and frequency for medications
+- dosage
+- frequency
 - temporal expressions
 
-This avoids the cost of building full gold FHIR resources.
+This avoids the cost of building full gold FHIR resources at the start.
 
-## 6. Fast Baselines
+## 7. Fast Baselines and Ablations
 
-Use only baselines that are cheap and informative.
-
-### Baseline 1. Raw ASR -> Extraction -> FHIR
-
-Pipeline:
-- diarization
-- ASR
-- extraction
-- FHIR generation
-- no transcript cleanup
+### Baseline 1. `step03` Raw ASR
 
 Purpose:
-- shows whether cleanup improves results
+- primary benchmark for current transcription quality
 
-### Baseline 2. Gold Transcript -> Extraction -> FHIR
-
-Pipeline:
-- reference transcript
-- same extraction and FHIR generation stages
+### Baseline 2. `step04` Cleaned Transcript
 
 Purpose:
-- separates ASR error from extraction error
+- measures whether cleanup improves transcript quality relative to reference text
 
-This is the most valuable baseline if you only add one.
+This is useful as a lightweight ablation, not the primary benchmark.
 
-## 7. Fast Ablation
+### Baseline 3. Gold Transcript -> Extraction -> FHIR
 
-### Ablation. Without transcript cleanup
+Purpose:
+- later baseline for separating ASR error from extraction error
 
-Compare:
-- full pipeline
-- same pipeline without cleanup
-
-Measure:
-- WER difference
-- extraction precision / recall / F1 difference
-- speaker-role accuracy difference if relevant
-
-This is the cheapest meaningful ablation.
+This is valuable, but it belongs after Phase 1 benchmarking is in place.
 
 ## 8. Minimum Results Tables
 
-### Table A. Main Evaluation
+### Table A. ASR Benchmark
 
 Rows:
-- transcription
-- speaker roles
-- extraction
-- FHIR validation
+- one row per consultation
+- one summary row
 
 Columns:
-- dataset or subset
-- metric
-- score
+- consultation id
+- transcript source
+- WER
+- optional CER
 
-### Table B. Per-Category Extraction
-
-Rows:
-- Condition
-- Medication
-- Observation
-- Procedure
-
-Columns:
-- precision
-- recall
-- F1
-
-### Table C. Baseline or Ablation Comparison
+### Table B. Cleanup Comparison
 
 Rows:
-- full pipeline
-- without cleanup
-- gold transcript pipeline
+- `step03`
+- `step04`
 
 Columns:
 - WER
-- role accuracy
-- extraction F1
-- validation pass rate
+- CER
+
+### Table C. Speaker-Role Evaluation
+
+Include only if feasible in Phase 1b.
+
+Rows:
+- overall
+- `PHYSICIAN`
+- `PATIENT`
+
+Columns:
+- accuracy or support
+- confusion counts
 
 ## 9. Implementation Order
 
-If we implement this together quickly, the best order is:
+Implement in this order:
 
-1. compute `WER` from PriMock57 references
-2. define a lightweight annotation format for 5 consultations
-3. evaluate extraction precision / recall / F1
-4. evaluate speaker-role accuracy
-5. run FHIR validation and report pass rate
-6. compare full pipeline vs no-cleanup pipeline
+1. parse PriMock57 TextGrid transcripts into merged reference transcripts
+2. read pipeline `step03` outputs and compute `WER`
+3. add optional `CER`
+4. compare `step04` cleaned transcripts as an ablation
+5. compute speaker-role accuracy from TextGrid overlaps if reliable
+6. only then define the lightweight annotation format for extraction
 
-## 10. Short Summary
+## 10. Shortest Defensible Package
 
 The shortest defensible evaluation package is:
-- `WER` on PriMock57
-- speaker-role accuracy on a small subset
-- extraction precision / recall / F1 on a small subset
-- FHIR validation pass rate on all outputs
-- one comparison between full pipeline and no-cleanup pipeline
+- `WER` on all currently processed consultations
+- optional `CER`
+- optional `step03` vs `step04` comparison
+- optional speaker-role accuracy if existing PriMock57 labels support it
 
-This is realistic, publishable as a feasibility-focused evaluation, and does not require full gold FHIR annotations.
+This is realistic, publishable as a feasibility-focused benchmark, and does not require new gold extraction or FHIR annotations before producing results.
