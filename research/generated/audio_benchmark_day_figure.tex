@@ -1,0 +1,32 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw[->, line width=0.5pt] (1.20,0.80) -- (1.20,4.90);
+\draw[->, line width=0.5pt] (1.20,0.80) -- (11.30,0.80);
+\draw[gray!30] (1.20,0.80) -- (11.00,0.80);
+\node[anchor=east,font=\scriptsize] at (1.12,0.80) {0.0};
+\draw[gray!30] (1.20,1.56) -- (11.00,1.56);
+\node[anchor=east,font=\scriptsize] at (1.12,1.56) {0.2};
+\draw[gray!30] (1.20,2.32) -- (11.00,2.32);
+\node[anchor=east,font=\scriptsize] at (1.12,2.32) {0.4};
+\draw[gray!30] (1.20,3.08) -- (11.00,3.08);
+\node[anchor=east,font=\scriptsize] at (1.12,3.08) {0.6};
+\draw[gray!30] (1.20,3.84) -- (11.00,3.84);
+\node[anchor=east,font=\scriptsize] at (1.12,3.84) {0.8};
+\draw[gray!30] (1.20,4.60) -- (11.00,4.60);
+\node[anchor=east,font=\scriptsize] at (1.12,4.60) {1.0};
+\fill[blue!60] (5.29,0.80) rectangle (5.74,2.03);
+\fill[teal!60] (5.88,0.80) rectangle (6.33,3.06);
+\fill[green!55!black] (6.46,0.80) rectangle (6.91,4.21);
+\node[anchor=north,font=\scriptsize] at (6.10,0.68) {Day 1};
+\fill[blue!60] (9.30,4.65) rectangle (9.58,4.83);
+\node[anchor=west,font=\scriptsize] at (9.66,4.74) {Step 3 WER};
+\fill[teal!60] (9.30,4.20) rectangle (9.58,4.38);
+\node[anchor=west,font=\scriptsize] at (9.66,4.29) {Step 4 WER};
+\fill[green!55!black] (9.30,3.75) rectangle (9.58,3.93);
+\node[anchor=west,font=\scriptsize] at (9.66,3.84) {Role accuracy};
+\node[rotate=90,font=\scriptsize] at (0.45,2.70) {Score};
+\end{tikzpicture}
+\caption{Day-level audio benchmark summary for the currently processed PriMock57 subset. Only Day~1 is available at present because later consultation days have not yet been run end-to-end.}
+\label{fig:audio-benchmark-day-summary}
+\end{figure}
