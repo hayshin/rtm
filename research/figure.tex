@@ -92,14 +92,14 @@
         fill=cyan!6, draw=cyan!30, rounded corners=9pt, line width=0.9pt,
         fit=(step1)(step2)(segments)(step3)(transcript),
         inner sep=15pt,
-        label={[font=\small\itshape, text=cyan!80!black]above:Speech Processing Workflow}
+        label={[font=\normal\bfseries, text=cyan!80!black]above:Speech Processing Workflow}
     ] {};
 
     \node[
         fill=orange!6, draw=orange!30, rounded corners=9pt, line width=0.9pt,
         fit=(step4)(cleaned)(step5)(step6)(output),
         inner sep=15pt,
-        label={[font=\small\itshape, text=orange!80!black]below:LLM-to-FHIR Workflow}
+        label={[font=\normal\bfseries, text=orange!80!black]below:LLM-to-FHIR Workflow}
     ] {};
 \end{scope}
 
